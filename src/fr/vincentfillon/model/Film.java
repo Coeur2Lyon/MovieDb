@@ -18,32 +18,34 @@ public class Film {
 
     }
 
-    private int idFilm=0;
-    long millis = cal.getTimeInMillis();
+    private int idFilm = 0;
     private StringProperty titreFR;
     private StringProperty titreO;
     private StringProperty scenario;
     private StringProperty anneeSortie;
     private StringProperty nationalite;
+
+    long millis = cal.getTimeInMillis();
     private Timestamp createdAt = new Timestamp(millis);
 
 
-
     private Object StringProperty;
+
     public Film(int idFilm, String titreFR, String titreO, String nationalite, String scenario, String anneeSortie) {
-        this(0,null, null,null,null,null,null);
+        this(0, null, null, null, null, null, null);
     }
 
-    public Film(int idFilm,String titreFR, String titreO, String scenario,String anneeSortie, String nationalite, Timestamp createdAt) {
+    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, Timestamp createdAt) {
         this.idFilm = idFilm;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
         this.anneeSortie = new SimpleStringProperty(anneeSortie);
         this.nationalite = new SimpleStringProperty(nationalite);
-        this.createdAt=new Timestamp(millis);
+        this.createdAt = new Timestamp(millis);
     }
-    public Film(String titreFR, String titreO, String scenario,String anneeSortie, String nationalite) {
+
+    public Film() {
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
@@ -142,9 +144,6 @@ public class Film {
     }
 
     //
-
-
-
 
 
 }

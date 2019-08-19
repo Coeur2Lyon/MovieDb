@@ -29,8 +29,8 @@ public class FilmDAO extends Dao<Film> {
         return false;
     }
 
-    public Film find(/*int id*/) {
-        Film film=new Film();
+    public Film find(int id) {
+       Film film=new Film();
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
