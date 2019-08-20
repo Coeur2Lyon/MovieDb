@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -35,7 +36,7 @@ public class Film {
         this(0, null, null, null, null, null, null);
     }
 
-    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, Timestamp createdAt) {
+    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, Date createdAt) {
         this.idFilm = idFilm;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
@@ -45,7 +46,7 @@ public class Film {
         this.createdAt = new Timestamp(millis);
     }
 
-    public Film() {
+    public Film(String titreFR, String titreO, String scenario, String anneeSortie, ) {
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
@@ -53,8 +54,6 @@ public class Film {
         this.nationalite = new SimpleStringProperty(nationalite);
 
     }
-    //
-
 
     public int getIdFilm() {
         return idFilm;

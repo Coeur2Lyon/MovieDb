@@ -14,15 +14,15 @@ docker build -t vincent/mysql .
 docker run --name projet_filmotheque -p3306:3306 -d vincent/mysql
 
 
-(si le conteneur se crée mais ne démarre pas, démarrez-le:
+5)si le conteneur se crée mais ne démarre pas, démarrez-le:
 docker start projet_filmotheque )
 
-5)Exécution/entrer dans le conteneur :
+6)Exécution/entrer dans le conteneur :
 
 docker exec -it projet_filmotheque /bin/bash
 
 -Dans le conteneur (#root@.../#):
-6)Connectez-vous à la base en tant que root:
+7)Connectez-vous à la base en tant que root:
 
 mysql -uroot -pPASSWORD
 

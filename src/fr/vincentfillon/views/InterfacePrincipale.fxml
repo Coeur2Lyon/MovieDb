@@ -37,12 +37,12 @@
                       <Button mnemonicParsing="false" prefHeight="23.0" text="Annuler" />
                     </buttons>
                   </ButtonBar>
-                  <Hyperlink layoutX="177.0" layoutY="283.0" prefHeight="25.0" prefWidth="147.0" text="Mot de passe oublié?" textFill="#d0c7c7">
+                  <Hyperlink layoutX="177.0" layoutY="283.0" prefHeight="20.0" prefWidth="174.0" text="Mot de passe oublié?" textFill="#d0c7c7">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="lnkCreationCompte" layoutX="89.0" layoutY="325.0" onAction="#initInterfaceUser" prefHeight="36.0" prefWidth="352.0" text="Pas encore de compte? Créer un compte" textFill="#d0c7c7">
+                  <Hyperlink fx:id="lnkCreationCompte" layoutX="89.0" layoutY="325.0" onAction="#initInterfaceUser" prefHeight="34.0" prefWidth="394.0" text="Pas encore de compte? Créer un compte" textFill="#d0c7c7">
                      <font>
                         <Font size="18.0" />
                      </font>
