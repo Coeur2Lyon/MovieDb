@@ -34,16 +34,16 @@ public class FilmDAO extends Dao<Film> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    //ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM film WHERE elv_id = " + id);
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM film");
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Film WHERE IdFilm = " + id);
+                    //ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM film");
             if (result.first()){
                 String titreFR = result.getString(2);
                 String titreO = result.getString(3);
                 String nationalite = result.getString(4);
                 String scenario = result.getString(5);
                 String anneeSortie = result.getString(6);
-                Film film = new Film(titreFR, titreO, nationalite, scenario, anneeSortie);
-                list = List<T>;
+                film = new Film(id,titreFR,titreO,nationalite,scenario,anneeSortie);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

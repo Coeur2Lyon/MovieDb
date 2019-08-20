@@ -1,0 +1,68 @@
+##########Commandes docker ################
+
+Vérifier les images téléchargés: docker images
+Verifier les conteneurs déployés : docker ps
+
+
+##########Docker installé################
+
+docker pull mysql:latest    //Télécharge l'image MySql du Docker hub
+docker run --name dbName -d -p3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:latest  //On crée un conteneu nomé dbName sur le port 3306 (port MySql par défaut) et accessible avec l'utilisateur ROOT avec le mot de passe "password
+
+
+dans #root... :
+
+docker exec -it dbName /bin/bash  //entrer dans le conteneur pour executer commande 
+mysql -uroot -ppassword
+
+Dans la BDD Mysql:
+
+show databases; // ne pas oublier ;
+
+Création d'un Dockerfile pour environnement customizÉ
+
+touch Dockerfile
+
+
+FROM mysql:latest
+ENV MYSQL_ROOT_PASSWORD PASSWORD
+ENV MYSQL_DATABASE filmotheque
+ENV MYSQL_USERS vincent
+ENV MYSQL_PASSWORD password
+ADD BDD/MySQL/Projet_Filotheque.sql /docker-entrypoint-initdb.d
+EXPOSE 3306
+
+-Pour builder l'image:
+
+docker build -t vincent/mysql . // on nomme le container souhaité et on indique un "." pour spécifier que le Dockerfile est dans le répertoire courant.
+
+-Création du conteneur pour cette image:
+
+docker run --name projet_filmotheque -p3306:3306 -d vincent/mysql
+
+-Exécution/entrer dans le conteneur :
+
+docker exec -it projet_filmotheque /bin/bash
+
+-Pour tester et vérifier que l'user vincent (uvincent) à bien été créé avec le mot de passe "password" (ppassword):
+mysql -uvincent -ppassword ou 
+mysql -uroot -pPASSWORD
+
+dans mysql: showdatabases; 
+use filmotheque;
+show tables;
+
+
+
+Arrêter/démarrer un conteneur:
+docker start projet_filmotheque
+
+-Supprimer les conteneurs:
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+-Supprimer toutes les images non utilisées:
+docker rmi $(docker images -q)
+
+
+

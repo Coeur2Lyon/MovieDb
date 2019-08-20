@@ -7,7 +7,7 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
     static String driver = "com.mysql.jdbc.Driver";
     static String url = "jdbc:mysql";
     static String ip = "Localhost";
-    static String dbName = "projet_filmothèque";
+    static String dbName = "projet_filmotheque";
     static String username = "root";
     static String password = "";
     static String urlStr = url + "://" + ip + "/" + dbName + "";

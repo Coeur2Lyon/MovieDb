@@ -1,0 +1,13 @@
+version: '2'
+services:
+  oc.spring.demo.db_ticket:
+    image: postgres
+    volumes:
+      - "../BDD/PostGreSql/01_create_db_filmotheque.sql:/docker-entrypoint-initdb.d/01.sql"
+     
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      - POSTGRES_DB=projet_filmothèque
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=
