@@ -1,6 +1,9 @@
 package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
+import fr.vincentfillon.connectivity.ConnectionClass;
+import fr.vincentfillon.dao.Dao;
+import fr.vincentfillon.dao.FilmDAO;
 import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -49,12 +52,15 @@ public class InterfaceFilmsController {
      */
     public InterfaceFilmsController() {
 
+        //Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
 
-       /* movieData.add(new Film(0,"Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US","2019-06-25 11:15:53.322000"));
-        movieData.add(new Film(0,"Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
+
+
+        movieData.add(new Film("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
+        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
         movieData.add(new Film("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
         movieData.add(new Film("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
-*/
+
 
     }
 
@@ -150,10 +156,29 @@ public class InterfaceFilmsController {
      */
     @FXML
     private void addNewMovie() {
-        Film tempFilm = new Film();
+        /*Film tempFilm = new Film();
         boolean okClicked = Main.showMovieEditDialog(tempFilm);
         if (okClicked) {
             getMovieData().add(tempFilm);
+        }
+        */
+        Film tempMovie = movieTable.getSelectionModel().getSelectedItem();
+        if (tempMovie == null) {
+            // Nothing selected.
+            boolean okClicked = Main.showMovieEditDialog(tempMovie);
+            if (okClicked) {
+                showMovieDetails(tempMovie);
+            }
+
+        } else {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Modification impossible");
+            alert.setHeaderText("Vous devez être administrateur pour modifier un film");
+            alert.setContentText("Veuillez désélectionner le film ou sortir/entrer. ");
+
+            alert.showAndWait();
         }
     }
 
@@ -161,7 +186,7 @@ public class InterfaceFilmsController {
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected movie.
      */
-     /*
+
     @FXML
    private void handleEditMovie() {
         Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
@@ -181,7 +206,7 @@ public class InterfaceFilmsController {
 
             alert.showAndWait();
         }
-    }*/
+    }
 
 
 }

@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -15,7 +16,7 @@ public class Film {
     GregorianCalendar cal = new GregorianCalendar(2007, 9 - 1, 23);
 
 
-    public Film(int idFilm) {
+    public Film() {
 
     }
 
@@ -32,27 +33,26 @@ public class Film {
 
     private Object StringProperty;
 
-    public Film(int idFilm, String titreFR, String titreO, String nationalite, String scenario, String anneeSortie) {
+    public Film(int idFilm,String titreFR, String titreO, String nationalite, String scenario, String anneeSortie) {
         this(0, null, null, null, null, null, null);
     }
 
-    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, Date createdAt) {
+    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF, Date createdAt) {
         this.idFilm = idFilm;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
         this.anneeSortie = new SimpleStringProperty(anneeSortie);
-        this.nationalite = new SimpleStringProperty(nationalite);
+        this.nationalite = new SimpleStringProperty(nationaliteF);
         this.createdAt = new Timestamp(millis);
     }
 
-    public Film(String titreFR, String titreO, String scenario, String anneeSortie, ) {
+    public Film(String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF) {
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
         this.anneeSortie = new SimpleStringProperty(anneeSortie);
-        this.nationalite = new SimpleStringProperty(nationalite);
-
+        this.nationalite = new SimpleStringProperty(nationaliteF);
     }
 
     public int getIdFilm() {

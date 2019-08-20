@@ -66,7 +66,7 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                                <Label prefHeight="94.0" prefWidth="68.0" text="Scenario" textFill="#df63ff" GridPane.rowIndex="4">
+                                <Label prefHeight="94.0" prefWidth="115.0" text="Scenario" textFill="#df63ff" GridPane.rowIndex="4">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
@@ -102,6 +102,7 @@
                         <Image url="@img/MovieDB_Violet.png" />
                      </image>
                   </ImageView>
+                  <Button layoutX="316.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleEditMovie" text="Editer..." />
                     </children>
                 </AnchorPane>
             </items>

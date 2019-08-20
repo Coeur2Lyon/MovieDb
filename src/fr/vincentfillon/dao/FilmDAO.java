@@ -29,37 +29,42 @@ public class FilmDAO extends Dao<Film> {
         return false;
     }
 
-    public Film find(int id) {
-       Film film=new Film();
+    public Film find(int idFilm) {
+        Film film = new Film();
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Film WHERE IdFilm = " + id);
-                    //ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM film");
-            if (result.first()){
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Film WHERE IdFilm = " + idFilm);
+            //ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM film");
+
+
+            if (result.first()) {
                 String titreFR = result.getString(2);
                 String titreO = result.getString(3);
                 String nationalite = result.getString(4);
                 String scenario = result.getString(5);
                 String anneeSortie = result.getString(6);
-                film = new Film(id,titreFR,titreO,nationalite,scenario,anneeSortie);
+                film = new Film(idFilm, titreFR, titreO, nationalite, scenario, anneeSortie);
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return film;
     }
 }
 /*
- while (resultSet.next()) {
-                        int idFilm = resultSet.getInt(1);
-                        String titreFR = resultSet.getString(2);
-                        String titreO = resultSet.getString(3);
-                        String nationalite = resultSet.getString(4);
-                        String scenario = resultSet.getString(5);
-                        String anneeSortie = resultSet.getString(6);
-                        Timestamp createdAt = resultSet.getTimestamp(8);
-                        Film film = new Film(idFilm, titreFR, titreO, nationalite, scenario, anneeSortie);
-                        list = (List<T>) film;
+while (resultSet.next()) {
+                int idFilm = resultSet.getInt(1);
+                String titreFR = resultSet.getString(2);
+                String titreO = resultSet.getString(3);
+                String nationalite = resultSet.getString(4);
+                String scenario = resultSet.getString(5);
+                String anneeSortie = resultSet.getString(6);
+                Film film = new Film(idFilm, titreFR, titreO, nationalite, scenario, anneeSortie);
+                list = (List<T>) film;
+                }
+
  */
+

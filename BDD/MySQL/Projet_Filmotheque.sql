@@ -68,7 +68,7 @@ create table FILM
   Scenario    text,
   AnneeSortie int,
   NationaliteF varchar(50),
-  CreatedAt   timestamp default current_timestamp,,
+  CreatedAt   timestamp default current_timestamp,
   primary key (IdFilm)
 );
 
@@ -148,12 +148,6 @@ references FILM (IdFilm)
 alter table EVALUE
   add constraint FK_EVALUE2 foreign key (IdUser)
 references UTILISATEUR (IdUser)
-  on delete restrict
-  on update restrict;
-
-alter table FILM
-  add constraint FK_REALISE foreign key (IdActeurRealisateur)
-references ACTEUR_REALISATEUR (IdActeurRealisateur)
   on delete restrict
   on update restrict;
 
@@ -254,8 +248,9 @@ INSERT INTO REALISE (IdActeurRealisateur, IdFilm)
 VALUES (1, 1),
        (2, 2),
        (3, 3),
-       (4, 5),
-       (4, 6);
+       (6, 4),
+       (4, 5);
+
 
 INSERT CORRESPOND (IdGenre, IdFilm)
 VALUES (8, 1),
@@ -269,9 +264,6 @@ VALUES (8, 1),
        (3, 4),
        (3, 5),
        (4, 5);
-
-
-
 
 
 
