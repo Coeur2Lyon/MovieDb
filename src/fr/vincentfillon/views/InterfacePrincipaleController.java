@@ -1,10 +1,10 @@
 package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
-import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 
 public class InterfacePrincipaleController extends Main {

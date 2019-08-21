@@ -1,7 +1,7 @@
 package fr.vincentfillon.dao;
 
-import fr.vincentfillon.connectivity.ConnectionClass;
-import fr.vincentfillon.model.Film;
+
+
 
 import java.sql.*;
 import java.util.List;

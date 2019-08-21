@@ -1,23 +1,14 @@
 package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
-import fr.vincentfillon.connectivity.ConnectionClass;
-import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.FilmDAO;
 import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class InterfaceFilmsController {
 
