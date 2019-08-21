@@ -33,10 +33,6 @@ public class Film {
 
     private Object StringProperty;
 
-    public Film(int idFilm,String titreFR, String titreO, String nationalite, String scenario, String anneeSortie) {
-        this(0, null, null, null, null, null, null);
-    }
-
     public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF, Date createdAt) {
         this.idFilm = idFilm;
         this.titreFR = new SimpleStringProperty(titreFR);
@@ -44,7 +40,7 @@ public class Film {
         this.scenario = new SimpleStringProperty(scenario);
         this.anneeSortie = new SimpleStringProperty(anneeSortie);
         this.nationalite = new SimpleStringProperty(nationaliteF);
-        this.createdAt = new Timestamp(millis);
+        this.createdAt = new Timestamp(createdAt.getTime());
     }
 
     public Film(String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF) {

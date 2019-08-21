@@ -52,14 +52,18 @@ public class InterfaceFilmsController {
      */
     public InterfaceFilmsController() {
 
-        //Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+
+        Film film = filmDAO.find(1);
+        //TODO ajout méthode findAll à filmDAO pour charger tous les films
+//        movieData.setAll(filmDAO.findAll());
+        movieData.add(film);
 
 
-
-        movieData.add(new Film("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
-        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
-        movieData.add(new Film("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
-        movieData.add(new Film("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
+//        movieData.add(new Film("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
+//        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
+//        movieData.add(new Film("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
+//        movieData.add(new Film("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
 
 
     }
