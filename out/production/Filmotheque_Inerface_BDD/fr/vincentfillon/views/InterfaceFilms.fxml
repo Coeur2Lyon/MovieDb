@@ -102,7 +102,7 @@
                         <Image url="@img/MovieDB_Violet.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="316.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleEditMovie" text="Editer..." />
+                  <Button layoutX="290.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleEditMovie" prefHeight="26.0" prefWidth="95.0" text="Editer..." />
                     </children>
                 </AnchorPane>
             </items>

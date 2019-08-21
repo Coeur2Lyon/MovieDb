@@ -156,30 +156,12 @@ public class InterfaceFilmsController {
      */
     @FXML
     private void addNewMovie() {
-        /*Film tempFilm = new Film();
+        Film tempFilm = new Film();
         boolean okClicked = Main.showMovieEditDialog(tempFilm);
         if (okClicked) {
             getMovieData().add(tempFilm);
         }
-        */
-        Film tempMovie = movieTable.getSelectionModel().getSelectedItem();
-        if (tempMovie == null) {
-            // Nothing selected.
-            boolean okClicked = Main.showMovieEditDialog(tempMovie);
-            if (okClicked) {
-                showMovieDetails(tempMovie);
-            }
 
-        } else {
-
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("Modification impossible");
-            alert.setHeaderText("Vous devez être administrateur pour modifier un film");
-            alert.setContentText("Veuillez désélectionner le film ou sortir/entrer. ");
-
-            alert.showAndWait();
-        }
     }
 
     /**
