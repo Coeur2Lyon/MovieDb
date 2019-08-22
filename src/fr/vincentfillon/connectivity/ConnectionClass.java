@@ -9,7 +9,7 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
     static String ip = "localhost";
     static String dbName = "moviedb";
     static String username = "root";
-    static String password = "";
+    static String password = "moviedb";
     static String urlStr = url + "://" + ip + "/" + dbName + "";
 
     private ConnectionClass() {
@@ -17,12 +17,16 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
 
     public static Connection connecte() {
         try {
+
             if (connection == null) {
                 Class.forName(driver);
                 connection = DriverManager.getConnection(urlStr, username, password);
                 //Statement statement = connection.createStatement();
             } else {
                 System.out.println("Il existe déja une connexion");
+                connection.close();
+                Class.forName(driver);
+                connection = DriverManager.getConnection(urlStr, username, password);
 
             }
         } catch (ClassNotFoundException |

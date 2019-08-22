@@ -3,8 +3,9 @@ package fr.vincentfillon.dao;
 
 
 
+import javafx.collections.ObservableList;
+
 import java.sql.*;
-import java.util.List;
 
 
 public abstract class Dao<T> {
@@ -41,4 +42,6 @@ public abstract class Dao<T> {
      * @return T
      */
     public abstract T find(int id);
+
+    public abstract ObservableList findAll();
 }

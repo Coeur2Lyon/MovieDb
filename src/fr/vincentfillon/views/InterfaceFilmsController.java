@@ -1,6 +1,9 @@
 package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
+import fr.vincentfillon.connectivity.ConnectionClass;
+import fr.vincentfillon.dao.Dao;
+import fr.vincentfillon.dao.FilmDAO;
 import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,11 +48,12 @@ public class InterfaceFilmsController {
 
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
 
-        Film film = filmDAO.find(1);
-        //TODO ajout méthode findAll à filmDAO pour charger tous les films
-//        movieData.setAll(filmDAO.findAll());
-        movieData.add(film);
 
+        //int i=1;
+        //Film film = filmDAO.find(i);
+
+        //TODO ajout méthode findAll à filmDAO pour charger tous les films
+      movieData.setAll(filmDAO.findAll());
 
 //        movieData.add(new Film("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
 //        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
