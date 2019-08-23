@@ -59,26 +59,12 @@ public class FilmDAO extends Dao<Film> {
 
         int i=1;
         Film film = find(i);
-        while (film.getAnneeSortie()!=null){
+        while (film.getTitreFR()!=null){
             listefilms.add(film);
             System.out.println(find(i));
             i++;
             film = find(i);
         }
-
-
-        System.out.println(film);
-        System.out.println(film.getAnneeSortie());
-        listefilms.add(film);
-
-       /* while (film!=null) {
-            film = find(i);
-            //i ++;
-
-            listefilms.add(film);
-
-        }*/
-
         return listefilms;
     }
 }

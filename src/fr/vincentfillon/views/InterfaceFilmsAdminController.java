@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class InterfaceFilmsController {
+public class InterfaceFilmsAdminController {
 
     @FXML
     private TableView<Film> movieTable;
@@ -44,7 +44,7 @@ public class InterfaceFilmsController {
 
     /* The constructor is called before the initialize() method.
      */
-    public InterfaceFilmsController() {
+    public InterfaceFilmsAdminController() {
 
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
 

@@ -54,12 +54,12 @@ public class InterfacePrincipaleController extends Main {
         Stage newWindow = new Stage();
         try {
             //FXMLLoader loader = new FXMLLoader();
-            //loader.setLocation(InterfacePrincipaleController.class.getResource("InterfaceFilms.fxml"));
+            //loader.setLocation(InterfacePrincipaleController.class.getResource("InterfaceFilmsAdmin.fxml"));
             //AnchorPane interfaceFilms = (AnchorPane) loader.load();
-            //InterfaceFilmsController controller;
+            //InterfaceFilmsAdminController controller;
             //controller = loader.getController();
             // controller.setMovie(this);
-            root = FXMLLoader.load(getClass().getResource("InterfaceFilms.fxml"));
+            root = FXMLLoader.load(getClass().getResource("InterfaceFilmsAdmin.fxml"));
             newWindow.setScene(new Scene(root,850,550));
             newWindow.initModality(Modality.APPLICATION_MODAL);
 

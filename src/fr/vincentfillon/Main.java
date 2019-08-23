@@ -3,8 +3,6 @@ package fr.vincentfillon;
 import fr.vincentfillon.model.Film;
 import fr.vincentfillon.views.MovieEditDialogController;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -26,6 +24,7 @@ public class Main extends Application {
        // this.primaryStage.setTitle("AddressApp");
         initInterfacePrncipale();
     }
+
 
     private void initInterfacePrncipale() {
         try {
