@@ -35,20 +35,6 @@ public class InterfacePrincipaleController extends Main {
 
     @FXML
     public void initInterfaceFilms(ActionEvent actionEvent) throws IOException {
-        /* Test de connexion à la BDD  si besoin
-        Connection connection= ConnectionClass.connecte();
-
-        try {
-            String query="SELECT * FROM utilisateur";
-            Statement statement = connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(query);
-            while(resultSet.next()){
-                System.out.println(resultSet.getString(1)+" "+resultSet.getString(2)+" "+resultSet.getString(3));
-            }
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }*/
 
         Parent root;
         Stage newWindow = new Stage();
@@ -62,9 +48,6 @@ public class InterfacePrincipaleController extends Main {
             root = FXMLLoader.load(getClass().getResource("InterfaceFilmsAdmin.fxml"));
             newWindow.setScene(new Scene(root,850,550));
             newWindow.initModality(Modality.APPLICATION_MODAL);
-
-
-
             newWindow.show();
 
 

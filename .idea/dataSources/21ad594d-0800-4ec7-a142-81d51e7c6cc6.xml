@@ -1112,9 +1112,7 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="279" parent="3" name="ACTEUR_REALISATEUR">
-      <Collation>utf8_general_ci</Collation>
-    </table>
+    <table id="279" parent="3" name="ACTEUR_REALISATEUR"/>
     <table id="280" parent="3" name="CORRESPOND"/>
     <table id="281" parent="3" name="EVALUE"/>
     <table id="282" parent="3" name="FILM"/>
@@ -1122,9 +1120,7 @@
     <table id="284" parent="3" name="JOUE"/>
     <table id="285" parent="3" name="REALISE"/>
     <table id="286" parent="3" name="ROLE"/>
-    <table id="287" parent="3" name="UTILISATEUR">
-      <Collation>utf8_general_ci</Collation>
-    </table>
+    <table id="287" parent="3" name="UTILISATEUR"/>
     <column id="288" parent="279" name="IdActeurRealisateur">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1255,7 +1251,7 @@ IdUser</ColNames>
     </column>
     <column id="311" parent="282" name="Scenario">
       <Position>4</Position>
-      <DataType>mediumtext|0s</DataType>
+      <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="312" parent="282" name="AnneeSortie">
@@ -1274,160 +1270,166 @@ IdUser</ColNames>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="315" parent="282" name="PRIMARY">
+    <column id="315" parent="282" name="IsDeleted">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="316" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdFilm</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="316" parent="283" name="IdGenre">
+    <column id="317" parent="283" name="IdGenre">
       <Position>1</Position>
       <DataType>decimal(8)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="283" name="Genre">
+    <column id="318" parent="283" name="Genre">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="318" parent="283" name="PRIMARY">
+    <key id="319" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdGenre</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="319" parent="284" name="IdActeurRealisateur">
+    <column id="320" parent="284" name="IdActeurRealisateur">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="284" name="IdFilm">
+    <column id="321" parent="284" name="IdFilm">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="321" parent="284" name="FK_JOUE2">
+    <index id="322" parent="284" name="FK_JOUE2">
       <ColNames>IdFilm</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="284" name="PRIMARY">
+    <key id="323" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdActeurRealisateur
 IdFilm</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="323" parent="284" name="FK_JOUE">
+    <foreign-key id="324" parent="284" name="FK_JOUE">
       <ColNames>IdActeurRealisateur</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ACTEUR_REALISATEUR</RefTableName>
       <RefColNames>IdActeurRealisateur</RefColNames>
     </foreign-key>
-    <foreign-key id="324" parent="284" name="FK_JOUE2">
+    <foreign-key id="325" parent="284" name="FK_JOUE2">
       <ColNames>IdFilm</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
-    <column id="325" parent="285" name="IdActeurRealisateur">
+    <column id="326" parent="285" name="IdActeurRealisateur">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="285" name="IdFilm">
+    <column id="327" parent="285" name="IdFilm">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="327" parent="285" name="FK_REALISE2">
+    <index id="328" parent="285" name="FK_REALISE2">
       <ColNames>IdFilm</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="328" parent="285" name="PRIMARY">
+    <key id="329" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdActeurRealisateur
 IdFilm</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="329" parent="285" name="FK_REALISE">
+    <foreign-key id="330" parent="285" name="FK_REALISE">
       <ColNames>IdActeurRealisateur</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ACTEUR_REALISATEUR</RefTableName>
       <RefColNames>IdActeurRealisateur</RefColNames>
     </foreign-key>
-    <foreign-key id="330" parent="285" name="FK_REALISE2">
+    <foreign-key id="331" parent="285" name="FK_REALISE2">
       <ColNames>IdFilm</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
-    <column id="331" parent="286" name="IdRole">
+    <column id="332" parent="286" name="IdRole">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="286" name="Role">
+    <column id="333" parent="286" name="Role">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="333" parent="286" name="PRIMARY">
+    <key id="334" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdRole</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="334" parent="287" name="IdUser">
+    <column id="335" parent="287" name="IdUser">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="287" name="IdRole">
+    <column id="336" parent="287" name="IdRole">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="287" name="Username">
+    <column id="337" parent="287" name="Username">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="287" name="Password">
+    <column id="338" parent="287" name="Password">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="287" name="Email">
+    <column id="339" parent="287" name="Email">
       <Position>5</Position>
       <DataType>varchar(150)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="287" name="Birthday">
+    <column id="340" parent="287" name="Birthday">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="287" name="CreatedAt">
+    <column id="341" parent="287" name="CreatedAt">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="341" parent="287" name="FK_ENDOSSSE">
+    <index id="342" parent="287" name="FK_ENDOSSSE">
       <ColNames>IdRole</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="342" parent="287" name="PRIMARY">
+    <key id="343" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdUser</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="343" parent="287" name="FK_ENDOSSSE">
+    <foreign-key id="344" parent="287" name="FK_ENDOSSSE">
       <ColNames>IdRole</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ROLE</RefTableName>

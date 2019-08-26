@@ -58,3 +58,5 @@ Supprimer toutes les images non utilisées:
 docker rmi $(docker images -q)
 
 
+Sortir de la BDD et des conteneur
+exit

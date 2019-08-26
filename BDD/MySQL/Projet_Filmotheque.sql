@@ -33,6 +33,7 @@ create table ACTEUR_REALISATEUR
   AnneeNaissance      int,
   NationaliteAR varchar(50),
   CreatedAt   timestamp default current_timestamp,
+  IsDeleted tinyint(1) default 0,
   primary key (IdActeurRealisateur)
 );
 
@@ -69,6 +70,7 @@ create table FILM
   AnneeSortie int,
   NationaliteF varchar(50),
   CreatedAt   timestamp default current_timestamp,
+  IsDeleted tinyint(1) default 0,
   primary key (IdFilm)
 );
 
@@ -124,8 +126,13 @@ create table UTILISATEUR
   Email    varchar(150),
   Birthday date,
   CreatedAt   timestamp default current_timestamp,
+  IsDeleted tinyint(1) default 0,
   primary key (IdUser)
 );
+
+alter table FILM convert to character set UTF8MB4;
+alter table UTILISATEUR convert to character set UTF8MB4;
+alter table ACTEUR_REALISATEUR convert to character set UTF8MB4;
 
 alter table CORRESPOND
   add constraint FK_CORRESPOND foreign key (IdGenre)

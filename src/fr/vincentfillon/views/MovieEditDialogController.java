@@ -66,7 +66,7 @@ public class MovieEditDialogController {
         fldTitreVO.setText(film.getTitreO());
         fldScenario.setText(film.getScenario());
         fldAnneeSortie.setText(film.getAnneeSortie());
-        fldNationalite.setText(film.getnationalite());
+        fldNationalite.setText(film.getNationalite());
     }
 
     /**
@@ -112,21 +112,21 @@ public class MovieEditDialogController {
         String errorMessage = "";
 
         if (fldTitreVF.getText() == null || fldTitreVF.getText().length() == 0) {
-            errorMessage += "No valid first name!\n";
+            errorMessage += "Champs vide!\n Merci d'entrez un titre français\n";
         }
         if (fldTitreVO.getText() == null || fldTitreVO.getText().length() == 0) {
-            errorMessage += "No valid last name!\n";
+            errorMessage += "Champs vide!\n Merci d'entrez un titre original!!\n";
         }
         if (fldScenario.getText() == null || fldScenario.getText().length() == 0) {
-            errorMessage += "No valid street!\n";
+            errorMessage += "Champs vide!\n Merci d'entrez un scenario\n";
         }
 
         if (fldAnneeSortie.getText() == null || fldAnneeSortie.getText().length() == 0) {
-            errorMessage += "No valid postal code!\n";
+            errorMessage += "Champs vide!\n Merci d'entrez une année de sortie\n";
         }
 
         if (fldNationalite.getText() == null || fldNationalite.getText().length() == 0) {
-            errorMessage += "No valid city!\n";
+            errorMessage += "Champs vide!\n Merci d'entrez une nationalité\n";
         }
 
         /*if (birthdayField.getText() == null || birthdayField.getText().length() == 0) {

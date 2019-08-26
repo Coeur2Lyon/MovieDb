@@ -8,10 +8,9 @@ import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+
+import java.util.Optional;
 
 public class InterfaceFilmsAdminController {
 
@@ -39,7 +38,6 @@ public class InterfaceFilmsAdminController {
     private Main main;
 
     @FXML
-    // private ComboBox<Film> myComboBox;
     private ObservableList<Film> movieData = FXCollections.observableArrayList();
 
     /* The constructor is called before the initialize() method.
@@ -47,13 +45,10 @@ public class InterfaceFilmsAdminController {
     public InterfaceFilmsAdminController() {
 
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
-
-
-        //int i=1;
+//Pour trouver le film d'indice i:
         //Film film = filmDAO.find(i);
 
-        //TODO ajout méthode findAll à filmDAO pour charger tous les films
-      movieData.setAll(filmDAO.findAll());
+        movieData.setAll(filmDAO.findAll());
 
 //        movieData.add(new Film("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
 //        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
@@ -97,8 +92,6 @@ public class InterfaceFilmsAdminController {
      */
     public void setMovie(InterfacePrincipaleController film) {
         this.film = film;
-
-
         //Add observable list data to the table
         movieTable.setItems(getMovieData());
     }
@@ -116,7 +109,7 @@ public class InterfaceFilmsAdminController {
             lblTitreVO.setText(film.getTitreO());
             lblScenario.setText(film.getScenario());
             lblAnneeSortie.setText(film.getAnneeSortie());
-            lblNationalite.setText(film.getnationalite());
+            lblNationalite.setText(film.getNationalite());
 
             //lbldate.setText(DateUtil.format(film.getBirthday()));
         } else {
@@ -129,25 +122,6 @@ public class InterfaceFilmsAdminController {
         }
     }
 
-    /**
-     * Called when the user clicks on the delete button.
-     */
-    /*@FXML
-    private void handleDeleteMovie() {
-        int selectedIndex = movieTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            movieTable.getItems().remove(selectedIndex);
-        } else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
-
-            alert.showAndWait();
-        }
-    }*/
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
@@ -155,26 +129,33 @@ public class InterfaceFilmsAdminController {
      */
     @FXML
     private void addNewMovie() {
+        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
         Film tempFilm = new Film();
         boolean okClicked = Main.showMovieEditDialog(tempFilm);
         if (okClicked) {
             getMovieData().add(tempFilm);
+            filmDAO.create(tempFilm);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Ajout de film");
+            alert.setHeaderText("Le film a bien été ajouté");
         }
-
     }
 
     /**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected movie.
      */
-
     @FXML
-   private void handleEditMovie() {
+    private void editMovie() {
+
         Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
+        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
         if (selectedMovie != null) {
             boolean okClicked = Main.showMovieEditDialog(selectedMovie);
             if (okClicked) {
                 showMovieDetails(selectedMovie);
+                filmDAO.update(selectedMovie);
             }
 
         } else {
@@ -184,10 +165,35 @@ public class InterfaceFilmsAdminController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Movie Selected");
             alert.setContentText("Please select a movie in the table.");
-
             alert.showAndWait();
         }
     }
 
-
+    /**
+     * Called when the user clicks on the delete button.
+     */
+    @FXML
+    private void deleteMovie() {
+        Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
+        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+        if (selectedMovie != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Suppression de film");
+            alert.setHeaderText("Êtes-vous sûr de vouloir supprimer le film sélectionné? ");
+            Optional<ButtonType> option = alert.showAndWait();
+            if (option.get() == ButtonType.OK) {
+                filmDAO.delete(selectedMovie);
+            }
+            movieData.remove(selectedMovie);
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Movie Selected");
+            alert.setContentText("Please select a movie in the table.");
+            alert.showAndWait();
+        }
+    }
 }

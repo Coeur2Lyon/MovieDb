@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="filmotheque@localhost">
+<dataSource name="moviedb@localhost">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
     <root id="1">
       <ServerVersion>8.0.17</ServerVersion>
@@ -7,13 +7,13 @@
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <DefaultCasing>exact</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="filmotheque">
+    <schema id="2" parent="1" name="information_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="3" parent="1" name="moviedb">
       <Current>1</Current>
       <Visible>1</Visible>
       <Collation>utf8mb4_0900_ai_ci</Collation>
-    </schema>
-    <schema id="3" parent="1" name="information_schema">
-      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="4" parent="1" name="mysql">
       <Collation>utf8mb4_0900_ai_ci</Collation>
@@ -1112,15 +1112,19 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="279" parent="2" name="ACTEUR_REALISATEUR"/>
-    <table id="280" parent="2" name="CORRESPOND"/>
-    <table id="281" parent="2" name="EVALUE"/>
-    <table id="282" parent="2" name="FILM"/>
-    <table id="283" parent="2" name="GENRE"/>
-    <table id="284" parent="2" name="JOUE"/>
-    <table id="285" parent="2" name="REALISE"/>
-    <table id="286" parent="2" name="ROLE"/>
-    <table id="287" parent="2" name="UTILISATEUR"/>
+    <table id="279" parent="3" name="ACTEUR_REALISATEUR">
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <table id="280" parent="3" name="CORRESPOND"/>
+    <table id="281" parent="3" name="EVALUE"/>
+    <table id="282" parent="3" name="FILM"/>
+    <table id="283" parent="3" name="GENRE"/>
+    <table id="284" parent="3" name="JOUE"/>
+    <table id="285" parent="3" name="REALISE"/>
+    <table id="286" parent="3" name="ROLE"/>
+    <table id="287" parent="3" name="UTILISATEUR">
+      <Collation>utf8_general_ci</Collation>
+    </table>
     <column id="288" parent="279" name="IdActeurRealisateur">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1183,13 +1187,13 @@ IdFilm</ColNames>
     </key>
     <foreign-key id="299" parent="280" name="FK_CORRESPOND">
       <ColNames>IdGenre</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>GENRE</RefTableName>
       <RefColNames>IdGenre</RefColNames>
     </foreign-key>
     <foreign-key id="300" parent="280" name="FK_CORRESPOND2">
       <ColNames>IdFilm</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
@@ -1222,13 +1226,13 @@ IdUser</ColNames>
     </key>
     <foreign-key id="306" parent="281" name="FK_EVALUE">
       <ColNames>IdFilm</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
     <foreign-key id="307" parent="281" name="FK_EVALUE2">
       <ColNames>IdUser</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>UTILISATEUR</RefTableName>
       <RefColNames>IdUser</RefColNames>
     </foreign-key>
@@ -1251,7 +1255,7 @@ IdUser</ColNames>
     </column>
     <column id="311" parent="282" name="Scenario">
       <Position>4</Position>
-      <DataType>text|0s</DataType>
+      <DataType>mediumtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="312" parent="282" name="AnneeSortie">
@@ -1315,13 +1319,13 @@ IdFilm</ColNames>
     </key>
     <foreign-key id="323" parent="284" name="FK_JOUE">
       <ColNames>IdActeurRealisateur</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ACTEUR_REALISATEUR</RefTableName>
       <RefColNames>IdActeurRealisateur</RefColNames>
     </foreign-key>
     <foreign-key id="324" parent="284" name="FK_JOUE2">
       <ColNames>IdFilm</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
@@ -1349,13 +1353,13 @@ IdFilm</ColNames>
     </key>
     <foreign-key id="329" parent="285" name="FK_REALISE">
       <ColNames>IdActeurRealisateur</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ACTEUR_REALISATEUR</RefTableName>
       <RefColNames>IdActeurRealisateur</RefColNames>
     </foreign-key>
     <foreign-key id="330" parent="285" name="FK_REALISE2">
       <ColNames>IdFilm</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>FILM</RefTableName>
       <RefColNames>IdFilm</RefColNames>
     </foreign-key>
@@ -1425,7 +1429,7 @@ IdFilm</ColNames>
     </key>
     <foreign-key id="343" parent="287" name="FK_ENDOSSSE">
       <ColNames>IdRole</ColNames>
-      <RefSchemaName>filmotheque</RefSchemaName>
+      <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ROLE</RefTableName>
       <RefColNames>IdRole</RefColNames>
     </foreign-key>

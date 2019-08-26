@@ -92,8 +92,10 @@
                            </font></Label>
                             </children>
                         </GridPane>
-                        <ButtonBar layoutX="54.0" layoutY="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                        <ButtonBar layoutX="54.0" layoutY="250.0" prefHeight="21.0" prefWidth="383.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0">
                             <buttons>
+                        <Button mnemonicParsing="false" onAction="#deleteMovie" text="Suppr..." />
+                        <Button mnemonicParsing="false" onAction="#editMovie" prefHeight="26.0" prefWidth="95.0" text="Editer..." />
                                 <Button mnemonicParsing="false" onAction="#addNewMovie" text="Ajouter..." />
                             </buttons>
                         </ButtonBar>
@@ -102,7 +104,6 @@
                         <Image url="@img/MovieDB_Violet.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="290.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleEditMovie" prefHeight="26.0" prefWidth="95.0" text="Editer..." />
                     </children>
                 </AnchorPane>
             </items>

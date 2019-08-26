@@ -2,9 +2,6 @@ package fr.vincentfillon.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -31,10 +28,12 @@ public class Film {
     long millis = cal.getTimeInMillis();
     private Timestamp createdAt = new Timestamp(millis);
 
+   private int isDeleted =0;
+
 
     private Object StringProperty;
 
-    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF, Date createdAt) {
+    public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF, Date createdAt, int isDeleted) {
         this.idFilm = idFilm;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
@@ -42,6 +41,7 @@ public class Film {
         this.anneeSortie = new SimpleStringProperty(anneeSortie);
         this.nationalite = new SimpleStringProperty(nationaliteF);
         this.createdAt = new Timestamp(createdAt.getTime());
+        this.isDeleted = isDeleted;
     }
 
     public Film(String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF) {
@@ -118,7 +118,7 @@ public class Film {
 
 //
 
-    public String getnationalite() {
+    public String getNationalite() {
         return nationalite.get();
     }
 
@@ -137,6 +137,14 @@ public class Film {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public int getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(int isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     //

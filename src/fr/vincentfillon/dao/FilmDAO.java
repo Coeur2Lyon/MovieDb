@@ -1,7 +1,6 @@
 package fr.vincentfillon.dao;
 
 
-import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +8,7 @@ import javafx.collections.ObservableList;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 
 
@@ -18,24 +18,49 @@ public class FilmDAO extends Dao<Film> {
         super(connection);
     }
 
-    public boolean create(Film obj) {
-        return false;
+
+    public void create(Film film) {
+
+        String sqlInsert = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + film.getTitreFR() + "','" + film.getTitreO() + "','" + film.getScenario() + "', '" + film.getAnneeSortie() + "','" + film.getNationalite() + "')";
+        try {
+            Statement statement = this.connect.createStatement();
+            statement.executeUpdate(sqlInsert);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public boolean delete(Film obj) {
-        return false;
+    public void delete(Film film) {
+        String sqlUpdate = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + film.getIdFilm() + "";
+        try {
+            Statement statement = this.connect.createStatement();
+            statement.executeUpdate(sqlUpdate);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public boolean update(Film obj) {
-        return false;
+    public void update(Film film) {
+        int anneeSortie = Integer.parseInt(film.getAnneeSortie());
+        String sqlUpdate = "UPDATE FILM SET TitreFr='" + film.getTitreFR() + "', TitreO='" + film.getTitreO() + "', Scenario='" + film.getScenario() + "', AnneeSortie='" + anneeSortie + "', NationaliteF='" + film.getNationalite() + "' WHERE IdFilm=" + film.getIdFilm() + "";
+        try {
+            Statement statement = this.connect.createStatement();
+            statement.executeUpdate(sqlUpdate);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public Film find(int idFilm) {
         Film film = new Film();
+        String sqlQuery = "SELECT * FROM FILM WHERE IdFilm = " + idFilm;
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM FILM WHERE IdFilm = " + idFilm);
+                    ResultSet.CONCUR_READ_ONLY).executeQuery(sqlQuery);
 
             if (result.first()) {
                 String titreFR = result.getString(2);
@@ -44,42 +69,32 @@ public class FilmDAO extends Dao<Film> {
                 String anneeSortie = result.getString(5);
                 String nationalite = result.getString(6);
                 Date createdAt = result.getDate(7);
-                film = new Film(idFilm, titreFR, titreO,scenario, anneeSortie, nationalite, createdAt);
+                Integer isDeleted = result.getInt(8);
+                result.close();
+                film = new Film(idFilm, titreFR, titreO, scenario, anneeSortie, nationalite, createdAt, isDeleted);
+                result.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return film;
+
     }
 
     public ObservableList findAll() {
 
-       ObservableList<Film> listefilms = FXCollections.observableArrayList();
+        ObservableList<Film> listefilms = FXCollections.observableArrayList();
 
-        int i=1;
+        int i = 1;
         Film film = find(i);
-        while (film.getTitreFR()!=null){
-            listefilms.add(film);
-            System.out.println(find(i));
+        while (film.getTitreFR() != null) {
+            if (film.getIsDeleted() == 0) {
+                listefilms.add(film);
+            }
             i++;
             film = find(i);
         }
         return listefilms;
     }
 }
-
-/*
-while (resultSet.next()) {
-                int idFilm = resultSet.getInt(1);
-                String titreFR = resultSet.getString(2);
-                String titreO = resultSet.getString(3);
-                String nationalite = resultSet.getString(4);
-                String scenario = resultSet.getString(5);
-                String anneeSortie = resultSet.getString(6);
-                Film film = new Film(idFilm, titreFR, titreO, nationalite, scenario, anneeSortie);
-                list = (List<T>) film;
-                }
-
- */
-
