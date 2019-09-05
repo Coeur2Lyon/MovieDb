@@ -1,8 +1,22 @@
 package fr.vincentfillon.connectivity;
 
+import fr.vincentfillon.Main;
+import javafx.scene.control.Alert;
+
 import java.sql.*;
 
 public class ConnectionClass { //Avec connexion unique à l'aide du design pattern SingleTon
+    /*  //Connexion OVH
+      static Connection connection = null;
+      static String driver = "com.mysql.cj.jdbc.Driver";
+      static String url = "jdbc:mysql";
+      static String ip = "moviedbowudb.mysql.db";
+      static String dbName = "moviedbowudb";
+      static String username = "moviedbowudb";
+      static String password = "Officedp69";
+      static String urlStr = url + "://" + ip + "/" + dbName + "";
+  */
+//Connexion LocalHost
     static Connection connection = null;
     static String driver = "com.mysql.cj.jdbc.Driver";
     static String url = "jdbc:mysql";
@@ -17,7 +31,7 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
 
     public static Connection connecte() {
         try {
-            
+
             if (connection == null) {
                 Class.forName(driver);
                 connection = DriverManager.getConnection(urlStr, username, password);
@@ -31,6 +45,13 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
             }
         } catch (ClassNotFoundException |
                 SQLException e) {
+            System.out.println("Echec de la connexion");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Echec de la connexion");
+            alert.setHeaderText("Echec de la connexion");
+            alert.setContentText("Vérifiez que vous êtes bien connecté à votre base de données puis recommencez.");
+            alert.showAndWait();
             e.printStackTrace();
         }
         return connection;

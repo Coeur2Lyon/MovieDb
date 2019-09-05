@@ -22,6 +22,9 @@ drop table if exists ROLE;
 
 drop table if exists UTILISATEUR;
 
+ALTER DATABASE moviedb charset=utf8;
+
+
 /*==============================================================*/
 /* Table : ACTEUR_REALISATEUR                                   */
 /*==============================================================*/
@@ -238,7 +241,7 @@ VALUES (0, 'Policier'),
        (1, 'Thriller'),
        (2, 'Fantastique/SF'),
        (3, 'Drame'),
-       (4, 'Biographie'),
+       (4, 'Biopic'),
        (5, 'Action'),
        (6, 'Horreur'),
        (7, 'Comédie'),

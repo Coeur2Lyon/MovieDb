@@ -44,7 +44,10 @@ public class InterfaceFilmsAdminController {
      */
     public InterfaceFilmsAdminController() {
 
+
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+
+
 //Pour trouver le film d'indice i:
         //Film film = filmDAO.find(i);
 

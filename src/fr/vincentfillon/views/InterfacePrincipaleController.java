@@ -55,7 +55,6 @@ public class InterfacePrincipaleController extends Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML

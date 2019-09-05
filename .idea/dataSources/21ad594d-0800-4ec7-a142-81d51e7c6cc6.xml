@@ -13,7 +13,7 @@
     <schema id="3" parent="1" name="moviedb">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>utf8mb4_0900_ai_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="4" parent="1" name="mysql">
       <Collation>utf8mb4_0900_ai_ci</Collation>
@@ -1112,15 +1112,23 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="279" parent="3" name="ACTEUR_REALISATEUR"/>
+    <table id="279" parent="3" name="ACTEUR_REALISATEUR">
+      <Collation>utf8mb4_0900_ai_ci</Collation>
+    </table>
     <table id="280" parent="3" name="CORRESPOND"/>
     <table id="281" parent="3" name="EVALUE"/>
-    <table id="282" parent="3" name="FILM"/>
+    <table id="282" parent="3" name="FILM">
+      <Collation>utf8mb4_0900_ai_ci</Collation>
+    </table>
     <table id="283" parent="3" name="GENRE"/>
     <table id="284" parent="3" name="JOUE"/>
     <table id="285" parent="3" name="REALISE"/>
-    <table id="286" parent="3" name="ROLE"/>
-    <table id="287" parent="3" name="UTILISATEUR"/>
+    <table id="286" parent="3" name="ROLE">
+      <Collation>utf8mb4_0900_ai_ci</Collation>
+    </table>
+    <table id="287" parent="3" name="UTILISATEUR">
+      <Collation>utf8mb4_0900_ai_ci</Collation>
+    </table>
     <column id="288" parent="279" name="IdActeurRealisateur">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1420,16 +1428,22 @@ IdFilm</ColNames>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="342" parent="287" name="FK_ENDOSSSE">
+    <column id="342" parent="287" name="IsDeleted">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="343" parent="287" name="FK_ENDOSSSE">
       <ColNames>IdRole</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="343" parent="287" name="PRIMARY">
+    <key id="344" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>IdUser</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="344" parent="287" name="FK_ENDOSSSE">
+    <foreign-key id="345" parent="287" name="FK_ENDOSSSE">
       <ColNames>IdRole</ColNames>
       <RefSchemaName>moviedb</RefSchemaName>
       <RefTableName>ROLE</RefTableName>

@@ -11,5 +11,11 @@
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="OVH_MovieDb" uuid="1feee91b-5646-4475-b232-7ec41addca36">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>moviedbowudb</user-name>
+    </data-source>
   </component>
 </project>
