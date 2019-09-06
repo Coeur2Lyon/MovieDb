@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 
 
@@ -46,8 +47,9 @@ public class InterfacePrincipaleController extends Main {
             //controller = loader.getController();
             // controller.setMovie(this);
             root = FXMLLoader.load(getClass().getResource("InterfaceFilmsAdmin.fxml"));
-            newWindow.setScene(new Scene(root,850,550));
+            newWindow.setScene(new Scene(root,850,642));
             newWindow.initModality(Modality.APPLICATION_MODAL);
+
             newWindow.show();
 
 

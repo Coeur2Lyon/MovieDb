@@ -16,10 +16,8 @@ public class Utilisateur {
     private int idRole=0;
 
     private String username="";
-
-
-
     private String password="";
+    private String email;
     private String birthday = simpleDateFormat.format(new Date());
     private Timestamp createdAt= new Timestamp(millis);
 
@@ -47,6 +45,7 @@ public class Utilisateur {
     public String getPassword() {
         return password;
     }
+    public String getEmail() {return email; }
 
     public String getBirthday() {
         return birthday;
@@ -70,6 +69,7 @@ public class Utilisateur {
     public void setPassword(String password) {
         this.password = password;
     }
+    public void setEmail(String email) { this.email = email; }
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;

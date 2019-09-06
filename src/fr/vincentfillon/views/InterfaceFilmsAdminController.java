@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.Optional;
 
@@ -19,7 +20,7 @@ public class InterfaceFilmsAdminController {
     @FXML
     private TableColumn<Film, String> colTitreVF;
     @FXML
-    private TableColumn<Film, String> colTitreVO;
+    private TableColumn<Film, String> colAnneeSortie;
 
     @FXML
     private Label lblTitreVF;
@@ -31,6 +32,16 @@ public class InterfaceFilmsAdminController {
     private Label lblAnneeSortie;
     @FXML
     private Label lblNationalite;
+
+    @FXML
+    private Label lblGenre;
+
+    @FXML
+    private Label lblRealisateur;
+
+    @FXML
+    private Label lblActeurs;
+
 
     // Reference to the main application.
     private InterfacePrincipaleController film;
@@ -73,7 +84,7 @@ public class InterfaceFilmsAdminController {
     private void initialize() {
         // Initialize the movie table with the two columns.
         colTitreVF.setCellValueFactory(cellData -> cellData.getValue().titreVFProperty());
-        colTitreVO.setCellValueFactory(cellData -> cellData.getValue().titreOProperty());
+        colAnneeSortie.setCellValueFactory(cellData -> cellData.getValue().anneeSortieProperty());
 
         // Clear movie details.
         showMovieDetails(null);

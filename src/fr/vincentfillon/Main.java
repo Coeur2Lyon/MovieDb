@@ -46,7 +46,7 @@ public class Main extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Movie");
+            dialogStage.setTitle("Ajout / Edition de films");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
@@ -69,12 +69,45 @@ public class Main extends Application {
             return false;
         }
     }
+
+    public static boolean showFiltreDialog() {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/FiltreDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Choix des filtres");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the Movie into the controller.
+            MovieEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            //controller.setMovie(film);
+
+            // Set the dialog icon.
+            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static Stage getPrimaryStage() {
         return primaryStage;
     }
 
     public static void main(String[] args) {
         launch(args);
-
     }
 }
