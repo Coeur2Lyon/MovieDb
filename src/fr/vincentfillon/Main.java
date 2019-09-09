@@ -1,7 +1,9 @@
 package fr.vincentfillon;
 
 import fr.vincentfillon.model.Film;
+import fr.vincentfillon.model.Jointure;
 import fr.vincentfillon.views.MovieEditDialogController;
+import fr.vincentfillon.views.MovieJoinEditDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,6 +39,39 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    public static boolean showMovieJoinEditDialog(Jointure jointureFilm) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/MovieJoinEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Ajout / Edition de films");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the Movie into the controller.
+            MovieJoinEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMovieJoin(jointureFilm);
+
+            // Set the dialog icon.
+            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    //Sauvegarde : Applel de la méthode à partir de la classe film uniquement
     public static boolean showMovieEditDialog(Film film) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.

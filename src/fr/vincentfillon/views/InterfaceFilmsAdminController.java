@@ -32,13 +32,10 @@ public class InterfaceFilmsAdminController {
     private Label lblAnneeSortie;
     @FXML
     private Label lblNationalite;
-
     @FXML
     private Label lblGenre;
-
     @FXML
     private Label lblRealisateur;
-
     @FXML
     private Label lblActeurs;
 
@@ -68,7 +65,6 @@ public class InterfaceFilmsAdminController {
 //        movieData.add(new Film("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
 //        movieData.add(new Film("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
 //        movieData.add(new Film("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
-
 
     }
 

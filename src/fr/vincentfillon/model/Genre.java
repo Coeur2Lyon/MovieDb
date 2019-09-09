@@ -1,17 +1,17 @@
 package fr.vincentfillon.model;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Genre {
 
+    private int idGenre=0;
+    private StringProperty genre;
 
     public Genre(int idGenre, StringProperty genre) {
         this.idGenre = idGenre;
         this.genre = genre;
     }
-
-    private int idGenre=0;
-    private StringProperty genre;
 
     public int getIdGenre() {
         return idGenre;
@@ -32,7 +32,5 @@ public class Genre {
     public void setGenre(String genre) {
         this.genre.set(genre);
     }
-
-
 
 }

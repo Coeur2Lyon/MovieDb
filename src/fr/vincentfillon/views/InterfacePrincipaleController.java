@@ -22,14 +22,10 @@ public class InterfacePrincipaleController extends Main {
     //private AnchorPane interfaceUser;
     private AnchorPane interfaceFilms;
     private fr.vincentfillon.Main main;
-    private ObservableList<Film> personData = FXCollections.observableArrayList();
+
+    //private ObservableList<Film> personData = FXCollections.observableArrayList();
 
     //private static ObservableList<Film> movieData = FXCollections.observableArrayList();
-
-
-
-
-
     /*public static ObservableList<Film> getMovieData() {
         return movieData;
     }*/
