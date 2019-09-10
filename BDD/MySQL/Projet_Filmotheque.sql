@@ -213,7 +213,8 @@ VALUES ('EastWood', 'Clint', 1930,'US'),
        ('Chabrol', 'Claude', 1930,'FR'),
        ('Belmondo', 'Jean-Paul', 1933,'FR'),
        ('Godard', 'Jean-Luc', 1930,'FR'),
-       ('Norton', 'Edward', 1969,'US');
+       ('Norton', 'Edward', 1969,'US'),
+       ('Pitt', 'Brad', 1963, 'US');
 
 INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF)
 VALUES ('Impitoyable',
@@ -254,7 +255,8 @@ VALUES (1, 1),
        (3, 5),
        (5, 3),
        (5, 4),
-       (7,2);
+       (7,2),
+       (8,2);
 
 INSERT INTO REALISE (IdActeurRealisateur, IdFilm)
 VALUES (1, 1),

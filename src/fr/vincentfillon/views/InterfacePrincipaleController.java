@@ -19,9 +19,11 @@ import java.io.IOException;
 
 public class InterfacePrincipaleController extends Main {
 
-    //private AnchorPane interfaceUser;
+
     private AnchorPane interfaceFilms;
+    private AnchorPane interfaceJointureFilms;
     private fr.vincentfillon.Main main;
+
 
     //private ObservableList<Film> personData = FXCollections.observableArrayList();
 
@@ -49,6 +51,22 @@ public class InterfacePrincipaleController extends Main {
             newWindow.show();
 
 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void initInterfaceJointureFilms(ActionEvent actionEvent) throws IOException {
+
+        Parent root;
+        Stage newWindow = new Stage();
+        try {
+            root = FXMLLoader.load(getClass().getResource("InterfaceJointureFilmsAdmin.fxml"));
+            newWindow.setScene(new Scene(root,850,642));
+            newWindow.initModality(Modality.APPLICATION_MODAL);
+
+            newWindow.show();
 
         } catch (IOException e) {
             e.printStackTrace();

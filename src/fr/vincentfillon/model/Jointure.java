@@ -1,22 +1,33 @@
 package fr.vincentfillon.model;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Jointure {
 
-    int idJointure=0;
+    GregorianCalendar cal = new GregorianCalendar(2007, 9 - 1, 23);
+    long millis = cal.getTimeInMillis();
+
+    int idJointure = 0;
     private StringProperty titreFR;
     private StringProperty titreO;
     private StringProperty scenario;
     private StringProperty anneeSortie;
     private StringProperty nationalite;
     private StringProperty genre;
-    private StringProperty prenomActeur;
-    private StringProperty nomActeur;
-    private StringProperty prenomRealisateur;
-    private StringProperty nomRealisateur;
 
-    public Jointure(int idJointure, StringProperty titreFR, StringProperty titreO, StringProperty scenario, StringProperty anneeSortie, StringProperty nationalite, StringProperty genre, StringProperty prenomActeur, StringProperty nomActeur, StringProperty prenomRealisateur, StringProperty nomRealisateur) {
+
+    private StringProperty realisateurs;
+    private StringProperty acteurs;
+    private int isDeleted;
+    private Timestamp createdAt = new Timestamp(millis);
+
+
+    public Jointure(int idJointure, StringProperty titreFR, StringProperty titreO, StringProperty scenario, StringProperty anneeSortie, StringProperty nationalite, StringProperty genre, StringProperty realisateurs, StringProperty acteurs, Date createdAt, int isDeleted) {
         this.idJointure = idJointure;
         this.titreFR = titreFR;
         this.titreO = titreO;
@@ -24,23 +35,29 @@ public class Jointure {
         this.anneeSortie = anneeSortie;
         this.nationalite = nationalite;
         this.genre = genre;
-        this.prenomActeur = prenomActeur;
-        this.nomActeur = nomActeur;
-        this.prenomRealisateur = prenomRealisateur;
-        this.nomRealisateur = nomRealisateur;
+        this.realisateurs = realisateurs;
+        this.acteurs = acteurs;
+        this.createdAt = new Timestamp(createdAt.getTime());
+        this.isDeleted = isDeleted;
+
     }
 
+    private Object StringProperty;
+
     public Jointure() {
-        this.titreFR = titreFR;
-        this.titreO = titreO;
-        this.scenario = scenario;
-        this.anneeSortie = anneeSortie;
-        this.nationalite = nationalite;
-        this.genre = genre;
-        this.prenomActeur = prenomActeur;
-        this.nomActeur = nomActeur;
-        this.prenomRealisateur = prenomRealisateur;
-        this.nomRealisateur = nomRealisateur;
+        this(null, null, null, null, null, null, null, null);
+    }
+
+    public Jointure(String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
+        this.titreFR = new SimpleStringProperty(titreFR);
+        this.titreO = new SimpleStringProperty(titreO);
+        this.scenario = new SimpleStringProperty(scenario);
+        this.anneeSortie = new SimpleStringProperty(anneeSortie);
+        this.nationalite = new SimpleStringProperty(nationalite);
+        this.genre = new SimpleStringProperty(genre);
+        this.realisateurs = new SimpleStringProperty(realisateurs);
+        this.acteurs = new SimpleStringProperty(acteurs);
+
     }
 
     public int getIdJointure() {
@@ -123,54 +140,42 @@ public class Jointure {
         this.genre.set(genre);
     }
 
-    public String getPrenomActeur() {
-        return prenomActeur.get();
+    public String getRealisateurs() {
+        return realisateurs.get();
     }
 
-    public StringProperty prenomActeurProperty() {
-        return prenomActeur;
+    public StringProperty realisateursProperty() {
+        return realisateurs;
     }
 
-    public void setPrenomActeur(String prenomActeur) {
-        this.prenomActeur.set(prenomActeur);
+    public void setRealisateurs(String realisateurs) {
+        this.realisateurs.set(realisateurs);
     }
 
-    public String getNomActeur() {
-        return nomActeur.get();
+    public String getActeurs() {
+        return acteurs.get();
     }
 
-    public StringProperty nomActeurProperty() {
-        return nomActeur;
+    public StringProperty acteursProperty() {
+        return acteurs;
     }
 
-    public void setNomActeur(String nomActeur) {
-        this.nomActeur.set(nomActeur);
+    public void setActeurs(String acteurs) {
+        this.acteurs.set(acteurs);
+    }
+    public int getIsDeleted() {
+        return isDeleted;
     }
 
-    public String getPrenomRealisateur() {
-        return prenomRealisateur.get();
+    public void setIsDeleted(int isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public StringProperty prenomRealisateurProperty() {
-        return prenomRealisateur;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
-
-    public void setPrenomRealisateur(String prenomRealisateur) {
-        this.prenomRealisateur.set(prenomRealisateur);
-    }
-
-    public String getNomRealisateur() {
-        return nomRealisateur.get();
-    }
-
-    public StringProperty nomRealisateurProperty() {
-        return nomRealisateur;
-    }
-
-    public void setNomRealisateur(String nomRealisateur) {
-        this.nomRealisateur.set(nomRealisateur);
-
-    }
-
 
 }

@@ -27,7 +27,6 @@ public class Main extends Application {
         initInterfacePrncipale();
     }
 
-
     private void initInterfacePrncipale() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("views/InterfacePrincipale.fxml"));
@@ -48,7 +47,7 @@ public class Main extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Ajout / Edition de films");
+            dialogStage.setTitle("Ajout/Edition de films");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);

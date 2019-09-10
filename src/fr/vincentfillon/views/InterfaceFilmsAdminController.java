@@ -32,12 +32,6 @@ public class InterfaceFilmsAdminController {
     private Label lblAnneeSortie;
     @FXML
     private Label lblNationalite;
-    @FXML
-    private Label lblGenre;
-    @FXML
-    private Label lblRealisateur;
-    @FXML
-    private Label lblActeurs;
 
 
     // Reference to the main application.
@@ -54,6 +48,8 @@ public class InterfaceFilmsAdminController {
 
 
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+
+
 
 
 //Pour trouver le film d'indice i:
@@ -77,7 +73,7 @@ public class InterfaceFilmsAdminController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize() {
+    private void initializeMovie() {
         // Initialize the movie table with the two columns.
         colTitreVF.setCellValueFactory(cellData -> cellData.getValue().titreVFProperty());
         colAnneeSortie.setCellValueFactory(cellData -> cellData.getValue().anneeSortieProperty());

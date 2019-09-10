@@ -41,7 +41,7 @@ public class InterfaceJointureFilmsAdminController {
     private Label lblActeurs;
 
 
-    // Reference to the main application.
+
     private InterfacePrincipaleController jointure;
     // Reference to the main application.
     private Main main;
@@ -54,13 +54,13 @@ public class InterfaceJointureFilmsAdminController {
     public InterfaceJointureFilmsAdminController() {
 
 
-        Dao<Jointure> jointureDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
 
 
-//Pour trouver le jointure d'indice i:
-        //Jointure jointure = jointureDAO.find(i);
 
-        movieJoinData.setAll(jointureDao.findAll());
+//Pour trouver le film d'indice i:
+      //  Jointure jointure = jointureDAO.find(1);
+        movieJoinData.setAll(jointureDAO.findAll());
 //        movieJoinData.add(new Jointure("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
 //        movieJoinData.add(new Jointure("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
 //        movieJoinData.add(new Jointure("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
@@ -76,7 +76,7 @@ public class InterfaceJointureFilmsAdminController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initializeJoin() {
+    private void initialize() {
         // Initialize the movie table with the two columns.
         colTitreVF.setCellValueFactory(cellData -> cellData.getValue().titreFRProperty());
         colAnneeSortie.setCellValueFactory(cellData -> cellData.getValue().anneeSortieProperty());
@@ -89,7 +89,6 @@ public class InterfaceJointureFilmsAdminController {
                 (observable, oldValue, newValue) -> showMovieJoinDetails(newValue));
         // Add observable list data to the table
         movieJoinTable.setItems(movieJoinData);
-
     }
 
     /**
@@ -110,19 +109,21 @@ public class InterfaceJointureFilmsAdminController {
      * @param jointureFilm the movie or null
      */
     private void showMovieJoinDetails(Jointure jointureFilm) {
-        if (jointure != null) {
+        if (jointureFilm != null) {
             // Fill the labels with info from the movie object.
+            System.out.println("Passe par l'endroit qui devrait remplir les champs ");
             lblTitreVF.setText(jointureFilm.getTitreFR());
             lblTitreVO.setText(jointureFilm.getTitreO());
             lblScenario.setText(jointureFilm.getScenario());
             lblAnneeSortie.setText(jointureFilm.getAnneeSortie());
             lblNationalite.setText(jointureFilm.getNationalite());
             lblGenre.setText(jointureFilm.getGenre());
-            lblRealisateur.setText(jointureFilm.getPrenomRealisateur()+" "+jointureFilm.getNomRealisateur());
-            lblActeurs.setText(jointureFilm.getPrenomActeur()+" "+jointureFilm.getNomActeur());
+            lblRealisateur.setText(jointureFilm.getRealisateurs());
+            lblActeurs.setText(jointureFilm.getActeurs());
 
         } else {
             // movie is null, remove all the text.
+            System.out.println("NE PASSE PAS par l'endroit qui devrait remplir les champs ");
             lblTitreVF.setText("");
             lblTitreVO.setText("");
             lblScenario.setText("");

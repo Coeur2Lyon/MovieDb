@@ -12,11 +12,6 @@ public class Film {
 
     GregorianCalendar cal = new GregorianCalendar(2007, 9 - 1, 23);
 
-
-    public Film() {
-        this(null,null,null,null,null);
-    }
-
     private int idFilm = 0;
     private StringProperty titreFR;
     private StringProperty titreO;
@@ -27,10 +22,12 @@ public class Film {
     long millis = cal.getTimeInMillis();
     private Timestamp createdAt = new Timestamp(millis);
 
-   private int isDeleted =0;
-
-
+    private int isDeleted = 0;
     private Object StringProperty;
+
+    public Film() {
+        this(null, null, null, null, null);
+    }
 
     public Film(int idFilm, String titreFR, String titreO, String scenario, String anneeSortie, String nationaliteF, Date createdAt, int isDeleted) {
         this.idFilm = idFilm;

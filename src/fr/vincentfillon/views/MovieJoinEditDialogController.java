@@ -76,8 +76,9 @@ public class MovieJoinEditDialogController {
         fldScenario.setText(jointure.getScenario());
         fldAnneeSortie.setText(jointure.getAnneeSortie());
         fldNationalite.setText(jointure.getNationalite());
-        fldGenre.setText(jointure.getPrenomActeur()+" "+jointure);
-        fldActeurs.setText(jointure.getPrenomActeur()+" "+jointure);
+        fldGenre.setText(jointure.getGenre());
+        fldRealisateur.setText(jointure.getRealisateurs());
+        fldActeurs.setText(jointure.getActeurs());
     }
 
     /**
@@ -101,8 +102,8 @@ public class MovieJoinEditDialogController {
             jointure.setAnneeSortie(fldAnneeSortie.getText());
             jointure.setNationalite(fldNationalite.getText());
             jointure.setGenre(fldGenre.getText());
-            jointure.setNomRealisateur(fldRealisateur.getText());
-            jointure.setNomActeur(fldActeurs.getText());
+            jointure.setRealisateurs(fldRealisateur.getText());
+            jointure.setActeurs(fldActeurs.getText());
 
             okClicked = true;
             dialogStage.close();
