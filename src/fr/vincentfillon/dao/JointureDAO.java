@@ -78,17 +78,21 @@ public class JointureDAO extends Dao<Jointure> {
                 String nationalite = resultFilm.getString(6);
                 Date createdAt = resultFilm.getDate(7);
                 Integer isDeleted = resultFilm.getInt(8);
+                String genre=resultGenre.getString(1);
+                String realisateur =resultRealisateur.getString(1) + " " + resultRealisateur.getString(2);
+                String acteurs = resultActeurs.getString(1) + " " + resultActeurs.getString(2);
+
 
                 //boucle de la jointure genre:
                 int genreSize = 1;
                 resultGenre.last();
                 genreSize = resultGenre.getRow();
                 resultGenre.first();
-                String genre=resultGenre.getString(1);
+
                 if (genreSize>1){
                     resultGenre.next();
-                    for (int i=2;i<genreSize;i++){
-                        genre+=resultGenre.getString(1);
+                    for (int i=2;i<=genreSize;i++){
+                        genre+=", "+resultGenre.getString(1);
                         resultGenre.next();
                     }
 
@@ -98,7 +102,7 @@ public class JointureDAO extends Dao<Jointure> {
                 resultRealisateur.last();
                 realisateurSize=resultRealisateur.getRow();
                 resultRealisateur.first();
-                String realisateur =", "+resultRealisateur.getString(1) + " " + resultRealisateur.getString(2);
+
                 if (realisateurSize>1){
                     resultRealisateur.next();
                     for(int i=2;i<realisateurSize;i++){
@@ -107,19 +111,18 @@ public class JointureDAO extends Dao<Jointure> {
                     }
                 }
 
-
                 int acteursSize = 1;
                 resultActeurs.last();
                 acteursSize = resultActeurs.getRow();
                 resultActeurs.first();
-                String acteurs = resultActeurs.getString(1) + " " + resultActeurs.getString(2);
+
                 if(acteursSize>1){
+                    resultActeurs.next();
                     for (int i = 1; i < acteursSize; i++) {
                         acteurs +=", "+ resultActeurs.getString(1) + " " + resultActeurs.getString(2);
                         resultActeurs.next();
                     }
                 }
-
 
                 jointure = new Jointure(titreFR,titreO,scenario,anneeSortie,nationalite,genre,realisateur,acteurs);
                 resultFilm.close();

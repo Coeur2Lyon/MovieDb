@@ -111,7 +111,6 @@ public class InterfaceJointureFilmsAdminController {
     private void showMovieJoinDetails(Jointure jointureFilm) {
         if (jointureFilm != null) {
             // Fill the labels with info from the movie object.
-            System.out.println("Passe par l'endroit qui devrait remplir les champs ");
             lblTitreVF.setText(jointureFilm.getTitreFR());
             lblTitreVO.setText(jointureFilm.getTitreO());
             lblScenario.setText(jointureFilm.getScenario());
@@ -123,7 +122,6 @@ public class InterfaceJointureFilmsAdminController {
 
         } else {
             // movie is null, remove all the text.
-            System.out.println("NE PASSE PAS par l'endroit qui devrait remplir les champs ");
             lblTitreVF.setText("");
             lblTitreVO.setText("");
             lblScenario.setText("");
