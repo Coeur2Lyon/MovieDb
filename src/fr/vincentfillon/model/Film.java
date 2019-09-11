@@ -23,6 +23,7 @@ public class Film {
     private Timestamp createdAt = new Timestamp(millis);
 
     private int isDeleted = 0;
+
     private Object StringProperty;
 
     public Film() {

@@ -23,10 +23,29 @@ public class Jointure {
 
     private StringProperty realisateurs;
     private StringProperty acteurs;
+
     private int isDeleted;
     private Timestamp createdAt = new Timestamp(millis);
 
+    private StringProperty prenomRealisateurs;
+    private StringProperty nomRealisateurs;
+    private StringProperty prenomActeurs;
+    private StringProperty nomActeurs;
 
+    public Jointure(GregorianCalendar cal, javafx.beans.property.StringProperty titreFR, javafx.beans.property.StringProperty titreO, javafx.beans.property.StringProperty scenario, javafx.beans.property.StringProperty anneeSortie, javafx.beans.property.StringProperty nationalite, javafx.beans.property.StringProperty genre, int isDeleted, javafx.beans.property.StringProperty prenomRealisateurs, javafx.beans.property.StringProperty nomRealisateurs, javafx.beans.property.StringProperty prenomActeurs, javafx.beans.property.StringProperty nomActeurs) {
+        this.cal = cal;
+        this.titreFR = titreFR;
+        this.titreO = titreO;
+        this.scenario = scenario;
+        this.anneeSortie = anneeSortie;
+        this.nationalite = nationalite;
+        this.genre = genre;
+        this.isDeleted = isDeleted;
+        this.prenomRealisateurs = prenomRealisateurs;
+        this.nomRealisateurs = nomRealisateurs;
+        this.prenomActeurs = prenomActeurs;
+        this.nomActeurs = nomActeurs;
+    }
     public Jointure(int idJointure, StringProperty titreFR, StringProperty titreO, StringProperty scenario, StringProperty anneeSortie, StringProperty nationalite, StringProperty genre, StringProperty realisateurs, StringProperty acteurs, Date createdAt, int isDeleted) {
         this.idJointure = idJointure;
         this.titreFR = titreFR;
@@ -177,5 +196,54 @@ public class Jointure {
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getPrenomRealisateurs() {
+        return prenomRealisateurs.get();
+    }
+
+    public StringProperty prenomRealisateursProperty() {
+        return prenomRealisateurs;
+    }
+
+    public void setPrenomRealisateurs(String prenomRealisateurs) {
+        this.prenomRealisateurs.set(prenomRealisateurs);
+    }
+
+    public String getNomRealisateurs() {
+        return nomRealisateurs.get();
+    }
+
+    public StringProperty nomRealisateursProperty() {
+        return nomRealisateurs;
+    }
+
+    public void setNomRealisateurs(String nomRealisateurs) {
+        this.nomRealisateurs.set(nomRealisateurs);
+    }
+
+    public String getPrenomActeurs() {
+        return prenomActeurs.get();
+    }
+
+    public StringProperty prenomActeursProperty() {
+        return prenomActeurs;
+    }
+
+    public void setPrenomActeurs(String prenomActeurs) {
+        this.prenomActeurs.set(prenomActeurs);
+    }
+
+    public String getNomActeurs() {
+        return nomActeurs.get();
+    }
+
+    public StringProperty nomActeursProperty() {
+        return nomActeurs;
+    }
+
+    public void setNomActeurs(String nomActeurs) {
+        this.nomActeurs.set(nomActeurs);
+    }
+
 
 }

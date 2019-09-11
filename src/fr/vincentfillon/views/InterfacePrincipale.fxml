@@ -47,6 +47,12 @@
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
+                  <ButtonBar layoutX="55.0" layoutY="234.0" prefHeight="47.0" prefWidth="420.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#initInterfaceJointureFilms" text="Accès FILMS" />
+                        <Button mnemonicParsing="false" onAction="#initInterfaceActeursRealisateurs" text="Accès Acteurs/Réalisateurs" />
+                    </buttons>
+                  </ButtonBar>
                </children>
             </Pane>
          </children></HBox>

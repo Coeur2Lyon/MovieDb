@@ -134,10 +134,10 @@ public class InterfaceFilmsAdminController {
      * details for a new movie.
      */
     @FXML
-    private void addNewMovie() {
+    /*private void addNewMovie() {
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
         Film tempFilm = new Film();
-        boolean okClicked = Main.showMovieEditDialog(tempFilm);
+        boolean okClicked = Main.showMovieJoinEditDialog(tempFilm);
         if (okClicked) {
             getMovieData().add(tempFilm);
             filmDAO.create(tempFilm);
@@ -146,19 +146,19 @@ public class InterfaceFilmsAdminController {
             alert.setTitle("Ajout de film");
             alert.setHeaderText("Le film a bien été ajouté");
         }
-    }
+    }*/
 
     /**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected movie.
      */
-    @FXML
+   //@FXML
     private void editMovie() {
 
-        Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
+        /*Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
         if (selectedMovie != null) {
-            boolean okClicked = Main.showMovieEditDialog(selectedMovie);
+            boolean okClicked = Main.showMovieJoinEditDialog(selectedMovie);
             if (okClicked) {
                 showMovieDetails(selectedMovie);
                 filmDAO.update(selectedMovie);
@@ -172,15 +172,15 @@ public class InterfaceFilmsAdminController {
             alert.setHeaderText("No Movie Selected");
             alert.setContentText("Please select a movie in the table.");
             alert.showAndWait();
-        }
+        }*/
     }
 
     /**
      * Called when the user clicks on the delete button.
      */
-    @FXML
+   // @FXML
     private void deleteMovie() {
-        Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
+        /*Film selectedMovie = movieTable.getSelectionModel().getSelectedItem();
         Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
         if (selectedMovie != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -200,6 +200,6 @@ public class InterfaceFilmsAdminController {
             alert.setHeaderText("No Movie Selected");
             alert.setContentText("Please select a movie in the table.");
             alert.showAndWait();
-        }
+        }*/
     }
 }

@@ -2,11 +2,17 @@ package fr.vincentfillon.views;
 
 //public class MovieEditDialogController {
 
-import fr.vincentfillon.model.Film;
+import fr.vincentfillon.connectivity.ConnectionClass;
+import fr.vincentfillon.dao.Dao;
+import fr.vincentfillon.dao.GenreDAO;
+import fr.vincentfillon.model.Genre;
 import fr.vincentfillon.model.Jointure;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -15,7 +21,7 @@ import javafx.stage.Stage;
 /**
  * Dialog to edit details of a movie.
  *
- * @author Marco Jakob
+ * @author Vincent Fillon
  */
 public class MovieJoinEditDialogController {
 
@@ -29,14 +35,18 @@ public class MovieJoinEditDialogController {
     private TextField fldAnneeSortie;
     @FXML
     private TextField fldNationalite;
-    @FXML
-    private TextField fldGenre;
-    @FXML
-    private TextField fldRealisateur;
-    @FXML
-    private TextField fldActeurs;
 
 
+    Genre western = new Genre("Western");
+    Genre action = new Genre("Action");
+
+
+    private ObservableList<Genre> listeGenre = FXCollections.observableArrayList();
+
+
+
+    @FXML
+    private ChoiceBox<Genre> cbxGenre = new ChoiceBox<Genre>(listeGenre);
 
 
     private Stage dialogStage;
@@ -49,6 +59,7 @@ public class MovieJoinEditDialogController {
      */
     @FXML
     private void initialize() {
+
     }
 
     /**
@@ -64,21 +75,21 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Sets the movie Join to be edited in the dialog.
+     * Sets the movie to be edited in the dialog.
      *
      * @param jointure
      */
-    public void setMovieJoin(Jointure jointure) {
+    public void setMovie(Jointure jointure) {
         this.jointure = jointure;
-
+        Dao<Genre> genreDAO = new GenreDAO(ConnectionClass.connecte());
+        //listeGenre.setAll(genreDAO.findAll());
+        listeGenre.setAll(genreDAO.find(1));
         fldTitreVF.setText(jointure.getTitreFR());
         fldTitreVO.setText(jointure.getTitreO());
         fldScenario.setText(jointure.getScenario());
         fldAnneeSortie.setText(jointure.getAnneeSortie());
         fldNationalite.setText(jointure.getNationalite());
-        fldGenre.setText(jointure.getGenre());
-        fldRealisateur.setText(jointure.getRealisateurs());
-        fldActeurs.setText(jointure.getActeurs());
+        cbxGenre.setItems(listeGenre);
     }
 
     /**
@@ -101,9 +112,6 @@ public class MovieJoinEditDialogController {
             jointure.setScenario(fldScenario.getText());
             jointure.setAnneeSortie(fldAnneeSortie.getText());
             jointure.setNationalite(fldNationalite.getText());
-            jointure.setGenre(fldGenre.getText());
-            jointure.setRealisateurs(fldRealisateur.getText());
-            jointure.setActeurs(fldActeurs.getText());
 
             okClicked = true;
             dialogStage.close();
@@ -144,16 +152,6 @@ public class MovieJoinEditDialogController {
             errorMessage += "Champs vide!\n Merci d'entrez une nationalité\n";
         }
 
-        if (fldGenre.getText() == null || fldNationalite.getText().length() == 0) {
-            errorMessage += "Champs vide!\n Merci d'entrez une \n";
-        }
-
-        if (fldRealisateur.getText() == null || fldNationalite.getText().length() == 0) {
-            errorMessage += "Champs vide!\n Merci d'entrez une \n";
-        }
-        if (fldActeurs.getText() == null || fldNationalite.getText().length() == 0) {
-            errorMessage += "Champs vide!\n Merci d'entrez une \n";
-        }
 
         if (errorMessage.length() == 0) {
             return true;

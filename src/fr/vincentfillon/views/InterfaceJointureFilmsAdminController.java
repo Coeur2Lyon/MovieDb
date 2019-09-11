@@ -2,13 +2,15 @@ package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
 import fr.vincentfillon.connectivity.ConnectionClass;
+import fr.vincentfillon.dao.ActeurRealisateurDAO;
 import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.FilmDAO;
 import fr.vincentfillon.dao.JointureDAO;
+import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.Film;
 import fr.vincentfillon.model.Jointure;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -41,10 +43,13 @@ public class InterfaceJointureFilmsAdminController {
     private Label lblActeurs;
 
 
-
+    // Reference à InterfacePrincipaleController
     private InterfacePrincipaleController jointure;
     // Reference to the main application.
     private Main main;
+
+    @FXML
+    private ObservableList<Film> movieData = FXCollections.observableArrayList();
 
     @FXML
     private ObservableList<Jointure> movieJoinData = FXCollections.observableArrayList();
@@ -56,8 +61,6 @@ public class InterfaceJointureFilmsAdminController {
 
         Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
 
-
-
 //Pour trouver le film d'indice i:
       //  Jointure jointure = jointureDAO.find(1);
         movieJoinData.setAll(jointureDAO.findAll());
@@ -66,8 +69,10 @@ public class InterfaceJointureFilmsAdminController {
 //        movieJoinData.add(new Jointure("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
 //        movieJoinData.add(new Jointure("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
-
-    public ObservableList<Jointure> getmovieJoinData() {
+    public ObservableList<Film> getMovieData() {
+        return movieData;
+    }
+    public ObservableList<Jointure> getMovieJoinData() {
         return movieJoinData;
     }
 
@@ -99,7 +104,7 @@ public class InterfaceJointureFilmsAdminController {
     public void setMovie(InterfacePrincipaleController jointure) {
         this.jointure = jointure;
         //Add observable list data to the table
-        movieJoinTable.setItems(getmovieJoinData());
+        movieJoinTable.setItems(getMovieJoinData());
     }
 
     /**
@@ -132,7 +137,24 @@ public class InterfaceJointureFilmsAdminController {
             lblActeurs.setText("");
         }
     }
-
+    /**
+     * Called when the user clicks the new button. Opens a dialog to edit
+     * details for a new movie.
+     */
+    /*@FXML
+    private void addNewMovie() {
+        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
+        Film tempFilm = new Film();
+        boolean okClicked = Main.showMovieJoinEditDialog(tempFilm);
+        if (okClicked) {
+            getMovieData().add(tempFilm);
+            filmDAO.create(tempFilm);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Ajout de film");
+            alert.setHeaderText("Le film a bien été ajouté");
+        }
+    }*/
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
@@ -140,12 +162,16 @@ public class InterfaceJointureFilmsAdminController {
      */
     @FXML
     private void addNewMovieJoin() {
-        Dao<Jointure> jointureDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Jointure tempJointure=new Jointure();
         Jointure tempJointureFilm = new Jointure();
-        boolean okClicked = Main.showMovieJoinEditDialog(tempJointureFilm);
+
+        boolean okClicked = Main.showMovieJoinEditDialog(tempJointure);
+
+
         if (okClicked) {
-            getmovieJoinData().add(tempJointureFilm);
-            jointureDao.create(tempJointureFilm);
+            getMovieJoinData().add(tempJointureFilm);
+            jointureDAO.create(tempJointureFilm);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un film");
@@ -207,4 +233,5 @@ public class InterfaceJointureFilmsAdminController {
             alert.showAndWait();
         }
     }
+
 }

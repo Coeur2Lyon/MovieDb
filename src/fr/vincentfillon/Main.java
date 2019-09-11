@@ -1,7 +1,9 @@
 package fr.vincentfillon;
 
+import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.Film;
 import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.views.ActRealEditDialogController;
 import fr.vincentfillon.views.MovieEditDialogController;
 import fr.vincentfillon.views.MovieJoinEditDialogController;
 import javafx.application.Application;
@@ -38,7 +40,9 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-    public static boolean showMovieJoinEditDialog(Jointure jointureFilm) {
+
+    //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
+    public static boolean showMovieJoinEditDialog(Jointure jointure) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -47,16 +51,16 @@ public class Main extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Ajout/Edition de films");
+            dialogStage.setTitle("Ajout / Edition de films");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
             // Set the Movie into the controller.
-            MovieJoinEditDialogController controller = loader.getController();
+            MovieEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
-            controller.setMovieJoin(jointureFilm);
+            controller.setMovie(jointure);
 
             // Set the dialog icon.
             dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
@@ -70,8 +74,42 @@ public class Main extends Application {
             return false;
         }
     }
-    //Sauvegarde : Applel de la méthode à partir de la classe film uniquement
-    public static boolean showMovieEditDialog(Film film) {
+
+    public static boolean showActeurRealisateurEditDialog(ActeurRealisateur acteurRealisateur) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/ActRealEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Ajout / Edition de'acteurs/réalisateurs");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the Movie into the controller.
+            ActRealEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setActeurRealisateur(acteurRealisateur);
+
+            // Set the dialog icon.
+            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    //TODO:Effacer ublic static boolean showMovieEditDialog_SAUVEGARDE(Film film) quand ça marchera.
+    //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
+   /* public static boolean showMovieEditDialog_SAUVEGARDE(Film film) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -103,7 +141,7 @@ public class Main extends Application {
             return false;
         }
     }
-
+    */
     public static boolean showFiltreDialog() {
         try {
             // Load the fxml file and create a new stage for the popup dialog.

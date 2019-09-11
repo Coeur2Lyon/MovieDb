@@ -19,6 +19,10 @@ public class JointureDAO extends Dao<Jointure> {
     @Override
     public void create(Jointure film) {
         String sqlInsert = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + film.getTitreFR() + "','" + film.getTitreO() + "','" + film.getScenario() + "', '" + film.getAnneeSortie() + "','" + film.getNationalite() + "')";
+        String sqlGenreCORRESPOND="";
+        String sqLRealisateurREALISE="";
+        String sqlActeursJOUE="";
+
         try {
             Statement statement = this.connect.createStatement();
             statement.executeUpdate(sqlInsert);

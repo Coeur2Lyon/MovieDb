@@ -1,9 +1,13 @@
 package fr.vincentfillon.dao;
 
+import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.Genre;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
 
 public class GenreDAO extends Dao<Genre> {
 
@@ -27,8 +31,25 @@ public class GenreDAO extends Dao<Genre> {
     }
 
     @Override
-    public Genre find(int id) {
-        return null;
+    public Genre find(int idGenre) {
+        Genre genre = new Genre();
+        String sqlQuery = "SELECT * FROM GENRE WHERE IdGenre = " + idGenre;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery(sqlQuery);
+
+            if (result.first()) {
+                String nomGenre = result.getString(2);
+                result.close();
+                genre = new Genre(idGenre,nomGenre);
+                result.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return genre;
+
     }
 
     @Override

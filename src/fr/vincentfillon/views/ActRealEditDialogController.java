@@ -2,18 +2,12 @@ package fr.vincentfillon.views;
 
 //public class MovieEditDialogController {
 
-import fr.vincentfillon.connectivity.ConnectionClass;
-import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.GenreDAO;
-import fr.vincentfillon.model.Genre;
+import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.Jointure;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -22,36 +16,26 @@ import javafx.stage.Stage;
 /**
  * Dialog to edit details of a movie.
  *
- * @author Vincent Fillon
+ * @author Marco Jakob
  */
-public class MovieEditDialogController {
+public class ActRealEditDialogController {
 
     @FXML
-    private TextField fldTitreVF;
+    private TextField fldPrenom;
     @FXML
-    private TextField fldTitreVO;
+    private TextField fldNom;
+
     @FXML
-    private TextField fldScenario;
-    @FXML
-    private TextField fldAnneeSortie;
+    private TextField fldAnneeNaissance;
     @FXML
     private TextField fldNationalite;
 
 
-    Genre western = new Genre("Western");
-    Genre action = new Genre("Action");
 
-
-    private ObservableList<Genre> listeGenre = FXCollections.observableArrayList();
-
-
-
-    @FXML
-    private ChoiceBox<Genre> cbxGenre = new ChoiceBox<Genre>(listeGenre);
 
 
     private Stage dialogStage;
-    private Jointure jointure;
+    private ActeurRealisateur acteurRealisateur;
     private boolean okClicked = false;
 
     /**
@@ -60,7 +44,6 @@ public class MovieEditDialogController {
      */
     @FXML
     private void initialize() {
-
     }
 
     /**
@@ -76,21 +59,19 @@ public class MovieEditDialogController {
     }
 
     /**
-     * Sets the movie to be edited in the dialog.
+     * Sets the movie Join to be edited in the dialog.
      *
-     * @param jointure
+     * @param acteurRealisateur
      */
-    public void setMovie(Jointure jointure) {
-        this.jointure = jointure;
-        Dao<Genre> genreDAO = new GenreDAO(ConnectionClass.connecte());
-        //listeGenre.setAll(genreDAO.findAll());
-        listeGenre.setAll(genreDAO.find(1));
-        fldTitreVF.setText(jointure.getTitreFR());
-        fldTitreVO.setText(jointure.getTitreO());
-        fldScenario.setText(jointure.getScenario());
-        fldAnneeSortie.setText(jointure.getAnneeSortie());
-        fldNationalite.setText(jointure.getNationalite());
-        cbxGenre.setItems(listeGenre);
+    public void setMovieJoin(ActeurRealisateur acteurRealisateur) {
+        this.acteurRealisateur=acteurRealisateur;
+
+        fldPrenom.setText(acteurRealisateur.getPrenom());
+        fldNom.setText(acteurRealisateur.getNom());
+
+        fldAnneeNaissance.setText(acteurRealisateur.getNom());
+        fldNationalite.setText(acteurRealisateur.getNationalite());
+
     }
 
     /**
@@ -108,11 +89,12 @@ public class MovieEditDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            jointure.setTitreFR(fldTitreVF.getText());
-            jointure.setTitreO(fldTitreVO.getText());
-            jointure.setScenario(fldScenario.getText());
-            jointure.setAnneeSortie(fldAnneeSortie.getText());
-            jointure.setNationalite(fldNationalite.getText());
+            acteurRealisateur.setPrenom(fldPrenom.getText());
+            acteurRealisateur.setNom(fldNom.getText());
+
+            acteurRealisateur.setAnneeNaissance(fldAnneeNaissance.getText());
+            acteurRealisateur.setNationalite(fldNationalite.getText());
+
 
             okClicked = true;
             dialogStage.close();
@@ -135,17 +117,14 @@ public class MovieEditDialogController {
     private boolean isInputValid() {
         String errorMessage = "";
 
-        if (fldTitreVF.getText() == null || fldTitreVF.getText().length() == 0) {
+        if (fldPrenom.getText() == null || fldPrenom.getText().length() == 0) {
             errorMessage += "Champs vide!\n Merci d'entrez un titre français\n";
         }
-        if (fldTitreVO.getText() == null || fldTitreVO.getText().length() == 0) {
+        if (fldNom.getText() == null || fldNom.getText().length() == 0) {
             errorMessage += "Champs vide!\n Merci d'entrez un titre original!!\n";
         }
-        if (fldScenario.getText() == null || fldScenario.getText().length() == 0) {
-            errorMessage += "Champs vide!\n Merci d'entrez un scenario\n";
-        }
 
-        if (fldAnneeSortie.getText() == null || fldAnneeSortie.getText().length() == 0) {
+        if (fldAnneeNaissance.getText() == null || fldAnneeNaissance.getText().length() == 0) {
             errorMessage += "Champs vide!\n Merci d'entrez une année de sortie\n";
         }
 
@@ -153,20 +132,31 @@ public class MovieEditDialogController {
             errorMessage += "Champs vide!\n Merci d'entrez une nationalité\n";
         }
 
-
         if (errorMessage.length() == 0) {
             return true;
         } else {
             // Show the error message.
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Invalid Fields");
-            alert.setHeaderText("Please correct invalid fields");
+            alert.setTitle("Champs non valide");
+            alert.setHeaderText("Merci de rectifier les champs non valides");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();
 
             return false;
         }
+    }
+
+    public void addNewActeurRealisateur(ActionEvent actionEvent) {
+        initActRealEditDialog();
+
+    }
+
+    private void initActRealEditDialog() {
+
+    }
+
+    public void setActeurRealisateur(ActeurRealisateur acteurRealisateur) {
     }
 }

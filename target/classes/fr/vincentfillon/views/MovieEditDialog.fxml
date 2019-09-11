@@ -42,7 +42,7 @@
                 <TextField fx:id="fldScenario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="fldAnneeSortie" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <TextField fx:id="fldNationalite" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ChoiceBox prefHeight="24.0" prefWidth="318.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="cbxGenre" prefHeight="24.0" prefWidth="318.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <ChoiceBox prefHeight="26.0" prefWidth="321.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <ChoiceBox prefHeight="24.0" prefWidth="318.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             </children>

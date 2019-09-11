@@ -8,9 +8,15 @@ public class Genre {
     private int idGenre=0;
     private StringProperty genre;
 
-    public Genre(int idGenre, StringProperty genre) {
+    public Genre(int idGenre, String genre) {
         this.idGenre = idGenre;
-        this.genre = genre;
+        this.genre = new SimpleStringProperty(genre);
+    }
+    public Genre() {
+        this(null);
+    }
+    public Genre(String genre) {
+        this.genre = new SimpleStringProperty(genre);
     }
 
     public int getIdGenre() {

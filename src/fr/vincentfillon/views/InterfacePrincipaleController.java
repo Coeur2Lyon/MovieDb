@@ -74,6 +74,23 @@ public class InterfacePrincipaleController extends Main {
     }
 
     @FXML
+    public void initInterfaceActeursRealisateurs(ActionEvent actionEvent) throws IOException {
+
+        Parent root;
+        Stage newWindow = new Stage();
+        try {
+            root = FXMLLoader.load(getClass().getResource("InterfaceActeursRealisateursAdmin.fxml"));
+            newWindow.setScene(new Scene(root,850,642));
+            newWindow.initModality(Modality.APPLICATION_MODAL);
+
+            newWindow.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void initInterfaceUser(ActionEvent actionEvent) {
         Stage newWindow = new Stage();
         Parent root;

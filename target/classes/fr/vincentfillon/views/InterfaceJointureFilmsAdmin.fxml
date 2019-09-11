@@ -131,11 +131,11 @@
                         </Label>
                             </children>
                         </GridPane>
-                        <ButtonBar layoutX="54.0" layoutY="250.0" prefHeight="21.0" prefWidth="383.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="10.0">
+                        <ButtonBar layoutX="54.0" layoutY="250.0" prefHeight="21.0" prefWidth="485.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="10.0">
                             <buttons>
                         <Button mnemonicParsing="false" onAction="#deleteMovieJoin" text="Suppr..." />
                         <Button mnemonicParsing="false" onAction="#editMovieJoin" prefHeight="26.0" prefWidth="95.0" text="Editer..." />
-                                <Button mnemonicParsing="false" onAction="#addNewMovieJoin" text="Ajouter..." />
+                                <Button mnemonicParsing="false" onAction="#addNewMovieJoin" text="+ Film" />
                             </buttons>
                         </ButtonBar>
                   <ImageView fitHeight="80.0" fitWidth="113.0" layoutX="363.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
