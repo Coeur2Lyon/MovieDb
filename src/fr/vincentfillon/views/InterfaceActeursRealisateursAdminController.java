@@ -81,7 +81,7 @@ public class InterfaceActeursRealisateursAdminController {
     private void initialize() {
         // Initialise le preview des acteurs/réalisateurs
         colPrenom.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
-        colNom.setCellValueFactory(cellData -> cellData.getValue().anneeNaissanceProperty());
+        colNom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
 
         // Clear movie details.
         showActeurRealisateursDetails(null);
@@ -111,9 +111,13 @@ public class InterfaceActeursRealisateursAdminController {
      * @param acteurRealisateur the movie or null
      */
     private void showActeurRealisateursDetails(ActeurRealisateur acteurRealisateur) {
+        System.out.println("On entre dans showActeurRealisateursDetails");
+        //System.out.println("acteurRealisateur NOM: "+acteurRealisateur.getNom());
+        //System.out.println("acteurRealisateur PRENOM:"+acteurRealisateur.getPrenom());
         if (acteurRealisateur != null) {
+            System.out.println("On replie les LABELL dans showActeurRealisateursDetails");
             // Fill the labels with info from the movie object.
-            lblPrenom.setText(acteurRealisateur.getPrenom());
+            lblPrenom.setText(acteurRealisateur.getNom());
             lblNom.setText(acteurRealisateur.getNom());
             lblAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
             lblNationalite.setText(acteurRealisateur.getNationalite());
@@ -136,7 +140,7 @@ public class InterfaceActeursRealisateursAdminController {
      */
     @FXML
     public void addActeurRealisateur(ActionEvent actionEvent) {
-        Dao<ActeurRealisateur> acteurRealisateurDao = new ActeurRealisateurDAO(ConnectionClass.connecte());
+        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
         ActeurRealisateur tempActeurRealisateur=new ActeurRealisateur();
 
 
@@ -145,7 +149,7 @@ public class InterfaceActeursRealisateursAdminController {
 
         if (okClicked) {
             getActeurRealisateursData().add(tempActeurRealisateur);
-            acteurRealisateurDao.create(tempActeurRealisateur);
+            acteurRealisateurDAO.create(tempActeurRealisateur);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un acteur/réalisateur");

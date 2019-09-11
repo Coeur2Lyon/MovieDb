@@ -15,8 +15,6 @@ public class ActeurRealisateur {
 
     private StringProperty nom;
     private StringProperty prenom;
-
-
     private StringProperty anneeNaissance;
     private StringProperty nationalite;
     private Timestamp createdAt = new Timestamp(millis);
@@ -29,13 +27,14 @@ public class ActeurRealisateur {
     public ActeurRealisateur(String nom, String prenom, String anneeNaissance, String nationalite) {
 
         this.nom = new SimpleStringProperty(nom);
-        this.prenom =new SimpleStringProperty();
-        this.anneeNaissance = new SimpleStringProperty();
-        this.nationalite = new SimpleStringProperty();
+        this.prenom =new SimpleStringProperty(prenom);
+        this.anneeNaissance = new SimpleStringProperty(anneeNaissance);
+        this.nationalite = new SimpleStringProperty(nationalite);
     }
 
-
+   /*TODO:Effacer si inutile
     public ActeurRealisateur(int idActeurRealisateur, String nom, String prenom, String anneeNaissance, String nationalite, Date createdAt, int isDeleted) {
+
         this.idActeurRealisateur = idActeurRealisateur;
         this.nom = new SimpleStringProperty();
         this.prenom =new SimpleStringProperty();
@@ -43,7 +42,7 @@ public class ActeurRealisateur {
         this.nationalite = new SimpleStringProperty();
         this.createdAt = new Timestamp(createdAt.getTime());
         this.isDeleted = isDeleted;
-    }
+    }*/
 
     public int getIdActeurRealisateur() {
         return idActeurRealisateur;
@@ -65,16 +64,11 @@ public class ActeurRealisateur {
         this.nom.set(nom);
     }
 
-    public String getPrenom() {
-        return prenom.get();
-    }
+    public String getPrenom() {return prenom.get();}
 
-    public StringProperty prenomProperty() {
-        return prenom;
-    }
+    public StringProperty prenomProperty() {return prenom;}
 
-    public void setPrenom(String prenom) {
-        this.prenom.set(prenom);
+    public void setPrenom(String prenom) {this.prenom.set(prenom);
     }
 
     public String getAnneeNaissance() {
