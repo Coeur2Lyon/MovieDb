@@ -31,14 +31,14 @@ ALTER DATABASE moviedb charset=utf8;
 create table ACTEUR_REALISATEUR
 (
   IdActeurRealisateur int not null auto_increment,
-  Nom                 varchar(50),
-  Prenom              varchar(50),
+  Nom                 varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Prenom              varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
   AnneeNaissance      int,
-  NationaliteAR varchar(50),
+  NationaliteAR varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdActeurRealisateur)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4;
+)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
 
 /*==============================================================*/
 /* Table : CORRESPOND                                           */
@@ -67,15 +67,15 @@ create table EVALUE
 create table FILM
 (
   IdFilm      int not null auto_increment,
-  TitreFr     varchar(50),
-  TitreO      varchar(50),
-  Scenario    text,
+  TitreFr     varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  TitreO      varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Scenario    text charset utf8mb4 COLLATE utf8_unicode_ci,
   AnneeSortie int,
-  NationaliteF varchar(50),
+  NationaliteF varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdFilm)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4;
+)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
 
 /*==============================================================*/
 /* Table : GENRE                                                */
@@ -124,14 +124,14 @@ create table UTILISATEUR
 (
   IdUser   int not null auto_increment,
   IdRole   int not null,
-  Username varchar(50),
-  Password varchar(50),
-  Email    varchar(150),
+  Username varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Password varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Email    varchar(150) charset utf8mb4 COLLATE utf8_unicode_ci,
   Birthday date,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdUser)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4;
+)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
 
 alter table FILM convert to character set UTF8MB4;
 alter table UTILISATEUR convert to character set UTF8MB4;
