@@ -4,7 +4,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class ActeurRealisateur {
@@ -20,14 +19,22 @@ public class ActeurRealisateur {
     private Timestamp createdAt = new Timestamp(millis);
     private int isDeleted;
 
+    public ActeurRealisateur(int idActeurRealisateur, String nom, String prenom, String anneeNaissance, String nationalite) {
+
+        this.idActeurRealisateur=idActeurRealisateur;
+        this.nom = new SimpleStringProperty(nom);
+        this.prenom = new SimpleStringProperty(prenom);
+        this.anneeNaissance = new SimpleStringProperty(anneeNaissance);
+        this.nationalite = new SimpleStringProperty(nationalite);
+    }
 
     public ActeurRealisateur() {
         this(null, null, null, null);
     }
-    public ActeurRealisateur(String nom, String prenom, String anneeNaissance, String nationalite) {
 
+    public ActeurRealisateur(String nom, String prenom, String anneeNaissance, String nationalite) {
         this.nom = new SimpleStringProperty(nom);
-        this.prenom =new SimpleStringProperty(prenom);
+        this.prenom = new SimpleStringProperty(prenom);
         this.anneeNaissance = new SimpleStringProperty(anneeNaissance);
         this.nationalite = new SimpleStringProperty(nationalite);
     }
@@ -64,11 +71,16 @@ public class ActeurRealisateur {
         this.nom.set(nom);
     }
 
-    public String getPrenom() {return prenom.get();}
+    public String getPrenom() {
+        return prenom.get();
+    }
 
-    public StringProperty prenomProperty() {return prenom;}
+    public StringProperty prenomProperty() {
+        return prenom;
+    }
 
-    public void setPrenom(String prenom) {this.prenom.set(prenom);
+    public void setPrenom(String prenom) {
+        this.prenom.set(prenom);
     }
 
     public String getAnneeNaissance() {
@@ -110,7 +122,6 @@ public class ActeurRealisateur {
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
-
 
 
 }

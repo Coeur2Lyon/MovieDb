@@ -1,7 +1,6 @@
 package fr.vincentfillon.dao;
 
 import fr.vincentfillon.model.ActeurRealisateur;
-import fr.vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -19,11 +18,11 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
 
 
     public void create(ActeurRealisateur acteurRealisateur) {
-
-        String sqlInsert = "INSERT INTO moviedb.ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR) VALUES('" + acteurRealisateur.getNom() + "','" + acteurRealisateur.getPrenom() + "','" + acteurRealisateur.getAnneeNaissance() + "', '" + acteurRealisateur.getNationalite() + "')";
+        int anneeNaissance = Integer.parseInt(acteurRealisateur.getAnneeNaissance());
+        String insertRequest = "INSERT INTO moviedb.ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR) VALUES('" + acteurRealisateur.getNom() + "','" + acteurRealisateur.getPrenom() + "','" + anneeNaissance + "', '" + acteurRealisateur.getNationalite() + "')";
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsert);
+            statement.executeUpdate(insertRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -31,11 +30,10 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
     }
 
     public void delete(ActeurRealisateur acteurRealisateur) {
-        String sqlUpdate = "UPDATE ACTEUR_REALISATEUR SET IsDeleted=1 WHERE IdActeurRealisateur=" + acteurRealisateur.getIdActeurRealisateur() + "";
+        String deleteRequest = "UPDATE moviedb.ACTEUR_REALISATEUR SET IsDeleted=1 WHERE IdActeurRealisateur=" + acteurRealisateur.getIdActeurRealisateur() + "";
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlUpdate);
-
+            statement.executeUpdate(deleteRequest);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,10 +41,10 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
 
     public void update(ActeurRealisateur acteurRealisateur) {
         int anneeNaissance = Integer.parseInt(acteurRealisateur.getAnneeNaissance());
-        String sqlUpdate = "UPDATE ACTEUR_REALISATEUR SET Nom='" + acteurRealisateur.getNom() + "', Prenom='" + acteurRealisateur.getPrenom() + "',  AnneeNaissance='" + anneeNaissance + "', NationaliteF='" + acteurRealisateur.getNationalite() + "' WHERE IdActeurRealisateur=" + acteurRealisateur.getIdActeurRealisateur() + "";
+        String updateRequest = "UPDATE moviedb.ACTEUR_REALISATEUR SET Nom='" + acteurRealisateur.getNom() + "', Prenom='" + acteurRealisateur.getPrenom() + "',  AnneeNaissance='" + anneeNaissance + "', NationaliteAR='" + acteurRealisateur.getNationalite() + "' WHERE IdActeurRealisateur=" + acteurRealisateur.getIdActeurRealisateur();
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlUpdate);
+            statement.executeUpdate(updateRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,12 +62,12 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
             if (result.first()) {
                 String nom = result.getString(2);
                 String prenom = result.getString(3);
-                String anneeNaissance=result.getString(4);
+                String anneeNaissance = result.getString(4);
                 String nationalite = result.getString(5);
                 Date createdAt = result.getDate(6);
                 Integer isDeleted = result.getInt(7);
                 result.close();
-                acteurRealisateur = new ActeurRealisateur(nom,prenom,anneeNaissance,nationalite);
+                acteurRealisateur = new ActeurRealisateur(idActeurRealisateur, nom, prenom, anneeNaissance, nationalite);
                 result.close();
             }
         } catch (SQLException e) {

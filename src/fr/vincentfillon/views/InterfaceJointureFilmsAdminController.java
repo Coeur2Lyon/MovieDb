@@ -49,9 +49,6 @@ public class InterfaceJointureFilmsAdminController {
     private Main main;
 
     @FXML
-    private ObservableList<Film> movieData = FXCollections.observableArrayList();
-
-    @FXML
     private ObservableList<Jointure> movieJoinData = FXCollections.observableArrayList();
 
     /* The constructor is called before the initialize() method.
@@ -69,9 +66,8 @@ public class InterfaceJointureFilmsAdminController {
 //        movieJoinData.add(new Jointure("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
 //        movieJoinData.add(new Jointure("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
-    public ObservableList<Film> getMovieData() {
-        return movieData;
-    }
+
+
     public ObservableList<Jointure> getMovieJoinData() {
         return movieJoinData;
     }
@@ -163,15 +159,13 @@ public class InterfaceJointureFilmsAdminController {
     @FXML
     private void addNewMovieJoin() {
         Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
-        Jointure tempJointure=new Jointure();
-        Jointure tempJointureFilm = new Jointure();
+       Jointure tempJointure=new Jointure();
 
         boolean okClicked = Main.showMovieJoinEditDialog(tempJointure);
 
-
         if (okClicked) {
-            getMovieJoinData().add(tempJointureFilm);
-            jointureDAO.create(tempJointureFilm);
+            getMovieJoinData().add(tempJointure);
+            jointureDAO.create(tempJointure);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un film");

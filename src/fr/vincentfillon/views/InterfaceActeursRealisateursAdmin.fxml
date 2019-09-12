@@ -22,8 +22,8 @@
                     <children>
                         <TableView fx:id="acteurRealisateurTable" layoutX="-12.0" layoutY="49.0" prefHeight="298.0" prefWidth="175.0" style="-fx-background-color: #7e02a1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn fx:id="colPrenom" prefWidth="195.0" text="Prénom" />
-                                <TableColumn fx:id="colNom" prefWidth="130.0" text="Nom" />
+                                <TableColumn fx:id="colPrenom" prefWidth="130.0" text="Prénom" />
+                                <TableColumn fx:id="colNom" prefWidth="195.0" style="-fx-text-transform: uppercase;" text="Nom" />
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 /**
  * Dialog to edit details of a movie.
  *
- * @author Marco Jakob
+ * @author Vincent Fillon
  */
 public class ActRealEditDialogController {
 
@@ -63,7 +63,7 @@ public class ActRealEditDialogController {
      *
      * @param acteurRealisateur
      */
-    public void setMovieJoin(ActeurRealisateur acteurRealisateur) {
+    public void setActeurRealisateur(ActeurRealisateur acteurRealisateur) {
         this.acteurRealisateur=acteurRealisateur;
 
         fldPrenom.setText(acteurRealisateur.getPrenom());
@@ -91,10 +91,8 @@ public class ActRealEditDialogController {
         if (isInputValid()) {
             acteurRealisateur.setPrenom(fldPrenom.getText());
             acteurRealisateur.setNom(fldNom.getText());
-
             acteurRealisateur.setAnneeNaissance(fldAnneeNaissance.getText());
             acteurRealisateur.setNationalite(fldNationalite.getText());
-
 
             okClicked = true;
             dialogStage.close();
@@ -148,15 +146,6 @@ public class ActRealEditDialogController {
         }
     }
 
-    public void addNewActeurRealisateur(ActionEvent actionEvent) {
-        initActRealEditDialog();
-
-    }
-
-    private void initActRealEditDialog() {
-
-    }
-
-    public void setActeurRealisateur(ActeurRealisateur acteurRealisateur) {
+    public void handleDelete(ActionEvent actionEvent) {
     }
 }

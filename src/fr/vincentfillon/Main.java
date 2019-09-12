@@ -4,7 +4,6 @@ import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.Film;
 import fr.vincentfillon.model.Jointure;
 import fr.vincentfillon.views.ActRealEditDialogController;
-import fr.vincentfillon.views.MovieEditDialogController;
 import fr.vincentfillon.views.MovieJoinEditDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -58,12 +57,12 @@ public class Main extends Application {
             dialogStage.setScene(scene);
 
             // Set the Movie into the controller.
-            MovieEditDialogController controller = loader.getController();
+            MovieJoinEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMovie(jointure);
 
             // Set the dialog icon.
-            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+            //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
@@ -84,7 +83,7 @@ public class Main extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Ajout / Edition de'acteurs/réalisateurs");
+            dialogStage.setTitle("Ajout / Edition d'acteurs/réalisateurs");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
@@ -96,7 +95,7 @@ public class Main extends Application {
             controller.setActeurRealisateur(acteurRealisateur);
 
             // Set the dialog icon.
-            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+            //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
@@ -158,7 +157,7 @@ public class Main extends Application {
             dialogStage.setScene(scene);
 
             // Set the Movie into the controller.
-            MovieEditDialogController controller = loader.getController();
+            MovieJoinEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             //controller.setMovie(film);
 

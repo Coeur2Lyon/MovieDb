@@ -2,9 +2,6 @@ package fr.vincentfillon.views;
 
 //public class MovieEditDialogController {
 
-import fr.vincentfillon.connectivity.ConnectionClass;
-import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.GenreDAO;
 import fr.vincentfillon.model.Genre;
 import fr.vincentfillon.model.Jointure;
 import javafx.collections.FXCollections;
@@ -12,7 +9,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -36,18 +32,7 @@ public class MovieJoinEditDialogController {
     @FXML
     private TextField fldNationalite;
 
-
-    Genre western = new Genre("Western");
-    Genre action = new Genre("Action");
-
-
     private ObservableList<Genre> listeGenre = FXCollections.observableArrayList();
-
-
-
-    @FXML
-    private ChoiceBox<Genre> cbxGenre = new ChoiceBox<Genre>(listeGenre);
-
 
     private Stage dialogStage;
     private Jointure jointure;
@@ -81,15 +66,12 @@ public class MovieJoinEditDialogController {
      */
     public void setMovie(Jointure jointure) {
         this.jointure = jointure;
-        Dao<Genre> genreDAO = new GenreDAO(ConnectionClass.connecte());
-        //listeGenre.setAll(genreDAO.findAll());
-        listeGenre.setAll(genreDAO.find(1));
         fldTitreVF.setText(jointure.getTitreFR());
         fldTitreVO.setText(jointure.getTitreO());
         fldScenario.setText(jointure.getScenario());
         fldAnneeSortie.setText(jointure.getAnneeSortie());
         fldNationalite.setText(jointure.getNationalite());
-        cbxGenre.setItems(listeGenre);
+
     }
 
     /**

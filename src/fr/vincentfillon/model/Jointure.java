@@ -32,36 +32,23 @@ public class Jointure {
     private StringProperty prenomActeurs;
     private StringProperty nomActeurs;
 
-    public Jointure(GregorianCalendar cal, javafx.beans.property.StringProperty titreFR, javafx.beans.property.StringProperty titreO, javafx.beans.property.StringProperty scenario, javafx.beans.property.StringProperty anneeSortie, javafx.beans.property.StringProperty nationalite, javafx.beans.property.StringProperty genre, int isDeleted, javafx.beans.property.StringProperty prenomRealisateurs, javafx.beans.property.StringProperty nomRealisateurs, javafx.beans.property.StringProperty prenomActeurs, javafx.beans.property.StringProperty nomActeurs) {
-        this.cal = cal;
-        this.titreFR = titreFR;
-        this.titreO = titreO;
-        this.scenario = scenario;
-        this.anneeSortie = anneeSortie;
-        this.nationalite = nationalite;
-        this.genre = genre;
-        this.isDeleted = isDeleted;
-        this.prenomRealisateurs = prenomRealisateurs;
-        this.nomRealisateurs = nomRealisateurs;
-        this.prenomActeurs = prenomActeurs;
-        this.nomActeurs = nomActeurs;
-    }
-    public Jointure(int idJointure, StringProperty titreFR, StringProperty titreO, StringProperty scenario, StringProperty anneeSortie, StringProperty nationalite, StringProperty genre, StringProperty realisateurs, StringProperty acteurs, Date createdAt, int isDeleted) {
+    private Object StringProperty;
+
+    public Jointure(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs, Date createdAt, int isDeleted) {
         this.idJointure = idJointure;
-        this.titreFR = titreFR;
-        this.titreO = titreO;
-        this.scenario = scenario;
-        this.anneeSortie = anneeSortie;
-        this.nationalite = nationalite;
-        this.genre = genre;
-        this.realisateurs = realisateurs;
-        this.acteurs = acteurs;
+        this.titreFR = new SimpleStringProperty(titreFR);
+        this.titreO = new SimpleStringProperty(titreO);
+        this.scenario = new SimpleStringProperty(scenario);
+        this.anneeSortie =new SimpleStringProperty(anneeSortie);
+        this.nationalite =new SimpleStringProperty(nationalite);
+        this.genre = new SimpleStringProperty(genre);
+        this.realisateurs = new SimpleStringProperty(realisateurs);
+        this.acteurs = new SimpleStringProperty(acteurs);
         this.createdAt = new Timestamp(createdAt.getTime());
         this.isDeleted = isDeleted;
-
     }
 
-    private Object StringProperty;
+
 
     public Jointure() {
         this(null, null, null, null, null, null, null, null);
@@ -76,7 +63,6 @@ public class Jointure {
         this.genre = new SimpleStringProperty(genre);
         this.realisateurs = new SimpleStringProperty(realisateurs);
         this.acteurs = new SimpleStringProperty(acteurs);
-
     }
 
     public int getIdJointure() {

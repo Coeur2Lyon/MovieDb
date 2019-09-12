@@ -21,10 +21,10 @@ public class FilmDAO extends Dao<Film> {
 
     public void create(Film film) {
 
-        String sqlInsert = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + film.getTitreFR() + "','" + film.getTitreO() + "','" + film.getScenario() + "', '" + film.getAnneeSortie() + "','" + film.getNationalite() + "')";
+        String insertRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + film.getTitreFR() + "','" + film.getTitreO() + "','" + film.getScenario() + "', '" + film.getAnneeSortie() + "','" + film.getNationalite() + "')";
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsert);
+            statement.executeUpdate(insertRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -32,10 +32,10 @@ public class FilmDAO extends Dao<Film> {
     }
 
     public void delete(Film film) {
-        String sqlUpdate = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + film.getIdFilm() + "";
+        String updateRequest = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + film.getIdFilm() + "";
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlUpdate);
+            statement.executeUpdate(updateRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,10 +44,11 @@ public class FilmDAO extends Dao<Film> {
 
     public void update(Film film) {
         int anneeSortie = Integer.parseInt(film.getAnneeSortie());
-        String sqlUpdate = "UPDATE FILM SET TitreFr='" + film.getTitreFR() + "', TitreO='" + film.getTitreO() + "', Scenario='" + film.getScenario() + "', AnneeSortie='" + anneeSortie + "', NationaliteF='" + film.getNationalite() + "' WHERE IdFilm=" + film.getIdFilm() + "";
+        String updateRequest = "UPDATE FILM SET TitreFr='" + film.getTitreFR() + "', TitreO='" + film.getTitreO() + "', Scenario='" + film.getScenario() + "', AnneeSortie='" + anneeSortie + "', NationaliteF='" + film.getNationalite() + "' WHERE IdFilm=" + film.getIdFilm() + "";
+
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlUpdate);
+            statement.executeUpdate(updateRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();

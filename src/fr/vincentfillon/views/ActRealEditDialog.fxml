@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="509.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.vincentfillon.views.MovieJoinEditDialogController">
+<AnchorPane prefHeight="509.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.vincentfillon.views.ActRealEditDialogController">
     <children>
         <GridPane layoutX="20.0" layoutY="28.0" prefHeight="360.0" prefWidth="570.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="10.0">
             <columnConstraints>
@@ -31,7 +31,7 @@
                 <TextField fx:id="fldNom" GridPane.columnIndex="1" />
                 <TextField fx:id="fldPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField fx:id="fldAnneNaissance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="fldAnneeNaissance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="fldNationalite" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             </children>
         </GridPane>

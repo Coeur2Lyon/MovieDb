@@ -15,10 +15,10 @@ public class UtilisateurDAO extends Dao<Utilisateur>{
 
     @Override
     public void create(Utilisateur utilisateur) {
-        String sqlInsert = "INSERT INTO moviedb.UTILISATEUR (IdRole,Username, Password, Email, Birthday) VALUES('0','" + utilisateur.getUsername() + "','" + utilisateur.getPassword() + "','" + utilisateur.getEmail() + "', '" + utilisateur.getBirthday() + "')";
+        String insertRequest = "INSERT INTO moviedb.UTILISATEUR (IdRole,Username, Password, Email, Birthday) VALUES('0','" + utilisateur.getUsername() + "','" + utilisateur.getPassword() + "','" + utilisateur.getEmail() + "', '" + utilisateur.getBirthday() + "')";
         try {
             Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsert);
+            statement.executeUpdate(insertRequest);
 
         } catch (SQLException e) {
             e.printStackTrace();

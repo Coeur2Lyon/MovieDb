@@ -111,13 +111,10 @@ public class InterfaceActeursRealisateursAdminController {
      * @param acteurRealisateur the movie or null
      */
     private void showActeurRealisateursDetails(ActeurRealisateur acteurRealisateur) {
-        System.out.println("On entre dans showActeurRealisateursDetails");
-        //System.out.println("acteurRealisateur NOM: "+acteurRealisateur.getNom());
-        //System.out.println("acteurRealisateur PRENOM:"+acteurRealisateur.getPrenom());
+
         if (acteurRealisateur != null) {
-            System.out.println("On replie les LABELL dans showActeurRealisateursDetails");
-            // Fill the labels with info from the movie object.
-            lblPrenom.setText(acteurRealisateur.getNom());
+           // Fill the labels with info from the movie object.
+            lblPrenom.setText(acteurRealisateur.getPrenom());
             lblNom.setText(acteurRealisateur.getNom());
             lblAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
             lblNationalite.setText(acteurRealisateur.getNationalite());
@@ -128,9 +125,7 @@ public class InterfaceActeursRealisateursAdminController {
             lblPrenom.setText("");
             lblNom.setText("");
             lblAnneeNaissance.setText("");
-            lblNationalite.setText("");
-
-        }
+            lblNationalite.setText("");}
     }
 
 
@@ -143,9 +138,7 @@ public class InterfaceActeursRealisateursAdminController {
         Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
         ActeurRealisateur tempActeurRealisateur=new ActeurRealisateur();
 
-
         boolean okClicked = Main.showActeurRealisateurEditDialog(tempActeurRealisateur);
-
 
         if (okClicked) {
             getActeurRealisateursData().add(tempActeurRealisateur);
@@ -174,7 +167,7 @@ public class InterfaceActeursRealisateursAdminController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Suppression de film");
-            alert.setHeaderText("Êtes-vous sûr de vouloir supprimer le film sélectionné? ");
+            alert.setHeaderText("Êtes-vous sûr de vouloir supprimer le film sélectionné?");
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get() == ButtonType.OK) {
                 acteurRealisateurDAO.delete(selectedActeurRealisateur);
@@ -193,6 +186,7 @@ public class InterfaceActeursRealisateursAdminController {
 
 
     public void editActeurRealisateur(ActionEvent actionEvent) {
+
         ActeurRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
         Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
         if (selectedActeurRealisateur != null) {

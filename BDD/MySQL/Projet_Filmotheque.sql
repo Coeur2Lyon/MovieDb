@@ -38,7 +38,7 @@ create table ACTEUR_REALISATEUR
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdActeurRealisateur)
-);
+)ENGINE=InnoDB CHARACTER SET=utf8mb4;
 
 /*==============================================================*/
 /* Table : CORRESPOND                                           */
@@ -75,7 +75,7 @@ create table FILM
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdFilm)
-);
+)ENGINE=InnoDB CHARACTER SET=utf8mb4;
 
 /*==============================================================*/
 /* Table : GENRE                                                */
@@ -131,7 +131,7 @@ create table UTILISATEUR
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdUser)
-);
+)ENGINE=InnoDB CHARACTER SET=utf8mb4;
 
 alter table FILM convert to character set UTF8MB4;
 alter table UTILISATEUR convert to character set UTF8MB4;
