@@ -11,7 +11,7 @@ docker build -t vincent/mysql .
 
 # 4)Créer un conteneur pour cette image:
 
-docker run --name moviedb -p3306:3306 -d vincent/mysql
+docker run --name moviedb -p3306:3306 -d vincent/mysql -character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 
 # 5)si le conteneur se crée mais ne démarre pas, démarrez-le:
