@@ -30,10 +30,10 @@ drop table if exists UTILISATEUR;
 create table ACTEUR_REALISATEUR
 (
   IdActeurRealisateur int not null auto_increment,
-  Nom                 varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
-  Prenom              varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Nom                 varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  Prenom              varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
   AnneeNaissance      int,
-  NationaliteAR varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  NationaliteAR varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdActeurRealisateur)
@@ -66,11 +66,11 @@ create table EVALUE
 create table FILM
 (
   IdFilm      int not null auto_increment,
-  TitreFr     varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
-  TitreO      varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
-  Scenario    text charset utf8mb4 COLLATE utf8_unicode_ci,
+  TitreFr     varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  TitreO      varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  Scenario    text charset utf8mb4 COLLATE utf8mb4_unicode_ci,
   AnneeSortie int,
-  NationaliteF varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
+  NationaliteF varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdFilm)
@@ -123,9 +123,9 @@ create table UTILISATEUR
 (
   IdUser   int not null auto_increment,
   IdRole   int not null,
-  Username varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
-  Password varchar(50) charset utf8mb4 COLLATE utf8_unicode_ci,
-  Email    varchar(150) charset utf8mb4 COLLATE utf8_unicode_ci,
+  Username varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  Password varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  Email    varchar(150) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
   Birthday date,
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
@@ -275,7 +275,3 @@ VALUES (8, 1),
        (3, 4),
        (3, 5),
        (4, 5);
-
-
-
-
