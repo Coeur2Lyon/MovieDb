@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="moviedb@localhost" uuid="515931cc-a30d-4bd8-9277-9cb6260483d3">
+    <data-source name="moviedb@localhost" uuid="1b2d91cf-c74e-45e6-a3b2-8a30f2c3a371">
       <database-info product="MySQL" version="8.0.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )" family="MYSQL" exact-version="8.0.17">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:@</introspection-schemas>
+      <introspection-schemas>*:@,information_schema,moviedb,mysql,performance_schema,sys</introspection-schemas>
     </data-source>
   </component>
 </project>

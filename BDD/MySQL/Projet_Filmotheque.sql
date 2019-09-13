@@ -22,7 +22,6 @@ drop table if exists ROLE;
 
 drop table if exists UTILISATEUR;
 
-ALTER DATABASE moviedb charset=utf8;
 
 
 /*==============================================================*/
@@ -38,7 +37,7 @@ create table ACTEUR_REALISATEUR
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdActeurRealisateur)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
+);
 
 /*==============================================================*/
 /* Table : CORRESPOND                                           */
@@ -75,7 +74,7 @@ create table FILM
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdFilm)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
+);
 
 /*==============================================================*/
 /* Table : GENRE                                                */
@@ -131,11 +130,9 @@ create table UTILISATEUR
   CreatedAt   timestamp default current_timestamp,
   IsDeleted tinyint(1) default 0,
   primary key (IdUser)
-)ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE utf8_unicode_ci;
+);
 
-alter table FILM convert to character set UTF8MB4;
-alter table UTILISATEUR convert to character set UTF8MB4;
-alter table ACTEUR_REALISATEUR convert to character set UTF8MB4;
+
 
 alter table CORRESPOND
   add constraint FK_CORRESPOND foreign key (IdGenre)
