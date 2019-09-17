@@ -1,8 +1,8 @@
 package fr.vincentfillon;
 
 import fr.vincentfillon.model.ActeurRealisateur;
-import fr.vincentfillon.model.Film;
 import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.ListeCheckBox;
 import fr.vincentfillon.views.ActRealEditDialogController;
 import fr.vincentfillon.views.MovieJoinEditDialogController;
 import javafx.application.Application;
@@ -20,11 +20,10 @@ public class Main extends Application {
     private static Stage primaryStage;
 
 
-
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-       // this.primaryStage.setTitle("AddressApp");
+        // this.primaryStage.setTitle("AddressApp");
         initInterfacePrncipale();
     }
 
@@ -34,14 +33,13 @@ public class Main extends Application {
             primaryStage.setTitle("MovieDB: Connexion");
             primaryStage.setScene(new Scene(root, 600, 600));
             primaryStage.show();
-        }
-        catch( IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
-    public static boolean showMovieJoinEditDialog(Jointure jointure) {
+    public static boolean showMovieJoinEditDialog(Jointure jointure, ListeCheckBox listeCheckBox) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -60,6 +58,13 @@ public class Main extends Application {
             MovieJoinEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMovie(jointure);
+
+            //set the Checkbox into the controller
+
+            controller.setListCheckBox(listeCheckBox);
+            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: showMovieJoinEditDialog()"+listeCheckBox.isCboxThriller());
+            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: showMovieJoinEditDialog())"+listeCheckBox.isCboxPolicier());
+
 
             // Set the dialog icon.
             //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
@@ -106,6 +111,7 @@ public class Main extends Application {
             return false;
         }
     }
+
     //TODO:Effacer ublic static boolean showMovieEditDialog_SAUVEGARDE(Film film) quand ça marchera.
     //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
    /* public static boolean showMovieEditDialog_SAUVEGARDE(Film film) {

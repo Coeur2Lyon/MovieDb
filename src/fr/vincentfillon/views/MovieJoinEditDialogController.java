@@ -1,17 +1,20 @@
 package fr.vincentfillon.views;
 
-//public class MovieEditDialogController {
 
+import fr.vincentfillon.model.Correspond;
 import fr.vincentfillon.model.Genre;
 import fr.vincentfillon.model.Jointure;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import fr.vincentfillon.model.ListeCheckBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 //import ch.makery.address.util.DateUtil;
 
 /**
@@ -31,12 +34,76 @@ public class MovieJoinEditDialogController {
     private TextField fldAnneeSortie;
     @FXML
     private TextField fldNationalite;
+    @FXML
+    private CheckBox cboxPolicier;
+    @FXML
+    private CheckBox cboxThriller;
+    @FXML
+    private CheckBox cboxFantastqiqueSF;
+    @FXML
+    private CheckBox cboxDrame;
+    @FXML
+    private CheckBox cboxBiopic;
+    @FXML
+    private CheckBox cboxAction;
+    @FXML
+    private CheckBox cboxHorreur;
+    @FXML
+    private CheckBox cboxComedie;
+    @FXML
+    private CheckBox cboxWestern;
+    @FXML
+    private CheckBox cboxAventure;
 
-    private ObservableList<Genre> listeGenre = FXCollections.observableArrayList();
+    public CheckBox getCboxPolicier() {
+        return cboxPolicier;
+    }
+
+    public CheckBox getCboxThriller() {
+        return cboxThriller;
+    }
+
+    public CheckBox getCboxFantastqiqueSF() {
+        return cboxFantastqiqueSF;
+    }
+
+    public CheckBox getCboxDrame() {
+        return cboxDrame;
+    }
+
+    public CheckBox getCboxBiopic() {
+        return cboxBiopic;
+    }
+
+    public CheckBox getCboxAction() {
+        return cboxAction;
+    }
+
+    public CheckBox getCboxHorreur() {
+        return cboxHorreur;
+    }
+
+    public CheckBox getCboxComedie() {
+        return cboxComedie;
+    }
+
+    public CheckBox getCboxWestern() {
+        return cboxWestern;
+    }
+
+    public CheckBox getCboxAventure() {
+        return cboxAventure;
+    }
+
 
     private Stage dialogStage;
+    private ListeCheckBox listeCheckBox;
     private Jointure jointure;
+    private Correspond correspond;
+    private Genre genre;
+
     private boolean okClicked = false;
+    ArrayList<Integer> listeGenre = new ArrayList<>();
 
     /**
      * Initializes the controller class. This method is automatically called
@@ -71,6 +138,23 @@ public class MovieJoinEditDialogController {
         fldScenario.setText(jointure.getScenario());
         fldAnneeSortie.setText(jointure.getAnneeSortie());
         fldNationalite.setText(jointure.getNationalite());
+    }
+    public void setListCheckBox(ListeCheckBox listeCheckBox){
+        this.listeCheckBox=listeCheckBox;
+
+        cboxPolicier.setSelected(cboxPolicier.isSelected());
+        cboxAventure.setSelected(cboxAventure.isSelected());
+        cboxComedie.setSelected(cboxComedie.isSelected());
+        cboxHorreur.setSelected(cboxHorreur.isSelected());
+        cboxBiopic.setSelected(cboxBiopic.isSelected());
+        cboxDrame.setSelected(cboxDrame.isSelected());
+        cboxFantastqiqueSF.setSelected(cboxFantastqiqueSF.isSelected());
+        cboxThriller.setSelected(cboxThriller.isSelected());
+        cboxWestern.setSelected(cboxWestern.isSelected());
+        cboxAction.setSelected(cboxAction.isSelected());
+
+        System.out.println("listeCheckBox.isCboxThriller() dans la méthode: setListCheckBox()"+listeCheckBox.isCboxThriller());
+        System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: setLisCheckBox())"+listeCheckBox.isCboxPolicier());
 
     }
 
@@ -86,8 +170,9 @@ public class MovieJoinEditDialogController {
     /**
      * Called when the user clicks ok.
      */
+    //CheckBox cboxAventure, CheckBox cboxWestern, CheckBox cboxComedie, CheckBox cboxHorreur, CheckBox cboxAction, CheckBox cboxBiopic, CheckBox cboxDrame, CheckBox cboxFantastqiqueSF, CheckBox cboxThriller, CheckBox cboxPolicier
     @FXML
-    private void handleOk() {
+    private void handleOk()  {
         if (isInputValid()) {
             jointure.setTitreFR(fldTitreVF.getText());
             jointure.setTitreO(fldTitreVO.getText());
@@ -95,11 +180,24 @@ public class MovieJoinEditDialogController {
             jointure.setAnneeSortie(fldAnneeSortie.getText());
             jointure.setNationalite(fldNationalite.getText());
 
+            listeCheckBox.setCboxAction(cboxAction.isSelected());
+            listeCheckBox.setCboxAventure(cboxAventure.isSelected());
+            listeCheckBox.setCboxBiopic(cboxBiopic.isSelected());
+            listeCheckBox.setCboxComedie(cboxComedie.isSelected());
+            listeCheckBox.setCboxDrame(cboxDrame.isSelected());
+            listeCheckBox.setCboxFantastqiqueSF(cboxFantastqiqueSF.isSelected());
+            listeCheckBox.setCboxHorreur(cboxHorreur.isSelected());
+            listeCheckBox.setCboxPolicier(cboxPolicier.isSelected());
+            listeCheckBox.setCboxThriller(cboxThriller.isSelected());
+            listeCheckBox.setCboxWestern(cboxWestern.isSelected());
+
+            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: handleOk()"+listeCheckBox.isCboxThriller());
+            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: handleOk())"+listeCheckBox.isCboxPolicier());
+
             okClicked = true;
             dialogStage.close();
         }
     }
-
     /**
      * Called when the user clicks cancel.
      */
@@ -113,6 +211,7 @@ public class MovieJoinEditDialogController {
      *
      * @return true if the input is valid
      */
+
     private boolean isInputValid() {
         String errorMessage = "";
 
@@ -134,6 +233,9 @@ public class MovieJoinEditDialogController {
             errorMessage += "Champs vide!\n Merci d'entrez une nationalité\n";
         }
 
+        if (cboxAction.isSelected() == false && cboxAventure.isSelected() == false && cboxBiopic.isSelected() == false && cboxDrame.isSelected() == false && cboxComedie.isSelected() == false && cboxFantastqiqueSF.isSelected() == false && cboxHorreur.isSelected() == false && cboxPolicier.isSelected() == false && cboxThriller.isSelected() == false && cboxWestern.isSelected() == false) {
+            errorMessage += "Champs vide!\n Merci de cocher au moins un genre\n";
+        }
 
         if (errorMessage.length() == 0) {
             return true;

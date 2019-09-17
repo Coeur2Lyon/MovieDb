@@ -23,19 +23,21 @@ drop table if exists ROLE;
 drop table if exists UTILISATEUR;
 
 
-
 /*==============================================================*/
 /* Table : ACTEUR_REALISATEUR                                   */
 /*==============================================================*/
 create table ACTEUR_REALISATEUR
 (
   IdActeurRealisateur int not null auto_increment,
-  Nom                 varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  Prenom              varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
+  Nom                 varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  Prenom              varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
   AnneeNaissance      int,
-  NationaliteAR varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  CreatedAt   timestamp default current_timestamp,
-  IsDeleted tinyint(1) default 0,
+  NationaliteAR       varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  CreatedAt           timestamp    default current_timestamp,
+  IsDeleted           tinyint(1)   default 0,
   primary key (IdActeurRealisateur)
 );
 
@@ -65,14 +67,18 @@ create table EVALUE
 /*==============================================================*/
 create table FILM
 (
-  IdFilm      int not null auto_increment,
-  TitreFr     varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  TitreO      varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  Scenario    text charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  AnneeSortie int,
-  NationaliteF varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  CreatedAt   timestamp default current_timestamp,
-  IsDeleted tinyint(1) default 0,
+  IdFilm       int not null auto_increment,
+  TitreFr      varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  TitreO       varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  Scenario     text charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  AnneeSortie  int,
+  NationaliteF varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  CreatedAt    timestamp    default current_timestamp,
+  IsDeleted    tinyint(1)   default 0,
   primary key (IdFilm)
 );
 
@@ -121,17 +127,19 @@ create table ROLE
 /*==============================================================*/
 create table UTILISATEUR
 (
-  IdUser   int not null auto_increment,
-  IdRole   int not null,
-  Username varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  Password varchar(50) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  Email    varchar(150) charset utf8mb4 COLLATE utf8mb4_unicode_ci,
-  Birthday date,
-  CreatedAt   timestamp default current_timestamp,
-  IsDeleted tinyint(1) default 0,
+  IdUser    int not null auto_increment,
+  IdRole    int not null,
+  Username  varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  Password  varchar(50) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  Email     varchar(150) charset utf8mb4
+  COLLATE utf8mb4_unicode_ci,
+  Birthday  date,
+  CreatedAt timestamp    default current_timestamp,
+  IsDeleted tinyint(1)   default 0,
   primary key (IdUser)
 );
-
 
 
 alter table CORRESPOND
@@ -203,37 +211,48 @@ VALUES (1, 'JackAdmin', 'password', 'jackadmin@gmail.com', '1980-05-24'),
        (2, 'PolUtilisateur', 'password', 'polutilisateur@hotmail.com', '1996-09-30');
 
 
-INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance,NationaliteAR)
-VALUES ('EastWood', 'Clint', 1930,'US'),
-       ('Fincher', 'David', 1962,'US'),
-       ('Melville', 'Jean-Pierre', 1917,'FR'),
-       ('Chabrol', 'Claude', 1930,'FR'),
-       ('Belmondo', 'Jean-Paul', 1933,'FR'),
-       ('Godard', 'Jean-Luc', 1930,'FR'),
-       ('Norton', 'Edward', 1969,'US'),
-       ('Pitt', 'Brad', 1963, 'US');
+INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR)
+VALUES ('EASTWOOD', 'Clint', 1930, 'US'),
+       ('FINSHER', 'David', 1962, 'US'),
+       ('MELVILLE', 'Jean-Pierre', 1917, 'FR'),
+       ('CHABROL', 'Claude', 1930, 'FR'),
+       ('BELMONDO', 'Jean-Paul', 1933, 'FR'),
+       ('GODARD', 'Jean-Luc', 1930, 'FR'),
+       ('NORTON', 'Edward', 1969, 'US'),
+       ('PITT', 'Brad', 1963, 'US'),
+       ('VILLERET', 'Jacques', 1951, 'FR');
 
-INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF)
+INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR,IsDeleted)
+VALUES('','',2019,'-',10);
+
+
+
+INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie, NationaliteF)
 VALUES ('Impitoyable',
         'Unforgiven',
         'Un ancien cowboy se voit proposer une mission périlleuse par un de ses anciens équipiers',
-        1992,'US'),
+        1992,
+        'US'),
        ('Fight Club',
         'Fight Club',
         'Le film démarre sur le plan du personnage principal (Edward Norton) à qui on a enfoncé un pistolet dans la bouche et dont on entend la voix en monologue qui se remémore comment il en est arrivé là.',
-        1999,'US'),
+        1999,
+        'US'),
        ('Aîné des Ferchaux(l\')',
         'Aîné des Ferchaux(l\')',
         'Contraint de renoncer à une carrière de boxeur qu''il avait un temps envisagée, un jeune homme, Michel, se fait engager comme secrétaire et garde du corps d''un vieux banquier, Dieudonné Ferchaux, contraint de quitter précipitamment la France pour fuir la justice. À New York puis à La Nouvelle-Orléans, les deux hommes apprendront à mieux se connaître tout en jouant au chat et à la souris.',
-        1963,'FR'),
+        1963,
+        'FR'),
        ('A bout de souffle',
         'A bout de souffle',
         'Michel Poiccard, jeune voyou insolent, vole une voiture à Marseille pour se rendre à Paris. En route, il tue un gendarme motocycliste qui voulait le verbaliser ',
-        1960,'FR'),
+        1960,
+        'FR'),
        ('Landru',
         'Landru',
         'Ce film retrace la vie du tueur en série Henri Désiré Landru. Pendant la Première Guerre mondiale, il séduisait des femmes seules et riches. Ayant réussi à leur faire signer une procuration, il les assassinait dans sa maison de campagne puis faisait disparaître leurs corps en les brûlant dans un fourneau.',
-        1963,'FR');
+        1963,
+        'FR');
 
 INSERT INTO GENRE (IdGenre, Genre)
 VALUES (0, 'Policier'),
@@ -252,8 +271,8 @@ VALUES (1, 1),
        (3, 5),
        (5, 3),
        (5, 4),
-       (7,2),
-       (8,2);
+       (7, 2),
+       (8, 2);
 
 INSERT INTO REALISE (IdActeurRealisateur, IdFilm)
 VALUES (1, 1),

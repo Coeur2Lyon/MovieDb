@@ -1,56 +1,13 @@
 package fr.vincentfillon.model;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
-public class Genre {
-
-    private int idGenre = 0;
-    private StringProperty genre;
+public class ListeCheckBox {
 
     private boolean cboxPolicier;
     private boolean cboxThriller;
     private boolean cboxFantastqiqueSF;
-    private boolean cboxDrame;
-    private boolean cboxBiopic;
-    private boolean cboxAction;
-    private boolean cboxHorreur;
-    private boolean cboxComedie;
-    private boolean cboxWestern;
-    private boolean cboxAventure;
 
+    public ListeCheckBox() {
 
-    public Genre(int idGenre, String genre) {
-        this.idGenre = idGenre;
-        this.genre = new SimpleStringProperty(genre);
-    }
-
-    public Genre() {
-        this(null);
-    }
-
-    public Genre(String genre) {
-        this.genre = new SimpleStringProperty(genre);
-    }
-
-    public int getIdGenre() {
-        return idGenre;
-    }
-
-    public void setIdGenre(int idGenre) {
-        this.idGenre = idGenre;
-    }
-
-    public String getGenre() {
-        return genre.get();
-    }
-
-    public StringProperty genreProperty() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre.set(genre);
     }
 
     public boolean isCboxPolicier() {
@@ -133,4 +90,24 @@ public class Genre {
         this.cboxAventure = cboxAventure;
     }
 
+    private boolean cboxDrame;
+    private boolean cboxBiopic;
+    private boolean cboxAction;
+    private boolean cboxHorreur;
+    private boolean cboxComedie;
+    private boolean cboxWestern;
+    private boolean cboxAventure;
+
+    public ListeCheckBox(boolean cboxPolicier, boolean cboxThriller, boolean cboxFantastqiqueSF, boolean cboxDrame, boolean cboxBiopic, boolean cboxAction, boolean cboxHorreur, boolean cboxComedie, boolean cboxWestern, boolean cboxAventure) {
+        this.cboxPolicier = cboxPolicier;
+        this.cboxThriller = cboxThriller;
+        this.cboxFantastqiqueSF = cboxFantastqiqueSF;
+        this.cboxDrame = cboxDrame;
+        this.cboxBiopic = cboxBiopic;
+        this.cboxAction = cboxAction;
+        this.cboxHorreur = cboxHorreur;
+        this.cboxComedie = cboxComedie;
+        this.cboxWestern = cboxWestern;
+        this.cboxAventure = cboxAventure;
+    }
 }

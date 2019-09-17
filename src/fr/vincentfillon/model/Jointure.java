@@ -39,8 +39,8 @@ public class Jointure {
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
-        this.anneeSortie =new SimpleStringProperty(anneeSortie);
-        this.nationalite =new SimpleStringProperty(nationalite);
+        this.anneeSortie = new SimpleStringProperty(anneeSortie);
+        this.nationalite = new SimpleStringProperty(nationalite);
         this.genre = new SimpleStringProperty(genre);
         this.realisateurs = new SimpleStringProperty(realisateurs);
         this.acteurs = new SimpleStringProperty(acteurs);
@@ -49,12 +49,26 @@ public class Jointure {
     }
 
 
-
     public Jointure() {
-        this(null, null, null, null, null, null, null, null);
+        this(0,null, null, null, null, null, null, null, null);
     }
 
     public Jointure(String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
+        this.titreFR = new SimpleStringProperty(titreFR);
+        this.titreO = new SimpleStringProperty(titreO);
+        this.scenario = new SimpleStringProperty(scenario);
+        this.anneeSortie = new SimpleStringProperty(anneeSortie);
+        this.nationalite = new SimpleStringProperty(nationalite);
+        this.genre = new SimpleStringProperty(genre);
+        this.realisateurs = new SimpleStringProperty(realisateurs);
+        this.acteurs = new SimpleStringProperty(acteurs);
+    }
+
+
+
+
+    public Jointure(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
+        this.idJointure=idJointure;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
@@ -168,6 +182,7 @@ public class Jointure {
     public void setActeurs(String acteurs) {
         this.acteurs.set(acteurs);
     }
+
     public int getIsDeleted() {
         return isDeleted;
     }
@@ -175,6 +190,7 @@ public class Jointure {
     public void setIsDeleted(int isDeleted) {
         this.isDeleted = isDeleted;
     }
+
     public Timestamp getCreatedAt() {
         return createdAt;
     }
@@ -230,6 +246,5 @@ public class Jointure {
     public void setNomActeurs(String nomActeurs) {
         this.nomActeurs.set(nomActeurs);
     }
-
 
 }

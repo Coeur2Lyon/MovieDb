@@ -26,21 +26,18 @@ public class JointureDAO extends Dao<Jointure> {
         String nationalite = jointure.getNationalite();
 
 
-        String sqlInsertRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + titreF + "','" + titreO + "','" + scenario + "', '" + anneeSortie + "','" + nationalite + "')";
+        String sqlInsertFilmRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + titreF + "','" + titreO + "','" + scenario + "', '" + anneeSortie + "','" + nationalite + "')";
 
-        String sqlInsertGenreCORRESPOND = "INSERT INTO moviedb.CORRESPOND(IdGenre, IdFilm) VALUES (10," + jointure.getIdJointure() + ")";
+        //A la création, n assiqgne systématiquement l'acteur/Réalisateur d'id 10 qui correspond à un acteur vide.
         String sqLInsertRealisateurREALISE = "INSERT INTO moviedb.REALISE(IdActeurRealisateur, IdFilm) VALUES (10," + jointure.getIdJointure() + ")";
         String sqlInsertActeursJOUE = "INSERT INTO moviedb.JOUE(IdActeurRealisateur, IdFilm) VALUES (10," + jointure.getIdJointure() + ")";
 
         try {
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsertRequest);
-            statement.executeUpdate(sqlInsertGenreCORRESPOND);
-            statement.executeUpdate(sqLInsertRealisateurREALISE);
-            statement.executeUpdate(sqlInsertActeursJOUE);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            Statement statement = this.connect.createStatement();
+            statement.executeUpdate(sqlInsertFilmRequest);
+        } catch (Exception e) {
+
         }
 
     }
@@ -60,7 +57,7 @@ public class JointureDAO extends Dao<Jointure> {
         int idJointure;
         idJointure = jointure.getIdJointure();
 
-        // String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointure.getTitreFR() + "', TitreO='" + jointure.getTitreO() + "', Scenario='" + jointure.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointure.getNationalite() + "' WHERE idJointure=" + jointure.getIdJointure() + ";";
+        //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointure.getTitreFR() + "', TitreO='" + jointure.getTitreO() + "', Scenario='" + jointure.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointure.getNationalite() + "' WHERE idJointure=" + jointure.getIdJointure() + ";";
         //String updateRequest="UPDATE moviedb.FILM SET TitreFr='tEST MODIF', TitreO='TEST TEST', Scenario='TEST', AnneeSortie=1963, NationaliteF='FR' WHERE idJointure=3";
 
         String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie=1963, NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
@@ -108,8 +105,6 @@ public class JointureDAO extends Dao<Jointure> {
 
 
             if (resultFilm.first() && resultGenre.first() && resultRealisateur.first() && resultActeurs.first()) {
-
-
                 String titreFR = resultFilm.getString(2);
                 String titreO = resultFilm.getString(3);
                 String scenario = resultFilm.getString(4);
@@ -190,28 +185,15 @@ public class JointureDAO extends Dao<Jointure> {
 
     public ObservableList findAll() {
         ObservableList<Jointure> listeFilms = FXCollections.observableArrayList();
-        Jointure jointure;
 
-        String sqlAllRequest = "SELECT * FROM FILM";
-
-        int tailleListe;
-        try {
-            ResultSet resultRequete = this.connect.createStatement(
-                    ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery(sqlAllRequest);
-
-            resultRequete.last();
-            tailleListe = resultRequete.getRow();
-            resultRequete.first();
-            for (int i = 1; i <= tailleListe; i++) {
-                jointure = find(i);
-                if (jointure.getIsDeleted() == 0) {
-                    listeFilms.add(jointure);}
+        int i = 1;
+        Jointure jointure = find(i);
+        while (jointure.getTitreFR() != null) {
+            if (jointure.getIsDeleted() == 0) {
+                listeFilms.add(jointure);
             }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+            i++;
+            jointure = find(i);
         }
         return listeFilms;
     }
