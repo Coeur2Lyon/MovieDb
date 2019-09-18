@@ -37,11 +37,17 @@ public abstract class Dao<T> {
     public abstract void update(T obj);
 
     /**
-     * Méthode de recherche des informations
+     * Méthode de recherche d'un film en donction de son id
      * @param id
      * @return T
      */
     public abstract T find(int id);
 
     public abstract ObservableList findAll();
+
+
+    public abstract int findIdfromTitre(String titre);
+
+    public abstract int findIdMax();
+
 }

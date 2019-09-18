@@ -10,7 +10,6 @@ public class Correspond {
     int idFilm=0;
     int idGenre=0;
 
-    ArrayList<Integer> listeIntGenres=new ArrayList<>();
 
     public Correspond() {
     }

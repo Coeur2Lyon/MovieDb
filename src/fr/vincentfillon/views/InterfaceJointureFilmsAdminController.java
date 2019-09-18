@@ -51,7 +51,7 @@ public class InterfaceJointureFilmsAdminController {
     @FXML
     private ObservableList<Jointure> movieJoinData = FXCollections.observableArrayList();
 
-    private ObservableList<ListeCheckBox> listeCheckboxData= FXCollections.observableArrayList();
+    private ObservableList<ListeCheckBox> listeCheckboxData = FXCollections.observableArrayList();
 
 
     /* The constructor is called before the initialize() method.
@@ -74,9 +74,11 @@ public class InterfaceJointureFilmsAdminController {
     public ObservableList<Jointure> getMovieJoinData() {
         return movieJoinData;
     }
-    public ObservableList<ListeCheckBox> getListeCheckBoxData(){
+
+    public ObservableList<ListeCheckBox> getListeCheckBoxData() {
         return listeCheckboxData;
     }
+
     /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
@@ -167,76 +169,82 @@ public class InterfaceJointureFilmsAdminController {
         Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
         Jointure tempJointure = new Jointure();
-        ListeCheckBox listeCheckBox=new ListeCheckBox();
-        System.out.println("listeCheckBox.isCboxThriller() dans la méthode:addNewMovie() AVANT OkClicked"+listeCheckBox.isCboxThriller());
-        System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: addNewMovie() AVANT OkClicked"+listeCheckBox.isCboxPolicier());
+        Correspond tempCorrespond = new Correspond();
+        ListeCheckBox listeCheckBox = new ListeCheckBox();
 
-        boolean okClicked = Main.showMovieJoinEditDialog(tempJointure,listeCheckBox);
+        boolean okClicked = Main.showMovieJoinEditDialog(tempJointure, listeCheckBox);
 
 
         if (okClicked) {
-            System.out.println("listeCheckBox.isCboxThriller() dans la méthode:addNewMovie()/OkClicked AVANT ADD"+listeCheckBox.isCboxThriller());
-            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: addNewMovie()/OkClicked AVANT ADD"+listeCheckBox.isCboxPolicier());
+
 
             getMovieJoinData().add(tempJointure);
             getListeCheckBoxData().add(listeCheckBox);
 
-            System.out.println("listeCheckBox.isCboxThriller() dans la méthode:addNewMovie()/OkClicked APRES ADD"+listeCheckBox.isCboxThriller());
-            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: addNewMovie()/OkClicked APRES ADD"+listeCheckBox.isCboxPolicier());
+            jointureDAO.create(tempJointure);
 
+            int idFilm=jointureDAO.findIdMax();
+            tempCorrespond.setIdFilm(idFilm);
 
+            System.out.println("L'IdFilm doît être égal au dernier Idjointure:  " + idFilm);
+            System.out.println("Le get de tempCorrespond doît être égale à Id Film:  " +tempCorrespond.getIdFilm());
 
+            //System.out.println("Id du dernier tempjointure ajouté" +tempJointure.getIdJointure());
+           // System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
 
-            //jointureDAO.create(tempJointure);
-            int idFilm = tempJointure.getIdJointure();
+            if (listeCheckBox.isCboxPolicier()) {
+                tempCorrespond.setIdGenre(0);
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxThriller()) {
+                System.out.println("idFilm dans IF:  " + idFilm);
+                System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
+                tempCorrespond.setIdGenre(1);
+                System.out.println("IdGenre du Thriller(si coché) qui doit être égal à 1:" +tempCorrespond.getIdGenre());
+                System.out.println("IdFilm doit être le dernier id:" +tempCorrespond.getIdFilm());
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxFantastqiqueSF()) {
+                tempCorrespond.setIdGenre(2);
+            }
+            if (listeCheckBox.isCboxDrame()) {
+                tempCorrespond.setIdGenre(3);
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxBiopic()) {
+                tempCorrespond.setIdGenre(4);
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxAction()) {
+                tempCorrespond.setIdGenre(5);
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxHorreur()) {
+                tempCorrespond.setIdGenre(6);
+                correspondDao.create(tempCorrespond);
+            }
+            if (listeCheckBox.isCboxComedie()) {
+                tempCorrespond.setIdGenre(7);
+                correspondDao.create(tempCorrespond);
+            }
 
-            if (listeCheckBox.isCboxPolicier()){
-                Correspond tempCorrespond = new Correspond(idFilm,0);
+            if (listeCheckBox.isCboxWestern()) {
+                tempCorrespond.setIdGenre(8);
                 correspondDao.create(tempCorrespond);
             }
-            if (listeCheckBox.isCboxThriller()){
-                Correspond tempCorrespond = new Correspond(idFilm,1);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxFantastqiqueSF()){
-                Correspond tempCorrespond = new Correspond(idFilm,2);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxDrame()){
-                Correspond tempCorrespond = new Correspond(idFilm,3);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxBiopic()){
-                Correspond tempCorrespond = new Correspond(idFilm,4);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxAction()){
-                Correspond tempCorrespond = new Correspond(idFilm,5);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxHorreur()){
-                Correspond tempCorrespond = new Correspond(idFilm,6);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxComedie()){
-                Correspond tempCorrespond = new Correspond(idFilm,7);
+            if (listeCheckBox.isCboxAventure()) {
+                tempCorrespond.setIdGenre(9);
                 correspondDao.create(tempCorrespond);
             }
 
-            if (listeCheckBox.isCboxWestern()){
-                Correspond tempCorrespond = new Correspond(idFilm,8);
-                correspondDao.create(tempCorrespond);
-            }
-            if (listeCheckBox.isCboxAventure()){
-                Correspond tempCorrespond = new Correspond(idFilm,9);
-                correspondDao.create(tempCorrespond);
-            }
+            movieJoinData.setAll(jointureDAO.findAll());
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un film");
             alert.setHeaderText("Le film a bien été ajouté");
             alert.showAndWait();
+
         }
     }
 
@@ -246,11 +254,11 @@ public class InterfaceJointureFilmsAdminController {
      */
     @FXML
     private void editMovieJoin() {
-ListeCheckBox listeCheckBox=new ListeCheckBox();
+        ListeCheckBox listeCheckBox = new ListeCheckBox();
         Jointure selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
         Dao<Jointure> jointureDao = new JointureDAO(ConnectionClass.connecte());
         if (selectedJoinMovie != null) {
-            boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie,listeCheckBox);
+            boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listeCheckBox);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
                 jointureDao.update(selectedJoinMovie);

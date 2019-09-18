@@ -29,13 +29,12 @@ public class JointureDAO extends Dao<Jointure> {
         String sqlInsertFilmRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + titreF + "','" + titreO + "','" + scenario + "', '" + anneeSortie + "','" + nationalite + "')";
 
         //A la création, n assiqgne systématiquement l'acteur/Réalisateur d'id 10 qui correspond à un acteur vide.
-        String sqLInsertRealisateurREALISE = "INSERT INTO moviedb.REALISE(IdActeurRealisateur, IdFilm) VALUES (10," + jointure.getIdJointure() + ")";
-        String sqlInsertActeursJOUE = "INSERT INTO moviedb.JOUE(IdActeurRealisateur, IdFilm) VALUES (10," + jointure.getIdJointure() + ")";
 
         try {
 
             Statement statement = this.connect.createStatement();
             statement.executeUpdate(sqlInsertFilmRequest);
+
         } catch (Exception e) {
 
         }
@@ -183,6 +182,7 @@ public class JointureDAO extends Dao<Jointure> {
         return jointure;
     }
 
+    @Override
     public ObservableList findAll() {
         ObservableList<Jointure> listeFilms = FXCollections.observableArrayList();
 
@@ -196,6 +196,33 @@ public class JointureDAO extends Dao<Jointure> {
             jointure = find(i);
         }
         return listeFilms;
+    }
+
+
+    @Override
+    public int findIdfromTitre(String titre) {
+        int id = 0;
+
+
+        return id;
+    }
+
+    @Override
+    public int findIdMax() {
+        int idMax = 0;
+        String sqlFindMax = "SELECT MAX(IdFilm) FROM FILM";
+        try {
+            ResultSet resultFilm = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery(sqlFindMax);
+
+            if (resultFilm.first()) {
+                idMax=resultFilm.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idMax;
     }
 }
 

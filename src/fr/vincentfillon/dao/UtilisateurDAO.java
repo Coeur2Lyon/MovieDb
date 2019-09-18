@@ -45,4 +45,14 @@ public class UtilisateurDAO extends Dao<Utilisateur>{
     public ObservableList findAll() {
         return null;
     }
+
+    @Override
+    public int findIdfromTitre(String titre) {
+        return 0;
+    }
+
+    @Override
+    public int findIdMax() {
+        return 0;
+    }
 }

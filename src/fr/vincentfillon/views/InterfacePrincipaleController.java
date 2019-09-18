@@ -25,13 +25,6 @@ public class InterfacePrincipaleController extends Main {
     private fr.vincentfillon.Main main;
 
 
-    //private ObservableList<Film> personData = FXCollections.observableArrayList();
-
-    //private static ObservableList<Film> movieData = FXCollections.observableArrayList();
-    /*public static ObservableList<Film> getMovieData() {
-        return movieData;
-    }*/
-
     @FXML
     public void initInterfaceFilms(ActionEvent actionEvent) throws IOException {
 
@@ -49,8 +42,6 @@ public class InterfacePrincipaleController extends Main {
             newWindow.initModality(Modality.APPLICATION_MODAL);
 
             newWindow.show();
-
-
 
         } catch (IOException e) {
             e.printStackTrace();

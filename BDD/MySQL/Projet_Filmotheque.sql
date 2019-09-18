@@ -46,7 +46,7 @@ create table ACTEUR_REALISATEUR
 /*==============================================================*/
 create table CORRESPOND
 (
-  IdGenre numeric(8, 0) not null,
+  IdGenre int not null,
   IdFilm  int           not null,
   primary key (IdGenre, IdFilm)
 );
@@ -87,7 +87,7 @@ create table FILM
 /*==============================================================*/
 create table GENRE
 (
-  IdGenre numeric(8, 0) not null,
+  IdGenre int not null,
   Genre   varchar(50),
   primary key (IdGenre)
 );
@@ -223,8 +223,7 @@ VALUES ('EASTWOOD', 'Clint', 1930, 'US'),
        ('VILLERET', 'Jacques', 1951, 'FR');
 
 INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR,IsDeleted)
-VALUES('','',2019,'-',10);
-
+VALUES('-','-',2019,'-',1);
 
 
 INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie, NationaliteF)

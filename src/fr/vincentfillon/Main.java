@@ -60,11 +60,7 @@ public class Main extends Application {
             controller.setMovie(jointure);
 
             //set the Checkbox into the controller
-
             controller.setListCheckBox(listeCheckBox);
-            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: showMovieJoinEditDialog()"+listeCheckBox.isCboxThriller());
-            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: showMovieJoinEditDialog())"+listeCheckBox.isCboxPolicier());
-
 
             // Set the dialog icon.
             //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
@@ -112,41 +108,7 @@ public class Main extends Application {
         }
     }
 
-    //TODO:Effacer ublic static boolean showMovieEditDialog_SAUVEGARDE(Film film) quand ça marchera.
-    //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
-   /* public static boolean showMovieEditDialog_SAUVEGARDE(Film film) {
-        try {
-            // Load the fxml file and create a new stage for the popup dialog.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/MovieEditDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
 
-            // Create the dialog Stage.
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Ajout / Edition de films");
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(primaryStage);
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-
-            // Set the Movie into the controller.
-            MovieEditDialogController controller = loader.getController();
-            controller.setDialogStage(dialogStage);
-            controller.setMovie(film);
-
-            // Set the dialog icon.
-            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
-
-            // Show the dialog and wait until the user closes it
-            dialogStage.showAndWait();
-
-            return controller.isOkClicked();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-    */
     public static boolean showFiltreDialog() {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
