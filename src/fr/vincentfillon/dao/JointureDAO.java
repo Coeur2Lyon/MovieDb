@@ -43,6 +43,14 @@ public class JointureDAO extends Dao<Jointure> {
 
     @Override
     public void delete(Jointure jointure) {
+        String updateRequest = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + jointure.getIdJointure() + "";
+        try {
+            Statement statement = this.connect.createStatement();
+            statement.executeUpdate(updateRequest);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
