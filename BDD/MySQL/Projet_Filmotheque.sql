@@ -145,55 +145,55 @@ create table UTILISATEUR
 alter table CORRESPOND
   add constraint FK_CORRESPOND foreign key (IdGenre)
 references GENRE (IdGenre)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table CORRESPOND
   add constraint FK_CORRESPOND2 foreign key (IdFilm)
 references FILM (IdFilm)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table EVALUE
   add constraint FK_EVALUE foreign key (IdFilm)
 references FILM (IdFilm)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table EVALUE
   add constraint FK_EVALUE2 foreign key (IdUser)
 references UTILISATEUR (IdUser)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table JOUE
   add constraint FK_JOUE foreign key (IdActeurRealisateur)
 references ACTEUR_REALISATEUR (IdActeurRealisateur)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table JOUE
   add constraint FK_JOUE2 foreign key (IdFilm)
 references FILM (IdFilm)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table REALISE
   add constraint FK_REALISE foreign key (IdActeurRealisateur)
 references ACTEUR_REALISATEUR (IdActeurRealisateur)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table REALISE
   add constraint FK_REALISE2 foreign key (IdFilm)
 references FILM (IdFilm)
-  on delete restrict
+  on delete cascade
   on update restrict;
 
 alter table UTILISATEUR
   add constraint FK_ENDOSSSE foreign key (IdRole)
 references ROLE (IdRole)
-  on delete restrict
+  on delete cascade 
   on update restrict;
 
 
