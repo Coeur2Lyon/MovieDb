@@ -8,7 +8,6 @@ import fr.vincentfillon.model.ListeCheckBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -139,22 +138,42 @@ public class MovieJoinEditDialogController {
         fldAnneeSortie.setText(jointure.getAnneeSortie());
         fldNationalite.setText(jointure.getNationalite());
     }
-    public void setListCheckBox(ListeCheckBox listeCheckBox){
-        this.listeCheckBox=listeCheckBox;
 
-        cboxPolicier.setSelected(cboxPolicier.isSelected());
-        cboxAventure.setSelected(cboxAventure.isSelected());
-        cboxComedie.setSelected(cboxComedie.isSelected());
-        cboxHorreur.setSelected(cboxHorreur.isSelected());
-        cboxBiopic.setSelected(cboxBiopic.isSelected());
-        cboxDrame.setSelected(cboxDrame.isSelected());
-        cboxFantastqiqueSF.setSelected(cboxFantastqiqueSF.isSelected());
-        cboxThriller.setSelected(cboxThriller.isSelected());
-        cboxWestern.setSelected(cboxWestern.isSelected());
-        cboxAction.setSelected(cboxAction.isSelected());
+    public void setListCheckBox(ListeCheckBox listeCheckBox) {
+        this.listeCheckBox = listeCheckBox;
 
-        System.out.println("listeCheckBox.isCboxThriller() dans la méthode: setListCheckBox()"+listeCheckBox.isCboxThriller());
-        System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: setLisCheckBox())"+listeCheckBox.isCboxPolicier());
+        if (listeCheckBox.isCboxPolicier()) {
+            cboxPolicier.setSelected(true);
+        }
+        if (listeCheckBox.isCboxAventure()) {
+            cboxAventure.setSelected(true);
+        }
+        if (listeCheckBox.isCboxComedie()) {
+            cboxComedie.setSelected(true);
+        }
+        if (listeCheckBox.isCboxHorreur()) {
+            cboxHorreur.setSelected(true);
+        }
+        if (listeCheckBox.isCboxBiopic()) {
+            cboxBiopic.setSelected(true);
+        }
+        if (listeCheckBox.isCboxDrame()) {
+            cboxDrame.setSelected(true);
+        }
+        if (listeCheckBox.isCboxFantastqiqueSF()) {
+            cboxFantastqiqueSF.setSelected(true);
+        }
+        if (listeCheckBox.isCboxThriller()) {
+            cboxThriller.setSelected(true);
+        }
+        if (listeCheckBox.isCboxWestern()) {
+            cboxWestern.setSelected(true);
+        }
+        if (listeCheckBox.isCboxAction()) {
+            cboxAction.setSelected(true);
+        }
+        System.out.println("listeCheckBox.isCboxDrame() dans la méthode: setListCheckBox()" + listeCheckBox.isCboxDrame());
+        System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: setLisCheckBox())" + listeCheckBox.isCboxPolicier());
 
     }
 
@@ -172,7 +191,7 @@ public class MovieJoinEditDialogController {
      */
     //CheckBox cboxAventure, CheckBox cboxWestern, CheckBox cboxComedie, CheckBox cboxHorreur, CheckBox cboxAction, CheckBox cboxBiopic, CheckBox cboxDrame, CheckBox cboxFantastqiqueSF, CheckBox cboxThriller, CheckBox cboxPolicier
     @FXML
-    private void handleOk()  {
+    private void handleOk() {
         if (isInputValid()) {
             jointure.setTitreFR(fldTitreVF.getText());
             jointure.setTitreO(fldTitreVO.getText());
@@ -191,13 +210,14 @@ public class MovieJoinEditDialogController {
             listeCheckBox.setCboxThriller(cboxThriller.isSelected());
             listeCheckBox.setCboxWestern(cboxWestern.isSelected());
 
-            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: handleOk()"+listeCheckBox.isCboxThriller());
-            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: handleOk())"+listeCheckBox.isCboxPolicier());
+            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: handleOk()" + listeCheckBox.isCboxThriller());
+            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: handleOk())" + listeCheckBox.isCboxPolicier());
 
             okClicked = true;
             dialogStage.close();
         }
     }
+
     /**
      * Called when the user clicks cancel.
      */

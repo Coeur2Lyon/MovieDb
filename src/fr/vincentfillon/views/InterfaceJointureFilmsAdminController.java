@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class InterfaceJointureFilmsAdminController {
@@ -110,7 +111,6 @@ public class InterfaceJointureFilmsAdminController {
         movieJoinTable.setItems(getMovieJoinData());
     }
 
-
     /**
      * Fills all text fields to show details about the movie.
      * If the specified movie is null, all text fields are cleared.
@@ -176,36 +176,32 @@ public class InterfaceJointureFilmsAdminController {
 
 
         if (okClicked) {
-
-
             getMovieJoinData().add(tempJointure);
             getListeCheckBoxData().add(listeCheckBox);
 
             jointureDAO.create(tempJointure);
 
-            int idFilm=jointureDAO.findIdMax();
+            int idFilm = jointureDAO.findIdMax();
             tempCorrespond.setIdFilm(idFilm);
 
             System.out.println("L'IdFilm doît être égal au dernier Idjointure:  " + idFilm);
-            System.out.println("Le get de tempCorrespond doît être égale à Id Film:  " +tempCorrespond.getIdFilm());
+            System.out.println("Le get de tempCorrespond doît être égale à Id Film:  " + tempCorrespond.getIdFilm());
 
             //System.out.println("Id du dernier tempjointure ajouté" +tempJointure.getIdJointure());
-           // System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
+            // System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
 
             if (listeCheckBox.isCboxPolicier()) {
                 tempCorrespond.setIdGenre(0);
                 correspondDao.create(tempCorrespond);
             }
             if (listeCheckBox.isCboxThriller()) {
-                System.out.println("idFilm dans IF:  " + idFilm);
-                System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
+                ;
                 tempCorrespond.setIdGenre(1);
-                System.out.println("IdGenre du Thriller(si coché) qui doit être égal à 1:" +tempCorrespond.getIdGenre());
-                System.out.println("IdFilm doit être le dernier id:" +tempCorrespond.getIdFilm());
                 correspondDao.create(tempCorrespond);
             }
             if (listeCheckBox.isCboxFantastqiqueSF()) {
                 tempCorrespond.setIdGenre(2);
+                correspondDao.create(tempCorrespond);
             }
             if (listeCheckBox.isCboxDrame()) {
                 tempCorrespond.setIdGenre(3);
@@ -236,7 +232,7 @@ public class InterfaceJointureFilmsAdminController {
                 tempCorrespond.setIdGenre(9);
                 correspondDao.create(tempCorrespond);
             }
-
+//TODO Vérifier si cette ligne est vraiment indispensable (Tout à la fin)
             movieJoinData.setAll(jointureDAO.findAll());
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -254,23 +250,122 @@ public class InterfaceJointureFilmsAdminController {
      */
     @FXML
     private void editMovieJoin() {
-        ListeCheckBox listeCheckBox = new ListeCheckBox();
         Jointure selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
+
         Dao<Jointure> jointureDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
+
+        Correspond tempCorrespond = new Correspond();
+        int idFilm = selectedJoinMovie.getIdJointure();
+        tempCorrespond.setIdFilm(idFilm);
+        ListeCheckBox listegenreFromIdFilm = ((CorrespondDAO) correspondDao).extractListeCheckBoxFromJointure(selectedJoinMovie);
+
+        ArrayList<Integer> listIntGenre = ((CorrespondDAO) correspondDao).extractIdListFromJointure(selectedJoinMovie);
+        System.out.println("Essai en sélectionnant un DRAME doit être true si Drame: " + listegenreFromIdFilm.isCboxDrame());
+
+
         if (selectedJoinMovie != null) {
-            boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listeCheckBox);
+            boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listegenreFromIdFilm);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
                 jointureDao.update(selectedJoinMovie);
+                System.out.println("La liste doit être [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] quand tout est coché: " + listIntGenre);
+                if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
+                    System.out.println("IF : POLICIER a été Coché MAIS PAS dans la liste(DONC coché pour la première fois");
+                    tempCorrespond.setIdGenre(0);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxPolicier() && listIntGenre.contains(0)) {
+                    System.out.println("IF : POLICIER a été DECOCHé, il faut l'effacer avec les ID");
+                    tempCorrespond.setIdGenre(0);
+                    correspondDao.delete(tempCorrespond);
+                }
+
+                if (listegenreFromIdFilm.isCboxThriller() && !listIntGenre.contains(1)) {
+                    System.out.println("IF : THRILLER a été Coché MAIS PAS dans la liste(DONC coché pour la première fois");
+
+                    tempCorrespond.setIdGenre(1);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxThriller() && listIntGenre.contains(1)) {
+                    tempCorrespond.setIdGenre(1);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxFantastqiqueSF() && !listIntGenre.contains(2)) {
+                    tempCorrespond.setIdGenre(2);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxFantastqiqueSF() && listIntGenre.contains(2)) {
+                    tempCorrespond.setIdGenre(2);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxDrame() && !listIntGenre.contains(3)) {
+                    tempCorrespond.setIdGenre(3);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxDrame() && listIntGenre.contains(3)) {
+                    tempCorrespond.setIdGenre(3);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxBiopic() && !listIntGenre.contains(4)) {
+                    tempCorrespond.setIdGenre(4);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxBiopic() && listIntGenre.contains(4)) {
+                    tempCorrespond.setIdGenre(4);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxAction() && !listIntGenre.contains(5)) {
+                    tempCorrespond.setIdGenre(5);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxAction() && listIntGenre.contains(5)) {
+                    tempCorrespond.setIdGenre(5);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxHorreur() && !listIntGenre.contains(6)) {
+                    tempCorrespond.setIdGenre(6);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxHorreur() && listIntGenre.contains(6)) {
+                    tempCorrespond.setIdGenre(6);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxComedie() && !listIntGenre.contains(7)) {
+                    tempCorrespond.setIdGenre(7);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxComedie() && listIntGenre.contains(7)) {
+                    tempCorrespond.setIdGenre(7);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxWestern() && !listIntGenre.contains(8)) {
+                    tempCorrespond.setIdGenre(8);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxWestern() && listIntGenre.contains(8)) {
+                    tempCorrespond.setIdGenre(8);
+                    correspondDao.delete(tempCorrespond);
+                }
+                if (listegenreFromIdFilm.isCboxAventure() && !listIntGenre.contains(9)) {
+                    tempCorrespond.setIdGenre(9);
+                    correspondDao.create(tempCorrespond);
+                }
+                if (!listegenreFromIdFilm.isCboxAventure() && listIntGenre.contains(9)) {
+                    tempCorrespond.setIdGenre(9);
+                    correspondDao.delete(tempCorrespond);
+                }
+//TODO Vérifier si cette ligne est vraiment indispensable (Tout à la fin)
+                movieJoinData.setAll(jointureDao.findAll());
             }
 
         } else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
+            alert.setTitle("Pas de sélection");
+            alert.setHeaderText("Aucun film sélectionné");
+            alert.setContentText("Merci de sélectionner un film");
             alert.showAndWait();
         }
     }
@@ -292,6 +387,7 @@ public class InterfaceJointureFilmsAdminController {
                 jointureDAO.delete(selectedJoinMovie);
             }
             movieJoinData.remove(selectedJoinMovie);
+            int tailleListe;
         } else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);

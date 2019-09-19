@@ -59,7 +59,7 @@ public class JointureDAO extends Dao<Jointure> {
         //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointure.getTitreFR() + "', TitreO='" + jointure.getTitreO() + "', Scenario='" + jointure.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointure.getNationalite() + "' WHERE idJointure=" + jointure.getIdJointure() + ";";
         //String updateRequest="UPDATE moviedb.FILM SET TitreFr='tEST MODIF', TitreO='TEST TEST', Scenario='TEST', AnneeSortie=1963, NationaliteF='FR' WHERE idJointure=3";
 
-        String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie=1963, NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
+        String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie="+anneeSortie+", NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
 
         try {
             Statement statement = this.connect.createStatement();

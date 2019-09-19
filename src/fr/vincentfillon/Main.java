@@ -62,9 +62,6 @@ public class Main extends Application {
             //set the Checkbox into the controller
             controller.setListCheckBox(listeCheckBox);
 
-            // Set the dialog icon.
-            //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
-
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 
