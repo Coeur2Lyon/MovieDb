@@ -193,7 +193,16 @@ public class JointureDAO extends Dao<Jointure> {
     @Override
     public ObservableList findAll() {
         ObservableList<Jointure> listeFilms = FXCollections.observableArrayList();
+for(int i=1;i<=findIdMax();i++){
+    Jointure jointure=find(i);
 
+    if(jointure.getIsDeleted()==0){
+        listeFilms.add(jointure);
+    }
+}
+
+
+        /*
         int i = 1;
         Jointure jointure = find(i);
         while (jointure.getTitreFR() != null) {
@@ -202,7 +211,7 @@ public class JointureDAO extends Dao<Jointure> {
             }
             i++;
             jointure = find(i);
-        }
+        }*/
         return listeFilms;
     }
 

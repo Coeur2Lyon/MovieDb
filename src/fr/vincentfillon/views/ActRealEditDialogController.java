@@ -70,7 +70,6 @@ public class ActRealEditDialogController {
         fldNom.setText(acteurRealisateur.getNom());
         fldAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
         fldNationalite.setText(acteurRealisateur.getNationalite());
-
     }
 
     /**

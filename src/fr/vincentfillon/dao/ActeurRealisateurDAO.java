@@ -4,10 +4,7 @@ import fr.vincentfillon.model.ActeurRealisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Date;
 
 public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
@@ -64,10 +61,19 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
                 String prenom = result.getString(3);
                 String anneeNaissance = result.getString(4);
                 String nationalite = result.getString(5);
-                Date createdAt = result.getDate(6);
-                Integer isDeleted = result.getInt(7);
+                Timestamp createdAt = result.getTimestamp(6);
+                int isDeleted = result.getInt(7);
                 result.close();
-                acteurRealisateur = new ActeurRealisateur(idActeurRealisateur, nom, prenom, anneeNaissance, nationalite);
+
+                acteurRealisateur = new ActeurRealisateur(idActeurRealisateur, nom, prenom, anneeNaissance, nationalite,createdAt,isDeleted);
+
+                acteurRealisateur.setIdActeurRealisateur(idActeurRealisateur);
+                acteurRealisateur.setNom(nom);
+                acteurRealisateur.setPrenom(prenom);
+                acteurRealisateur.setAnneeNaissance(anneeNaissance);
+                acteurRealisateur.setNationalite(nationalite);
+                acteurRealisateur.setCreatedAt(createdAt);
+                acteurRealisateur.setIsDeleted(isDeleted);
                 result.close();
             }
         } catch (SQLException e) {
@@ -79,16 +85,17 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
     public ObservableList findAll() {
 
         ObservableList<ActeurRealisateur> listeActeursRealisateurs = FXCollections.observableArrayList();
+        for (int i = 1; i <= findIdMax(); i++) {
 
-        int i = 1;
-        ActeurRealisateur acteurRealisateur = find(i);
-        while (acteurRealisateur.getNom() != null) {
-            if (acteurRealisateur.getIsDeleted() == 0) {
+            ActeurRealisateur acteurRealisateur = find(i);
+            if (acteurRealisateur.getIsDeleted()==0) {
+                System.out.println("L'acteur"+acteurRealisateur.getNom()+" Va être ajouté à la liste");
+                System.out.println("Car son GetIsDeleted est logiquement NUL"+acteurRealisateur.getIsDeleted());
                 listeActeursRealisateurs.add(acteurRealisateur);
             }
-            i++;
-            acteurRealisateur = find(i);
         }
+
+        System.out.println("Liste: "+listeActeursRealisateurs);
         return listeActeursRealisateurs;
     }
 
@@ -99,6 +106,19 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
 
     @Override
     public int findIdMax() {
-        return 0;
+        int idMax = 0;
+        String sqlFindMax = "SELECT MAX(IdActeurRealisateur) FROM ACTEUR_REALISATEUR";
+        try {
+            ResultSet resultACtReal = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery(sqlFindMax);
+
+            if (resultACtReal.first()) {
+                idMax = resultACtReal.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idMax;
     }
 }

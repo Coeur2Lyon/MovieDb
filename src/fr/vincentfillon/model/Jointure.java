@@ -48,7 +48,6 @@ public class Jointure {
         this.isDeleted = isDeleted;
     }
 
-
     public Jointure() {
         this(0,null, null, null, null, null, null, null, null);
     }
@@ -63,9 +62,6 @@ public class Jointure {
         this.realisateurs = new SimpleStringProperty(realisateurs);
         this.acteurs = new SimpleStringProperty(acteurs);
     }
-
-
-
 
     public Jointure(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
         this.idJointure=idJointure;

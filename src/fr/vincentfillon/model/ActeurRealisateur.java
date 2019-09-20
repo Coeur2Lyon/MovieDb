@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class ActeurRealisateur {
@@ -19,6 +20,20 @@ public class ActeurRealisateur {
     private Timestamp createdAt = new Timestamp(millis);
     private int isDeleted;
 
+    private Object StringProperty;
+
+    public ActeurRealisateur(int idActeurRealisateur, String nom, String prenom, String anneeNaissance, String nationalite, Date createdAt, int isDeleted) {
+
+        this.idActeurRealisateur = idActeurRealisateur;
+        this.nom = new SimpleStringProperty();
+        this.prenom =new SimpleStringProperty();
+        this.anneeNaissance = new SimpleStringProperty();
+        this.nationalite = new SimpleStringProperty();
+        this.createdAt = new Timestamp(createdAt.getTime());
+        this.isDeleted = isDeleted;
+    }
+
+
     public ActeurRealisateur(int idActeurRealisateur, String nom, String prenom, String anneeNaissance, String nationalite) {
 
         this.idActeurRealisateur=idActeurRealisateur;
@@ -29,7 +44,7 @@ public class ActeurRealisateur {
     }
 
     public ActeurRealisateur() {
-        this(null, null, null, null);
+        this(0, null, null, null,null);
     }
 
     public ActeurRealisateur(String nom, String prenom, String anneeNaissance, String nationalite) {
@@ -39,17 +54,8 @@ public class ActeurRealisateur {
         this.nationalite = new SimpleStringProperty(nationalite);
     }
 
-   /*TODO:Effacer si inutile
-    public ActeurRealisateur(int idActeurRealisateur, String nom, String prenom, String anneeNaissance, String nationalite, Date createdAt, int isDeleted) {
 
-        this.idActeurRealisateur = idActeurRealisateur;
-        this.nom = new SimpleStringProperty();
-        this.prenom =new SimpleStringProperty();
-        this.anneeNaissance = new SimpleStringProperty();
-        this.nationalite = new SimpleStringProperty();
-        this.createdAt = new Timestamp(createdAt.getTime());
-        this.isDeleted = isDeleted;
-    }*/
+
 
     public int getIdActeurRealisateur() {
         return idActeurRealisateur;
@@ -120,7 +126,7 @@ public class ActeurRealisateur {
     }
 
     public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+        this.createdAt =  createdAt;
     }
 
 

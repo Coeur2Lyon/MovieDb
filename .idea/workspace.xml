@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java" afterDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -136,26 +143,26 @@
     <session id="-641159642">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="9" />
           <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ACTEUR_REALISATEUR" value="34" />
+          <entry key="ACTEUR_REALISATEUR" value="35" />
           <entry key="CORRESPOND" value="20" />
           <entry key="Dockerfile" value="2" />
-          <entry key="EVALUE" value="13" />
-          <entry key="FILM" value="58" />
+          <entry key="EVALUE" value="14" />
+          <entry key="FILM" value="59" />
           <entry key="GENRE" value="32" />
           <entry key="JOUE" value="15" />
           <entry key="MF" value="1" />
@@ -166,10 +173,10 @@
           <entry key="class" value="4" />
           <entry key="cnf" value="1" />
           <entry key="fk_correspond2" value="1" />
-          <entry key="fxml" value="112" />
+          <entry key="fxml" value="113" />
           <entry key="html" value="1" />
           <entry key="iml" value="2" />
-          <entry key="java" value="363" />
+          <entry key="java" value="370" />
           <entry key="log" value="1" />
           <entry key="md" value="10" />
           <entry key="properties" value="1" />
@@ -181,11 +188,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="Database Element" value="196" />
+          <entry key="Database Element" value="199" />
           <entry key="Dockerfile" value="2" />
           <entry key="HTML" value="1" />
           <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="363" />
+          <entry key="JAVA" value="370" />
           <entry key="Log" value="1" />
           <entry key="Manifest" value="1" />
           <entry key="Markdown" value="10" />
@@ -193,17 +200,17 @@
           <entry key="Properties" value="1" />
           <entry key="SQL" value="25" />
           <entry key="Scratch" value="75" />
-          <entry key="XML" value="115" />
+          <entry key="XML" value="116" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="104" />
-          <entry key="cell" value="266" />
+          <entry key="cell" value="268" />
           <entry key="dummy" value="31" />
           <entry key="fxml" value="59" />
           <entry key="html" value="31" />
-          <entry key="java" value="21397" />
+          <entry key="java" value="21821" />
           <entry key="md" value="323" />
           <entry key="properties" value="54" />
           <entry key="snippet" value="39" />
@@ -216,12 +223,12 @@
         <counts>
           <entry key="Dockerfile" value="104" />
           <entry key="HTML" value="31" />
-          <entry key="JAVA" value="21394" />
+          <entry key="JAVA" value="21818" />
           <entry key="Markdown" value="323" />
           <entry key="PLAIN_TEXT" value="294" />
           <entry key="Properties" value="54" />
           <entry key="SQL" value="1246" />
-          <entry key="Scratch" value="2177" />
+          <entry key="Scratch" value="2179" />
           <entry key="XML" value="236" />
         </counts>
       </usages-collector>
@@ -230,6 +237,7 @@
           <entry key="git.branch.checkout.local" value="3" />
           <entry key="git.branch.delete.local" value="3" />
           <entry key="git.branch.delete.remote" value="3" />
+          <entry key="git.branch.merge" value="1" />
           <entry key="git.branch.rename" value="1" />
         </counts>
       </usages-collector>
@@ -239,36 +247,9 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7688022">
+    <splitter split-orientation="horizontal" split-proportion="0.49252906">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="990">
-                  <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#387#388#0" expanded="true" />
-                    <element signature="e#420#421#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/FilmDAO.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="41" column="9" selection-start-line="34" selection-start-column="7" selection-end-line="41" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#3408#3409#0" expanded="true" />
-                    <element signature="e#3432#3433#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/UtilisateurDAO.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -279,55 +260,24 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/09aec6c6-94af-4885-87eb-4c67f8cca667/console.sql">
-              <provider selected="true" editor-type-id="text-editor">
+            <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/FILM">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
                 <state>
-                  <caret column="27" selection-start-column="27" selection-end-column="27" />
+                  <filtering enabled="true" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialogController.java">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1500">
-                  <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1140">
-                  <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+                <state relative-caret-position="23">
+                  <caret line="119" column="50" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="50" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#387#388#0" expanded="true" />
+                    <element signature="e#420#421#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -335,8 +285,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdminController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
+                <state relative-caret-position="203">
+                  <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
                   <folding>
                     <element signature="e#2561#2562#0" expanded="true" />
                     <element signature="e#2606#2607#0" expanded="true" />
@@ -345,42 +295,120 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-918">
+                  <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1831#1832#0" expanded="true" />
+                    <element signature="e#1901#1902#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/CorrespondDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="254">
+                  <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#438#439#0" expanded="true" />
+                    <element signature="e#465#466#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialogController.java">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceJointureFilmsAdminController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1245">
-                  <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+                <state relative-caret-position="248">
+                  <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/09aec6c6-94af-4885-87eb-4c67f8cca667/console.sql">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/CORRESPOND">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
+                <state relative-caret-position="417">
+                  <caret line="127" column="38" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1664#1665#0" expanded="true" />
+                    <element signature="e#1717#1718#0" expanded="true" />
+                    <element signature="e#2112#2113#0" expanded="true" />
+                    <element signature="e#2154#2155#0" expanded="true" />
+                    <element signature="e#2221#2222#0" expanded="true" />
+                    <element signature="e#2283#2284#0" expanded="true" />
+                    <element signature="e#2313#2314#0" expanded="true" />
+                    <element signature="e#2345#2346#0" expanded="true" />
+                    <element signature="e#2388#2389#0" expanded="true" />
+                    <element signature="e#2414#2415#0" expanded="true" />
+                    <element signature="e#2452#2453#0" expanded="true" />
+                    <element signature="e#2485#2486#0" expanded="true" />
+                    <element signature="e#2518#2519#0" expanded="true" />
+                    <element signature="e#2553#2554#0" expanded="true" />
+                    <element signature="e#2599#2600#0" expanded="true" />
+                    <element signature="e#2628#2629#0" expanded="true" />
+                    <element signature="e#2672#2673#0" expanded="true" />
+                    <element signature="e#2711#2712#0" expanded="true" />
+                    <element signature="e#2752#2753#0" expanded="true" />
+                    <element signature="e#2795#2796#0" expanded="true" />
+                    <element signature="e#2849#2850#0" expanded="true" />
+                    <element signature="e#2886#2887#0" expanded="true" />
+                    <element signature="e#2946#2947#0" expanded="true" />
+                    <element signature="e#3001#3002#0" expanded="true" />
+                    <element signature="e#3039#3040#0" expanded="true" />
+                    <element signature="e#3079#3080#0" expanded="true" />
+                    <element signature="e#3130#3131#0" expanded="true" />
+                    <element signature="e#3164#3165#0" expanded="true" />
+                    <element signature="e#3218#3219#0" expanded="true" />
+                    <element signature="e#3267#3268#0" expanded="true" />
+                    <element signature="e#3300#3301#0" expanded="true" />
+                    <element signature="e#3332#3333#0" expanded="true" />
+                    <element signature="e#3379#3380#0" expanded="true" />
+                    <element signature="e#3421#3422#0" expanded="true" />
+                    <element signature="e#3460#3461#0" expanded="true" />
+                    <element signature="e#3492#3493#0" expanded="true" />
+                    <element signature="e#3545#3546#0" expanded="true" />
+                    <element signature="e#3587#3588#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/FILM">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1020">
+                  <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/EVALUE">
               <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
                 <state>
                   <filtering enabled="true" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfacePrincipaleController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="477">
+                  <caret line="72" selection-start-line="72" selection-end-line="72" />
                 </state>
               </provider>
             </entry>
@@ -474,7 +502,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="fix-affichage-utf8" />
       </map>
     </option>
   </component>
@@ -503,7 +531,6 @@
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/MovieEditDialogController.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialog.fxml" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/21ad594d-0800-4ec7-a142-81d51e7c6cc6/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/515931cc-a30d-4bd8-9277-9cb6260483d3/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0b3c3c19-a32d-4f8a-810e-b87951cebddc/console.sql" />
@@ -511,27 +538,28 @@
         <option value="$PROJECT_DIR$/BDD/MySQL/mysql_charset.cnf" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e0b48f7d-002f-4133-a32f-49ff0f63fbd4/console.sql" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdminController.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/Genre.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialog.fxml" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/ListeCheckBox.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5967d65e-a52e-4556-aaf1-2f7f8cbd778d/console.sql" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/Dao.java" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/FilmDAO.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/GenreDAO.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/UtilisateurDAO.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/Correspond.java" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfacePrincipaleController.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/Main.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialogController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/09aec6c6-94af-4885-87eb-4c67f8cca667/console.sql" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/CorrespondDAO.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceJointureFilmsAdminController.java" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java" />
         <option value="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" />
-        <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdminController.java" />
         <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/views/InterfacePrincipaleController.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java" />
+        <option value="$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java" />
       </list>
     </option>
   </component>
@@ -715,7 +743,7 @@
     <property name="SearchEverywhereHistoryKey" value="jdk&#9;PSI&#9;JAVA://sun.plugin.security.JDK11ClassFileTransformer&#10;tomcat8&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568963305140" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568971789337" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -1008,8 +1036,7 @@
       <workItem from="1568789557367" duration="4885000" />
       <workItem from="1568801473012" duration="11676000" />
       <workItem from="1568876720178" duration="6388000" />
-      <workItem from="1568887125609" duration="13410000" />
-      <workItem from="1568962509013" duration="793000" />
+      <workItem from="1568887125609" duration="13177000" />
     </task>
     <servers />
   </component>
@@ -1025,7 +1052,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468879000" />
+    <option name="totallyTimeSpent" value="475424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,7 +1067,7 @@
     <frame x="67" y="1225" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23796348" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.28389597" />
       <window_info id="Structure" order="1" weight="0.17697228" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -1072,15 +1099,15 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Ant Build" order="4" sideWeight="0.49841774" weight="0.11621472" />
       <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.49841774" weight="0.28334257" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.49841774" visible="true" weight="0.16602103" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info active="true" anchor="right" id="Coverage" order="11" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info active="true" anchor="right" id="Coverage" order="10" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="right" id="Database" order="11" sideWeight="0.49841774" weight="0.16602103" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.34643054" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.28389597" />
       <window_info id="Structure" order="1" weight="0.17697228" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -1090,7 +1117,7 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32864866" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25405404" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28324324" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39783785" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1101,23 +1128,23 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3264865" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32540542" />
       <window_info anchor="bottom" id="Docker" order="14" weight="0.32972974" />
       <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32864866" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.50054055" />
-      <window_info anchor="bottom" id="Database Console" order="17" weight="0.28432432" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.28216216" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49841774" weight="0.24958494" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Ant Build" order="4" sideWeight="0.49841774" weight="0.11621472" />
       <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.49841774" weight="0.28334257" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.49841774" weight="0.1793027" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info active="true" anchor="right" id="Coverage" order="11" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info active="true" anchor="right" id="Coverage" order="10" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="right" id="Database" order="11" sideWeight="0.49841774" visible="true" weight="0.16602103" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1197,7 +1224,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://e0b48f7d-002f-4133-a32f-49ff0f63fbd4/schema/moviedb/table/JOUE" />
     <entry file="das://e0b48f7d-002f-4133-a32f-49ff0f63fbd4/schema/moviedb/table/GENRE" />
     <entry file="das://e0b48f7d-002f-4133-a32f-49ff0f63fbd4/schema/moviedb/table/FILM" />
     <entry file="das://e0b48f7d-002f-4133-a32f-49ff0f63fbd4/schema/moviedb/table/EVALUE" />
@@ -1209,14 +1235,6 @@
           <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="213" selection-start-line="74" selection-start-column="213" selection-end-line="74" selection-end-column="213" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/Film.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1240,6 +1258,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1193#1194#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="e#1583#1584#0" expanded="true" />
+            <element signature="e#1621#1622#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1795#1796#0" expanded="true" />
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1887#1888#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="71" column="67" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1252,13 +1319,6 @@
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://5967d65e-a52e-4556-aaf1-2f7f8cbd778d/schema/moviedb/table/EVALUE" />
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5967d65e-a52e-4556-aaf1-2f7f8cbd778d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1301,13 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/EVALUE">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/REALISE">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1319,13 +1372,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfacePrincipaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="89" column="47" lean-forward="true" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1347,13 +1393,6 @@
       </provider>
     </entry>
     <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/CORRESPOND/index/fk_correspond2" />
-    <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/ACTEUR_REALISATEUR">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/GENRE">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1361,61 +1400,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/CorrespondDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceJointureFilmsAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="168" column="47" selection-start-line="168" selection-start-column="47" selection-end-line="168" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/GenreDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="606">
           <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java">
+    <entry file="file://$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-543">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/FilmDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="41" column="9" selection-start-line="34" selection-start-column="7" selection-end-line="41" selection-end-column="9" />
+        <state relative-caret-position="367">
+          <caret line="89" column="18" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="18" />
           <folding>
             <element signature="e#3408#3409#0" expanded="true" />
             <element signature="e#3432#3433#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/UtilisateurDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1428,8 +1441,22 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/09aec6c6-94af-4885-87eb-4c67f8cca667/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="5" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/MovieJoinEditDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/UtilisateurDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1440,25 +1467,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql">
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/CorrespondDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+        <state relative-caret-position="254">
+          <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        <state relative-caret-position="200">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfacePrincipaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceJointureFilmsAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/EVALUE">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://09aec6c6-94af-4885-87eb-4c67f8cca667/schema/moviedb/table/ACTEUR_REALISATEUR">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/InterfaceActeursRealisateursAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
+        <state relative-caret-position="203">
+          <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
           <folding>
             <element signature="e#2561#2562#0" expanded="true" />
             <element signature="e#2606#2607#0" expanded="true" />
@@ -1466,17 +1526,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/Main.java">
+    <entry file="jar:///usr/lib/jvm/oracle-java8-jdk-amd64/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+        <state relative-caret-position="212">
+          <caret line="883" column="16" selection-start-line="883" selection-start-column="16" selection-end-line="883" selection-end-column="16" />
+          <folding>
+            <element signature="e#37718#37719#0" expanded="true" />
+            <element signature="e#37754#37755#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/views/ActRealEditDialogController.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/JointureDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+        <state relative-caret-position="23">
+          <caret line="119" column="50" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/Jointure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/model/ActeurRealisateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="127" column="38" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1664#1665#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+            <element signature="e#2221#2222#0" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2313#2314#0" expanded="true" />
+            <element signature="e#2345#2346#0" expanded="true" />
+            <element signature="e#2388#2389#0" expanded="true" />
+            <element signature="e#2414#2415#0" expanded="true" />
+            <element signature="e#2452#2453#0" expanded="true" />
+            <element signature="e#2485#2486#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+            <element signature="e#2553#2554#0" expanded="true" />
+            <element signature="e#2599#2600#0" expanded="true" />
+            <element signature="e#2628#2629#0" expanded="true" />
+            <element signature="e#2672#2673#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2849#2850#0" expanded="true" />
+            <element signature="e#2886#2887#0" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3039#3040#0" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3130#3131#0" expanded="true" />
+            <element signature="e#3164#3165#0" expanded="true" />
+            <element signature="e#3218#3219#0" expanded="true" />
+            <element signature="e#3267#3268#0" expanded="true" />
+            <element signature="e#3300#3301#0" expanded="true" />
+            <element signature="e#3332#3333#0" expanded="true" />
+            <element signature="e#3379#3380#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+            <element signature="e#3460#3461#0" expanded="true" />
+            <element signature="e#3492#3493#0" expanded="true" />
+            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/vincentfillon/dao/ActeurRealisateurDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
         </state>
       </provider>
     </entry>
