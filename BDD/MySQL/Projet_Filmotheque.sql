@@ -193,7 +193,7 @@ references FILM (IdFilm)
 alter table UTILISATEUR
   add constraint FK_ENDOSSSE foreign key (IdRole)
 references ROLE (IdRole)
-  on delete cascade 
+  on delete cascade
   on update restrict;
 
 

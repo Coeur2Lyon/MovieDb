@@ -65,11 +65,10 @@ public class ActRealEditDialogController {
      */
     public void setActeurRealisateur(ActeurRealisateur acteurRealisateur) {
         this.acteurRealisateur=acteurRealisateur;
-
+//Paramétrages des infos à afficher dans les TextFields de la fenêtre ActRelaEditDialog
         fldPrenom.setText(acteurRealisateur.getPrenom());
         fldNom.setText(acteurRealisateur.getNom());
-
-        fldAnneeNaissance.setText(acteurRealisateur.getNom());
+        fldAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
         fldNationalite.setText(acteurRealisateur.getNationalite());
 
     }

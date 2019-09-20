@@ -177,9 +177,9 @@ public class InterfaceActeursRealisateursAdminController {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
+            alert.setTitle("Aucune sélection");
+            alert.setHeaderText("Pas d'acteur/réalisateur.");
+            alert.setContentText("Merci de sélectionner un acteur/réalisateur");
             alert.showAndWait();
         }
     }
