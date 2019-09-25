@@ -3,7 +3,6 @@ package fr.vincentfillon.views;
 //public class MovieEditDialogController {
 
 import fr.vincentfillon.model.ActeurRealisateur;
-import fr.vincentfillon.model.Jointure;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

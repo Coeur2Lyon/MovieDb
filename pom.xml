@@ -79,7 +79,19 @@
             <scope>test</scope>
         </dependency>
 
+
+
+
         <!-- ===== Bibliothèques tierces ===== -->
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.17</version>
+        </dependency>
+
+
         <!-- == Bibliothèques JavaFX == -->
         <!-- https://mvnrepository.com/artifact/com.zenjava/javafx-maven-plugin -->
 

@@ -5,6 +5,13 @@ public class ListeCheckBox {
     private boolean cboxPolicier;
     private boolean cboxThriller;
     private boolean cboxFantastqiqueSF;
+    private boolean cboxDrame;
+    private boolean cboxBiopic;
+    private boolean cboxAction;
+    private boolean cboxHorreur;
+    private boolean cboxComedie;
+    private boolean cboxWestern;
+    private boolean cboxAventure;
 
     public ListeCheckBox() {
 
@@ -90,13 +97,7 @@ public class ListeCheckBox {
         this.cboxAventure = cboxAventure;
     }
 
-    private boolean cboxDrame;
-    private boolean cboxBiopic;
-    private boolean cboxAction;
-    private boolean cboxHorreur;
-    private boolean cboxComedie;
-    private boolean cboxWestern;
-    private boolean cboxAventure;
+
 
     public ListeCheckBox(boolean cboxPolicier, boolean cboxThriller, boolean cboxFantastqiqueSF, boolean cboxDrame, boolean cboxBiopic, boolean cboxAction, boolean cboxHorreur, boolean cboxComedie, boolean cboxWestern, boolean cboxAventure) {
         this.cboxPolicier = cboxPolicier;

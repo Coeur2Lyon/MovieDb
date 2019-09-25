@@ -6,7 +6,7 @@ import fr.vincentfillon.dao.CorrespondDAO;
 import fr.vincentfillon.dao.Dao;
 import fr.vincentfillon.dao.JointureDAO;
 import fr.vincentfillon.model.Correspond;
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,11 +19,11 @@ import java.util.Optional;
 public class InterfaceJointureFilmsAdminController {
 
     @FXML
-    private TableView<Jointure> movieJoinTable;
+    private TableView<JointureFilm> movieJoinTable;
     @FXML
-    private TableColumn<Jointure, String> colTitreVF;
+    private TableColumn<JointureFilm, String> colTitreVF;
     @FXML
-    private TableColumn<Jointure, String> colAnneeSortie;
+    private TableColumn<JointureFilm, String> colAnneeSortie;
 
     @FXML
     private Label lblTitreVF;
@@ -50,29 +50,29 @@ public class InterfaceJointureFilmsAdminController {
     private Main main;
 
     @FXML
-    private ObservableList<Jointure> movieJoinData = FXCollections.observableArrayList();
+    private ObservableList<JointureFilm> movieJoinData = FXCollections.observableArrayList();
 
     private ObservableList<ListeCheckBox> listeCheckboxData = FXCollections.observableArrayList();
 
 
     /* The constructor is called before the initialize() method.
      */
-    public InterfaceJointureFilmsAdminController() {
+    public InterfaceJointureFilmsAdminController()  {
 
 
-        Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
 
 //Pour trouver le film d'indice i:
-        //  Jointure jointure = jointureDAO.find(1);
+        //  JointureFilm jointure = jointureDAO.find(1);
         movieJoinData.setAll(jointureDAO.findAll());
-//        movieJoinData.add(new Jointure("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
-//        movieJoinData.add(new Jointure("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
-//        movieJoinData.add(new Jointure("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
-//        movieJoinData.add(new Jointure("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
+//        movieJoinData.add(new JointureFilm("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
+//        movieJoinData.add(new JointureFilm("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
+//        movieJoinData.add(new JointureFilm("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
+//        movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
 
 
-    public ObservableList<Jointure> getMovieJoinData() {
+    public ObservableList<JointureFilm> getMovieJoinData() {
         return movieJoinData;
     }
 
@@ -85,7 +85,7 @@ public class InterfaceJointureFilmsAdminController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize() {
+    public void initialize() {
         // Initialize the movie table with the two columns.
         colTitreVF.setCellValueFactory(cellData -> cellData.getValue().titreFRProperty());
         colAnneeSortie.setCellValueFactory(cellData -> cellData.getValue().anneeSortieProperty());
@@ -117,7 +117,7 @@ public class InterfaceJointureFilmsAdminController {
      *
      * @param jointureFilm the movie or null
      */
-    private void showMovieJoinDetails(Jointure jointureFilm) {
+    public void showMovieJoinDetails(JointureFilm jointureFilm) {
         if (jointureFilm != null) {
             // Fill the labels with info from the movie object.
             lblTitreVF.setText(jointureFilm.getTitreFR());
@@ -141,45 +141,28 @@ public class InterfaceJointureFilmsAdminController {
             lblActeurs.setText("");
         }
     }
-    /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new movie.
-     */
-    /*@FXML TODO:Effacer addMovie quand appli stable
-    private void addNewMovie() {
-        Dao<Film> filmDAO = new FilmDAO(ConnectionClass.connecte());
-        Film tempFilm = new Film();
-        boolean okClicked = Main.showMovieJoinEditDialog(tempFilm);
-        if (okClicked) {
-            getMovieData().add(tempFilm);
-            filmDAO.create(tempFilm);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("Ajout de film");
-            alert.setHeaderText("Le film a bien été ajouté");
-        }
-    }*/
+
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new movie.
      */
     @FXML
-    private void addNewMovieJoin() {
-        Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+    public void addNewMovieJoin() {
+        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
-        Jointure tempJointure = new Jointure();
+        JointureFilm tempJointureFilm = new JointureFilm();
         Correspond tempCorrespond = new Correspond();
         ListeCheckBox listeCheckBox = new ListeCheckBox();
 
-        boolean okClicked = Main.showMovieJoinEditDialog(tempJointure, listeCheckBox);
+        boolean okClicked = Main.showMovieJoinEditDialog(tempJointureFilm, listeCheckBox);
 
 
         if (okClicked) {
-            getMovieJoinData().add(tempJointure);
+            getMovieJoinData().add(tempJointureFilm);
             getListeCheckBoxData().add(listeCheckBox);
 
-            jointureDAO.create(tempJointure);
+            jointureDAO.create(tempJointureFilm);
 
             int idFilm = jointureDAO.findIdMax();
             tempCorrespond.setIdFilm(idFilm);
@@ -187,7 +170,7 @@ public class InterfaceJointureFilmsAdminController {
             System.out.println("L'IdFilm doît être égal au dernier Idjointure:  " + idFilm);
             System.out.println("Le get de tempCorrespond doît être égale à Id Film:  " + tempCorrespond.getIdFilm());
 
-            //System.out.println("Id du dernier tempjointure ajouté" +tempJointure.getIdJointure());
+            //System.out.println("Id du dernier tempjointure ajouté" +tempJointureFilm.getIdJointure());
             // System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
 
             if (listeCheckBox.isCboxPolicier()) {
@@ -249,10 +232,10 @@ public class InterfaceJointureFilmsAdminController {
      * details for the selected movie.
      */
     @FXML
-    private void editMovieJoin() {
-        Jointure selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
+    public void editMovieJoin() {
+        JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
 
-        Dao<Jointure> jointureDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDao = new JointureDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
 
         Correspond tempCorrespond = new Correspond();
@@ -269,21 +252,17 @@ public class InterfaceJointureFilmsAdminController {
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
                 jointureDao.update(selectedJoinMovie);
-                System.out.println("La liste doit être [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] quand tout est coché: " + listIntGenre);
+
                 if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
-                    System.out.println("IF : POLICIER a été Coché MAIS PAS dans la liste(DONC coché pour la première fois");
                     tempCorrespond.setIdGenre(0);
                     correspondDao.create(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxPolicier() && listIntGenre.contains(0)) {
-                    System.out.println("IF : POLICIER a été DECOCHé, il faut l'effacer avec les ID");
                     tempCorrespond.setIdGenre(0);
                     correspondDao.delete(tempCorrespond);
                 }
 
                 if (listegenreFromIdFilm.isCboxThriller() && !listIntGenre.contains(1)) {
-                    System.out.println("IF : THRILLER a été Coché MAIS PAS dans la liste(DONC coché pour la première fois");
-
                     tempCorrespond.setIdGenre(1);
                     correspondDao.create(tempCorrespond);
                 }
@@ -360,11 +339,11 @@ public class InterfaceJointureFilmsAdminController {
             }
 
         } else {
-            // Nothing selected.
+            // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Pas de sélection");
-            alert.setHeaderText("Aucun film sélectionné");
+            alert.setHeaderText("Aucun film sélectionné.");
             alert.setContentText("Merci de sélectionner un film");
             alert.showAndWait();
         }
@@ -375,8 +354,8 @@ public class InterfaceJointureFilmsAdminController {
      */
     @FXML
     private void deleteMovieJoin() {
-        Jointure selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
-        Dao<Jointure> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
+        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
         if (selectedJoinMovie != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.initOwner(Main.getPrimaryStage());
@@ -388,13 +367,13 @@ public class InterfaceJointureFilmsAdminController {
             }
             movieJoinData.remove(selectedJoinMovie);
             int tailleListe;
-        } else {
-            // Nothing selected.
+        }else {
+            // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
+            alert.setTitle("Pas de sélection");
+            alert.setHeaderText("Aucun film sélectionné.");
+            alert.setContentText("Merci de sélectionner un film");
             alert.showAndWait();
         }
     }

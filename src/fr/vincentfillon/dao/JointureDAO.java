@@ -1,6 +1,6 @@
 package fr.vincentfillon.dao;
 
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,20 +10,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public class JointureDAO extends Dao<Jointure> {
+public class JointureDAO extends Dao<JointureFilm> {
 
     public JointureDAO(Connection connection) {
         super(connection);
     }
 
     @Override
-    public void create(Jointure jointure) {
+    public void create(JointureFilm jointureFilm) {
 
-        String titreF = jointure.getTitreFR();
-        String titreO = jointure.getTitreO();
-        String scenario = jointure.getScenario();
-        int anneeSortie = Integer.parseInt(jointure.getAnneeSortie());
-        String nationalite = jointure.getNationalite();
+        String titreF = jointureFilm.getTitreFR();
+        String titreO = jointureFilm.getTitreO();
+        String scenario = jointureFilm.getScenario();
+        int anneeSortie = Integer.parseInt(jointureFilm.getAnneeSortie());
+        String nationalite = jointureFilm.getNationalite();
 
 
         String sqlInsertFilmRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + titreF + "','" + titreO + "','" + scenario + "', '" + anneeSortie + "','" + nationalite + "')";
@@ -42,8 +42,8 @@ public class JointureDAO extends Dao<Jointure> {
     }
 
     @Override
-    public void delete(Jointure jointure) {
-        String updateRequest = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + jointure.getIdJointure() + "";
+    public void delete(JointureFilm jointureFilm) {
+        String updateRequest = "UPDATE FILM SET IsDeleted=1 WHERE IdFilm=" + jointureFilm.getIdJointure() + "";
         try {
             Statement statement = this.connect.createStatement();
             statement.executeUpdate(updateRequest);
@@ -55,16 +55,16 @@ public class JointureDAO extends Dao<Jointure> {
     }
 
     @Override
-    public void update(Jointure jointure) {
-        String titreF = jointure.getTitreFR();
-        String titreO = jointure.getTitreO();
-        String scenario = jointure.getScenario();
-        int anneeSortie = Integer.parseInt(jointure.getAnneeSortie());
-        String nationalite = jointure.getNationalite();
+    public void update(JointureFilm jointureFilm) {
+        String titreF = jointureFilm.getTitreFR();
+        String titreO = jointureFilm.getTitreO();
+        String scenario = jointureFilm.getScenario();
+        int anneeSortie = Integer.parseInt(jointureFilm.getAnneeSortie());
+        String nationalite = jointureFilm.getNationalite();
         int idJointure;
-        idJointure = jointure.getIdJointure();
+        idJointure = jointureFilm.getIdJointure();
 
-        //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointure.getTitreFR() + "', TitreO='" + jointure.getTitreO() + "', Scenario='" + jointure.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointure.getNationalite() + "' WHERE idJointure=" + jointure.getIdJointure() + ";";
+        //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointureFilm.getTitreFR() + "', TitreO='" + jointureFilm.getTitreO() + "', Scenario='" + jointureFilm.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointureFilm.getNationalite() + "' WHERE idJointure=" + jointureFilm.getIdJointure() + ";";
         //String updateRequest="UPDATE moviedb.FILM SET TitreFr='tEST MODIF', TitreO='TEST TEST', Scenario='TEST', AnneeSortie=1963, NationaliteF='FR' WHERE idJointure=3";
 
         String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie="+anneeSortie+", NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
@@ -80,9 +80,9 @@ public class JointureDAO extends Dao<Jointure> {
     }
 
     @Override
-    public Jointure find(int idJointure) {
+    public JointureFilm find(int idJointure) {
 
-        Jointure jointure = new Jointure();
+        JointureFilm jointureFilm = new JointureFilm();
         String sqlMovieRequest =
                 "SELECT * FROM FILM WHERE IdFilm = " + idJointure;
 
@@ -124,7 +124,7 @@ public class JointureDAO extends Dao<Jointure> {
                 String acteurs = resultActeurs.getString(1) + " " + resultActeurs.getString(2);
 
 
-                //boucle de la jointure genre:
+                //boucle de la jointureFilm genre:
                 int genreSize = 1;
                 resultGenre.last();
                 genreSize = resultGenre.getRow();
@@ -177,7 +177,7 @@ public class JointureDAO extends Dao<Jointure> {
                 }
 
 
-                jointure = new Jointure(idJointure, titreFR, titreO, scenario, anneeSortie, nationalite, genre, realisateur, acteurs, createdAt, isDeleted);
+                jointureFilm = new JointureFilm(idJointure, titreFR, titreO, scenario, anneeSortie, nationalite, genre, realisateur, acteurs, createdAt, isDeleted);
 
                 resultFilm.close();
                 resultActeurs.close();
@@ -187,24 +187,24 @@ public class JointureDAO extends Dao<Jointure> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return jointure;
+        return jointureFilm;
     }
 
     @Override
     public ObservableList findAll() {
-        ObservableList<Jointure> listeFilms = FXCollections.observableArrayList();
+        ObservableList<JointureFilm> listeFilms = FXCollections.observableArrayList();
 for(int i=1;i<=findIdMax();i++){
-    Jointure jointure=find(i);
+    JointureFilm jointureFilm =find(i);
 
-    if(jointure.getIsDeleted()==0){
-        listeFilms.add(jointure);
+    if(jointureFilm.getIsDeleted()==0){
+        listeFilms.add(jointureFilm);
     }
 }
 
 
         /*
         int i = 1;
-        Jointure jointure = find(i);
+        JointureFilm jointure = find(i);
         while (jointure.getTitreFR() != null) {
             if (jointure.getIsDeleted() == 0) {
                 listeFilms.add(jointure);

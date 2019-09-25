@@ -1,9 +1,10 @@
 package fr.vincentfillon;
 
 import fr.vincentfillon.model.ActeurRealisateur;
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import fr.vincentfillon.views.ActRealEditDialogController;
+import fr.vincentfillon.views.JoueEditDialogController;
 import fr.vincentfillon.views.MovieJoinEditDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -39,7 +40,7 @@ public class Main extends Application {
     }
 
     //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
-    public static boolean showMovieJoinEditDialog(Jointure jointure, ListeCheckBox listeCheckBox) {
+    public static boolean showMovieJoinEditDialog(JointureFilm jointureFilm, ListeCheckBox listeCheckBox) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -57,7 +58,7 @@ public class Main extends Application {
             // Set the Movie into the controller.
             MovieJoinEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
-            controller.setMovie(jointure);
+            controller.setMovie(jointureFilm);
 
             //set the Checkbox into the controller
             controller.setListCheckBox(listeCheckBox);
@@ -92,8 +93,36 @@ public class Main extends Application {
             controller.setDialogStage(dialogStage);
             controller.setActeurRealisateur(acteurRealisateur);
 
-            // Set the dialog icon.
-            //dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean showJoueEditDialog(ActeurRealisateur acteurRealisateur) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("views/JoueEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Attribution d'un film à un acteur");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set acteur dans controlôleur
+            JoueEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setInfosActeur(acteurRealisateur);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

@@ -3,7 +3,7 @@ package fr.vincentfillon.views;
 
 import fr.vincentfillon.model.Correspond;
 import fr.vincentfillon.model.Genre;
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -97,7 +97,7 @@ public class MovieJoinEditDialogController {
 
     private Stage dialogStage;
     private ListeCheckBox listeCheckBox;
-    private Jointure jointure;
+    private JointureFilm jointureFilm;
     private Correspond correspond;
     private Genre genre;
 
@@ -128,16 +128,18 @@ public class MovieJoinEditDialogController {
     /**
      * Sets the movie to be edited in the dialog.
      *
-     * @param jointure
+     * @param jointureFilm
      */
-    public void setMovie(Jointure jointure) {
-        this.jointure = jointure;
-        fldTitreVF.setText(jointure.getTitreFR());
-        fldTitreVO.setText(jointure.getTitreO());
-        fldScenario.setText(jointure.getScenario());
-        fldAnneeSortie.setText(jointure.getAnneeSortie());
-        fldNationalite.setText(jointure.getNationalite());
+    public void setMovie(JointureFilm jointureFilm) {
+        this.jointureFilm = jointureFilm;
+        fldTitreVF.setText(jointureFilm.getTitreFR());
+        fldTitreVO.setText(jointureFilm.getTitreO());
+        fldScenario.setText(jointureFilm.getScenario());
+        fldAnneeSortie.setText(jointureFilm.getAnneeSortie());
+        fldNationalite.setText(jointureFilm.getNationalite());
     }
+
+
 
     public void setListCheckBox(ListeCheckBox listeCheckBox) {
         this.listeCheckBox = listeCheckBox;
@@ -189,15 +191,15 @@ public class MovieJoinEditDialogController {
     /**
      * Called when the user clicks ok.
      */
-    //CheckBox cboxAventure, CheckBox cboxWestern, CheckBox cboxComedie, CheckBox cboxHorreur, CheckBox cboxAction, CheckBox cboxBiopic, CheckBox cboxDrame, CheckBox cboxFantastqiqueSF, CheckBox cboxThriller, CheckBox cboxPolicier
+
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            jointure.setTitreFR(fldTitreVF.getText());
-            jointure.setTitreO(fldTitreVO.getText());
-            jointure.setScenario(fldScenario.getText());
-            jointure.setAnneeSortie(fldAnneeSortie.getText());
-            jointure.setNationalite(fldNationalite.getText());
+            jointureFilm.setTitreFR(fldTitreVF.getText());
+            jointureFilm.setTitreO(fldTitreVO.getText());
+            jointureFilm.setScenario(fldScenario.getText());
+            jointureFilm.setAnneeSortie(fldAnneeSortie.getText());
+            jointureFilm.setNationalite(fldNationalite.getText());
 
             listeCheckBox.setCboxAction(cboxAction.isSelected());
             listeCheckBox.setCboxAventure(cboxAventure.isSelected());
@@ -209,9 +211,6 @@ public class MovieJoinEditDialogController {
             listeCheckBox.setCboxPolicier(cboxPolicier.isSelected());
             listeCheckBox.setCboxThriller(cboxThriller.isSelected());
             listeCheckBox.setCboxWestern(cboxWestern.isSelected());
-
-            System.out.println("listeCheckBox.isCboxThriller() dans la méthode: handleOk()" + listeCheckBox.isCboxThriller());
-            System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: handleOk())" + listeCheckBox.isCboxPolicier());
 
             okClicked = true;
             dialogStage.close();

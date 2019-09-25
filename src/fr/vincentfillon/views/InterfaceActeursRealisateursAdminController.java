@@ -5,15 +5,23 @@ import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.dao.ActeurRealisateurDAO;
 import fr.vincentfillon.dao.Dao;
 import fr.vincentfillon.dao.JointureDAO;
+import fr.vincentfillon.dao.JoueDAO;
 import fr.vincentfillon.model.ActeurRealisateur;
-import fr.vincentfillon.model.Film;
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
+import fr.vincentfillon.model.Joue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class InterfaceActeursRealisateursAdminController {
@@ -42,15 +50,13 @@ public class InterfaceActeursRealisateursAdminController {
     private Label lblRealise;
 
 
-
-
     private InterfacePrincipaleController reference;
     // Reference to the main application.
     private Main main;
+    private JoueEditDialogController joueEditDialogController;
 
     @FXML
     private ObservableList<ActeurRealisateur> acteurRealisateursData = FXCollections.observableArrayList();
-
 
 
     /* The constructor is called before the initialize() method.
@@ -61,13 +67,14 @@ public class InterfaceActeursRealisateursAdminController {
         Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
 
 //Pour trouver l'acteur d'indice i:
-       // ActeurRealisateur acteurRealisateur = acteurRealisateurDAO.find(1);
+        // ActeurRealisateur acteurRealisateur = acteurRealisateurDAO.find(1);
         acteurRealisateursData.setAll(acteurRealisateurDAO.findAll());
-       //acteurRealisateursData.add(new ActeurRealisateur("Villeret", "Jacques",  "1960", "FR"));
+        //acteurRealisateursData.add(new ActeurRealisateur("Villeret", "Jacques",  "1960", "FR"));
         //acteurRealisateursData.add(new ActeurRealisateur("Scorses", "Martin", "1962", "US"));
-//        movieJoinData.add(new Jointure("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
-//        movieJoinData.add(new Jointure("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
+//        movieJoinData.add(new JointureFilm("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
+//        movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
+
     public ObservableList<ActeurRealisateur> getActeurRealisateursData() {
         return acteurRealisateursData;
     }
@@ -78,7 +85,7 @@ public class InterfaceActeursRealisateursAdminController {
      * after the fxml file has been loaded.
      */
     @FXML
-    private void initialize() {
+    public void initialize() {
         // Initialise le preview des acteurs/réalisateurs
         colPrenom.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
         colNom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
@@ -101,7 +108,7 @@ public class InterfaceActeursRealisateursAdminController {
     public void setActeurRealisateur(InterfacePrincipaleController reference) {
         this.reference = reference;
         //Add observable list data to the table
-       acteurRealisateurTable.setItems(getActeurRealisateursData());
+        acteurRealisateurTable.setItems(getActeurRealisateursData());
     }
 
     /**
@@ -110,10 +117,10 @@ public class InterfaceActeursRealisateursAdminController {
      *
      * @param acteurRealisateur the movie or null
      */
-    private void showActeurRealisateursDetails(ActeurRealisateur acteurRealisateur) {
+    public void showActeurRealisateursDetails(ActeurRealisateur acteurRealisateur) {
 
         if (acteurRealisateur != null) {
-           // Fill the labels with info from the movie object.
+            // Fill the labels with info from the movie object.
             lblPrenom.setText(acteurRealisateur.getPrenom());
             lblNom.setText(acteurRealisateur.getNom());
             lblAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
@@ -125,7 +132,8 @@ public class InterfaceActeursRealisateursAdminController {
             lblPrenom.setText("");
             lblNom.setText("");
             lblAnneeNaissance.setText("");
-            lblNationalite.setText("");}
+            lblNationalite.setText("");
+        }
     }
 
 
@@ -136,7 +144,7 @@ public class InterfaceActeursRealisateursAdminController {
     @FXML
     public void addActeurRealisateur(ActionEvent actionEvent) {
         Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
-        ActeurRealisateur tempActeurRealisateur=new ActeurRealisateur();
+        ActeurRealisateur tempActeurRealisateur = new ActeurRealisateur();
 
         boolean okClicked = Main.showActeurRealisateurEditDialog(tempActeurRealisateur);
 
@@ -184,7 +192,7 @@ public class InterfaceActeursRealisateursAdminController {
         }
     }
 
-
+    @FXML
     public void editActeurRealisateur(ActionEvent actionEvent) {
 
         ActeurRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
@@ -200,18 +208,86 @@ public class InterfaceActeursRealisateursAdminController {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
+            alert.setTitle("Aucune sélection");
+            alert.setHeaderText("Pas d'acteur/réalisateur sélectionné");
+            alert.setContentText("Merci de sélectionner un acteur/réalisateur");
             alert.showAndWait();
         }
     }
 
-    public void addRealise(ActionEvent actionEvent) {
-        //TODO: Ajouter la méthode de jointure ACTEUR_REALISATEUR-REALISE-FILM
+    public void initRealiseEditDialog(ActionEvent actionEvent) {
+        /*Parent root;
+        Stage newWindow = new Stage();
+        try {
+            root = FXMLLoader.load(getClass().getResource("JoueEditDialog.fxml"));
+            newWindow.setScene(new Scene(root,850,642));
+            newWindow.initModality(Modality.APPLICATION_MODAL);
+
+            newWindow.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
     }
 
-    public void addJoueDans(ActionEvent actionEvent) {
-        //TODO: Ajouter la méthode de jointure ACTEUR_REALISATEUR-JOUE-FILM
+
+    public void addJoue() {
+        ActeurRealisateur selectedActeur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
+        JointureFilm filmARecuperer = new JointureFilm();
+
+        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
+        Dao<Joue> joueDao = new JoueDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureFilmDao = new JointureDAO(ConnectionClass.connecte());
+
+
+        Joue tempJoue = new Joue();
+
+
+        if (selectedActeur != null) {
+
+            int idSelectedActeur = selectedActeur.getIdActeurRealisateur();
+            System.out.println("La valeur de l'ID pris en compte (de manière normale et edffective actuellement) qui doit être la valeur de l'Id de l'acteur séléctionné à la base)  est:" + idSelectedActeur);
+            tempJoue.setIdActeurRealisateur(idSelectedActeur);
+            boolean okClicked = Main.showJoueEditDialog(selectedActeur);
+            if (okClicked) {
+                filmARecuperer = joueEditDialogController.getJointureFilm();
+                int idFilmARecup = filmARecuperer.getIdJointure();
+                if (idFilmARecup != 0) {
+                    //filmARecuperer=jointureFilmDao.find(idFilmARecup);
+                    tempJoue.setIdFilm(idFilmARecup);
+                    System.out.println("L'Id du film a récupérer doit être l'Id du film sélectionné: " + idFilmARecup);
+                    // tempJoue.setIdFilm(6);
+
+
+                    //selectedFilm=jointureFilmDao.find(idSelectedFilm);
+                    //tempJoue.setIdFilm(idSelectedFilm);
+
+                    //showActeurRealisateursDetails(selectedActeur);
+                    joueDao.create(tempJoue);
+
+                    // Nothing selected.
+                    //Alert alert = new Alert(Alert.AlertType.WARNING);
+                    //alert.initOwner(Main.getPrimaryStage());
+                    //alert.setTitle("Aucune sélection");
+                    // alert.setHeaderText("Pas de film sélectionné");
+                    // alert.setContentText("Merci de sélectionner un film");
+                    // alert.showAndWait();
+                }
+
+
+            }
+
+
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(Main.getPrimaryStage());
+            alert.setTitle("Aucune sélection");
+            alert.setHeaderText("Pas d'acteur/réalisateur sélectionné");
+            alert.setContentText("Merci de sélectionner un acteur/réalisateur");
+            alert.showAndWait();
+        }
+
     }
+
 }

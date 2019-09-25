@@ -1,7 +1,7 @@
 package fr.vincentfillon.dao;
 
 import fr.vincentfillon.model.Correspond;
-import fr.vincentfillon.model.Jointure;
+import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import javafx.collections.ObservableList;
 
@@ -19,17 +19,9 @@ public class CorrespondDAO extends Dao<Correspond> {
 
     @Override
     public void create(Correspond correspond) {
-        System.out.println("Id du Film dans CorrespondDAO/create() :" + correspond.getIdFilm());
-        System.out.println("Id du Genre dans CorrespondDAO/create():" + correspond.getIdGenre());
 
         int idFilm = correspond.getIdFilm();
         int idGenre = correspond.getIdGenre();
-
-        // String sqlFindMax="SELECT MAX(IdFilm) FROM FILM";
-//TODO:Effacer les System out Quand Appli stable
-        System.out.println("Contrôle juste avant Insertion SQL:");
-        System.out.println("L'Id du Film à insérer est :" + idFilm);
-        System.out.println("L'Id du Genre à insérer est :" + idGenre);
 
         String sqlInsertCorrespond = "INSERT INTO moviedb.CORRESPOND(IdGenre, IdFilm) VALUES (" + idGenre + "," + idFilm + ")";
 //Attribution de l'acteur/réal. d'id 10 (Acteur fantôme.
@@ -105,9 +97,9 @@ public class CorrespondDAO extends Dao<Correspond> {
         return 0;
     }
 
-    public ListeCheckBox extractListeCheckBoxFromJointure(Jointure jointure) {
+    public ListeCheckBox extractListeCheckBoxFromJointure(JointureFilm jointureFilm) {
         ListeCheckBox listeCheckBox = new ListeCheckBox();
-        int idFilm = jointure.getIdJointure();
+        int idFilm = jointureFilm.getIdJointure();
 
         String sqlGenreFromId = "SELECT IdGenre FROM CORRESPOND WHERE IdFilm=" + idFilm + "";
 
@@ -188,9 +180,9 @@ public class CorrespondDAO extends Dao<Correspond> {
         return listeCheckBox;
     }
 
-    public ArrayList<Integer> extractIdListFromJointure(Jointure jointure) {
+    public ArrayList<Integer> extractIdListFromJointure(JointureFilm jointureFilm) {
         ArrayList<Integer> listeIntgenre = new ArrayList<>();
-        int idFilm = jointure.getIdJointure();
+        int idFilm = jointureFilm.getIdJointure();
 
         String sqlGenreFromId = "SELECT IdGenre FROM CORRESPOND WHERE IdFilm=" + idFilm + "";
 

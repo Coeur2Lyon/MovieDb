@@ -11,8 +11,7 @@ public class Correspond {
     int idGenre=0;
 
 
-    public Correspond() {
-    }
+    public Correspond() {}
 
     public Correspond(int idFilm, int idGenre) {
         this.idFilm = idFilm;

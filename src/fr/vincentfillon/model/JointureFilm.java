@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Jointure {
+public class JointureFilm {
 
     GregorianCalendar cal = new GregorianCalendar(2007, 9 - 1, 23);
     long millis = cal.getTimeInMillis();
@@ -34,7 +34,7 @@ public class Jointure {
 
     private Object StringProperty;
 
-    public Jointure(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs, Date createdAt, int isDeleted) {
+    public JointureFilm(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs, Date createdAt, int isDeleted) {
         this.idJointure = idJointure;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
@@ -48,11 +48,11 @@ public class Jointure {
         this.isDeleted = isDeleted;
     }
 
-    public Jointure() {
+    public JointureFilm() {
         this(0,null, null, null, null, null, null, null, null);
     }
 
-    public Jointure(String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
+    public JointureFilm(String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
         this.scenario = new SimpleStringProperty(scenario);
@@ -63,7 +63,7 @@ public class Jointure {
         this.acteurs = new SimpleStringProperty(acteurs);
     }
 
-    public Jointure(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
+    public JointureFilm(int idJointure, String titreFR, String titreO, String scenario, String anneeSortie, String nationalite, String genre, String realisateurs, String acteurs) {
         this.idJointure=idJointure;
         this.titreFR = new SimpleStringProperty(titreFR);
         this.titreO = new SimpleStringProperty(titreO);
