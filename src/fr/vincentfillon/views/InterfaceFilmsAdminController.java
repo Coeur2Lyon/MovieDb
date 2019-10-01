@@ -4,7 +4,7 @@ import fr.vincentfillon.Main;
 import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.dao.CorrespondDAO;
 import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.JointureDAO;
+import fr.vincentfillon.dao.JointureFilmDAO;
 import fr.vincentfillon.model.Correspond;
 import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
@@ -16,7 +16,7 @@ import javafx.scene.control.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class InterfaceJointureFilmsAdminController {
+public class InterfaceFilmsAdminController {
 
     @FXML
     private TableView<JointureFilm> movieJoinTable;
@@ -57,10 +57,10 @@ public class InterfaceJointureFilmsAdminController {
 
     /* The constructor is called before the initialize() method.
      */
-    public InterfaceJointureFilmsAdminController()  {
+    public InterfaceFilmsAdminController()  {
 
 
-        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
 
 //Pour trouver le film d'indice i:
         //  JointureFilm jointure = jointureDAO.find(1);
@@ -149,7 +149,7 @@ public class InterfaceJointureFilmsAdminController {
      */
     @FXML
     public void addNewMovieJoin() {
-        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
         JointureFilm tempJointureFilm = new JointureFilm();
         Correspond tempCorrespond = new Correspond();
@@ -235,7 +235,7 @@ public class InterfaceJointureFilmsAdminController {
     public void editMovieJoin() {
         JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
 
-        Dao<JointureFilm> jointureDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDao = new JointureFilmDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
 
         Correspond tempCorrespond = new Correspond();
@@ -355,7 +355,7 @@ public class InterfaceJointureFilmsAdminController {
     @FXML
     private void deleteMovieJoin() {
         JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
-        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
         if (selectedJoinMovie != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.initOwner(Main.getPrimaryStage());

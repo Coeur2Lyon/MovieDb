@@ -1,6 +1,7 @@
 package fr.vincentfillon;
 
 import fr.vincentfillon.model.ActeurRealisateur;
+import fr.vincentfillon.model.JointureActeursRealisateur;
 import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import fr.vincentfillon.views.ActRealEditDialogController;
@@ -73,7 +74,7 @@ public class Main extends Application {
         }
     }
 
-    public static boolean showActeurRealisateurEditDialog(ActeurRealisateur acteurRealisateur) {
+    public static boolean showActeurRealisateurEditDialog(JointureActeursRealisateur acteurRealisateur) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -104,7 +105,7 @@ public class Main extends Application {
         }
     }
 
-    public static boolean showJoueEditDialog(ActeurRealisateur acteurRealisateur) {
+    public static boolean showJoueEditDialog(JointureActeursRealisateur acteurRealisateur) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();

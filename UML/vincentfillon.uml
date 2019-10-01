@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>fr.vincentfillon</OriginalElement>
+  <nodes>
+    <node x="83.22882775119618" y="4.46875">fr.vincentfillon.model</node>
+    <node x="335.9927432216906" y="105.46875">fr.vincentfillon.Main</node>
+    <node x="118.45053827751198" y="327.46875">fr.vincentfillon.views</node>
+    <node x="20.0" y="105.46875">fr.vincentfillon.dao</node>
+    <node x="192.0" y="216.46875">fr.vincentfillon.connectivity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fr.vincentfillon.Main" target="fr.vincentfillon.views">
+      <point x="32.80000000000001" y="15.5" />
+      <point x="409.7927432216906" y="196.46875" />
+      <point x="411.5" y="196.46875" />
+      <point x="411.5" y="307.46875" />
+      <point x="243.4959928229665" y="307.46875" />
+      <point x="59.54545454545453" y="-15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.views" target="fr.vincentfillon.connectivity">
+      <point x="11.909090909090907" y="-15.5" />
+      <point x="195.8596291866029" y="267.46875" />
+      <point x="280.0" y="267.46875" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.views" target="fr.vincentfillon.Main">
+      <point x="23.818181818181813" y="-15.5" />
+      <point x="207.7687200956938" y="277.46875" />
+      <point x="378.5" y="277.46875" />
+      <point x="378.5" y="196.46875" />
+      <point x="360.5927432216906" y="196.46875" />
+      <point x="-16.400000000000006" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.connectivity" target="fr.vincentfillon.Main">
+      <point x="0.0" y="-15.5" />
+      <point x="280.0" y="196.46875" />
+      <point x="344.1927432216906" y="196.46875" />
+      <point x="-32.8" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao" target="fr.vincentfillon.dao">
+      <point x="-39.33333333333334" y="15.5" />
+      <point x="39.66666666666666" y="156.46875" />
+      <point x="0.0" y="156.46875" />
+      <point x="0.0" y="120.96875" />
+      <point x="-59.0" y="-0.0" />
+    </edge>
+    <edge source="fr.vincentfillon.model" target="fr.vincentfillon.model">
+      <point x="-59.0625" y="15.5" />
+      <point x="91.66632775119618" y="55.46875" />
+      <point x="63.22882775119618" y="55.46875" />
+      <point x="63.22882775119618" y="19.96875" />
+      <point x="-67.5" y="-0.0" />
+    </edge>
+    <edge source="fr.vincentfillon.Main" target="fr.vincentfillon.model">
+      <point x="0.0" y="-15.5" />
+      <point x="376.9927432216906" y="85.46875" />
+      <point x="209.79132775119618" y="85.46875" />
+      <point x="59.0625" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.views" target="fr.vincentfillon.model">
+      <point x="-23.818181818181813" y="-15.5" />
+      <point x="8.4375" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.views" target="fr.vincentfillon.views">
+      <point x="-43.66666666666666" y="15.5" />
+      <point x="140.28387161084532" y="378.46875" />
+      <point x="98.45053827751198" y="378.46875" />
+      <point x="98.45053827751198" y="353.3020833333333" />
+      <point x="-65.5" y="10.333333333333334" />
+    </edge>
+    <edge source="fr.vincentfillon.dao" target="fr.vincentfillon.model">
+      <point x="-29.5" y="-15.5" />
+      <point x="49.5" y="75.46875" />
+      <point x="108.54132775119618" y="75.46875" />
+      <point x="-42.1875" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.views" target="fr.vincentfillon.dao">
+      <point x="-47.636363636363626" y="-15.5" />
+      <point x="136.31417464114836" y="297.46875" />
+      <point x="106.28353269537482" y="297.46875" />
+      <point x="106.28353269537482" y="196.46875" />
+      <point x="118.33333333333334" y="196.46875" />
+      <point x="39.33333333333334" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.2999999999999998" x="235.73504273504267" y="237.84615384615387" />
+  <SelectedNodes>
+    <node>fr.vincentfillon.Main</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

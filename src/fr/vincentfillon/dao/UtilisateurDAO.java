@@ -47,11 +47,6 @@ public class UtilisateurDAO extends Dao<Utilisateur>{
     }
 
     @Override
-    public int findIdfromTitre(String titre) {
-        return 0;
-    }
-
-    @Override
     public int findIdMax() {
         return 0;
     }

@@ -8,10 +8,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class JoueDAO extends Dao<Joue> {
+public class RealiseDAO extends Dao<Joue> {
 
 
-    public JoueDAO(Connection conn) {
+    public RealiseDAO(Connection conn) {
         super(conn);
     }
 
@@ -34,9 +34,6 @@ public class JoueDAO extends Dao<Joue> {
         return extractedId;
     }
 
-
-
-
     @Override
     public void delete(Joue obj) {
 
@@ -56,7 +53,6 @@ public class JoueDAO extends Dao<Joue> {
     public ObservableList findAll() {
         return null;
     }
-
 
 
     @Override

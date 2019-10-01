@@ -3,12 +3,10 @@ package fr.vincentfillon.views;
 import fr.vincentfillon.Main;
 import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.JointureDAO;
-import fr.vincentfillon.dao.JoueDAO;
+import fr.vincentfillon.dao.JointureFilmDAO;
 import fr.vincentfillon.model.ActeurRealisateur;
+import fr.vincentfillon.model.JointureActeursRealisateur;
 import fr.vincentfillon.model.JointureFilm;
-import fr.vincentfillon.model.Joue;
-import fr.vincentfillon.model.ListeCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class JoueEditDialogController extends InterfaceJointureFilmsAdminController {
+public class JoueEditDialogController extends InterfaceFilmsAdminController {
 
 
     @FXML
@@ -65,13 +63,13 @@ public class JoueEditDialogController extends InterfaceJointureFilmsAdminControl
     // Reference à InterfacePrincipaleController
     private InterfacePrincipaleController jointure;
     private MovieJoinEditDialogController movieJoinEditDialogController;
-    private ActeurRealisateur acteurRealisateur;
+    private JointureActeursRealisateur acteurRealisateur;
     private Stage dialogStage;
     private JointureFilm jointureFilm;
 
     // Reference to the main application.
     private Main main;
-    InterfaceJointureFilmsAdminController interfaceJointureFilmsAdminController = new InterfaceJointureFilmsAdminController();
+    InterfaceFilmsAdminController interfaceFilmsAdminController = new InterfaceFilmsAdminController();
 
     private boolean okClicked = false;
 
@@ -87,7 +85,7 @@ public class JoueEditDialogController extends InterfaceJointureFilmsAdminControl
     public JoueEditDialogController() {
 
         super();
-        Dao<JointureFilm> jointureDAO = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
 
 //Pour trouver le film d'indice i:
         //  JointureFilm jointure = jointureDAO.find(1);
@@ -181,12 +179,12 @@ public class JoueEditDialogController extends InterfaceJointureFilmsAdminControl
         return okClicked;
     }
 
-    public void setInfosActeur(ActeurRealisateur acteurRealisateur) {
+    public void setInfosActeur(JointureActeursRealisateur acteurRealisateur) {
         this.acteurRealisateur = acteurRealisateur;
 //Paramétrages des infos à afficher dans les TextFields de la fenêtre ActRelaEditDialog
         lblPrenomTitre.setText(acteurRealisateur.getPrenom());
         lblNomTitre.setText(acteurRealisateur.getNom());
-        lblId.setText(String.valueOf(acteurRealisateur.getIdActeurRealisateur()));
+        lblId.setText(String.valueOf(acteurRealisateur.getIdJointure()));
     }
 
 
@@ -195,19 +193,19 @@ public class JoueEditDialogController extends InterfaceJointureFilmsAdminControl
     }
 
 
-    public JointureFilm getJointureFilm() {
-        Dao<JointureFilm> jointureFilmDao = new JointureDAO(ConnectionClass.connecte());
+    public int getIdSelectedFilm() {
+        int idSelectedFilm=1;
+        Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
         JointureFilm selectedFilm= movieJoinTable.getSelectionModel().getSelectedItem();
         selectedFilm=jointureFilmDao.find(selectedFilm.getIdJointure());
-        return jointureFilm;
+        idSelectedFilm=selectedFilm.getIdJointure();
+
+        return idSelectedFilm;
     }
 
     public boolean isInputValid() {
         String errorMessage = "";
         JointureFilm selectedFilmIsValid = movieJoinTable.getSelectionModel().getSelectedItem();
-
-
-
 
         if (selectedFilmIsValid == null) {
             errorMessage += "Pas de film sélectionné!\n Merci de sélectionner un film\n";

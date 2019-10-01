@@ -1,9 +1,6 @@
 package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
-import fr.vincentfillon.model.Film;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +10,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 
 
@@ -53,7 +49,7 @@ public class InterfacePrincipaleController extends Main {
         Parent root;
         Stage newWindow = new Stage();
         try {
-            root = FXMLLoader.load(getClass().getResource("InterfaceJointureFilmsAdmin.fxml"));
+            root = FXMLLoader.load(getClass().getResource("InterfaceFilmsAdmin.fxml"));
             newWindow.setScene(new Scene(root,850,642));
             newWindow.initModality(Modality.APPLICATION_MODAL);
 

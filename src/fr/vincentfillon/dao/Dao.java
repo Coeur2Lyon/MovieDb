@@ -45,9 +45,6 @@ public abstract class Dao<T> {
 
     public abstract ObservableList findAll();
 
-
-    public abstract int findIdfromTitre(String titre);
-
     public abstract int findIdMax();
 
 }

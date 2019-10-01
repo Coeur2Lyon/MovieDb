@@ -26,17 +26,12 @@
                      </font>
                   </Label>
                   <PasswordField layoutX="196.0" layoutY="117.0" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #2A0033; -fx-border-color: #9643A9; -fx-border-radius: 20;" />
-                  <Label layoutX="55.0" layoutY="121.0" text="Password" textFill="#f8f8f8">
+                  <Label layoutX="55.0" layoutY="121.0" text="Mot de passe" textFill="#f8f8f8">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ButtonBar layoutX="183.0" layoutY="193.0" prefHeight="25.0" prefWidth="280.0">
-                    <buttons>
-                        <Button fx:id="btnOK" minWidth="12.0" mnemonicParsing="false" onAction="#initInterfaceJointureFilms" prefHeight="18.0" prefWidth="153.0" style="-fx-font-weight: bold;" text="OK" textFill="#0c004c" />
-                      <Button mnemonicParsing="false" prefHeight="23.0" text="Annuler" />
-                    </buttons>
-                  </ButtonBar>
+                  <ButtonBar layoutX="183.0" layoutY="193.0" prefHeight="25.0" prefWidth="280.0" />
                   <Hyperlink layoutX="177.0" layoutY="283.0" prefHeight="20.0" prefWidth="174.0" text="Mot de passe oublié?" textFill="#d0c7c7">
                      <font>
                         <Font size="14.0" />
@@ -49,8 +44,9 @@
                   </Hyperlink>
                   <ButtonBar layoutX="55.0" layoutY="234.0" prefHeight="47.0" prefWidth="420.0">
                     <buttons>
-                      <Button mnemonicParsing="false" onAction="#initInterfaceJointureFilms" text="Accès FILMS" />
+                      <Button mnemonicParsing="false" onAction="#initInterfaceJointureFilms" prefWidth="196.0" text="Accès FILMS" />
                         <Button mnemonicParsing="false" onAction="#initInterfaceActeursRealisateurs" text="Accès Acteurs/Réalisateurs" />
+                      <Button maxWidth="100.0" minWidth="43.0" mnemonicParsing="false" prefHeight="28.0" text="Annuler" />
                     </buttons>
                   </ButtonBar>
                </children>

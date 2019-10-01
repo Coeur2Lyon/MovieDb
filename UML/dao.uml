@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>fr.vincentfillon.dao</OriginalElement>
+  <nodes>
+    <node x="813.0" y="131.0">fr.vincentfillon.dao.JointureDAO</node>
+    <node x="182.0" y="131.0">fr.vincentfillon.dao.JoueDAO</node>
+    <node x="973.0" y="131.0">fr.vincentfillon.dao.UtilisateurDAO</node>
+    <node x="466.0" y="-134.0">fr.vincentfillon.dao.Dao</node>
+    <node x="317.0" y="131.0">fr.vincentfillon.dao.FilmDAO</node>
+    <node x="447.0" y="131.0">fr.vincentfillon.dao.GenreDAO</node>
+    <node x="589.0" y="131.0">fr.vincentfillon.dao.ActeurRealisateurDAO</node>
+    <node x="0.0" y="131.0">fr.vincentfillon.dao.CorrespondDAO</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fr.vincentfillon.dao.JointureDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="-35.0" y="-15.5" />
+      <point x="848.0" y="81.0" />
+      <point x="527.0" y="81.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.CorrespondDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="-40.5" y="-15.5" />
+      <point x="40.5" y="51.0" />
+      <point x="472.71428571428567" y="51.0" />
+      <point x="-35.28571428571428" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.JoueDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="28.75" y="-15.5" />
+      <point x="268.25" y="81.0" />
+      <point x="489.0" y="81.0" />
+      <point x="-19.0" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.UtilisateurDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="38.25" y="-15.5" />
+      <point x="1087.75" y="51.0" />
+      <point x="543.2857142857143" y="51.0" />
+      <point x="35.285714285714334" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.FilmDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="-27.5" y="-15.5" />
+      <point x="344.5" y="91.0" />
+      <point x="494.42857142857144" y="91.0" />
+      <point x="-13.571428571428555" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.ActeurRealisateurDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="-51.0" y="-15.5" />
+      <point x="640.0" y="101.0" />
+      <point x="516.1428571428571" y="101.0" />
+      <point x="8.14285714285711" y="15.5" />
+    </edge>
+    <edge source="fr.vincentfillon.dao.GenreDAO" target="fr.vincentfillon.dao.Dao">
+      <point x="-30.5" y="-15.5" />
+      <point x="477.5" y="111.0" />
+      <point x="505.2857142857142" y="111.0" />
+      <point x="-2.7142857142857224" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="588.0" y="60.99999999999997" />
+  <SelectedNodes>
+    <node>fr.vincentfillon.dao.Dao</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

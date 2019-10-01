@@ -5,12 +5,12 @@ public class Joue {
     ActeurRealisateur acteurRealisateur;
 
     int idFilm=0;
-    int idActeurRealisateur=0;
+    int idActeursRealisateur =0;
 
     public Joue(){}
 
-    public Joue(int idActeurRealisateur, int idFilm) {
-        this.idActeurRealisateur = idActeurRealisateur;
+    public Joue(int idActeursRealisateur, int idFilm) {
+        this.idActeursRealisateur = idActeursRealisateur;
         this.idFilm = idFilm;
 
     }
@@ -22,12 +22,12 @@ public class Joue {
         this.idFilm = idFilm;
     }
 
-    public int getIdActeurRealisateur() {
-        return idActeurRealisateur;
+    public int getIdActeursRealisateur() {
+        return idActeursRealisateur;
     }
 
-    public void setIdActeurRealisateur(int idActeurRealisateur) {
-        this.idActeurRealisateur = idActeurRealisateur;
+    public void setIdActeursRealisateur(int idActeursRealisateur) {
+        this.idActeursRealisateur = idActeursRealisateur;
     }
 
 

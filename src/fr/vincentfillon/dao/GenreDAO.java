@@ -57,10 +57,7 @@ public class GenreDAO extends Dao<Genre> {
         return null;
     }
 
-    @Override
-    public int findIdfromTitre(String titre) {
-        return 0;
-    }
+
 
     @Override
     public int findIdMax() {

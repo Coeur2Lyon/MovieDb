@@ -2,36 +2,27 @@ package fr.vincentfillon.views;
 
 import fr.vincentfillon.Main;
 import fr.vincentfillon.connectivity.ConnectionClass;
-import fr.vincentfillon.dao.ActeurRealisateurDAO;
-import fr.vincentfillon.dao.Dao;
-import fr.vincentfillon.dao.JointureDAO;
-import fr.vincentfillon.dao.JoueDAO;
+import fr.vincentfillon.dao.*;
 import fr.vincentfillon.model.ActeurRealisateur;
+import fr.vincentfillon.model.JointureActeursRealisateur;
 import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.Joue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class InterfaceActeursRealisateursAdminController {
 
     @FXML
-    private TableView<ActeurRealisateur> acteurRealisateurTable;
+    private TableView<JointureActeursRealisateur> acteurRealisateurTable;
     @FXML
-    private TableColumn<ActeurRealisateur, String> colPrenom;
+    private TableColumn<JointureActeursRealisateur, String> colPrenom;
     @FXML
-    private TableColumn<ActeurRealisateur, String> colNom;
+    private TableColumn<JointureActeursRealisateur, String> colNom;
 
     @FXML
     private Label lblPrenom;
@@ -56,26 +47,23 @@ public class InterfaceActeursRealisateursAdminController {
     private JoueEditDialogController joueEditDialogController;
 
     @FXML
-    private ObservableList<ActeurRealisateur> acteurRealisateursData = FXCollections.observableArrayList();
-
-
-    /* The constructor is called before the initialize() method.
+    private ObservableList<JointureActeursRealisateur> acteurRealisateursData = FXCollections.observableArrayList();
+/* The constructor is called before the initialize() method.
      */
     public InterfaceActeursRealisateursAdminController() {
 
-
-        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
+        Dao<JointureActeursRealisateur> jointureActeursRealisateurDAO = new JointureActeursRealisateurDAO(ConnectionClass.connecte());
 
 //Pour trouver l'acteur d'indice i:
         // ActeurRealisateur acteurRealisateur = acteurRealisateurDAO.find(1);
-        acteurRealisateursData.setAll(acteurRealisateurDAO.findAll());
+        acteurRealisateursData.setAll(jointureActeursRealisateurDAO.findAll());
         //acteurRealisateursData.add(new ActeurRealisateur("Villeret", "Jacques",  "1960", "FR"));
         //acteurRealisateursData.add(new ActeurRealisateur("Scorses", "Martin", "1962", "US"));
 //        movieJoinData.add(new JointureFilm("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
 //        movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
 
-    public ObservableList<ActeurRealisateur> getActeurRealisateursData() {
+    public ObservableList<JointureActeursRealisateur> getActeurRealisateursData() {
         return acteurRealisateursData;
     }
 
@@ -115,16 +103,18 @@ public class InterfaceActeursRealisateursAdminController {
      * Fills all text fields to show details about the movie.
      * If the specified movie is null, all text fields are cleared.
      *
-     * @param acteurRealisateur the movie or null
+     * @param jointureActeursRealisateur the movie or null
      */
-    public void showActeurRealisateursDetails(ActeurRealisateur acteurRealisateur) {
+    public void showActeurRealisateursDetails(JointureActeursRealisateur jointureActeursRealisateur) {
 
-        if (acteurRealisateur != null) {
+        if (jointureActeursRealisateur != null) {
             // Fill the labels with info from the movie object.
-            lblPrenom.setText(acteurRealisateur.getPrenom());
-            lblNom.setText(acteurRealisateur.getNom());
-            lblAnneeNaissance.setText(acteurRealisateur.getAnneeNaissance());
-            lblNationalite.setText(acteurRealisateur.getNationalite());
+            lblPrenom.setText(jointureActeursRealisateur.getPrenom());
+            lblNom.setText(jointureActeursRealisateur.getNom());
+            lblAnneeNaissance.setText(jointureActeursRealisateur.getAnneeNaissance());
+            lblNationalite.setText(jointureActeursRealisateur.getNationalite());
+            lblJoue.setText(jointureActeursRealisateur.getJoue());
+            lblRealise.setText(jointureActeursRealisateur.getRealise());
 
 
         } else {
@@ -143,14 +133,14 @@ public class InterfaceActeursRealisateursAdminController {
      */
     @FXML
     public void addActeurRealisateur(ActionEvent actionEvent) {
-        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
-        ActeurRealisateur tempActeurRealisateur = new ActeurRealisateur();
+        Dao<JointureActeursRealisateur> jointureActeursRealisateurDAO = new JointureActeursRealisateurDAO(ConnectionClass.connecte());
+        JointureActeursRealisateur tempActeurRealisateur = new JointureActeursRealisateur();
 
         boolean okClicked = Main.showActeurRealisateurEditDialog(tempActeurRealisateur);
 
         if (okClicked) {
             getActeurRealisateursData().add(tempActeurRealisateur);
-            acteurRealisateurDAO.create(tempActeurRealisateur);
+            jointureActeursRealisateurDAO.create(tempActeurRealisateur);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un acteur/réalisateur");
@@ -169,8 +159,8 @@ public class InterfaceActeursRealisateursAdminController {
      */
     @FXML
     private void deleteActeurRealisateur() {
-        ActeurRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
-        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
+        JointureActeursRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
+        Dao<JointureActeursRealisateur> acteurRealisateurDAO = new JointureActeursRealisateurDAO(ConnectionClass.connecte());
         if (selectedActeurRealisateur != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.initOwner(Main.getPrimaryStage());
@@ -195,8 +185,8 @@ public class InterfaceActeursRealisateursAdminController {
     @FXML
     public void editActeurRealisateur(ActionEvent actionEvent) {
 
-        ActeurRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
-        Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
+        JointureActeursRealisateur selectedActeurRealisateur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
+        Dao<JointureActeursRealisateur> acteurRealisateurDAO = new JointureActeursRealisateurDAO(ConnectionClass.connecte());
         if (selectedActeurRealisateur != null) {
             boolean okClicked = Main.showActeurRealisateurEditDialog(selectedActeurRealisateur);
             if (okClicked) {
@@ -232,12 +222,12 @@ public class InterfaceActeursRealisateursAdminController {
 
 
     public void addJoue() {
-        ActeurRealisateur selectedActeur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
+        JointureActeursRealisateur selectedActeur = acteurRealisateurTable.getSelectionModel().getSelectedItem();
         JointureFilm filmARecuperer = new JointureFilm();
 
         Dao<ActeurRealisateur> acteurRealisateurDAO = new ActeurRealisateurDAO(ConnectionClass.connecte());
         Dao<Joue> joueDao = new JoueDAO(ConnectionClass.connecte());
-        Dao<JointureFilm> jointureFilmDao = new JointureDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
 
 
         Joue tempJoue = new Joue();
@@ -245,13 +235,18 @@ public class InterfaceActeursRealisateursAdminController {
 
         if (selectedActeur != null) {
 
-            int idSelectedActeur = selectedActeur.getIdActeurRealisateur();
+            int idSelectedActeur = selectedActeur.getIdJointure();
             System.out.println("La valeur de l'ID pris en compte (de manière normale et edffective actuellement) qui doit être la valeur de l'Id de l'acteur séléctionné à la base)  est:" + idSelectedActeur);
-            tempJoue.setIdActeurRealisateur(idSelectedActeur);
+            tempJoue.setIdActeursRealisateur(idSelectedActeur);
             boolean okClicked = Main.showJoueEditDialog(selectedActeur);
             if (okClicked) {
-                filmARecuperer = joueEditDialogController.getJointureFilm();
-                int idFilmARecup = filmARecuperer.getIdJointure();
+                int idFilmARecup = 0;
+
+                try{
+                    joueEditDialogController.getIdSelectedFilm();
+                }catch (Exception e){
+                }
+                //int idFilmARecup = filmARecuperer.getIdJointure();
                 if (idFilmARecup != 0) {
                     //filmARecuperer=jointureFilmDao.find(idFilmARecup);
                     tempJoue.setIdFilm(idFilmARecup);
@@ -273,11 +268,7 @@ public class InterfaceActeursRealisateursAdminController {
                     // alert.setContentText("Merci de sélectionner un film");
                     // alert.showAndWait();
                 }
-
-
             }
-
-
         } else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);

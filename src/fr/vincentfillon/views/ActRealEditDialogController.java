@@ -3,6 +3,7 @@ package fr.vincentfillon.views;
 //public class MovieEditDialogController {
 
 import fr.vincentfillon.model.ActeurRealisateur;
+import fr.vincentfillon.model.JointureActeursRealisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -34,7 +35,7 @@ public class ActRealEditDialogController {
 
 
     private Stage dialogStage;
-    private ActeurRealisateur acteurRealisateur;
+    private JointureActeursRealisateur acteurRealisateur;
     private boolean okClicked = false;
 
     /**
@@ -60,10 +61,10 @@ public class ActRealEditDialogController {
     /**
      * Sets the movie Join to be edited in the dialog.
      *
-     * @param acteurRealisateur
+     * @param jointureActeursRealisateur
      */
-    public void setActeurRealisateur(ActeurRealisateur acteurRealisateur) {
-        this.acteurRealisateur=acteurRealisateur;
+    public void setActeurRealisateur(JointureActeursRealisateur jointureActeursRealisateur) {
+        this.acteurRealisateur=jointureActeursRealisateur;
 //Paramétrages des infos à afficher dans les TextFields de la fenêtre ActRelaEditDialog
         fldPrenom.setText(acteurRealisateur.getPrenom());
         fldNom.setText(acteurRealisateur.getNom());

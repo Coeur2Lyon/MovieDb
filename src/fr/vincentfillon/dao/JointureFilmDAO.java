@@ -10,9 +10,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public class JointureDAO extends Dao<JointureFilm> {
+public class JointureFilmDAO extends Dao<JointureFilm> {
 
-    public JointureDAO(Connection connection) {
+    public JointureFilmDAO(Connection connection) {
         super(connection);
     }
 
@@ -67,7 +67,7 @@ public class JointureDAO extends Dao<JointureFilm> {
         //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointureFilm.getTitreFR() + "', TitreO='" + jointureFilm.getTitreO() + "', Scenario='" + jointureFilm.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointureFilm.getNationalite() + "' WHERE idJointure=" + jointureFilm.getIdJointure() + ";";
         //String updateRequest="UPDATE moviedb.FILM SET TitreFr='tEST MODIF', TitreO='TEST TEST', Scenario='TEST', AnneeSortie=1963, NationaliteF='FR' WHERE idJointure=3";
 
-        String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie="+anneeSortie+", NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
+        String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie=" + anneeSortie + ", NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
 
         try {
             Statement statement = this.connect.createStatement();
@@ -124,7 +124,7 @@ public class JointureDAO extends Dao<JointureFilm> {
                 String acteurs = resultActeurs.getString(1) + " " + resultActeurs.getString(2);
 
 
-                //boucle de la jointureFilm genre:
+                //boucle de la construction de la String "genre" extraite de la jointure:
                 int genreSize = 1;
                 resultGenre.last();
                 genreSize = resultGenre.getRow();
@@ -138,7 +138,7 @@ public class JointureDAO extends Dao<JointureFilm> {
                     }
 
                 }
-
+//boucle de la construction de la String "realisateur" extraite de la jointure:
                 int realisateurSize = 1;
                 resultRealisateur.last();
                 realisateurSize = resultRealisateur.getRow();
@@ -151,7 +151,7 @@ public class JointureDAO extends Dao<JointureFilm> {
                         resultRealisateur.next();
                     }
                 }
-
+//boucle de la construction de la String "acteurs" extraite de la jointure:
                 int acteursSize = 1;
                 resultActeurs.last();
                 acteursSize = resultActeurs.getRow();
@@ -193,13 +193,13 @@ public class JointureDAO extends Dao<JointureFilm> {
     @Override
     public ObservableList findAll() {
         ObservableList<JointureFilm> listeFilms = FXCollections.observableArrayList();
-for(int i=1;i<=findIdMax();i++){
-    JointureFilm jointureFilm =find(i);
+        for (int i = 1; i <= findIdMax(); i++) {
+            JointureFilm jointureFilm = find(i);
 
-    if(jointureFilm.getIsDeleted()==0){
-        listeFilms.add(jointureFilm);
-    }
-}
+            if (jointureFilm.getIsDeleted() == 0) {
+                listeFilms.add(jointureFilm);
+            }
+        }
 
 
         /*
@@ -216,7 +216,6 @@ for(int i=1;i<=findIdMax();i++){
     }
 
 
-    @Override
     public int findIdfromTitre(String titre) {
         int id = 0;
 
@@ -234,7 +233,7 @@ for(int i=1;i<=findIdMax();i++){
                     ResultSet.CONCUR_READ_ONLY).executeQuery(sqlFindMax);
 
             if (resultFilm.first()) {
-                idMax=resultFilm.getInt(1);
+                idMax = resultFilm.getInt(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>fr.vincentfillon.model</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1670.0">fr.vincentfillon.model.Correspond</node>
+    <node x="0.0" y="0.0">fr.vincentfillon.model.JointureFilm</node>
+    <node x="1178.0" y="0.0">fr.vincentfillon.model.ActeurRealisateur</node>
+    <node x="0.0" y="1183.0">fr.vincentfillon.model.Genre</node>
+    <node x="253.0" y="1670.0">fr.vincentfillon.model.IdSelectedFilm</node>
+    <node x="329.0" y="1183.0">fr.vincentfillon.model.Utilisateur</node>
+    <node x="803.0" y="1183.0">fr.vincentfillon.model.ListeCheckBox</node>
+    <node x="1654.0" y="1183.0">fr.vincentfillon.model.Joue</node>
+    <node x="692.0" y="0.0">fr.vincentfillon.model.Film</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.3256561328334226" x="985.0" y="923.5" />
+  <SelectedNodes>
+    <node>fr.vincentfillon.model.Correspond</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

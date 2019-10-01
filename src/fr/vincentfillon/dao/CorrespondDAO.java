@@ -87,10 +87,7 @@ public class CorrespondDAO extends Dao<Correspond> {
         return null;
     }
 
-    @Override
-    public int findIdfromTitre(String titre) {
-        return 0;
-    }
+
 
     @Override
     public int findIdMax() {
