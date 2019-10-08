@@ -57,7 +57,7 @@ public class InterfaceFilmsAdminController {
 
     /* The constructor is called before the initialize() method.
      */
-    public InterfaceFilmsAdminController()  {
+    public InterfaceFilmsAdminController() {
 
 
         Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
@@ -101,6 +101,8 @@ public class InterfaceFilmsAdminController {
     }
 
     /**
+     * Est appelée par le controlleur de l'interface principale (InterfacePrincipaleController)
+     * pour donner en retour une référence à lui-même
      * Is called by the main application to give a reference back to itself.
      *
      * @param jointure
@@ -112,8 +114,8 @@ public class InterfaceFilmsAdminController {
     }
 
     /**
-     * Fills all text fields to show details about the movie.
-     * If the specified movie is null, all text fields are cleared.
+     * Remplie les labels de "Détails du film avec les information récupérées (getters) de l'objet
+     * JointureFilms(construit à partir des données de la base de donnée via le patterDAO
      *
      * @param jointureFilm the movie or null
      */
@@ -142,7 +144,6 @@ public class InterfaceFilmsAdminController {
         }
     }
 
-
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new movie.
@@ -163,15 +164,12 @@ public class InterfaceFilmsAdminController {
             getListeCheckBoxData().add(listeCheckBox);
 
             jointureDAO.create(tempJointureFilm);
+            movieJoinData.setAll(jointureDAO.findAll());
+
 
             int idFilm = jointureDAO.findIdMax();
             tempCorrespond.setIdFilm(idFilm);
 
-            System.out.println("L'IdFilm doît être égal au dernier Idjointure:  " + idFilm);
-            System.out.println("Le get de tempCorrespond doît être égale à Id Film:  " + tempCorrespond.getIdFilm());
-
-            //System.out.println("Id du dernier tempjointure ajouté" +tempJointureFilm.getIdJointure());
-            // System.out.println("IdFilm de tempCorrespond qui doit être idenntique a Idtempjointure (ci dessus):" +tempCorrespond.getIdFilm());
 
             if (listeCheckBox.isCboxPolicier()) {
                 tempCorrespond.setIdGenre(0);
@@ -215,8 +213,7 @@ public class InterfaceFilmsAdminController {
                 tempCorrespond.setIdGenre(9);
                 correspondDao.create(tempCorrespond);
             }
-//TODO Vérifier si cette ligne est vraiment indispensable (Tout à la fin)
-            movieJoinData.setAll(jointureDAO.findAll());
+
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
@@ -239,15 +236,14 @@ public class InterfaceFilmsAdminController {
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
 
         Correspond tempCorrespond = new Correspond();
-        int idFilm = selectedJoinMovie.getIdJointure();
-        tempCorrespond.setIdFilm(idFilm);
-        ListeCheckBox listegenreFromIdFilm = ((CorrespondDAO) correspondDao).extractListeCheckBoxFromJointure(selectedJoinMovie);
-
-        ArrayList<Integer> listIntGenre = ((CorrespondDAO) correspondDao).extractIdListFromJointure(selectedJoinMovie);
-        System.out.println("Essai en sélectionnant un DRAME doit être true si Drame: " + listegenreFromIdFilm.isCboxDrame());
-
 
         if (selectedJoinMovie != null) {
+            int idFilm = selectedJoinMovie.getIdJointure();
+            tempCorrespond.setIdFilm(idFilm);
+            ListeCheckBox listegenreFromIdFilm = ((CorrespondDAO) correspondDao).extractListeCheckBoxFromJointure(selectedJoinMovie);
+
+            ArrayList<Integer> listIntGenre = ((CorrespondDAO) correspondDao).extractIdListFromJointure(selectedJoinMovie);
+
             boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listegenreFromIdFilm);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
@@ -255,7 +251,7 @@ public class InterfaceFilmsAdminController {
 
                 if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxPolicier() && listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
@@ -264,7 +260,7 @@ public class InterfaceFilmsAdminController {
 
                 if (listegenreFromIdFilm.isCboxThriller() && !listIntGenre.contains(1)) {
                     tempCorrespond.setIdGenre(1);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxThriller() && listIntGenre.contains(1)) {
                     tempCorrespond.setIdGenre(1);
@@ -272,7 +268,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxFantastqiqueSF() && !listIntGenre.contains(2)) {
                     tempCorrespond.setIdGenre(2);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxFantastqiqueSF() && listIntGenre.contains(2)) {
                     tempCorrespond.setIdGenre(2);
@@ -280,7 +276,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxDrame() && !listIntGenre.contains(3)) {
                     tempCorrespond.setIdGenre(3);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxDrame() && listIntGenre.contains(3)) {
                     tempCorrespond.setIdGenre(3);
@@ -288,7 +284,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxBiopic() && !listIntGenre.contains(4)) {
                     tempCorrespond.setIdGenre(4);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxBiopic() && listIntGenre.contains(4)) {
                     tempCorrespond.setIdGenre(4);
@@ -296,7 +292,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxAction() && !listIntGenre.contains(5)) {
                     tempCorrespond.setIdGenre(5);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxAction() && listIntGenre.contains(5)) {
                     tempCorrespond.setIdGenre(5);
@@ -304,7 +300,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxHorreur() && !listIntGenre.contains(6)) {
                     tempCorrespond.setIdGenre(6);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxHorreur() && listIntGenre.contains(6)) {
                     tempCorrespond.setIdGenre(6);
@@ -312,7 +308,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxComedie() && !listIntGenre.contains(7)) {
                     tempCorrespond.setIdGenre(7);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxComedie() && listIntGenre.contains(7)) {
                     tempCorrespond.setIdGenre(7);
@@ -320,7 +316,7 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxWestern() && !listIntGenre.contains(8)) {
                     tempCorrespond.setIdGenre(8);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxWestern() && listIntGenre.contains(8)) {
                     tempCorrespond.setIdGenre(8);
@@ -328,14 +324,14 @@ public class InterfaceFilmsAdminController {
                 }
                 if (listegenreFromIdFilm.isCboxAventure() && !listIntGenre.contains(9)) {
                     tempCorrespond.setIdGenre(9);
-                    correspondDao.create(tempCorrespond);
+                    correspondDao.update(tempCorrespond);
                 }
                 if (!listegenreFromIdFilm.isCboxAventure() && listIntGenre.contains(9)) {
                     tempCorrespond.setIdGenre(9);
                     correspondDao.delete(tempCorrespond);
                 }
-//TODO Vérifier si cette ligne est vraiment indispensable (Tout à la fin)
                 movieJoinData.setAll(jointureDao.findAll());
+                movieJoinTable.getSelectionModel().getSelectedItem();
             }
 
         } else {
@@ -367,7 +363,7 @@ public class InterfaceFilmsAdminController {
             }
             movieJoinData.remove(selectedJoinMovie);
             int tailleListe;
-        }else {
+        } else {
             // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());

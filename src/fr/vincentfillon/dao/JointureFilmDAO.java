@@ -4,10 +4,7 @@ import fr.vincentfillon.model.JointureFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Date;
 
 public class JointureFilmDAO extends Dao<JointureFilm> {
@@ -25,20 +22,24 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
         int anneeSortie = Integer.parseInt(jointureFilm.getAnneeSortie());
         String nationalite = jointureFilm.getNationalite();
 
+        String sqlInsertFilmRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES(?,?,?,?,?)";
 
-        String sqlInsertFilmRequest = "INSERT INTO moviedb.FILM (TitreFr, TitreO, Scenario, AnneeSortie,NationaliteF) VALUES('" + titreF + "','" + titreO + "','" + scenario + "', '" + anneeSortie + "','" + nationalite + "')";
-
-        //A la création, n assiqgne systématiquement l'acteur/Réalisateur d'id 10 qui correspond à un acteur vide.
+        //A la création, on assiqgne systématiquement l'acteur/Réalisateur d'id 10 qui correspond à un acteur vide.
 
         try {
+            PreparedStatement preparedStatement = connect.prepareStatement(sqlInsertFilmRequest);
 
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsertFilmRequest);
+            preparedStatement.setString(1, titreF);
+            preparedStatement.setString(2, titreO);
+            preparedStatement.setString(3, scenario);
+            preparedStatement.setInt(4, anneeSortie);
+            preparedStatement.setString(5, nationalite);
+
+            preparedStatement.executeUpdate();
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
-
     }
 
     @Override
@@ -51,7 +52,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -61,23 +61,25 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
         String scenario = jointureFilm.getScenario();
         int anneeSortie = Integer.parseInt(jointureFilm.getAnneeSortie());
         String nationalite = jointureFilm.getNationalite();
-        int idJointure;
-        idJointure = jointureFilm.getIdJointure();
+        int idJointure = jointureFilm.getIdJointure();
 
-        //String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + jointureFilm.getTitreFR() + "', TitreO='" + jointureFilm.getTitreO() + "', Scenario='" + jointureFilm.getScenario() + "', AnneeSortie='" +anneeSortie + "', NationaliteF='" + jointureFilm.getNationalite() + "' WHERE idJointure=" + jointureFilm.getIdJointure() + ";";
-        //String updateRequest="UPDATE moviedb.FILM SET TitreFr='tEST MODIF', TitreO='TEST TEST', Scenario='TEST', AnneeSortie=1963, NationaliteF='FR' WHERE idJointure=3";
-
-        String updateRequest = "UPDATE moviedb.FILM SET TitreFr='" + titreF + "', TitreO='" + titreO + "', Scenario='" + scenario + "', AnneeSortie=" + anneeSortie + ", NationaliteF='" + nationalite + "' WHERE FILM.IdFilm=" + idJointure + "";
-
+        String updateRequest = "UPDATE moviedb.FILM SET TitreFr=?, TitreO=?, Scenario=?, AnneeSortie=?, NationaliteF=? WHERE FILM.IdFilm=?";
         try {
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(updateRequest);
+            PreparedStatement preparedStatement = connect.prepareStatement(updateRequest);
+            preparedStatement.setString(1, titreF);
+            preparedStatement.setString(2, titreO);
+            preparedStatement.setString(3, scenario);
+            preparedStatement.setInt(4, anneeSortie);
+            preparedStatement.setString(5, nationalite);
+            preparedStatement.setInt(6, idJointure);
+
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
+
 
     @Override
     public JointureFilm find(int idJointure) {
@@ -94,7 +96,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
         String sqlJointureActeurs =
                 "SELECT ACTEUR_REALISATEUR.Prenom, ACTEUR_REALISATEUR.Nom FROM FILM INNER JOIN JOUE J on FILM.IdFilm = J.IdFilm INNER JOIN ACTEUR_REALISATEUR on J.IdActeurRealisateur = ACTEUR_REALISATEUR.IdActeurRealisateur WHERE FILM.IdFilm=" + idJointure;
 
-
         try {
             ResultSet resultFilm = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -110,7 +111,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY).executeQuery(sqlJointureActeurs);
 
-
             if (resultFilm.first() && resultGenre.first() && resultRealisateur.first() && resultActeurs.first()) {
                 String titreFR = resultFilm.getString(2);
                 String titreO = resultFilm.getString(3);
@@ -122,7 +122,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
                 String genre = resultGenre.getString(1);
                 String realisateur = resultRealisateur.getString(1) + " " + resultRealisateur.getString(2);
                 String acteurs = resultActeurs.getString(1) + " " + resultActeurs.getString(2);
-
 
                 //boucle de la construction de la String "genre" extraite de la jointure:
                 int genreSize = 1;

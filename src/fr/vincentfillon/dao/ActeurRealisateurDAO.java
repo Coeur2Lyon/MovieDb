@@ -89,17 +89,11 @@ public class ActeurRealisateurDAO extends Dao<ActeurRealisateur> {
 
             ActeurRealisateur acteurRealisateur = find(i);
             if (acteurRealisateur.getIsDeleted()==0) {
-                System.out.println("L'acteur"+acteurRealisateur.getNom()+" Va être ajouté à la liste");
-                System.out.println("Car son GetIsDeleted est logiquement NUL"+acteurRealisateur.getIsDeleted());
-                listeActeursRealisateurs.add(acteurRealisateur);
+               listeActeursRealisateurs.add(acteurRealisateur);
             }
         }
-
-        System.out.println("Liste: "+listeActeursRealisateurs);
         return listeActeursRealisateurs;
     }
-
-
 
     @Override
     public int findIdMax() {

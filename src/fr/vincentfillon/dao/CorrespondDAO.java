@@ -5,10 +5,7 @@ import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class CorrespondDAO extends Dao<Correspond> {
@@ -23,33 +20,39 @@ public class CorrespondDAO extends Dao<Correspond> {
         int idFilm = correspond.getIdFilm();
         int idGenre = correspond.getIdGenre();
 
-        String sqlInsertCorrespond = "INSERT INTO moviedb.CORRESPOND(IdGenre, IdFilm) VALUES (" + idGenre + "," + idFilm + ")";
-//Attribution de l'acteur/réal. d'id 10 (Acteur fantôme.
-        String sqLInsertRealisateurREALISE = "INSERT INTO moviedb.REALISE(IdActeurRealisateur, IdFilm) VALUES (10," + idFilm + ")";
-        String sqlInsertActeursJOUE = "INSERT INTO moviedb.JOUE(IdActeurRealisateur, IdFilm) VALUES (10," + idFilm + ")";
+        String sqlInsertCorrespond = "INSERT INTO moviedb.CORRESPOND(IdGenre, IdFilm) VALUES (?,?)";
+//Attribution de l'acteur/réal. d'id 10 (Acteur fantôme) aux tables REALISE et JOUE.
+        String sqLInsertRealisateurREALISE = "INSERT INTO moviedb.REALISE(IdActeurRealisateur, IdFilm) VALUES (10,?)";
+        String sqlInsertActeursJOUE = "INSERT INTO moviedb.JOUE(IdActeurRealisateur, IdFilm) VALUES (10,?)";
 
         try {
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsertCorrespond);
-            statement.executeUpdate(sqLInsertRealisateurREALISE);
-            statement.executeUpdate(sqlInsertActeursJOUE);
+            PreparedStatement preparedStatement = connect.prepareStatement(sqlInsertCorrespond);
+            PreparedStatement preparedStatement1 = connect.prepareStatement(sqLInsertRealisateurREALISE);
+            PreparedStatement preparedStatement2 = connect.prepareStatement(sqlInsertActeursJOUE);
+
+            preparedStatement.setInt(1, idGenre);
+            preparedStatement.setInt(2, idFilm);
+            preparedStatement1.setInt(1, idFilm);
+            preparedStatement1.setInt(1, idFilm);
+
+            preparedStatement.executeUpdate();
+            preparedStatement1.executeUpdate();
+            preparedStatement2.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
     }
 
     @Override
     public void delete(Correspond correspond) {
 
         int idGenre = correspond.getIdGenre();
-        int idFilm=correspond.getIdFilm();
+        int idFilm = correspond.getIdFilm();
 
-        System.out.println("Contrôle juste avant Supprssion DANS CorrespondDAO/delete:");
-        System.out.println("L'Id du Film à supprimer est :" + correspond.getIdFilm());
-        System.out.println("L'Id du Genre à insérer est :" + correspond.getIdGenre());
-
-        String sqlDeleteRequest = "DELETE FROM CORRESPOND WHERE IdGenre="+idGenre+" AND IdFilm="+idFilm;
+        String sqlDeleteRequest = "DELETE FROM CORRESPOND WHERE IdGenre=" + idGenre + " AND IdFilm=" + idFilm;
 
         try {
             Statement statement = this.connect.createStatement();
@@ -60,9 +63,10 @@ public class CorrespondDAO extends Dao<Correspond> {
         }
 
     }
-    public void deleteByInt(int idGenre, int idFilm){
 
-        String sqlDeleteRequest = "DELETE FROM CORRESPOND WHERE IdGenre="+idGenre+" AND IdFilm="+idFilm;
+    public void deleteByInt(int idGenre, int idFilm) {
+
+        String sqlDeleteRequest = "DELETE FROM CORRESPOND WHERE IdGenre=" + idGenre + " AND IdFilm=" + idFilm;
         try {
             Statement statement = this.connect.createStatement();
             statement.executeUpdate(sqlDeleteRequest);
@@ -73,7 +77,24 @@ public class CorrespondDAO extends Dao<Correspond> {
     }
 
     @Override
-    public void update(Correspond obj) {
+    public void update(Correspond correspond) {
+        int idFilm = correspond.getIdFilm();
+        int idGenre = correspond.getIdGenre();
+
+        String sqlInsertCorrespond = "INSERT INTO moviedb.CORRESPOND(IdGenre, IdFilm) VALUES (?,?)";
+
+
+        try {
+            PreparedStatement preparedStatement = connect.prepareStatement(sqlInsertCorrespond);
+
+            preparedStatement.setInt(1, idGenre);
+            preparedStatement.setInt(2, idFilm);
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -86,7 +107,6 @@ public class CorrespondDAO extends Dao<Correspond> {
     public ObservableList findAll() {
         return null;
     }
-
 
 
     @Override
@@ -115,8 +135,6 @@ public class CorrespondDAO extends Dao<Correspond> {
                     result.next();
                 }
 
-                System.out.println("Liste des Ids Genre relevés: " + listeIntgenre);
-
                 if (listeIntgenre.contains(0)) {
                     listeCheckBox.setCboxPolicier(true);
                 } else {
@@ -134,7 +152,6 @@ public class CorrespondDAO extends Dao<Correspond> {
                 }
                 if (listeIntgenre.contains(3)) {
                     listeCheckBox.setCboxDrame(true);
-                    System.out.println("isDrame Doit etre TRUE:" + listeCheckBox.isCboxDrame());
                 } else {
                     listeCheckBox.setCboxDrame(false);
                 }

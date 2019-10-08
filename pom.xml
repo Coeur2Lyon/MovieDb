@@ -79,10 +79,14 @@
             <scope>test</scope>
         </dependency>
 
-
-
-
         <!-- ===== Bibliothèques tierces ===== -->
+        <!-- Dépendance qui set à crypter/décrypter les mots de passe-->
+        <!-- https://mvnrepository.com/artifact/org.jasypt/jasypt -->
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>1.9.2</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>

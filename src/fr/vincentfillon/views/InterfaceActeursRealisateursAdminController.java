@@ -48,7 +48,8 @@ public class InterfaceActeursRealisateursAdminController {
 
     @FXML
     private ObservableList<JointureActeursRealisateur> acteurRealisateursData = FXCollections.observableArrayList();
-/* The constructor is called before the initialize() method.
+
+    /* The constructor is called before the initialize() method.
      */
     public InterfaceActeursRealisateursAdminController() {
 
@@ -123,6 +124,8 @@ public class InterfaceActeursRealisateursAdminController {
             lblNom.setText("");
             lblAnneeNaissance.setText("");
             lblNationalite.setText("");
+            lblJoue.setText("-");
+            lblRealise.setText("-");
         }
     }
 
@@ -236,37 +239,21 @@ public class InterfaceActeursRealisateursAdminController {
         if (selectedActeur != null) {
 
             int idSelectedActeur = selectedActeur.getIdJointure();
-            System.out.println("La valeur de l'ID pris en compte (de manière normale et edffective actuellement) qui doit être la valeur de l'Id de l'acteur séléctionné à la base)  est:" + idSelectedActeur);
             tempJoue.setIdActeursRealisateur(idSelectedActeur);
             boolean okClicked = Main.showJoueEditDialog(selectedActeur);
             if (okClicked) {
                 int idFilmARecup = 0;
 
-                try{
+                try {
                     joueEditDialogController.getIdSelectedFilm();
-                }catch (Exception e){
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
                 //int idFilmARecup = filmARecuperer.getIdJointure();
                 if (idFilmARecup != 0) {
-                    //filmARecuperer=jointureFilmDao.find(idFilmARecup);
+
                     tempJoue.setIdFilm(idFilmARecup);
-                    System.out.println("L'Id du film a récupérer doit être l'Id du film sélectionné: " + idFilmARecup);
-                    // tempJoue.setIdFilm(6);
-
-
-                    //selectedFilm=jointureFilmDao.find(idSelectedFilm);
-                    //tempJoue.setIdFilm(idSelectedFilm);
-
-                    //showActeurRealisateursDetails(selectedActeur);
                     joueDao.create(tempJoue);
-
-                    // Nothing selected.
-                    //Alert alert = new Alert(Alert.AlertType.WARNING);
-                    //alert.initOwner(Main.getPrimaryStage());
-                    //alert.setTitle("Aucune sélection");
-                    // alert.setHeaderText("Pas de film sélectionné");
-                    // alert.setContentText("Merci de sélectionner un film");
-                    // alert.showAndWait();
                 }
             }
         } else {

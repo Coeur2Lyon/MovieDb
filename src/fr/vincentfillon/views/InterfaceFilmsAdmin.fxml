@@ -44,70 +44,70 @@
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="253.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints maxHeight="48.0" minHeight="25.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="40.0" minHeight="25.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                                 <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
                                 <Label text="Titre VF" textFill="#df63ff">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label text="Titre VO" textFill="#df63ff" GridPane.rowIndex="1">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label text="Nationalité" textFill="#df63ff" GridPane.rowIndex="2">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label text="Année de sortie" textFill="#df63ff" GridPane.rowIndex="3">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label prefHeight="94.0" prefWidth="115.0" text="Scenario" textFill="#df63ff" GridPane.rowIndex="4">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label text="Genre" textFill="#df63ff" GridPane.rowIndex="5">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                         <Label text="Réalisateur" textFill="#df63ff" GridPane.rowIndex="6">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblActeurs" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                        <Label fx:id="lblActeurs" prefHeight="124.0" prefWidth="285.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                                 <Label fx:id="lblTitreVF" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="#f5f4f4" GridPane.columnIndex="1" GridPane.rowIndex="0">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label fx:id="lblTitreVO" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label fx:id="lblNationalite" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20; -fx-label-padding-left: 10;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
                                 <Label fx:id="lblAnneeSortie" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font></Label>
-                        <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="425.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="147.0" prefWidth="289.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <content>
-                              <Label fx:id="lblScenario" alignment="TOP_LEFT" prefHeight="170.0" prefWidth="273.0" snapToPixel="false" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="LabelScenar" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblScenario" alignment="TOP_LEFT" prefHeight="197.0" prefWidth="273.0" snapToPixel="false" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="LabelScenar" textFill="WHITE" wrapText="true">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -116,17 +116,17 @@
                         </ScrollPane>
                         <Label fx:id="lblGenre" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                         <Label fx:id="lblRealisateur" prefHeight="37.0" prefWidth="294.0" style="-fx-background-color: #2A0033; -fx-border-radius: 20;" styleClass="label-bright" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                         <Label text="Acteurs" textFill="#df63ff" GridPane.rowIndex="7">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                             </children>

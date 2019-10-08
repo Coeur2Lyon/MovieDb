@@ -19,13 +19,13 @@
          <children>
             <Pane prefHeight="502.0" prefWidth="530.0">
                <children>
-                  <TextField layoutX="196.0" layoutY="39.0" prefHeight="34.0" prefWidth="280.0" style="-fx-border-color: #9643A9; -fx-background-color: #2A0033; -fx-border-radius: 20;" />
+                  <TextField fx:id="txtEmail" layoutX="196.0" layoutY="39.0" prefHeight="34.0" prefWidth="280.0" style="-fx-border-color: #9643A9; -fx-background-color: #2A0033; -fx-border-radius: 20; -fx-text-inner-color: #ffffff;" />
                   <Label layoutX="55.0" layoutY="43.0" text="E-mail" textFill="#f8f7f7">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <PasswordField layoutX="196.0" layoutY="117.0" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #2A0033; -fx-border-color: #9643A9; -fx-border-radius: 20;" />
+                  <PasswordField fx:id="txtPassword" layoutX="196.0" layoutY="117.0" prefHeight="34.0" prefWidth="280.0" style="-fx-background-color: #2A0033; -fx-border-color: #9643A9; -fx-border-radius: 20; -fx-text-inner-color: #ffffff;" />
                   <Label layoutX="55.0" layoutY="121.0" text="Mot de passe" textFill="#f8f8f8">
                      <font>
                         <Font size="16.0" />
@@ -44,7 +44,7 @@
                   </Hyperlink>
                   <ButtonBar layoutX="55.0" layoutY="234.0" prefHeight="47.0" prefWidth="420.0">
                     <buttons>
-                      <Button mnemonicParsing="false" onAction="#initInterfaceJointureFilms" prefWidth="196.0" text="Accès FILMS" />
+                      <Button mnemonicParsing="false" onAction="#initInterfaceFilms" prefWidth="196.0" text="Accès FILMS" />
                         <Button mnemonicParsing="false" onAction="#initInterfaceActeursRealisateurs" text="Accès Acteurs/Réalisateurs" />
                       <Button maxWidth="100.0" minWidth="43.0" mnemonicParsing="false" prefHeight="28.0" text="Annuler" />
                     </buttons>

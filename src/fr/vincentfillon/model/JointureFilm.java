@@ -19,8 +19,6 @@ public class JointureFilm {
     private StringProperty anneeSortie;
     private StringProperty nationalite;
     private StringProperty genre;
-
-
     private StringProperty realisateurs;
     private StringProperty acteurs;
 

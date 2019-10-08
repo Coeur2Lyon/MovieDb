@@ -4,10 +4,7 @@ import fr.vincentfillon.model.JointureActeursRealisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Date;
 
 public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateur> {
@@ -27,17 +24,17 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
         String nationalite = jointureActeursRealisateur.getNationalite();
 
 
-        String sqlInsertRequest = "INSERT INTO moviedb.ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR) VALUES('" + nom + "','" + prenom + "','" + anneeNaissance + "', '" + nationalite + "')";
-
-        //A la création, n assiqgne systématiquement l'acteur/Réalisateur d'id 10 qui correspond à un acteur vide.
+        String sqlInsertRequest = "INSERT INTO moviedb.ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR) VALUES(?,?,?,?)";
 
         try {
+            PreparedStatement preparedInsertStatement=connect.prepareStatement(sqlInsertRequest);
+            preparedInsertStatement.setString(1,nom);
+            preparedInsertStatement.setString(2,prenom);
+            preparedInsertStatement.setInt(3,anneeNaissance);
+            preparedInsertStatement.setString(4,nationalite);
 
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(sqlInsertRequest);
-
-        } catch (Exception e) {
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
@@ -67,17 +64,17 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
     }
 
     @Override
-    public JointureActeursRealisateur find(int idJointure) {
+    public JointureActeursRealisateur find(int idJointureActeursRealisateur) {
 
         JointureActeursRealisateur jointureActeursRealisateur = new JointureActeursRealisateur();
         String sqlMovieRequest =
-                "SELECT * FROM ACTEUR_REALISATEUR WHERE IdActeurRealisateur = " + idJointure;
+                "SELECT * FROM ACTEUR_REALISATEUR WHERE IdActeurRealisateur = " + idJointureActeursRealisateur;
 
         String sqlJointureJoue =
-                "SELECT FILM.TitreFr,FILM.TitreO FROM FILM INNER JOIN JOUE J on FILM.IdFilm = J.IdFilm INNER JOIN ACTEUR_REALISATEUR ON J.IdActeurRealisateur=ACTEUR_REALISATEUR.IdActeurRealisateur WHERE ACTEUR_REALISATEUR.IdActeurRealisateur=" + idJointure;
+                "SELECT FILM.TitreFr,FILM.TitreO FROM FILM INNER JOIN JOUE J on FILM.IdFilm = J.IdFilm INNER JOIN ACTEUR_REALISATEUR ON J.IdActeurRealisateur=ACTEUR_REALISATEUR.IdActeurRealisateur WHERE ACTEUR_REALISATEUR.IdActeurRealisateur=" + idJointureActeursRealisateur;
 
         String sqlJointureRealise =
-                "SELECT FILM.TitreFr,FILM.TitreO FROM FILM INNER JOIN REALISE R on FILM.IdFilm = R.IdFilm INNER JOIN ACTEUR_REALISATEUR ON R.IdActeurRealisateur=ACTEUR_REALISATEUR.IdActeurRealisateur WHERE ACTEUR_REALISATEUR.IdActeurRealisateur=" + idJointure;
+                "SELECT FILM.TitreFr,FILM.TitreO FROM FILM INNER JOIN REALISE R on FILM.IdFilm = R.IdFilm INNER JOIN ACTEUR_REALISATEUR ON R.IdActeurRealisateur=ACTEUR_REALISATEUR.IdActeurRealisateur WHERE ACTEUR_REALISATEUR.IdActeurRealisateur=" + idJointureActeursRealisateur;
 
 
         try {
@@ -104,11 +101,23 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
                 String joue = "-";
                 String realise = "-";
                 if (resultJoue.first()) {
-                    joue = resultJoue.getString(1) + "(" + resultJoue.getString(2) + ")";
+                    String titreFr=resultJoue.getString(1);
+                    String titreO=resultJoue.getString(2);
+                    if (titreFr.contains(titreO)){
+                        joue = titreFr;
+                    }else{
+                        joue = titreFr + "(" + titreO + ")";
+                    }
                 }
 
                 if (resultRealise.first()) {
-                    realise = resultRealise.getString(1) + "(" + resultRealise.getString(2) + ")";
+                    String titreFr=resultRealise.getString(1);
+                    String titreO=resultRealise.getString(2);
+                    if (titreFr.contains(titreO)){
+                        realise = titreFr;
+                    }else{
+                        realise = titreFr + "(" + titreO + ")";
+                    }
                 }
 
                 String anneeNaissanceString = Integer.toString(anneeNaissance);
@@ -122,8 +131,14 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
 
                 if (realiseSize > 1) {
                     resultRealise.next();
-                    for (int i = 2; i < realiseSize; i++) {
-                        realise += ", " + resultRealise.getString(1) + " " + resultRealise.getString(2);
+                    for (int i = 2; i <= realiseSize; i++) {
+                        String titreFr=resultRealise.getString(1);
+                        String titreO=resultRealise.getString(2);
+                        if (titreFr.contains(titreO)){
+                            realise +=", "+ titreFr;
+                        }else{
+                            realise +=", "+ titreFr + "(" + titreO + ")";
+                        }
                         resultRealise.next();
                     }
                 }
@@ -136,12 +151,18 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
                 if (joueSize > 1) {
                     resultJoue.next();
                     for (int i = 1; i < joueSize; i++) {
-                        joue += ", " + resultJoue.getString(1) + " " + resultJoue.getString(2);
+                        String titreFr=resultJoue.getString(1);
+                        String titreO=resultJoue.getString(2);
+                        if (titreFr.contains(titreO)){
+                            joue +=", "+ titreFr;
+                        }else{
+                            joue +=", "+ titreFr + "(" + titreO + ")";
+                        }
                         resultJoue.next();
                     }
                 }
 
-                jointureActeursRealisateur = new JointureActeursRealisateur(idJointure, nom, prenom, anneeNaissanceString, nationalite, realise, joue, createdAt, isDeleted);
+                jointureActeursRealisateur = new JointureActeursRealisateur(idJointureActeursRealisateur, nom, prenom, anneeNaissanceString, nationalite, realise, joue, createdAt, isDeleted);
 
                 resultActeursRealisateur.close();
                 resultJoue.close();

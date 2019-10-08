@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 public class Main extends Application {
@@ -25,30 +26,30 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        // this.primaryStage.setTitle("AddressApp");
         initInterfacePrncipale();
     }
 
     private void initInterfacePrncipale() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("views/InterfacePrincipale.fxml"));
+           Parent root = FXMLLoader.load(getClass().getResource("views/InterfacePrincipale.fxml"));
             primaryStage.setTitle("MovieDB: Connexion");
             primaryStage.setScene(new Scene(root, 600, 600));
             primaryStage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    //Fichier utilisé : Applel de la méthode à partir de la classe film uniquement
+
     public static boolean showMovieJoinEditDialog(JointureFilm jointureFilm, ListeCheckBox listeCheckBox) {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/MovieJoinEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
-            // Create the dialog Stage.
+            // Crée la fenêtre de dialogue:
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Ajout / Edition de films");
             dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -56,12 +57,12 @@ public class Main extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the Movie into the controller.
+            // Paramètre le film dans le contrôlleur
             MovieJoinEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMovie(jointureFilm);
 
-            //set the Checkbox into the controller
+            //Paramètre la liste de CheckBox(pour les genres) dans le contrôleur.
             controller.setListCheckBox(listeCheckBox);
 
             // Show the dialog and wait until the user closes it
@@ -76,7 +77,7 @@ public class Main extends Application {
 
     public static boolean showActeurRealisateurEditDialog(JointureActeursRealisateur acteurRealisateur) {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/ActRealEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
@@ -107,7 +108,7 @@ public class Main extends Application {
 
     public static boolean showJoueEditDialog(JointureActeursRealisateur acteurRealisateur) {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/JoueEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
@@ -138,7 +139,7 @@ public class Main extends Application {
 
     public static boolean showFiltreDialog() {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("views/FiltreDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();

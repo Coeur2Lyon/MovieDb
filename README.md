@@ -7,12 +7,11 @@
 # 3)Builder l'image (à partir du Dockerfile):
 
 docker build -t vincent/mysql .
-// on nomme le container souhaité ("vincent/mysql" est un exemple) et on indique un "." pour spécifier que le Dockerfile est dans le répertoire courant.
+// on nomme l'image souhaitée ("vincent/mysql" est un exemple) et on indique un "." pour spécifier que le Dockerfile est dans le répertoire courant.
 
 # 4)Créer un conteneur pour cette image paramétrer en tant que serveur utf8mb4:
 
 docker run --name moviedb -p3306:3306 -d vincent/mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
 
 # 5)si le conteneur se crée mais ne démarre pas, démarrez-le:
 docker start moviedb

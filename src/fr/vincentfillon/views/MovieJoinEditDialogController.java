@@ -13,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.codehaus.plexus.util.StringUtils;
 
 import java.util.ArrayList;
 //import ch.makery.address.util.DateUtil;
@@ -141,7 +142,6 @@ public class MovieJoinEditDialogController {
     }
 
 
-
     public void setListCheckBox(ListeCheckBox listeCheckBox) {
         this.listeCheckBox = listeCheckBox;
 
@@ -175,9 +175,6 @@ public class MovieJoinEditDialogController {
         if (listeCheckBox.isCboxAction()) {
             cboxAction.setSelected(true);
         }
-        System.out.println("listeCheckBox.isCboxDrame() dans la méthode: setListCheckBox()" + listeCheckBox.isCboxDrame());
-        System.out.println("listeCheckBox.isCboxPolicier()dans la méthode: setLisCheckBox())" + listeCheckBox.isCboxPolicier());
-
     }
 
     /**
@@ -234,7 +231,8 @@ public class MovieJoinEditDialogController {
 
     private boolean isInputValid() {
         String errorMessage = "";
-
+//TODO: Gérer le possibilités de dépassement de capacités MAX de caractères (déjà fait pour Scenario, voir capacité propriétés SQL pour les autres ).
+        //TODO(Complément ci-dessus Titres O et Fr+ Nationalité: 50caractères (VARCHAR)...)
         if (fldTitreVF.getText() == null || fldTitreVF.getText().length() == 0) {
             errorMessage += "Champs vide!\n Merci d'entrez un titre français\n";
         }
@@ -243,6 +241,9 @@ public class MovieJoinEditDialogController {
         }
         if (fldScenario.getText() == null || fldScenario.getText().length() == 0) {
             errorMessage += "Champs vide!\n Merci d'entrez un scenario\n";
+        }
+        if(fldScenario.getText().length()>65500){
+            errorMessage +="Le texte que vous avez entré comporte: "+fldScenario.getText().length()+" caractères,\n Merci de ne pas dépasser 65500 caractères";
         }
 
         if (fldAnneeSortie.getText() == null || fldAnneeSortie.getText().length() == 0) {
