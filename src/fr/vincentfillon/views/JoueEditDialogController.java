@@ -4,7 +4,6 @@ import fr.vincentfillon.Main;
 import fr.vincentfillon.connectivity.ConnectionClass;
 import fr.vincentfillon.dao.Dao;
 import fr.vincentfillon.dao.JointureFilmDAO;
-import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.JointureActeursRealisateur;
 import fr.vincentfillon.model.JointureFilm;
 import javafx.collections.FXCollections;
@@ -62,12 +61,12 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
 
     // Reference à InterfacePrincipaleController
     private InterfacePrincipaleController jointure;
-    private MovieJoinEditDialogController movieJoinEditDialogController;
+    private MovieEditDialogController movieEditDialogController;
     private JointureActeursRealisateur acteurRealisateur;
     private Stage dialogStage;
     private JointureFilm jointureFilm;
 
-    // Reference to the main application.
+   // Référence à l'interface principale Main
     private Main main;
     InterfaceFilmsAdminController interfaceFilmsAdminController = new InterfaceFilmsAdminController();
 
@@ -88,7 +87,7 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
         Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
 
 //Pour trouver le film d'indice i:
-        //  JointureFilm jointure = jointureDAO.find(1);
+        //  JointureFilm jointureFilm = jointureDAO.find(1);
         movieJoinData.setAll(jointureDAO.findAll());
 //        movieJoinData.add(new JointureFilm("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
 //        movieJoinData.add(new JointureFilm("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
@@ -99,15 +98,15 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
 
 
 
-    public ObservableList<JointureFilm> getMovieJoinData() {
+    public ObservableList<JointureFilm> getMovieData() {
         return movieJoinData;
     }
 
 
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     Initialise la classe contrôleur.
+     après que la vue fxml ait été chargée.
      */
 
 
@@ -118,16 +117,16 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
     }
 
     /**
-     * Is called by the main application to give a reference back to itself.
+     Est appellée par l'application principale Main pour se donner une référence à elle-même
      *
-     * @param jointure
+     * @param jointureFilm
      */
-    public void setMovie(InterfacePrincipaleController jointure) {
-        super.setMovie(jointure);
+    public void setMovie(InterfacePrincipaleController jointureFilm) {
+        super.setMovie(jointureFilm);
     }
 
     /**
-     * Fills all text fields to show details about the movie.
+     * Remplie les champs de textes/Labels pour afficher les détails du film.
      * If the specified movie is null, all text fields are cleared.
      *
      * @param jointureFilm the movie or null
@@ -137,7 +136,7 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
     }
 
     /**
-     * Called when the user clicks the new button. Opens a dialog to edit
+     * Appelée quand l'utilisateur clique the new button. Opens a dialog to edit
      * details for a new movie.
      */
     @FXML
@@ -146,8 +145,8 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
     }
 
     /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected movie.
+     * Appelée quand l'utilisateur clique Le bouton "Editer...". Opens a dialog to edit
+     * Ouvre une fenêtre de dialogue pour éditer les informations du film sélectionné.
      */
 
 
@@ -164,7 +163,7 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
     }
 
     /**
-     * Called when the user clicks on the delete button.
+     * Appelée quand l'utilisateur clique sur le boutton "Effacer..."
      */
     @FXML
     private void handleOK() {
@@ -217,7 +216,7 @@ public class JoueEditDialogController extends InterfaceFilmsAdminController {
             listeId.add(idSelectedFilm);
             return true;
         } else {
-            // Show the error message.
+            // Affiche le message d'erreur.
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Invalid Fields");

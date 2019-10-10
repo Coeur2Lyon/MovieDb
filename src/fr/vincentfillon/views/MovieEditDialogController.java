@@ -16,14 +16,14 @@ import javafx.stage.Stage;
 import org.codehaus.plexus.util.StringUtils;
 
 import java.util.ArrayList;
-//import ch.makery.address.util.DateUtil;
+
 
 /**
- * Dialog to edit details of a movie.
+ * Fenêtre de dialogue pour éditer les informations du film
  *
  * @author Vincent Fillon
  */
-public class MovieJoinEditDialogController {
+public class MovieEditDialogController {
 
     @FXML
     private TextField fldTitreVF;
@@ -107,8 +107,8 @@ public class MovieJoinEditDialogController {
     ArrayList<Integer> listeGenre = new ArrayList<>();
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     Initialise la classe contrôleur.
+     après que la vue fxml ait été chargée.
      */
     @FXML
     private void initialize() {
@@ -116,7 +116,7 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Sets the stage of this dialog.
+     * Définit/parmaètre la fenêtre de la boîte de dialogue.
      *
      * @param dialogStage
      */
@@ -124,11 +124,11 @@ public class MovieJoinEditDialogController {
         this.dialogStage = dialogStage;
 
         // Set the dialog icon.
-        this.dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+        //this.dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
     }
 
     /**
-     * Sets the movie to be edited in the dialog.
+     * Paramètre le film dans la boîte de dialogue afin qu'il puisse être éditer
      *
      * @param jointureFilm
      */
@@ -178,7 +178,7 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Returns true if the user clicked OK, false otherwise.
+     *Retourne true si l'utilisateur clique sur le bouton OK, sinon false
      *
      * @return
      */
@@ -187,7 +187,7 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Called when the user clicks ok.
+     * Appelée quand l'utilisateur clique "OK".
      */
 
     @FXML
@@ -216,7 +216,7 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Called when the user clicks cancel.
+     * Appelée quand l'utilisateur clique sur "Annuler".
      */
     @FXML
     private void handleCancel() {
@@ -224,9 +224,9 @@ public class MovieJoinEditDialogController {
     }
 
     /**
-     * Validates the user input in the text fields.
+     *Valide les entrées utilisateur dans les champs de texte(TextField).
      *
-     * @return true if the input is valid
+     * @return true si l'entrée est valide
      */
 
     private boolean isInputValid() {
@@ -261,7 +261,7 @@ public class MovieJoinEditDialogController {
         if (errorMessage.length() == 0) {
             return true;
         } else {
-            // Show the error message.
+            // Affiche le message d'erreur.
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Invalid Fields");

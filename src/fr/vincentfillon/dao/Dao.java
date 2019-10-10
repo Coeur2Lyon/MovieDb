@@ -13,7 +13,7 @@ public abstract class Dao<T> {
     }
 
     /**
-     * Méthode de création
+     * Méthode de création (ajout/insertion dans la base de données)
      * @param obj
      * @return boolean
      */

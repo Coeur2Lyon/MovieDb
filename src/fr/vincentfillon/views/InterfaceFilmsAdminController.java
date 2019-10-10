@@ -19,7 +19,7 @@ import java.util.Optional;
 public class InterfaceFilmsAdminController {
 
     @FXML
-    private TableView<JointureFilm> movieJoinTable;
+    private TableView<JointureFilm> movieTable;
     @FXML
     private TableColumn<JointureFilm, String> colTitreVF;
     @FXML
@@ -43,37 +43,26 @@ public class InterfaceFilmsAdminController {
     private Label lblActeurs;
 
 
-    // Reference à InterfacePrincipaleController
+    // Référence à InterfacePrincipaleController
     private InterfacePrincipaleController jointure;
-    private MovieJoinEditDialogController movieJoinEditDialogController;
-    // Reference to the main application.
+    private MovieEditDialogController movieEditDialogController;
+    // Référence à l'application principale Main.
     private Main main;
 
     @FXML
-    private ObservableList<JointureFilm> movieJoinData = FXCollections.observableArrayList();
+    private ObservableList<JointureFilm> movieData = FXCollections.observableArrayList();
 
     private ObservableList<ListeCheckBox> listeCheckboxData = FXCollections.observableArrayList();
 
-
-    /* The constructor is called before the initialize() method.
-     */
     public InterfaceFilmsAdminController() {
-
-
-        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
-
-//Pour trouver le film d'indice i:
-        //  JointureFilm jointure = jointureDAO.find(1);
-        movieJoinData.setAll(jointureDAO.findAll());
-//        movieJoinData.add(new JointureFilm("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
-//        movieJoinData.add(new JointureFilm("Fight Club", "Fight Club", "Un employé de bureau insomniaque analyse la société de consommation de ses points de vue", "1999", "US"));
-//        movieJoinData.add(new JointureFilm("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
-//        movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
+        Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
+        movieData.setAll(jointureFilmDao.findAll());
+// On peut ajouter manuellement des données au tableau (pour tests):
+// movieData.add(new JointureFilm("Impitoyable", "Unforgiven", "Comboy à la retraite entraîné par son ancien co-équipier dans une mission périlleuse", "1999", "US"));
     }
 
-
-    public ObservableList<JointureFilm> getMovieJoinData() {
-        return movieJoinData;
+    public ObservableList<JointureFilm> getMovieData() {
+        return movieData;
     }
 
     public ObservableList<ListeCheckBox> getListeCheckBoxData() {
@@ -81,36 +70,34 @@ public class InterfaceFilmsAdminController {
     }
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     Initialise la classe contrôleur.
+     après que la vue fxml ait été chargée.
      */
     @FXML
     public void initialize() {
-        // Initialize the movie table with the two columns.
+        // Initialise la Tableview moivieTable avec 2 colonnes
         colTitreVF.setCellValueFactory(cellData -> cellData.getValue().titreFRProperty());
         colAnneeSortie.setCellValueFactory(cellData -> cellData.getValue().anneeSortieProperty());
 
-        // Clear movie details.
+        // Efface les détails de films
         showMovieJoinDetails(null);
 
-        // Listen for selection changes and show the movie details when changed.
-        movieJoinTable.getSelectionModel().selectedItemProperty().addListener(
+        //Ecoute (Se tient prêt pour) le changement (en termes de sélection) à venir. Affiche les détails de l'acteur/réalisateur quand le changement est opéré (la sélection faite)
+        movieTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showMovieJoinDetails(newValue));
-        // Add observable list data to the table
-        movieJoinTable.setItems(movieJoinData);
+        // Ajoute les données contenue dans lObservableList à la TableView
+        movieTable.setItems(movieData);
     }
 
     /**
      * Est appelée par le controlleur de l'interface principale (InterfacePrincipaleController)
      * pour donner en retour une référence à lui-même
-     * Is called by the main application to give a reference back to itself.
-     *
-     * @param jointure
+     * @param jointureFilm
      */
-    public void setMovie(InterfacePrincipaleController jointure) {
-        this.jointure = jointure;
-        //Add observable list data to the table
-        movieJoinTable.setItems(getMovieJoinData());
+    public void setMovie(InterfacePrincipaleController jointureFilm) {
+        this.jointure = jointureFilm;
+        //Ajoute les données de l'observable liste à la TableView
+        movieTable.setItems(getMovieData());
     }
 
     /**
@@ -121,7 +108,7 @@ public class InterfaceFilmsAdminController {
      */
     public void showMovieJoinDetails(JointureFilm jointureFilm) {
         if (jointureFilm != null) {
-            // Fill the labels with info from the movie object.
+            // Remplie les labels avec les données issues de l'instance de jointureFilm la classe JointureFilm
             lblTitreVF.setText(jointureFilm.getTitreFR());
             lblTitreVO.setText(jointureFilm.getTitreO());
             lblScenario.setText(jointureFilm.getScenario());
@@ -131,8 +118,9 @@ public class InterfaceFilmsAdminController {
             lblRealisateur.setText(jointureFilm.getRealisateurs());
             lblActeurs.setText(jointureFilm.getActeurs());
 
-        } else {
-            // movie is null, remove all the text.
+        }
+        else {
+            // le film est "null", on affiche donc des chaînes de caractères vide ("")
             lblTitreVF.setText("");
             lblTitreVO.setText("");
             lblScenario.setText("");
@@ -145,12 +133,12 @@ public class InterfaceFilmsAdminController {
     }
 
     /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new movie.
+     * Appellée quand l'utilisateur clique sur "+Film"
+     * Ouvre la fenêtre de dialogue MovieEditController.
      */
     @FXML
     public void addNewMovieJoin() {
-        Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
         JointureFilm tempJointureFilm = new JointureFilm();
         Correspond tempCorrespond = new Correspond();
@@ -158,25 +146,20 @@ public class InterfaceFilmsAdminController {
 
         boolean okClicked = Main.showMovieJoinEditDialog(tempJointureFilm, listeCheckBox);
 
-
         if (okClicked) {
-            getMovieJoinData().add(tempJointureFilm);
+            jointureFilmDao.create(tempJointureFilm);
+
+            getMovieData().add(tempJointureFilm);
             getListeCheckBoxData().add(listeCheckBox);
 
-            jointureDAO.create(tempJointureFilm);
-            movieJoinData.setAll(jointureDAO.findAll());
-
-
-            int idFilm = jointureDAO.findIdMax();
+            int idFilm = jointureFilmDao.findIdMax();
             tempCorrespond.setIdFilm(idFilm);
-
 
             if (listeCheckBox.isCboxPolicier()) {
                 tempCorrespond.setIdGenre(0);
                 correspondDao.create(tempCorrespond);
             }
             if (listeCheckBox.isCboxThriller()) {
-                ;
                 tempCorrespond.setIdGenre(1);
                 correspondDao.create(tempCorrespond);
             }
@@ -204,7 +187,6 @@ public class InterfaceFilmsAdminController {
                 tempCorrespond.setIdGenre(7);
                 correspondDao.create(tempCorrespond);
             }
-
             if (listeCheckBox.isCboxWestern()) {
                 tempCorrespond.setIdGenre(8);
                 correspondDao.create(tempCorrespond);
@@ -213,26 +195,22 @@ public class InterfaceFilmsAdminController {
                 tempCorrespond.setIdGenre(9);
                 correspondDao.create(tempCorrespond);
             }
-
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un film");
             alert.setHeaderText("Le film a bien été ajouté");
             alert.showAndWait();
-
         }
     }
-
     /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected movie.
+     * Appelée quand l'utilisateur clique Le bouton "Editer...".
+     * Ouvre une fenêtre de dialogue pour éditer les informations du film sélectionné.
      */
     @FXML
     public void editMovieJoin() {
-        JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
+        JointureFilm selectedJoinMovie = movieTable.getSelectionModel().getSelectedItem();
 
-        Dao<JointureFilm> jointureDao = new JointureFilmDAO(ConnectionClass.connecte());
+        Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
         Dao<Correspond> correspondDao = new CorrespondDAO(ConnectionClass.connecte());
 
         Correspond tempCorrespond = new Correspond();
@@ -247,7 +225,7 @@ public class InterfaceFilmsAdminController {
             boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listegenreFromIdFilm);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
-                jointureDao.update(selectedJoinMovie);
+                jointureFilmDao.update(selectedJoinMovie);
 
                 if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
@@ -257,7 +235,6 @@ public class InterfaceFilmsAdminController {
                     tempCorrespond.setIdGenre(0);
                     correspondDao.delete(tempCorrespond);
                 }
-
                 if (listegenreFromIdFilm.isCboxThriller() && !listIntGenre.contains(1)) {
                     tempCorrespond.setIdGenre(1);
                     correspondDao.update(tempCorrespond);
@@ -330,12 +307,9 @@ public class InterfaceFilmsAdminController {
                     tempCorrespond.setIdGenre(9);
                     correspondDao.delete(tempCorrespond);
                 }
-                movieJoinData.setAll(jointureDao.findAll());
-                movieJoinTable.getSelectionModel().getSelectedItem();
             }
-
-        } else {
-            // Pas de film sélectionné.
+        }
+        else { // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Pas de sélection");
@@ -344,25 +318,23 @@ public class InterfaceFilmsAdminController {
             alert.showAndWait();
         }
     }
-
     /**
-     * Called when the user clicks on the delete button.
+     * Appelée quand l'utilisateur clique sur le boutton "Effacer..."
      */
     @FXML
     private void deleteMovieJoin() {
-        JointureFilm selectedJoinMovie = movieJoinTable.getSelectionModel().getSelectedItem();
+        JointureFilm selectedMovie = movieTable.getSelectionModel().getSelectedItem();
         Dao<JointureFilm> jointureDAO = new JointureFilmDAO(ConnectionClass.connecte());
-        if (selectedJoinMovie != null) {
+        if (selectedMovie != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Suppression de film");
             alert.setHeaderText("Êtes-vous sûr de vouloir supprimer le film sélectionné? ");
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get() == ButtonType.OK) {
-                jointureDAO.delete(selectedJoinMovie);
+                jointureDAO.delete(selectedMovie);
             }
-            movieJoinData.remove(selectedJoinMovie);
-            int tailleListe;
+            movieData.remove(selectedMovie);
         } else {
             // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -373,5 +345,4 @@ public class InterfaceFilmsAdminController {
             alert.showAndWait();
         }
     }
-
 }

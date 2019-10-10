@@ -211,16 +211,16 @@ VALUES (1, 'JackAdmin', 'password', 'jackadmin@gmail.com', '1980-05-24'),
   (2, 'PolUtilisateur', 'password', 'polutilisateur@hotmail.com', '1996-09-30');
 
 
-INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR,CreatedAt)
-VALUES ('EASTWOOD', 'Clint', 1930, 'US','2019-09-18 13:12:06'),
-  ('FINSHER', 'David', 1962, 'US','2019-09-18 13:12:06'),
-  ('MELVILLE', 'Jean-Pierre', 1917, 'FR','2019-09-18 13:12:06'),
-  ('CHABROL', 'Claude', 1930, 'FR','2019-09-18 13:12:06'),
-  ('BELMONDO', 'Jean-Paul', 1933, 'FR','2019-09-18 13:12:06'),
-  ('GODARD', 'Jean-Luc', 1930, 'FR','2019-09-18 13:12:06'),
-  ('NORTON', 'Edward', 1969, 'US','2019-09-18 13:12:06'),
-  ('PITT', 'Brad', 1963, 'US','2019-09-18 13:12:06'),
-  ('VILLERET', 'Jacques', 1951, 'FR','2019-09-18 13:12:06');
+INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR, CreatedAt)
+VALUES ('EASTWOOD', 'Clint', 1930, 'US', '2019-09-18 13:12:06'),
+  ('FINSHER', 'David', 1962, 'US', '2019-09-18 13:12:06'),
+  ('MELVILLE', 'Jean-Pierre', 1917, 'FR', '2019-09-18 13:12:06'),
+  ('CHABROL', 'Claude', 1930, 'FR', '2019-09-18 13:12:06'),
+  ('BELMONDO', 'Jean-Paul', 1933, 'FR', '2019-09-18 13:12:06'),
+  ('GODARD', 'Jean-Luc', 1930, 'FR', '2019-09-18 13:12:06'),
+  ('NORTON', 'Edward', 1969, 'US', '2019-09-18 13:12:06'),
+  ('PITT', 'Brad', 1963, 'US', '2019-09-18 13:12:06'),
+  ('VILLERET', 'Jacques', 1951, 'FR', '2019-09-18 13:12:06');
 
 INSERT INTO ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR, IsDeleted)
 VALUES ('-', '-', 2019, '-', 1);
@@ -238,14 +238,14 @@ VALUES ('CHABBAT', 'Alain ', 1958, 'Fr', '2019-09-20 07:54:25'),
   ('BARR', 'Jean-Marc', 1690, 'FR-US', '2019-10-08 11:25:00'),
   ('BERRI', 'Claude', 1934, 'FR', '2019-10-08 11:39:00'),
   ('BACRI', 'Jean-Pierre', 1951, 'FR', '2019-10-08 11:39:00'),
-  ('HACKMAN', 'Gene', 1930, 'US', '2019-10-08 11:50:00')
-;
+  ('HACKMAN', 'Gene', 1930, 'US', '2019-10-08 11:50:00'),
+  ('VEBER', 'Francis', 1937, 'FR', '2019-10-09 07:55:00');
 
 
-
-
-INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie, NationaliteF,CreatedAt)
-VALUES ('Impitoyable','Unforgiven','Un ancien cowboy se voit proposer une mission périlleuse par un de ses anciens équipiers',1992,'US','2019-09-18 13:12:06'),
+INSERT INTO FILM (TitreFr, TitreO, Scenario, AnneeSortie, NationaliteF, CreatedAt)
+VALUES ('Impitoyable', 'Unforgiven',
+        'Un ancien cowboy se voit proposer une mission périlleuse par un de ses anciens équipiers', 1992, 'US',
+        '2019-09-18 13:12:06'),
   ('Fight Club', 'Fight Club',
    'Le film démarre sur le plan du personnage principal (Edward Norton) à qui on a enfoncé un pistolet dans la bouche et dont on entend la voix en monologue qui se remémore comment il en est arrivé là.',
    1999, 'US', '2019-09-18 13:12:06'),
@@ -283,6 +283,7 @@ Prétextant faire des recherches pour son prochain roman, Morzini réussit à ab
 
 Avec quelques amis, Michel prend les choses en main et enlève la mère de Morzini. Celle-ci le tuyaute sur lʼendroit où se trouve probablement son fils. Michel sʼy rend et confronte Morzini, qui refuse de relâcher son otage. Michel décide alors dʼattaquer la maison à lʼaide dʼune pelle mécanique et libère lui-même Marie-Anne Prossant.',
    1980, 'FR', '2019-10-04 15:23:19'),
+
   ('Le Grand Bleu', 'Le Grand Bleu',
    'Jacques Mayol et Enzo Molinari se connaissent depuis l''enfance, dans les années 1960. Ils ont grandi ensemble en Grèce et partagent depuis toujours leur passion pour la mer. Mais à la suite de l''accident au cours d''une plongée et du décès de son père, Jacques revient en France. Vingt ans ont passé, mais la rivalité entre les deux hommes existe toujours. Le championnat du monde d''apnée No Limit à Taormina en Sicile à la fin des années 1980 est l''occasion pour les deux hommes de se retrouver et d''explorer un monde que personne ne connaît mieux qu''eux.
 
@@ -291,7 +292,16 @@ Avec quelques amis, Michel prend les choses en main et enlève la mère de Morzi
  En Sicile en 1988, Enzo est demandé en renfort pour sauver un plongeur coincé sous une épave. Il plonge dans l''eau sans respirateur et parvient à sauver le plongeur. Il demande ensuite à son frère Roberto de trouver Jacques. Au Pérou, Johanna Baker croise Jacques Mayol et, avec le Dr Lawrence, regarde une expérience quand Jacques plonge dans le lac glacé sans respirateur. La jeune femme lui apporte du café, Jacques revient plus tard lui offrir un cadeau afin de la remercier. De retour en France, Enzo trouve Jacques et le convie au championnat à Taormina. A New York, Johanna découvre que l''appartement qu''elle partage avec sa colocataire a été cambriolé. Elle apprend par le docteur Lawrence que Jacques est en Sicile et décide de s''y rendre.
 
  Sur place, Enzo et Jacques se retrouvent, le premier réprimande le réceptionniste de l''hôtel. Tandis qu''ils bavardent, Johanna les trouve et ils sympathisent ensemble. Lors d''une soirée, les deux hommes décident de voir qui tient le plus longtemps sous l''eau. Ils finissent sur un brancard. Johanna s''occupe de Jacques. Le lendemain, Enzo se voit interdit d''aller plonger et malgré les conseils de son médecin, il se lance. Un soir, le trio libère un dauphin enfermé dans un bassin. A l''entraînement d''apnée, Jacques plonge à plus de 110 m de profondeur. Dans la soirée, il entretient une liaison avec Johanna avec qui il passe la nuit. En pleine nuit, il sort, plonge dans la mer et nage avec un dauphin jusqu''au petit matin. Johanna comprend qu''il préfère passer du temps sous l''eau qu''être avec des femmes et décide de partir à New York. Une sorte d''ascenseur emmène Enzo, Jacques et un Belge à bord pour l''entraînement. Jacques et Johanna se retrouvent. Enzo fait 115 mètres, 4 minutes et 50 secondes en apnée. Jacques fait 120 mètres. La veille de la compétition, Johanna veut parler d''avenir avec Jacques mais il ne semble pas partager son opinion. Le jour de la compétition, Enzo fait tout pour battre Jacques, il va descendre même le plus profond possible, même à y risquer sa vie. Le docteur Lawrence veut arrêter la compétition car il estime que c''est trop dangereux mais Enzo refuse de l''écouter. Il reste plus longtemps et plus profond. Une fois remonté, il se meurt et demande à son ami de le laisser mourir au fond de la mer. Dévasté par la mort de son ami, il se mure dans le mutisme. Johanna apprend qu''elle est enceinte. Elle va voir Jacques qui fait une petite crise, elle le suit et tente de le raisonner. Elle lui avoue même sa grossesse mais il plonge quand même et - à la profondeur maximale qu''autorise la compétition - il quitte la lumière pour rejoindre un dauphin dans la noirceur des profondeurs.',
-   1988, 'FR', '2019-10-08 11:15:19');
+
+   ('Le dîner de cons', 'Le dîner de cons', 'Tous les mercredis, Pierre Brochant et ses amis organisent un dîner où chacun doit amener un con. Celui qui a trouvé le plus spectaculaire est declaré vainqueur. Ce soir, Brochant exulte, il est sur d''avoir trouvé la perle rare, un con de classe mondiale: Francois Pignon, comptable au ministère des Finances et passionné de modèles réduits en allumettes. Ce qu''il ignore c''est que Pignon est passe maître dans l''art de déclencher des catastrophes.', 1998, 'FR', '2019-10-09 07:32:31', 0),
+('La Chèvre', 'La Chèvre', 'La fille du grand PDG Bens, très malchanceuse, se fait enlever alors qu''elle est en vacances au Mexique. Pour la retrouver, son père, conseillé par son psychologue d''entreprise, utilise un de ses employés aussi malchanceux qu''elle, François Perrin, comptable, dans l''espoir qu''il lui arrive les mêmes malheurs qu''à sa fille et qu''il la retrouve. Le détective privé Campana, chargé de l''enquête malgré son scepticisme, devra donc faire équipe avec Perrin, ce qui ne sera pas de tout repos car non seulement il devra en rattraper les innombrables bourdes mais en plus il devra bien souvent partager sa poisse et même, de temps à autre, en subir seul les conséquences, au point que son cartésianisme initial n''en sortira pas intact.
+
+', 1981, 'FR', '2019-10-09 07:42:10', 0),
+   ('Tais-toi!', 'Tais-toi!', 'Quentin de Montargis se fait arrêter et se retrouve en prison. Ruby, un criminel, recherché par la police, est emprisonné après avoir volé l''argent de son ancien patron Vogel. Il souhaite venger la mort de la femme qu''il aimait et que Vogel, son mari, a tuée.
+
+En prison, le criminel ne parle plus à personne. Apprenant que Quentin a rendu fous plusieurs détenus pendant les dernières semaines, le commissaire Vernet voit là la façon de faire parler Ruby. Mais Ruby tente de se suicider, Quentin pensant avoir trouvé un ami en fait de même pour le retrouver à l''hôpital, puis le suit jusqu''à l''asile de fous, où il contacte un ancien collègue du bâtiment, Martineau. À la demande de Quentin, Martineau le fait évader avec Ruby qui s’apprêtait à quitter l''asile d''une façon plus discrète. Quentin et Ruby se retrouvent alors en pyjama d''hôpital au milieu de la ville, avec les hommes de Vogel à leur poursuite. Quentin aide Ruby à leur échapper et à voler une voiture, mais malgré cela Ruby soupçonne Quentin de travailler pour le commissaire Vernet. Ruby découvre la vraie nature de Quentin : un con certes, mais quelqu''un de très attachant et doté de vraies qualités humaines.
+
+Ruby et Quentin arrivent à s''introduire chez Vogel. Cependant, Vogel blesse par balle Ruby, et c''est finalement Quentin qui tue Vogel pour protéger Ruby. La police arrive sur les lieux quelques instants après.', 2002, 'FR', '2019-10-09 07:42:10', 0));
 
 
 INSERT INTO GENRE (IdGenre, Genre)
@@ -307,30 +317,80 @@ VALUES (0, 'Policier'),
   (9, 'Aventure');
 
 INSERT INTO JOUE (IdActeurRealisateur, IdFilm)
-VALUES (1, 1),
-  (3, 5),
+VALUES
+  (1, 1),
+  (14, 1),
+  (23, 1),
+  (7, 2),
+  (8, 2),
   (5, 3),
   (5, 4),
-  (7, 2),
-  (8, 2);
+  (3, 5),
+  (11, 6),
+  (1, 7),
+  (14, 7),
+  (15, 7),
+  (11, 8),
+  (22, 8),
+  (12, 9),
+  (12, 10),
+  (12, 11),
+  (16, 11),
+  (17, 12),
+  (19, 12),
+  (20, 12),
+  (9,13),
+  (16,14),
+  (16,15),
+  (17,15);
 
 INSERT INTO REALISE (IdActeurRealisateur, IdFilm)
-VALUES (1, 1),
+VALUES
+  (1, 1),
   (2, 2),
   (3, 3),
   (6, 4),
-  (4, 5);
-
+  (4, 5),
+  (11, 6),
+  (1, 7),
+  (11, 8),
+  (21, 9),
+  (13, 10),
+  (13, 11),
+  (18, 12),
+  (24, 13),
+  (24, 14),
+  (24, 15);
 
 INSERT CORRESPOND (IdGenre, IdFilm)
-VALUES (8, 1),
+VALUES
+  (8, 1),
   (5, 1),
   (2, 2),
   (5, 2),
   (0, 3),
-  (3, 3),
   (9, 3),
+  (3, 3),
   (0, 4),
   (3, 4),
   (3, 5),
-  (4, 5);
+  (4, 5),
+  (9, 6),
+  (7, 6),
+  (3, 7),
+  (7, 7),
+  (3, 8),
+  (7, 8),
+  (0, 8),
+  (3, 9),
+  (0, 9),
+  (9, 10),
+  (7, 10),
+  (0, 11),
+  (7, 11),
+  (9, 12),
+  (4, 12),
+  (3, 12),
+  (7, 13),
+  (7, 14),
+  (7, 15);

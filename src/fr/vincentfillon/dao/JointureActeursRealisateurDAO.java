@@ -13,16 +13,13 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
         super(connection);
     }
 
-
     @Override
     public void create(JointureActeursRealisateur jointureActeursRealisateur) {
-
 
         String nom = jointureActeursRealisateur.getNom();
         String prenom = jointureActeursRealisateur.getPrenom();
         int anneeNaissance = Integer.parseInt(jointureActeursRealisateur.getAnneeNaissance());
         String nationalite = jointureActeursRealisateur.getNationalite();
-
 
         String sqlInsertRequest = "INSERT INTO moviedb.ACTEUR_REALISATEUR (Nom, Prenom, AnneeNaissance, NationaliteAR) VALUES(?,?,?,?)";
 
@@ -33,10 +30,11 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
             preparedInsertStatement.setInt(3,anneeNaissance);
             preparedInsertStatement.setString(4,nationalite);
 
+            preparedInsertStatement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -75,7 +73,6 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
 
         String sqlJointureRealise =
                 "SELECT FILM.TitreFr,FILM.TitreO FROM FILM INNER JOIN REALISE R on FILM.IdFilm = R.IdFilm INNER JOIN ACTEUR_REALISATEUR ON R.IdActeurRealisateur=ACTEUR_REALISATEUR.IdActeurRealisateur WHERE ACTEUR_REALISATEUR.IdActeurRealisateur=" + idJointureActeursRealisateur;
-
 
         try {
             ResultSet resultActeursRealisateur = this.connect.createStatement(
@@ -122,7 +119,6 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
 
                 String anneeNaissanceString = Integer.toString(anneeNaissance);
 
-
                 //boucle de la construction de la String "realise" extraite de la jointure:
                 int realiseSize = 1;
                 resultRealise.last();
@@ -142,7 +138,7 @@ public class JointureActeursRealisateurDAO extends Dao<JointureActeursRealisateu
                         resultRealise.next();
                     }
                 }
-//boucle de la construction de la String "joue" extraite de la jointure:
+                //boucle de la construction de la String "joue" extraite de la jointure:
                 int joueSize = 1;
                 resultJoue.last();
                 joueSize = resultJoue.getRow();

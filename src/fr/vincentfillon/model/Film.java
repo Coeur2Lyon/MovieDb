@@ -49,102 +49,45 @@ public class Film {
         this.nationalite = new SimpleStringProperty(nationaliteF);
     }
 
-    public int getIdFilm() {
-        return idFilm;
-    }
+    public int getIdFilm() {return idFilm;}
 
-    public void setIdFilm(int idFilm) {
-        this.idFilm = idFilm;
-    }
+    public void setIdFilm(int idFilm) { this.idFilm = idFilm;}
 
-    //
+    public String getTitreFR() {return titreFR.get();    }
 
-    public String getTitreFR() {
-        return titreFR.get();
-    }
+    public void setTitreFR(String titreFR) {this.titreFR.set(titreFR);}
 
-    public void setTitreFR(String titreFR) {
-        this.titreFR.set(titreFR);
-    }
+    public StringProperty titreVFProperty() { return titreFR;}
 
-    public StringProperty titreVFProperty() {
-        return titreFR;
-    }
+    public String getTitreO() {return titreO.get();}
 
-    //
+    public void setTitreO(String titreO) {this.titreO.set(titreO);}
 
-    public String getTitreO() {
-        return titreO.get();
-    }
+    public StringProperty titreOProperty() {return titreO;}
 
-    public void setTitreO(String titreO) {
-        this.titreO.set(titreO);
-    }
+    public String getScenario() {return scenario.get();}
 
-    public StringProperty titreOProperty() {
-        return titreO;
-    }
+    public void setScenario(String scenario) {this.scenario.set(scenario);}
 
-    //
+    public StringProperty scenarioProperty() {return scenario;}
 
-    public String getScenario() {
-        return scenario.get();
-    }
+    public String getAnneeSortie() {return anneeSortie.get();}
 
-    public void setScenario(String scenario) {
-        this.scenario.set(scenario);
-    }
+    public void setAnneeSortie(String anneeSortie) {this.anneeSortie.set(anneeSortie);}
 
-    public StringProperty scenarioProperty() {
-        return scenario;
-    }
+    public StringProperty anneeSortieProperty() {return anneeSortie;}
 
-    //
+    public String getNationalite() {return nationalite.get();}
 
-    public String getAnneeSortie() {
-        return anneeSortie.get();
-    }
+    public void setnationalite(String nationalite) {this.nationalite.set(nationalite);}
 
-    public void setAnneeSortie(String anneeSortie) {
-        this.anneeSortie.set(anneeSortie);
-    }
+    public StringProperty nationaliteProperty() {return nationalite;}
 
-    public StringProperty anneeSortieProperty() {
-        return anneeSortie;
-    }
+    public Timestamp getCreatedAt() {return createdAt;}
 
-//
+    public void setCreatedAt(Timestamp createdAt) {this.createdAt = createdAt;}
 
-    public String getNationalite() {
-        return nationalite.get();
-    }
+    public int getIsDeleted() {return isDeleted;}
 
-    public void setnationalite(String nationalite) {
-        this.nationalite.set(nationalite);
-    }
-
-    public StringProperty nationaliteProperty() {
-        return nationalite;
-    }
-
-    //
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public int getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(int isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    //
-
-
+    public void setIsDeleted(int isDeleted) {this.isDeleted = isDeleted;}
 }

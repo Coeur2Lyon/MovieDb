@@ -1,27 +1,23 @@
 package fr.vincentfillon;
 
-import fr.vincentfillon.model.ActeurRealisateur;
 import fr.vincentfillon.model.JointureActeursRealisateur;
 import fr.vincentfillon.model.JointureFilm;
 import fr.vincentfillon.model.ListeCheckBox;
 import fr.vincentfillon.views.ActRealEditDialogController;
 import fr.vincentfillon.views.JoueEditDialogController;
-import fr.vincentfillon.views.MovieJoinEditDialogController;
+import fr.vincentfillon.views.MovieEditDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 
 import java.io.IOException;
 
 public class Main extends Application {
     private static Stage primaryStage;
-
 
     @Override
     public void start(Stage primaryStage) {
@@ -41,12 +37,11 @@ public class Main extends Application {
         }
     }
 
-
     public static boolean showMovieJoinEditDialog(JointureFilm jointureFilm, ListeCheckBox listeCheckBox) {
         try {
             // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/MovieJoinEditDialog.fxml"));
+            loader.setLocation(Main.class.getResource("views/MovieEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Crée la fenêtre de dialogue:
@@ -58,14 +53,14 @@ public class Main extends Application {
             dialogStage.setScene(scene);
 
             // Paramètre le film dans le contrôlleur
-            MovieJoinEditDialogController controller = loader.getController();
+            MovieEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setMovie(jointureFilm);
 
             //Paramètre la liste de CheckBox(pour les genres) dans le contrôleur.
             controller.setListCheckBox(listeCheckBox);
 
-            // Show the dialog and wait until the user closes it
+            // Affiche la fenêtre de dialogue et attend une action de l'utilisateur.
             dialogStage.showAndWait();
 
             return controller.isOkClicked();
@@ -82,7 +77,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("views/ActRealEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
-            // Create the dialog Stage.
+            //Crée la fenêtre de dialogue
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Ajout / Edition d'acteurs/réalisateurs");
             dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -90,13 +85,12 @@ public class Main extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set the Movie into the controller.
+            // Paramètre les données de l'acteur/réalisateurr dans le contrôleur
             ActRealEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setActeurRealisateur(acteurRealisateur);
 
-
-            // Show the dialog and wait until the user closes it
+            // Ouvrir la boîte de dialog(show) et attendre une action de l'utilisateur.
             dialogStage.showAndWait();
 
             return controller.isOkClicked();
@@ -113,7 +107,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("views/JoueEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
-            // Create the dialog Stage.
+            // Crée la fenêtre de la boîte de dialogue.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Attribution d'un film à un acteur");
             dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -121,46 +115,12 @@ public class Main extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            // Set acteur dans controlôleur
+            // Définie/paramètre(Set) acteur dans controlôleur
             JoueEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setInfosActeur(acteurRealisateur);
 
-            // Show the dialog and wait until the user closes it
-            dialogStage.showAndWait();
-
-            return controller.isOkClicked();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-
-    public static boolean showFiltreDialog() {
-        try {
-            // Charge le fichier FXML et crée une nouvelle fenêtre (Stage).
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("views/FiltreDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-
-            // Create the dialog Stage.
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Choix des filtres");
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(primaryStage);
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-
-            // Set the Movie into the controller.
-            MovieJoinEditDialogController controller = loader.getController();
-            controller.setDialogStage(dialogStage);
-            //controller.setMovie(film);
-
-            // Set the dialog icon.
-            dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
-
-            // Show the dialog and wait until the user closes it
+            // Ouvrir la boîte de dialog(show) et attendre une action de l'utilisateur.
             dialogStage.showAndWait();
 
             return controller.isOkClicked();

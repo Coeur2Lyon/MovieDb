@@ -30,38 +30,30 @@ public class InterfaceActeursRealisateursAdminController {
     private Label lblNom;
     @FXML
     private Label lblAnneeNaissance;
-    ;
     @FXML
     private Label lblNationalite;
-
     @FXML
     private Label lblJoue;
-
     @FXML
     private Label lblRealise;
 
 
     private InterfacePrincipaleController reference;
-    // Reference to the main application.
+    // Référence à l'interface principale Main
     private Main main;
     private JoueEditDialogController joueEditDialogController;
 
     @FXML
     private ObservableList<JointureActeursRealisateur> acteurRealisateursData = FXCollections.observableArrayList();
 
-    /* The constructor is called before the initialize() method.
-     */
     public InterfaceActeursRealisateursAdminController() {
-
         Dao<JointureActeursRealisateur> jointureActeursRealisateurDAO = new JointureActeursRealisateurDAO(ConnectionClass.connecte());
 
-//Pour trouver l'acteur d'indice i:
-        // ActeurRealisateur acteurRealisateur = acteurRealisateurDAO.find(1);
+// Pour trouver l'acteur d'indice i:
+// ActeurRealisateur acteurRealisateur = acteurRealisateurDAO.find(1);
         acteurRealisateursData.setAll(jointureActeursRealisateurDAO.findAll());
-        //acteurRealisateursData.add(new ActeurRealisateur("Villeret", "Jacques",  "1960", "FR"));
-        //acteurRealisateursData.add(new ActeurRealisateur("Scorses", "Martin", "1962", "US"));
-//        movieJoinData.add(new JointureFilm("L'armée des Ombres", "L'armée des Ombres", "Un ingénieur soupçonné de pensée gaullistes est arrêté par la Gestapo", "1969", "FR"));
-//        movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
+// Ajout manuel pour test si besoin:
+// movieJoinData.add(new JointureFilm("Les tontons flingueurs", "Les tontons flingueurs", "un ex-truand reconverti dans le négoce de matériel de travaux publics à Montauban voit sa petite vie tranquille basculer lorsque son ami d'enfance, Louis, dit le Mexicain, un gangster notoire de retour à Paris, l'appelle à son chevet.", "1963", "FR"));
     }
 
     public ObservableList<JointureActeursRealisateur> getActeurRealisateursData() {
@@ -70,8 +62,8 @@ public class InterfaceActeursRealisateursAdminController {
 
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     * Initialise la classe contrôleur.
+     * Cette méthode est directement appelée après que la page fxml(view) ait été appelée.
      */
     @FXML
     public void initialize() {
@@ -79,37 +71,39 @@ public class InterfaceActeursRealisateursAdminController {
         colPrenom.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
         colNom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
 
-        // Clear movie details.
+        // Efface les détails acteur/réalisateur.
         showActeurRealisateursDetails(null);
 
-        // Listen for selection changes and show the movie details when changed.
+        //Ecoute (Se tient prêt pour) le changement (en termes de sélection) à venir. Affiche les détails de l'acteur/réalisateur quand le changement est opéré (la sélection faite)
+
         acteurRealisateurTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showActeurRealisateursDetails(newValue));
-        // Add observable list data to the table
+        // Ajoute les données contenue dans lObservableList à la TableView.
+
         acteurRealisateurTable.setItems(acteurRealisateursData);
     }
 
     /**
-     * Is called by the main application to give a reference back to itself.
+     Est appellée par l'application principale Main pour se donner une référence à elle-même
      *
      * @param reference
      */
     public void setActeurRealisateur(InterfacePrincipaleController reference) {
         this.reference = reference;
-        //Add observable list data to the table
+        //Ajoute les données contenue dans lObservableList à la TableView
         acteurRealisateurTable.setItems(getActeurRealisateursData());
     }
 
     /**
-     * Fills all text fields to show details about the movie.
-     * If the specified movie is null, all text fields are cleared.
+     * Remplie les champs de textes/Labels pour afficher les détails de l'acteur/réalisateur.
+     * Si l'objet est null, alors on affiche des champs vides.
      *
      * @param jointureActeursRealisateur the movie or null
      */
     public void showActeurRealisateursDetails(JointureActeursRealisateur jointureActeursRealisateur) {
 
         if (jointureActeursRealisateur != null) {
-            // Fill the labels with info from the movie object.
+            // Remplie les labels avec les données issues de l'instance de jointureActeursRealisateur la classe JointureActeurRealisateur
             lblPrenom.setText(jointureActeursRealisateur.getPrenom());
             lblNom.setText(jointureActeursRealisateur.getNom());
             lblAnneeNaissance.setText(jointureActeursRealisateur.getAnneeNaissance());
@@ -117,9 +111,8 @@ public class InterfaceActeursRealisateursAdminController {
             lblJoue.setText(jointureActeursRealisateur.getJoue());
             lblRealise.setText(jointureActeursRealisateur.getRealise());
 
-
         } else {
-            // movie is null, remove all the text.
+            // L'acteur/réalisateur est "null", on définit comme vides (String "") tous les labels.
             lblPrenom.setText("");
             lblNom.setText("");
             lblAnneeNaissance.setText("");
@@ -131,8 +124,7 @@ public class InterfaceActeursRealisateursAdminController {
 
 
     /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new movie.
+     * Appellée quand l'utilisateur appuie sur "+ Acteur/réalisateur"
      */
     @FXML
     public void addActeurRealisateur(ActionEvent actionEvent) {
@@ -152,13 +144,7 @@ public class InterfaceActeursRealisateursAdminController {
     }
 
     /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected movie.
-     */
-
-
-    /**
-     * Called when the user clicks on the delete button.
+     * Appelée quand l'utilisateur clique sur le boutton "Effacer..."
      */
     @FXML
     private void deleteActeurRealisateur() {
@@ -175,7 +161,7 @@ public class InterfaceActeursRealisateursAdminController {
             }
             acteurRealisateursData.remove(selectedActeurRealisateur);
         } else {
-            // Nothing selected.
+            // Pas d'élément sélectionné
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Aucune sélection");
@@ -184,7 +170,10 @@ public class InterfaceActeursRealisateursAdminController {
             alert.showAndWait();
         }
     }
-
+    /**
+     * Appelée quand l'utilisateur clique Le bouton "Editer...".
+     * Ouvre une fenêtre de dialogue pour éditer les informations du film sélectionné.
+     */
     @FXML
     public void editActeurRealisateur(ActionEvent actionEvent) {
 
@@ -198,7 +187,7 @@ public class InterfaceActeursRealisateursAdminController {
             }
 
         } else {
-            // Nothing selected.
+            // Pas d'élément sélectionné
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Aucune sélection");
@@ -232,9 +221,7 @@ public class InterfaceActeursRealisateursAdminController {
         Dao<Joue> joueDao = new JoueDAO(ConnectionClass.connecte());
         Dao<JointureFilm> jointureFilmDao = new JointureFilmDAO(ConnectionClass.connecte());
 
-
         Joue tempJoue = new Joue();
-
 
         if (selectedActeur != null) {
 
@@ -243,7 +230,6 @@ public class InterfaceActeursRealisateursAdminController {
             boolean okClicked = Main.showJoueEditDialog(selectedActeur);
             if (okClicked) {
                 int idFilmARecup = 0;
-
                 try {
                     joueEditDialogController.getIdSelectedFilm();
                 } catch (Exception e) {
@@ -257,7 +243,7 @@ public class InterfaceActeursRealisateursAdminController {
                 }
             }
         } else {
-            // Nothing selected.
+            // Pas d'élément sélectionné
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Aucune sélection");

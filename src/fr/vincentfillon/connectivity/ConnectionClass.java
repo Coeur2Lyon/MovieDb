@@ -31,7 +31,6 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
 
     public static Connection connecte() {
         try {
-
             if (connection == null) {
                 Class.forName(driver);
                 connection = DriverManager.getConnection(urlStr, username, password);
@@ -40,8 +39,6 @@ public class ConnectionClass { //Avec connexion unique à l'aide du design patte
                 System.out.println("Il existe déja une connexion");
                 Class.forName(driver);
                 connection = DriverManager.getConnection(urlStr, username, password);
-
-
             }
         } catch (ClassNotFoundException |
                 SQLException e) {

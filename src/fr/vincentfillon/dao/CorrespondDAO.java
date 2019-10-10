@@ -33,7 +33,7 @@ public class CorrespondDAO extends Dao<Correspond> {
             preparedStatement.setInt(1, idGenre);
             preparedStatement.setInt(2, idFilm);
             preparedStatement1.setInt(1, idFilm);
-            preparedStatement1.setInt(1, idFilm);
+            preparedStatement2.setInt(1, idFilm);
 
             preparedStatement.executeUpdate();
             preparedStatement1.executeUpdate();

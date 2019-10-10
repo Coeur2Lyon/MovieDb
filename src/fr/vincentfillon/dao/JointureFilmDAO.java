@@ -80,7 +80,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
         }
     }
 
-
     @Override
     public JointureFilm find(int idJointure) {
 
@@ -135,7 +134,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
                         genre += ", " + resultGenre.getString(1);
                         resultGenre.next();
                     }
-
                 }
 //boucle de la construction de la String "realisateur" extraite de la jointure:
                 int realisateurSize = 1;
@@ -166,7 +164,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
 
                 if (genre == null) {
                     genre = "";
-
                 }
                 if (realisateur == null) {
                     realisateur = "";
@@ -174,8 +171,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
                 if (acteurs == null) {
                     acteurs = "";
                 }
-
-
                 jointureFilm = new JointureFilm(idJointure, titreFR, titreO, scenario, anneeSortie, nationalite, genre, realisateur, acteurs, createdAt, isDeleted);
 
                 resultFilm.close();
@@ -199,18 +194,6 @@ public class JointureFilmDAO extends Dao<JointureFilm> {
                 listeFilms.add(jointureFilm);
             }
         }
-
-
-        /*
-        int i = 1;
-        JointureFilm jointure = find(i);
-        while (jointure.getTitreFR() != null) {
-            if (jointure.getIsDeleted() == 0) {
-                listeFilms.add(jointure);
-            }
-            i++;
-            jointure = find(i);
-        }*/
         return listeFilms;
     }
 

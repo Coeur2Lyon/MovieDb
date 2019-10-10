@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 //import ch.makery.address.util.DateUtil;
 
 /**
- * Dialog to edit details of a movie.
+ * Boîte de dialogue pour éditer un acteur/réalisateur.
  *
  * @author Vincent Fillon
  */
@@ -39,15 +39,15 @@ public class ActRealEditDialogController {
     private boolean okClicked = false;
 
     /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
+     Initialise la classe contrôleur.
+     après que la vue fxml ait été chargée.
      */
     @FXML
     private void initialize() {
     }
 
     /**
-     * Sets the stage of this dialog.
+     * Définit/Paramètre la fenêtre de la boîte de dialogue
      *
      * @param dialogStage
      */
@@ -59,8 +59,8 @@ public class ActRealEditDialogController {
     }
 
     /**
-     * Sets the movie Join to be edited in the dialog.
-     *
+     * Définit/paramètre l'instance JointureActeursRealisateur
+     *afin que les infos de l'acteur-réal sélectionné soit affichés dans la boîte de dialogue.
      * @param jointureActeursRealisateur
      */
     public void setActeurRealisateur(JointureActeursRealisateur jointureActeursRealisateur) {
@@ -73,7 +73,7 @@ public class ActRealEditDialogController {
     }
 
     /**
-     * Returns true if the user clicked OK, false otherwise.
+     * Retourne "true" si l'utilisateur clique "OK"n sinon "false"
      *
      * @return
      */
@@ -82,7 +82,7 @@ public class ActRealEditDialogController {
     }
 
     /**
-     * Called when the user clicks ok.
+     * Appelée quand l'utilisateur clique ok.
      */
     @FXML
     private void handleOk() {
@@ -98,7 +98,7 @@ public class ActRealEditDialogController {
     }
 
     /**
-     * Called when the user clicks cancel.
+     * Appelée quand l'utilisateur clique sur "Annuler".
      */
     @FXML
     private void handleCancel() {
@@ -106,9 +106,9 @@ public class ActRealEditDialogController {
     }
 
     /**
-     * Validates the user input in the text fields.
+     * Valide les entrées utilisateur dans les champs de texte.
      *
-     * @return true if the input is valid
+     * @return true si l'entrée est valide
      */
     private boolean isInputValid() {
         String errorMessage = "";
@@ -131,7 +131,7 @@ public class ActRealEditDialogController {
         if (errorMessage.length() == 0) {
             return true;
         } else {
-            // Show the error message.
+            // Affiche le message d'erreur.
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Champs non valide");
