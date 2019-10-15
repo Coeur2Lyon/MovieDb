@@ -35,27 +35,24 @@ show databases;
 use moviedb;
 show tables;
 
-
-
 -Arrêter/démarrer un conteneur (projet_filmotheque pour l'exemple):
 
-docker start projet_filmotheque
+docker start moviedb
 
-docker stop projet_filmotheque
+docker stop moviedb
 
 -Arrêter les conteneurs:
-
 docker stop $(docker ps -a -q)
 
 -Supprimer les conteneurs:
-
 docker rm $(docker ps -a -q)
 
 
 Supprimer toutes les images non utilisées:
-
 docker rmi $(docker images -q)
 
 
-Sortir de la BDD et des conteneur
-exit
+Sortir de la BDD et des conteneur: exit
+
+Afficher tous les conteneurs:
+docker ps -a

@@ -34,9 +34,10 @@ EXPOSE 3306
 
 -Pour builder l'image:
 
-docker build -t vincent/mysql . // on nomme le container souhaité et on indique un "." pour spécifier que le Dockerfile est dans le répertoire courant.
+docker build -t vincent/mysql . // on nomme l'image souhaitée et on indique un "." pour spécifier que le Dockerfile est dans le répertoire courant.
 
--Création du conteneur pour cette image:
+-Création du conteneur (nommé projet_filmotheque ici) pour cette image:
+docker run IMAGE [-p port:por][-d][--name CONTAINERNAME]
 
 docker run --name projet_filmotheque -p3306:3306 -d vincent/mysql
 

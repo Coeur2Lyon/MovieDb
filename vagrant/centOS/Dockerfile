@@ -1,3 +1,4 @@
+#Builder pour MySQL
 FROM mysql:latest
 
 LABEL maintainer="vincent_fillon@hotmail.com"
@@ -8,6 +9,6 @@ ENV MYSQL_DATABASE moviedb
 ENV MYSQL_USERS vincent
 ENV MYSQL_PASSWORD password
 
-ADD BDD/MySQL/mysql_charset.cnf /etc/mysql/conf.d/mysql_charset.cnf
-ADD BDD/MySQL/Projet_Filmotheque.sql /docker-entrypoint-initdb.d
+ADD MySQL/mysql_charset.cnf /etc/mysql/conf.d/mysql_charset.cnf
+ADD MySQL/Projet_Filmotheque.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
