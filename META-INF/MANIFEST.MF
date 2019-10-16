@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: fr.vincentfillon.Main
+Main-Class: main.vincentfillon.Main
 Class-Path: mysql_jdbc_driver.jar
