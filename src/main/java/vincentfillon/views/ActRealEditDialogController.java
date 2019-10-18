@@ -1,6 +1,6 @@
 package vincentfillon.views;
 
-//public class MovieEditDialogController {
+//public class MovieEditDialogControllerTest {
 
 import vincentfillon.model.ActeurRealisateur;
 import vincentfillon.model.JointureActeursRealisateur;

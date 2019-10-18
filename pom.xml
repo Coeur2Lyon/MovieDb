@@ -67,12 +67,14 @@
     <!-- =============================================================== -->
     <dependencies>
 
+        <!--  Dépendance JUnit pour tests -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -86,6 +88,8 @@
             <version>3.1.0</version>
             <scope>test</scope>
         </dependency>
+
+
 
         <!-- ===== Bibliothèques tierces ===== -->
         <!-- Dépendance qui set à crypter/décrypter les mots de passe-->

@@ -70,8 +70,8 @@ public class InterfaceFilmsAdminController {
     }
 
     /**
-     Initialise la classe contrôleur.
-     après que la vue fxml ait été chargée.
+     * Initialise la classe contrôleur.
+     * après que la vue fxml ait été chargée.
      */
     @FXML
     public void initialize() {
@@ -92,6 +92,7 @@ public class InterfaceFilmsAdminController {
     /**
      * Est appelée par le controlleur de l'interface principale (InterfacePrincipaleController)
      * pour donner en retour une référence à lui-même
+     *
      * @param jointureFilm
      */
     public void setMovie(InterfacePrincipaleController jointureFilm) {
@@ -118,8 +119,7 @@ public class InterfaceFilmsAdminController {
             lblRealisateur.setText(jointureFilm.getRealisateurs());
             lblActeurs.setText(jointureFilm.getActeurs());
 
-        }
-        else {
+        } else {
             // le film est "null", on affiche donc des chaînes de caractères vide ("")
             lblTitreVF.setText("");
             lblTitreVO.setText("");
@@ -202,6 +202,7 @@ public class InterfaceFilmsAdminController {
             alert.showAndWait();
         }
     }
+
     /**
      * Appelée quand l'utilisateur clique Le bouton "Editer...".
      * Ouvre une fenêtre de dialogue pour éditer les informations du film sélectionné.
@@ -216,6 +217,7 @@ public class InterfaceFilmsAdminController {
         Correspond tempCorrespond = new Correspond();
 
         if (selectedJoinMovie != null) {
+            String genre = "";
             int idFilm = selectedJoinMovie.getIdJointure();
             tempCorrespond.setIdFilm(idFilm);
             ListeCheckBox listegenreFromIdFilm = ((CorrespondDAO) correspondDao).extractListeCheckBoxFromJointure(selectedJoinMovie);
@@ -225,19 +227,23 @@ public class InterfaceFilmsAdminController {
             boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listegenreFromIdFilm);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
-                jointureFilmDao.update(selectedJoinMovie);
 
                 if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
                     correspondDao.update(tempCorrespond);
+                    listIntGenre.add(0);
+
                 }
                 if (!listegenreFromIdFilm.isCboxPolicier() && listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
                     correspondDao.delete(tempCorrespond);
+                    listIntGenre.remove(listIntGenre.indexOf(0));
                 }
                 if (listegenreFromIdFilm.isCboxThriller() && !listIntGenre.contains(1)) {
                     tempCorrespond.setIdGenre(1);
                     correspondDao.update(tempCorrespond);
+                    listIntGenre.add(1);
+                    listIntGenre.remove(listIntGenre.indexOf(1));
                 }
                 if (!listegenreFromIdFilm.isCboxThriller() && listIntGenre.contains(1)) {
                     tempCorrespond.setIdGenre(1);
@@ -307,9 +313,10 @@ public class InterfaceFilmsAdminController {
                     tempCorrespond.setIdGenre(9);
                     correspondDao.delete(tempCorrespond);
                 }
+                getMovieData().setAll(jointureFilmDao.findAll());
+                jointureFilmDao.update(selectedJoinMovie);
             }
-        }
-        else { // Pas de film sélectionné.
+        } else { // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Pas de sélection");
@@ -318,6 +325,7 @@ public class InterfaceFilmsAdminController {
             alert.showAndWait();
         }
     }
+
     /**
      * Appelée quand l'utilisateur clique sur le boutton "Effacer..."
      */

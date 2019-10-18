@@ -99,13 +99,13 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                                <Button fx:id="btnAddJoue" mnemonicParsing="false" onAction="#addJoue" prefHeight="30.0" prefWidth="30.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                                <Button fx:id="btnJoue" mnemonicParsing="false" onAction="#addJoue" prefHeight="30.0" prefWidth="30.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
                         <Label text="à joué dans:" textFill="#df63ff" GridPane.rowIndex="5" GridPane.valignment="TOP">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnAddRealise" contentDisplay="TOP" mnemonicParsing="false" onAction="#initRealiseEditDialog" prefHeight="30.0" prefWidth="30.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                        <Button fx:id="btnRealise" contentDisplay="TOP" mnemonicParsing="false" onAction="#initRealiseEditDialog" prefHeight="30.0" prefWidth="30.0" text="+" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
                             </children>
                         </GridPane>
                         <ButtonBar layoutX="54.0" layoutY="250.0" prefHeight="21.0" prefWidth="485.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="10.0">
