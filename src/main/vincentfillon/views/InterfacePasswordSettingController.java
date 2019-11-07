@@ -1,4 +1,4 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
 import javafx.event.ActionEvent;
 

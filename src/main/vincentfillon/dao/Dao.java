@@ -1,4 +1,4 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
 import javafx.collections.ObservableList;
 

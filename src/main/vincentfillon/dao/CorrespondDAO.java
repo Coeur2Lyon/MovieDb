@@ -1,8 +1,8 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
-import main.vincentfillon.model.Correspond;
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.ListeCheckBox;
+import vincentfillon.model.Correspond;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.ListeCheckBox;
 import javafx.collections.ObservableList;
 
 import java.sql.*;

@@ -1,10 +1,10 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
 
-import main.vincentfillon.model.Correspond;
-import main.vincentfillon.model.Genre;
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.ListeCheckBox;
+import vincentfillon.model.Correspond;
+import vincentfillon.model.Genre;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.ListeCheckBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

@@ -1,13 +1,13 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
-import main.vincentfillon.Main;
-import main.vincentfillon.connectivity.ConnectionClass;
-import main.vincentfillon.dao.CorrespondDAO;
-import main.vincentfillon.dao.Dao;
-import main.vincentfillon.dao.JointureFilmDAO;
-import main.vincentfillon.model.Correspond;
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.ListeCheckBox;
+import vincentfillon.Main;
+import vincentfillon.connectivity.ConnectionClass;
+import vincentfillon.dao.CorrespondDAO;
+import vincentfillon.dao.Dao;
+import vincentfillon.dao.JointureFilmDAO;
+import vincentfillon.model.Correspond;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.ListeCheckBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

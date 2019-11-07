@@ -1,12 +1,12 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
-import main.vincentfillon.Main;
-import main.vincentfillon.connectivity.ConnectionClass;
-import main.vincentfillon.dao.Dao;
-import main.vincentfillon.dao.FilmDAO;
-import main.vincentfillon.dao.UtilisateurDAO;
-import main.vincentfillon.model.Film;
-import main.vincentfillon.model.Utilisateur;
+import vincentfillon.Main;
+import vincentfillon.connectivity.ConnectionClass;
+import vincentfillon.dao.Dao;
+import vincentfillon.dao.FilmDAO;
+import vincentfillon.dao.UtilisateurDAO;
+import vincentfillon.model.Film;
+import vincentfillon.model.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

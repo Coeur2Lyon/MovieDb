@@ -1,6 +1,6 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
-import main.vincentfillon.model.JointureFilm;
+import vincentfillon.model.JointureFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

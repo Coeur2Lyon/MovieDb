@@ -1,4 +1,4 @@
-package main.vincentfillon.model;
+package vincentfillon.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

@@ -1,4 +1,4 @@
-package main.vincentfillon.model;
+package vincentfillon.model;
 
 public class Joue {
     Film film;

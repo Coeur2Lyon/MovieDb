@@ -1,7 +1,7 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
 
-import main.vincentfillon.model.Film;
+import vincentfillon.model.Film;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

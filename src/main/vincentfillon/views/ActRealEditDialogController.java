@@ -1,9 +1,9 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
 //public class MovieEditDialogController {
 
-import main.vincentfillon.model.ActeurRealisateur;
-import main.vincentfillon.model.JointureActeursRealisateur;
+import vincentfillon.model.ActeurRealisateur;
+import vincentfillon.model.JointureActeursRealisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

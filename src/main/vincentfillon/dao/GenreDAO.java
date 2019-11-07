@@ -1,7 +1,7 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
-import main.vincentfillon.model.ActeurRealisateur;
-import main.vincentfillon.model.Genre;
+import vincentfillon.model.ActeurRealisateur;
+import vincentfillon.model.Genre;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;

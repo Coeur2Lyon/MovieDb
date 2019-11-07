@@ -1,12 +1,12 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
-import main.vincentfillon.Main;
-import main.vincentfillon.connectivity.ConnectionClass;
-import main.vincentfillon.dao.*;
-import main.vincentfillon.model.ActeurRealisateur;
-import main.vincentfillon.model.JointureActeursRealisateur;
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.Joue;
+import vincentfillon.Main;
+import vincentfillon.connectivity.ConnectionClass;
+import vincentfillon.dao.*;
+import vincentfillon.model.ActeurRealisateur;
+import vincentfillon.model.JointureActeursRealisateur;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.Joue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

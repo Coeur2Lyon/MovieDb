@@ -1,11 +1,11 @@
-package main.vincentfillon;
+package vincentfillon;
 
-import main.vincentfillon.model.JointureActeursRealisateur;
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.ListeCheckBox;
-import main.vincentfillon.views.ActRealEditDialogController;
-import main.vincentfillon.views.JoueEditDialogController;
-import main.vincentfillon.views.MovieEditDialogController;
+import vincentfillon.model.JointureActeursRealisateur;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.ListeCheckBox;
+import vincentfillon.views.ActRealEditDialogController;
+import vincentfillon.views.JoueEditDialogController;
+import vincentfillon.views.MovieEditDialogController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

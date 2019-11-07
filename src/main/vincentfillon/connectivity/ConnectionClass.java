@@ -1,6 +1,6 @@
-package main.vincentfillon.connectivity;
+package vincentfillon.connectivity;
 
-import main.vincentfillon.Main;
+import vincentfillon.Main;
 import javafx.scene.control.Alert;
 
 import java.sql.*;

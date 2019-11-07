@@ -1,11 +1,11 @@
-package main.vincentfillon.views;
+package vincentfillon.views;
 
-import main.vincentfillon.Main;
-import main.vincentfillon.connectivity.ConnectionClass;
-import main.vincentfillon.dao.Dao;
-import main.vincentfillon.dao.JointureFilmDAO;
-import main.vincentfillon.model.JointureActeursRealisateur;
-import main.vincentfillon.model.JointureFilm;
+import vincentfillon.Main;
+import vincentfillon.connectivity.ConnectionClass;
+import vincentfillon.dao.Dao;
+import vincentfillon.dao.JointureFilmDAO;
+import vincentfillon.model.JointureActeursRealisateur;
+import vincentfillon.model.JointureFilm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

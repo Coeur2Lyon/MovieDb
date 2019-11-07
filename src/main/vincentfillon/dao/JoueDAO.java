@@ -1,7 +1,7 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
-import main.vincentfillon.model.JointureFilm;
-import main.vincentfillon.model.Joue;
+import vincentfillon.model.JointureFilm;
+import vincentfillon.model.Joue;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;

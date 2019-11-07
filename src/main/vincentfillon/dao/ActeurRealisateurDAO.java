@@ -1,6 +1,6 @@
-package main.vincentfillon.dao;
+package vincentfillon.dao;
 
-import main.vincentfillon.model.ActeurRealisateur;
+import vincentfillon.model.ActeurRealisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
