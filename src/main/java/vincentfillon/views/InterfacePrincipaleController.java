@@ -24,7 +24,7 @@ public class InterfacePrincipaleController extends Main {
 
     private AnchorPane interfaceFilms;
     private AnchorPane interfaceJointureFilms;
-    private main.vincentfillon.Main main;
+    private vincentfillon.Main main;
 
     @FXML
     private TextField txtEmail;
