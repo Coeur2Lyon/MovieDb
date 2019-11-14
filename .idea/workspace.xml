@@ -7,51 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15b4e4b6-744f-4f8f-84bf-cf8d02655df7.corrupted.20191021-090619.reason.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15b4e4b6-744f-4f8f-84bf-cf8d02655df7.corrupted.20191021-090619.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/linuxMysqlNODocker/Vagrantfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/.vagrant/rgloader/loader.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/MySQL/moviedb.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Vagrantfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/script.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/.vagrant/rgloader/loader.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/Vagrantfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/mySQL/moviedb.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/mySQL/mysql_charset.cnf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/script.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDD/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/BDD/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/dao/UtilisateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/dao/UtilisateurDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/model/Utilisateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPassword.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePasswordSetting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePasswordSetting.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipale.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipale.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipaleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/JoueEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/JoueEditDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/centOS/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/centOS/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/centOS/Vagrantfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/centOS/mysql/Projet_Filmotheque.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/centOS/mysql/mysql_charset.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/MySQL/mysql_charset.cnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/windows10/Vagrantfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vagrant/windows10/Vagrantfile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/vincentfillon/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/vincentfillon/views/InterfaceActeursRealisateurAdminControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/vincentfillon/views/InterfaceFilmsAdminControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/vincentfillon/views/MovieEditDialogControllerTest.java" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -298,8 +257,8 @@
       <file leaf-file-name="InterfaceFilmsAdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="321" column="18" selection-start-line="321" selection-start-column="18" selection-end-line="321" selection-end-column="18" />
+            <state relative-caret-position="356">
+              <caret line="320" column="94" selection-start-line="320" selection-start-column="94" selection-end-line="320" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -580,10 +539,31 @@
               <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
               <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="vincentfillon" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vincentfillon" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1060,7 +1040,7 @@
       <workItem from="1573572452956" duration="956000" />
       <workItem from="1573640671797" duration="5090000" />
       <workItem from="1573726826805" duration="331000" />
-      <workItem from="1573727177376" duration="1650000" />
+      <workItem from="1573727177376" duration="2069000" />
     </task>
     <servers />
   </component>
@@ -1091,7 +1071,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="817255000" />
+    <option name="totallyTimeSpent" value="817674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,7 +1084,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="1225" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32936078" />
@@ -1845,8 +1824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="321" column="18" selection-start-line="321" selection-start-column="18" selection-end-line="321" selection-end-column="18" />
+        <state relative-caret-position="356">
+          <caret line="320" column="94" selection-start-line="320" selection-start-column="94" selection-end-line="320" selection-end-column="94" />
         </state>
       </provider>
     </entry>
