@@ -141,6 +141,7 @@ create table UTILISATEUR
   primary key (IdUser)
 );
 
+
 alter table CORRESPOND
   add constraint FK_CORRESPOND foreign key (IdGenre)
 references GENRE (IdGenre)

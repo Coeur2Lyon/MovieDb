@@ -21,7 +21,16 @@ public class Utilisateur {
     private StringProperty username;
     private StringProperty password;
     private StringProperty email;
-    private String birthday = simpleDateFormat.format(new Date());
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    private Date birthday;
     private Timestamp createdAt= new Timestamp(millis);
     private int isDeleted;
 
@@ -29,7 +38,7 @@ public class Utilisateur {
 
     public Utilisateur(){this(0,0,null,null,null,null);}
 
-    public Utilisateur(int idUser, int idRole, String username, String password, String email, String birthday, Date createdAt, int isDeleted) {
+    public Utilisateur(int idUser, int idRole, String username, String password, String email, Date birthday, Date createdAt, int isDeleted) {
         this.idUser = idUser;
         this.idRole = idRole;
         this.username = new SimpleStringProperty(username);
@@ -39,7 +48,7 @@ public class Utilisateur {
         this.createdAt = new Timestamp(createdAt.getTime());
         this.isDeleted =isDeleted;
     }
-    public Utilisateur(int idUser, int idRole, String username, String password, String email, String birthday) {
+    public Utilisateur(int idUser, int idRole, String username, String password, String email, Date birthday) {
         this.idUser = idUser;
         this.idRole = idRole;
         this.username = new SimpleStringProperty(username);
@@ -107,13 +116,7 @@ public class Utilisateur {
     }
     public void setCreatedAt(Date createdAt) { this.createdAt = new Timestamp(createdAt.getTime());}
 
-    public String getBirthday() {
-        return birthday;
-    }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
 
 
     public int getIsDeleted() { return isDeleted;}

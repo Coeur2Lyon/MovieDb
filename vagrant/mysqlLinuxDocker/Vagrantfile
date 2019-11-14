@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+  #config.ssh.username = "root"
+  config.vm.box = "centos/7"
+
+  #config.vm.network :public_network
+  config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct:true
+
+  config.vm.provider "virtualbox" do |v|
+    v.gui = false
+  end
+
+
+  config.vm.provision "docker" do |d|
+    #d.build_image "."
+  end
+
+ config.vm.provision "shell",
+   inline: "sudo mkdir mysql"
+
+ config.vm.provision "shell",
+   inline: "chmod -R 777 mysql"
+
+ config.vm.provision :file, source: ".", destination: "~/mysql"
+ #  override.vm.synced_folder ".", "/", type: "nfs"
+
+ config.vm.provision "shell",
+    path: "script.sh"
+end

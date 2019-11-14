@@ -42,7 +42,6 @@ public class InterfaceFilmsAdminController {
     @FXML
     private Label lblActeurs;
 
-
     // Référence à InterfacePrincipaleController
     private InterfacePrincipaleController jointure;
     private MovieEditDialogController movieEditDialogController;
@@ -195,6 +194,11 @@ public class InterfaceFilmsAdminController {
                 tempCorrespond.setIdGenre(9);
                 correspondDao.create(tempCorrespond);
             }
+            getMovieData().setAll(jointureFilmDao.findAll());
+            showMovieJoinDetails(tempJointureFilm);
+            showMovieJoinDetails(jointureFilmDao.find(tempJointureFilm.getIdJointure()));
+
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.initOwner(Main.getPrimaryStage());
             alert.setTitle("Ajout d'un film");
@@ -227,6 +231,7 @@ public class InterfaceFilmsAdminController {
             boolean okClicked = Main.showMovieJoinEditDialog(selectedJoinMovie, listegenreFromIdFilm);
             if (okClicked) {
                 showMovieJoinDetails(selectedJoinMovie);
+                jointureFilmDao.update(selectedJoinMovie);
 
                 if (listegenreFromIdFilm.isCboxPolicier() && !listIntGenre.contains(0)) {
                     tempCorrespond.setIdGenre(0);
@@ -313,8 +318,7 @@ public class InterfaceFilmsAdminController {
                     tempCorrespond.setIdGenre(9);
                     correspondDao.delete(tempCorrespond);
                 }
-                getMovieData().setAll(jointureFilmDao.findAll());
-                jointureFilmDao.update(selectedJoinMovie);
+                showMovieJoinDetails(jointureFilmDao.find(selectedJoinMovie.getIdJointure()));
             }
         } else { // Pas de film sélectionné.
             Alert alert = new Alert(Alert.AlertType.WARNING);

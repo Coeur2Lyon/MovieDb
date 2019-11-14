@@ -1,0 +1,147 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# This Vagrantfile (vagrantup.com) spins up a MySQL server with your data
+# already loaded. Many of the settings below are the same suggestions you get
+# from `vagrant init`.
+#
+# Just be sure that (if you want data loaded) you have your .sql file sitting
+# in the directory that will be shared to the guest. Usually this is the folder
+# that your Vagrantfile is in. The database and user will have the same name as
+# the .sql file, so name it something appropriate. It's probably best to stick
+# to letters (and numbers ?) because I didn't do any crazy substitution rules.
+#
+# The mysql root user and the user with the same name as your file will be using
+# 'pass' as their password. User 'vagrant'@'localhost' doesn't use a password,
+# so you can just run `mysql` after you ssh into your VM and jump right in.
+#
+# Feel free to change the vm.box and vm.box_url, but I know it works with this
+# one since it's already a LAMP server.
+#
+# Enjoy!
+#
+# Don Denton
+# Happy Collision
+# happycollision.com
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "lamp"
+
+  # The url from where the 'config.vm.box' box will be fetched if it
+  # doesn't already exist on the user's system.
+  config.vm.box_url = "https://dl.dropbox.com/u/14741389/vagrantboxes/lucid64-lamp.box"
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+
+  # Make this VM reachable on the host network as well, so that other
+  # VM's running other browsers can access our dev server.
+  config.vm.network :private_network, ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network :public_network
+
+  # Make it so that network access from the vagrant guest is able to
+  # use SSH private keys that are present on the host without copying
+  # them into the VM.
+  config.ssh.forward_agent = true
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider :virtualbox do |vb|
+  #   # Don't boot with headless mode
+  #   vb.gui = true
+  #
+  #   # Use VBoxManage to customize the VM. For example to change memory:
+  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+  #
+  #   # This setting makes it so that network access from inside the vagrant guest
+  #   # is able to resolve DNS using the hosts VPN connection.
+  #   # (The Discourse folks use this, so I just left it.)
+  #   v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  # end
+  #
+  # View the documentation for the provider you're using for more
+  # information on available options.
+
+
+  update = <<SCRIPT
+# Probably a decent idea to update...
+sudo apt-get update && sudo apt-get -y upgrade
+SCRIPT
+
+  mysql_prefs = <<SCRIPT
+# Stop MySQL. Start up again ignoring passwords.
+sudo /etc/init.d/mysql stop
+sudo /usr/sbin/mysqld --skip-grant-tables --skip-networking &
+# Wait for mysql to start up
+until mysqladmin ping; do
+	sleep 2
+done
+# Set root password to 'pass'
+# Create vagrant user with no pass for ease of use during ssh
+`mysql -u root -e "\
+FLUSH PRIVILEGES; \
+SET PASSWORD FOR root@'localhost' = PASSWORD('pass'); \
+FLUSH PRIVILEGES; \
+\
+GRANT ALL PRIVILEGES ON *.* TO 'vagrant'@'localhost' \
+WITH GRANT OPTION; \
+FLUSH PRIVILEGES; \"`
+# Import SQL data, if it is sitting in /vagrant dir
+if [ ! -z `ls /vagrant/*.sql` ]; then
+	# Set variable to the basename of the file, minus '.sql'
+	DBNAME=`ls /vagrant/*.sql | cut -d '/' -f 3 | sed s/.sql//`
+
+	# Create a database with that name
+	mysqladmin -u root -ppass create $DBNAME
+
+	# Import the SQL into new database
+	`mysql -u root -ppass $DBNAME < /vagrant/$DBNAME.sql`
+
+	# Create a new user with same name as new db, with password 'pass'
+	`mysql -u root -ppass -e "\
+		GRANT ALL PRIVILEGES ON $DBNAME.* TO '$DBNAME'@'%' \
+		IDENTIFIED BY 'pass' WITH GRANT OPTION; \
+		FLUSH PRIVILEGES; \"`
+fi
+# Allow remote connections to mysql (don't do it like this in production)
+sudo sed -i 's/bind-address		= 127.0.0.1/bind-address		= 0.0.0.0/' /etc/mysql/my.cnf
+# Kill mysql process
+sudo mysqladmin -u root -ppass shutdown
+# Wait for mysql to shutdown
+while mysqladmin -u root -ppass ping; do
+	sleep 2
+done
+# Start it up again, good as new. But better.
+sudo service mysql start
+SCRIPT
+
+  # Just comment out the ones you don't want to use.
+  script = ''
+  script += update
+  script += mysql_prefs
+
+  config.vm.provision :shell, :inline => script
+
+end

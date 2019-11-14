@@ -1,0 +1,53 @@
+# Téléchargement Vagrant Edge WINDOWS10
+# https://az792536.vo.msecnd.net/vms/VMBuild_20190311/Vagrant/MSEdge/MSEdge.Win10.Vagrant.zip
+
+Vagrant.configure("2") do |config|
+
+    config.vm.guest = :windows
+    # Configuration de winrm, qui rend la VM scriptable depuis
+    # l'extérieur.
+    config.vm.communicator = "winrm"
+    # Identifiants pour que Vagrant puisse commander la VM
+    config.winrm.username = "IEUser"
+    config.winrm.password = "Passw0rd!"
+
+    # Ouverture du port réseau de winrm
+    config.vm.network :forwarded_port, guest: 5985, host: 59851,
+        id: "winrm", auto_correct:true
+    # Ouverture du port du remote desktop protocol
+    config.vm.network :forwarded_port, guest: 3389, host: 33891,
+        id: "rdp", auto_correct:true
+
+    config.vm.network :public_network,
+        id: "winrm", auto_correct:true
+    config.vm.network :forwarded_port, guest: 3306, host: 3306,
+        id: "winrm", auto_correct:true
+
+    # Chemin de la box qui sera importée au premier démarrage
+    config.vm.box_url = "file://vagrant-win7-ie11"
+    # Timeout rapide (30 s) au premier démarrage
+    config.vm.boot_timeout = 120
+
+    config.vm.box ="Microsoft/EdgeOnWindows10"
+    config.vm.box_version = "1.0"
+
+      config.vm.provider "virtualbox" do |v|
+          v.gui = true
+        end
+
+    config.vm.provision "shell",
+        powershell_elevated_interactive:true,
+        path: "script.sh"
+end
+
+
+
+
+
+
+
+
+
+
+
+

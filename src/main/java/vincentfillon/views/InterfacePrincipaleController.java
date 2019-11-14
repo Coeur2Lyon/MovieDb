@@ -24,7 +24,7 @@ public class InterfacePrincipaleController extends Main {
 
     private AnchorPane interfaceFilms;
     private AnchorPane interfaceJointureFilms;
-    private vincentfillon.Main main;
+    private Main main;
 
     @FXML
     private TextField txtEmail;
@@ -152,8 +152,23 @@ public class InterfacePrincipaleController extends Main {
         Stage newWindow = new Stage();
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("InterfaceUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("main/java/vincentfillon/views/InterfaceUser.fxml"));
             newWindow.setScene(new Scene(root, 500, 600));
+            newWindow.initModality(Modality.APPLICATION_MODAL);
+            newWindow.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void initInterfacePasswordForgetten(ActionEvent actionEvent) {
+        Stage newWindow = new Stage();
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("InterfaceForgettenPassword.fxml"));
+            newWindow.setScene(new Scene(root, 570, 390));
             newWindow.initModality(Modality.APPLICATION_MODAL);
             newWindow.show();
 

@@ -1,7 +1,5 @@
 package vincentfillon.views;
 
-//public class MovieEditDialogControllerTest {
-
 import vincentfillon.model.ActeurRealisateur;
 import vincentfillon.model.JointureActeursRealisateur;
 import javafx.event.ActionEvent;
@@ -11,7 +9,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-//import ch.makery.address.util.DateUtil;
 
 /**
  * Boîte de dialogue pour éditer un acteur/réalisateur.
@@ -24,15 +21,10 @@ public class ActRealEditDialogController {
     private TextField fldPrenom;
     @FXML
     private TextField fldNom;
-
     @FXML
     private TextField fldAnneeNaissance;
     @FXML
     private TextField fldNationalite;
-
-
-
-
 
     private Stage dialogStage;
     private JointureActeursRealisateur acteurRealisateur;

@@ -15,10 +15,26 @@ public class UtilisateurDAO extends Dao<Utilisateur> {
 
     @Override
     public void create(Utilisateur utilisateur) {
-        String insertRequest = "INSERT INTO moviedb.UTILISATEUR (IdRole,Username, Password, Email, Birthday) VALUES('0','" + utilisateur.getUsername() + "','" + utilisateur.getPassword() + "','" + utilisateur.getEmail() + "', '" + utilisateur.getBirthday() + "')";
+
+        int idRole=2;// 2 est l'identifiant d'un simple utilisateur (l'administrateur est "1")
+        String username=utilisateur.getUsername();
+        String password=utilisateur.getPassword();
+        String email= utilisateur.getEmail();
+        java.util.Date birthdayDate=utilisateur.getBirthday();
+
+        java.sql.Date sqlDate=new java.sql.Date(birthdayDate.getTime());
+
+        String insertRequest = "INSERT INTO UTILISATEUR (IdRole,Username, Password, Email, Birthday) VALUES(?,?,?,?,?)";
         try {
-            Statement statement = this.connect.createStatement();
-            statement.executeUpdate(insertRequest);
+
+            PreparedStatement preparedStatement = connect.prepareStatement(insertRequest);
+            preparedStatement.setInt(1,idRole);
+            preparedStatement.setString(2,username);
+            preparedStatement.setString(3,password);
+            preparedStatement.setString(4,email);
+            preparedStatement.setDate(5,sqlDate);
+
+            preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,7 +81,7 @@ public class UtilisateurDAO extends Dao<Utilisateur> {
                 utilisateur.setUsername(username);
                 utilisateur.setPassword(password);
                 utilisateur.setEmail(email);
-                utilisateur.setBirthday(birthday);
+                utilisateur.setBirthday(birthdayDate);
                 utilisateur.setCreatedAt(createdAt);
                 utilisateur.setIsDeleted(isDeleted);
             }

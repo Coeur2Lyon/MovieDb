@@ -1,0 +1,1947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MovieDb" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15b4e4b6-744f-4f8f-84bf-cf8d02655df7.corrupted.20191021-090619.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/15b4e4b6-744f-4f8f-84bf-cf8d02655df7.corrupted.20191021-090619.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/linuxMysqlNODocker/Vagrantfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/.vagrant/rgloader/loader.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/MySQL/moviedb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Vagrantfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/script.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/.vagrant/rgloader/loader.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/Vagrantfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/mySQL/moviedb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/mySQL/mysql_charset.cnf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BDD/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/BDD/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/dao/UtilisateurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/dao/UtilisateurDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/model/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/model/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceForgettenPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePasswordSetting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePasswordSetting.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipale.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipale.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfacePrincipaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/JoueEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/JoueEditDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/centOS/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/centOS/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/centOS/Vagrantfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/centOS/mysql/Projet_Filmotheque.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/centOS/mysql/mysql_charset.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/vagrant/mysqlLinuxDocker/MySQL/mysql_charset.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/windows10/Vagrantfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vagrant/windows10/Vagrantfile2" beforeDir="false" />
+    </list>
+    <ignored path="JavaFxApplication.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MovieDb$Main.ic" NAME="Main Coverage Results" MODIFIED="1568197690004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sample.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="131" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="moviedb@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-641159642">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="20" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.9" value="9" />
+          <entry key="project.opened" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ACTEUR_REALISATEUR" value="35" />
+          <entry key="CORRESPOND" value="20" />
+          <entry key="Dockerfile" value="2" />
+          <entry key="EVALUE" value="14" />
+          <entry key="FILM" value="61" />
+          <entry key="GENRE" value="32" />
+          <entry key="JOUE" value="15" />
+          <entry key="MF" value="1" />
+          <entry key="REALISE" value="10" />
+          <entry key="ROLE" value="6" />
+          <entry key="T_TEST_COLLATIONS_1_TC1" value="1" />
+          <entry key="UTILISATEUR" value="7" />
+          <entry key="class" value="4" />
+          <entry key="cnf" value="1" />
+          <entry key="fk_correspond2" value="1" />
+          <entry key="fxml" value="138" />
+          <entry key="html" value="1" />
+          <entry key="iml" value="2" />
+          <entry key="java" value="407" />
+          <entry key="log" value="1" />
+          <entry key="md" value="10" />
+          <entry key="properties" value="1" />
+          <entry key="snippet" value="1" />
+          <entry key="sql" value="98" />
+          <entry key="xml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="4" />
+          <entry key="Database Element" value="201" />
+          <entry key="Dockerfile" value="2" />
+          <entry key="HTML" value="1" />
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="407" />
+          <entry key="Log" value="1" />
+          <entry key="Manifest" value="1" />
+          <entry key="Markdown" value="10" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="1" />
+          <entry key="SQL" value="25" />
+          <entry key="Scratch" value="75" />
+          <entry key="XML" value="141" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Dockerfile" value="104" />
+          <entry key="cell" value="269" />
+          <entry key="dummy" value="35" />
+          <entry key="fxml" value="69" />
+          <entry key="html" value="31" />
+          <entry key="java" value="23273" />
+          <entry key="md" value="323" />
+          <entry key="properties" value="54" />
+          <entry key="snippet" value="39" />
+          <entry key="sql" value="3115" />
+          <entry key="txt" value="263" />
+          <entry key="xml" value="177" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Dockerfile" value="104" />
+          <entry key="HTML" value="31" />
+          <entry key="JAVA" value="23270" />
+          <entry key="Markdown" value="323" />
+          <entry key="PLAIN_TEXT" value="298" />
+          <entry key="Properties" value="54" />
+          <entry key="SQL" value="1246" />
+          <entry key="Scratch" value="2180" />
+          <entry key="XML" value="246" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="3" />
+          <entry key="git.branch.delete.local" value="3" />
+          <entry key="git.branch.delete.remote" value="3" />
+          <entry key="git.branch.merge" value="1" />
+          <entry key="git.branch.rename" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieEditDialog.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml">
+          <provider selected="true" editor-type-id="text-editor" />
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="ActRealEditDialog.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml">
+          <provider selected="true" editor-type-id="text-editor" />
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="ActRealEditDialogController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BDD/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterfaceFilmsAdminController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="321" column="18" selection-start-line="321" selection-start-column="18" selection-end-line="321" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActeurRealisateur.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/model/ActeurRealisateur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projet_Filmotheque.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2790">
+              <caret line="186" column="49" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>// Nothing selected.</find>
+      <find>// Show the dialog and wait until the user closes it</find>
+      <find>// Create the dialog Stage.</find>
+      <find>//</find>
+      <find>Connection</find>
+      <find>connec</find>
+      <find>Conn</find>
+      <find>'</find>
+      <find>ju</find>
+      <find>jpg</find>
+      <find>ActRealEditDialog.f</find>
+      <find>ActRealEditDialog.fxml</find>
+      <find>+=&quot;,</find>
+      <find>add</find>
+      <find>finda</find>
+      <find>edit</find>
+      <find>, 0)</find>
+      <find>Le</find>
+      <find>, 0),</find>
+      <find>VEBER</find>
+      <find>, 0);</find>
+      <find>;</find>
+      <find>base</find>
+      <find>isInput</find>
+      <find>stage</find>
+      <find>main</find>
+      <find>Alert</find>
+      <find>init</find>
+      <find>package main.java.</find>
+      <find>main.java.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>listIntGenre</replace>
+      <replace>JointureActeursRealisateur</replace>
+      <replace>jointureActeursRealisateur</replace>
+      <replace>ActeursRealisateur</replace>
+      <replace>// Charge le fichier FXML et crée une nouvelle fenêtre (Stage).</replace>
+      <replace>Appelée quand l'utilisateur clique</replace>
+      <replace>sur le boutton &quot;Effacer...&quot;</replace>
+      <replace>Initialise la classe contrôleur.</replace>
+      <replace>après que la vue fxml ait été chargée.</replace>
+      <replace>Le bouton &quot;Editer...&quot;</replace>
+      <replace>Ouvre une fenêtre de dialogue pour éditer les informations du film sélectionné.</replace>
+      <replace>Est appellée par l'application principale Main pour se donner une référence à elle-même</replace>
+      <replace>Remplie les champs de textes/Labels pour afficher les détails du film.</replace>
+      <replace>Affiche le message d'erreur</replace>
+      <replace>Définit/Paramètre la fenêtre de la boîte de dialogue</replace>
+      <replace>@return true si l'entrée est valide</replace>
+      <replace>Retourne &quot;true&quot; si l'utilisateur clique &quot;OK&quot;n sinon &quot;false&quot;</replace>
+      <replace>Valide les entrées utilisateur dans les champs de texte.</replace>
+      <replace>clique sur &quot;Annuler&quot;</replace>
+      <replace>Ajoute les données contenue dans lObservableList à la TableView</replace>
+      <replace>//Ecoute (Se tient prêt pour) le changement (en termes de sélection) à venir. Affiche les détails de l'acteur/réalisateur quand le changement est opéré (la sélection faite)</replace>
+      <replace>Référence à l'interface principlae Main</replace>
+      <replace>// Pas d'élément sélectionné</replace>
+      <replace>// Ouvrir la boîte de dialog(show) et attendre une action de l'utilisateur.</replace>
+      <replace>// Crée la fenêtre de la boîte de dialogue.</replace>
+      <replace>)</replace>
+      <replace>),</replace>
+      <replace>,</replace>
+      <replace>package</replace>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/fr/vincentfillon/connectivity</dir>
+      <dir>$PROJECT_DIR$/src/fr/vincentfillon</dir>
+      <dir>$PROJECT_DIR$/src/test/fr/vincentfillon</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/main/vincentfillon</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+    </dirStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fix-affichage-utf8" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/vincentfillon/views/MovieEditDialogController.java" />
+        <option value="$PROJECT_DIR$/src/test/vincentfillon/views/MovieEditDialogControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/vincentfillon/views/InterfaceActeursRealisateurAdminControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/vincentfillon/views/InterfaceFilmsAdminControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceFilmsAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceActeursRealisateursAdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceFilmsAdminController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fd511914-3b55-470b-aeb2-1732fd39dd0a/console.sql" />
+        <option value="$PROJECT_DIR$/vagrant/windows10/Vagrantfile2" />
+        <option value="$PROJECT_DIR$/vagrant/windows10/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/linuxForAllOS/AlternativeVagrantFiles/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/linuxForAllOS/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/Environment1_LinuxFromAllOS_MultiContainers/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/Environment2_LinuxFromAllOS/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/Environment2_LinuxFromAllOS/Dockerfile" />
+        <option value="$PROJECT_DIR$/vagrant/EnvironmentTest_Windows10FromUbuntu/Dockerfile" />
+        <option value="$PROJECT_DIR$/vagrant/EnvironmentTest_Windows10FromUbuntu/README.md" />
+        <option value="$PROJECT_DIR$/vagrant/EnvironmentTest_Windows10FromUbuntu/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/Environment2_LinuxFromAllOS/README.md" />
+        <option value="$PROJECT_DIR$/vagrant/Environment1_LinuxFromAllOS_MultiContainers/README.md" />
+        <option value="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/script.sh" />
+        <option value="$PROJECT_DIR$/vagrant/Environment2_LinuxFromAllOS/DockerHostVagrantFile" />
+        <option value="$PROJECT_DIR$/vagrant/windows10FromUbuntuEnvironment/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/linuxNODocker/script.sh" />
+        <option value="$PROJECT_DIR$/vagrant/linuxMysqlNODocker/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/linuxNODocker/Vagrantfile" />
+        <option value="$PROJECT_DIR$/vagrant/linuxDockerMysql/script.sh" />
+        <option value="$PROJECT_DIR$/vagrant/linuxDockerMysql/Vagrantfile" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceUser.fxml" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/model/Utilisateur.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f3f90125-2e5c-40ac-9f17-d17e5179c820/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/dao/UtilisateurDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/ActRealEditDialogController.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceActeursRealisateursAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfacePrincipale.fxml" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfacePrincipaleController.java" />
+        <option value="$PROJECT_DIR$/target/classes/main/vincentfillon/views/InterfaceForgettenPassword.fxml" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceForgettenPasswordController.java" />
+        <option value="$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceForgettenPassword.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/views/JoueEditDialogController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/ActRealEditDialogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/BDD/Dockerfile" />
+        <option value="$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/usr/share/maven" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="createModuleGroups" value="true" />
+        <option name="dedicatedModuleDir" value=".idea" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="moviedb" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="1198" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="BDD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vincentfillon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vincentfillon" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="CatdeaLogs" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="jdk&#9;PSI&#9;JAVA://sun.plugin.security.JDK11ClassFileTransformer&#10;tomcat8&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568993474552" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.data.extractors.current.id" value="SQL Inserts" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OpenBI" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.15551049" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.25821596" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vagrant/windows10/AlternantiveVagrantFiles" />
+      <recent name="$PROJECT_DIR$/vagrant/windows10" />
+      <recent name="$PROJECT_DIR$/vagrant/windows10/docker" />
+      <recent name="$PROJECT_DIR$/BDD" />
+      <recent name="$PROJECT_DIR$/vagrant/centOS/BDD" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.vincentfillon.views" />
+      <recent name="test.vincentfillon.views" />
+      <recent name="fr.vincentfillon.model" />
+      <recent name="fr.vincentfillon.dao" />
+      <recent name="fr.vincentfillon.views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/target/classes/vincentfillon/views" />
+      <recent name="$PROJECT_DIR$/vagrant/linuxNODocker" />
+      <recent name="$PROJECT_DIR$/vagrant/Environment2_LinuxFromAllOS" />
+      <recent name="$PROJECT_DIR$/vagrant/EnvironmentTest_Windows10FromUbuntu" />
+      <recent name="$PROJECT_DIR$/vagrant" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main (2)">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.vincentfillon.Main" />
+      <module name="Filmotheque_Inerface_BDD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.vincentfillon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vincentfillon.Main" />
+      <module name="moviedb" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vincentfillon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="main.vincentfillon.Main" />
+      <module name="Filmotheque_Inerface_BDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.vincentfillon.Main" />
+      <module name="Filmotheque_Inerface_BDD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.vincentfillon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActeurRealisateurDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="moviedb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vincentfillon.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="vincentfillon.dao" />
+      <option name="MAIN_CLASS_NAME" value="vincentfillon.dao.ActeurRealisateurDAOTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ActeurRealisateurDAOTest.should_create_actor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="moviedb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vincentfillon.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="vincentfillon.dao" />
+      <option name="MAIN_CLASS_NAME" value="vincentfillon.dao.ActeurRealisateurDAOTest" />
+      <option name="METHOD_NAME" value="should_create_actor" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_MovieDb" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="36557" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="JSONFilePath" value="" />
+          <option name="command" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="containerName" value="moviedb" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="sha256:6611ab3a959648d9960e99b3b1e76c26164adadff378f71f094d18135386166f" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="JUnit.ActeurRealisateurDAOTest.should_create_actor" />
+      <item itemvalue="JUnit.ActeurRealisateurDAOTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ActeurRealisateurDAOTest" />
+        <item itemvalue="JUnit.ActeurRealisateurDAOTest.should_create_actor" />
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1560952976446" duration="1952000" />
+      <workItem from="1561031837009" duration="4279000" />
+      <workItem from="1561037453330" duration="2978000" />
+      <workItem from="1561040464481" duration="3485000" />
+      <workItem from="1561100947115" duration="497000" />
+      <workItem from="1561101468936" duration="2814000" />
+      <workItem from="1561104310395" duration="9901000" />
+      <workItem from="1561120249949" duration="8495000" />
+      <workItem from="1561377786510" duration="10277000" />
+      <workItem from="1561447056713" duration="5276000" />
+      <workItem from="1561452531389" duration="16084000" />
+      <workItem from="1561534178739" duration="18268000" />
+      <workItem from="1561621209539" duration="9178000" />
+      <workItem from="1561641556679" duration="777000" />
+      <workItem from="1561705341371" duration="2837000" />
+      <workItem from="1561716587945" duration="240000" />
+      <workItem from="1561725532262" duration="2467000" />
+      <workItem from="1561728056324" duration="3239000" />
+      <workItem from="1561828648986" duration="3266000" />
+      <workItem from="1562140482299" duration="3815000" />
+      <workItem from="1565255074881" duration="416000" />
+      <workItem from="1565256462524" duration="865000" />
+      <workItem from="1566197230577" duration="38864000" />
+      <workItem from="1566378476033" duration="283000" />
+      <workItem from="1566396082921" duration="21675000" />
+      <workItem from="1566552262528" duration="14672000" />
+      <workItem from="1566801895119" duration="20500000" />
+      <workItem from="1567407375654" duration="13284000" />
+      <workItem from="1567674406132" duration="11070000" />
+      <workItem from="1567695649284" duration="22387000" />
+      <workItem from="1567780098995" duration="186000" />
+      <workItem from="1567780604208" duration="2245000" />
+      <workItem from="1568012957441" duration="9676000" />
+      <workItem from="1568030723527" duration="14375000" />
+      <workItem from="1568099903372" duration="31014000" />
+      <workItem from="1568193585870" duration="3293000" />
+      <workItem from="1568197166996" duration="638000" />
+      <workItem from="1568203149258" duration="11632000" />
+      <workItem from="1568215031404" duration="691000" />
+      <workItem from="1568271361774" duration="3470000" />
+      <workItem from="1568274890255" duration="8511000" />
+      <workItem from="1568290260619" duration="11891000" />
+      <workItem from="1568358139315" duration="6650000" />
+      <workItem from="1568377178358" duration="14446000" />
+      <workItem from="1568616709845" duration="15035000" />
+      <workItem from="1568639014615" duration="361000" />
+      <workItem from="1568639393463" duration="14354000" />
+      <workItem from="1568714021552" duration="13937000" />
+      <workItem from="1568789557367" duration="4885000" />
+      <workItem from="1568801473012" duration="11676000" />
+      <workItem from="1568876720178" duration="6388000" />
+      <workItem from="1568887125609" duration="13177000" />
+      <workItem from="1568983498979" duration="9805000" />
+      <workItem from="1569329955444" duration="18100000" />
+      <workItem from="1569404546725" duration="618000" />
+      <workItem from="1569418613173" duration="3914000" />
+      <workItem from="1569480895961" duration="1813000" />
+      <workItem from="1569568450900" duration="599000" />
+      <workItem from="1569591957315" duration="9000" />
+      <workItem from="1569826383774" duration="8889000" />
+      <workItem from="1569914976475" duration="3369000" />
+      <workItem from="1569930983609" duration="12377000" />
+      <workItem from="1569998312609" duration="7114000" />
+      <workItem from="1570009546900" duration="12838000" />
+      <workItem from="1570085945830" duration="17954000" />
+      <workItem from="1570172806679" duration="3598000" />
+      <workItem from="1570184728178" duration="10309000" />
+      <workItem from="1570202784357" duration="65000" />
+      <workItem from="1570432067560" duration="4267000" />
+      <workItem from="1570452761248" duration="848000" />
+      <workItem from="1570454004577" duration="2751000" />
+      <workItem from="1570518332237" duration="280000" />
+      <workItem from="1570519227708" duration="8741000" />
+      <workItem from="1570535274289" duration="7235000" />
+      <workItem from="1570547853563" duration="896000" />
+      <workItem from="1570605063343" duration="15807000" />
+      <workItem from="1570691312111" duration="9336000" />
+      <workItem from="1570711960046" duration="9522000" />
+      <workItem from="1570775662904" duration="6389000" />
+      <workItem from="1570784745905" duration="4424000" />
+      <workItem from="1571149911162" duration="3613000" />
+      <workItem from="1571219882295" duration="1119000" />
+      <workItem from="1571233156566" duration="633000" />
+      <workItem from="1571296088622" duration="724000" />
+      <workItem from="1571297699532" duration="8776000" />
+      <workItem from="1571381665703" duration="2989000" />
+      <workItem from="1571384677628" duration="14438000" />
+      <workItem from="1571641581998" duration="13402000" />
+      <workItem from="1571728795412" duration="8039000" />
+      <workItem from="1571754872473" duration="3771000" />
+      <workItem from="1571813964013" duration="14286000" />
+      <workItem from="1571843347478" duration="3092000" />
+      <workItem from="1571899944880" duration="150000" />
+      <workItem from="1571925813002" duration="4538000" />
+      <workItem from="1572249381013" duration="2653000" />
+      <workItem from="1572279083249" duration="837000" />
+      <workItem from="1572342785906" duration="14825000" />
+      <workItem from="1572420725699" duration="2128000" />
+      <workItem from="1572423595141" duration="85000" />
+      <workItem from="1572423735646" duration="8313000" />
+      <workItem from="1572433493309" duration="9955000" />
+      <workItem from="1572509616185" duration="11876000" />
+      <workItem from="1572854306457" duration="1524000" />
+      <workItem from="1572945310419" duration="1441000" />
+      <workItem from="1573033653199" duration="1967000" />
+      <workItem from="1573121913743" duration="1876000" />
+      <workItem from="1573123808197" duration="4736000" />
+      <workItem from="1573207039760" duration="1017000" />
+      <workItem from="1573226686449" duration="1299000" />
+      <workItem from="1573228863377" duration="821000" />
+      <workItem from="1573572452956" duration="956000" />
+      <workItem from="1573640671797" duration="5090000" />
+      <workItem from="1573726826805" duration="331000" />
+      <workItem from="1573727177376" duration="1650000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_Features_in__MovieDbWeb_Beta_0_0 - 2019.08.21 at 15h 26m 20s.xml">
+      <configuration name="All Features in: MovieDbWeb_Beta_0_0" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__MovieDbWeb_Beta_0_0 - 2019.08.21 at 15h 26m 33s.xml">
+      <configuration name="All Features in: MovieDbWeb_Beta_0_0" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="All_Features_in__MovieDbWeb_Beta_0_0 - 2019.08.21 at 15h 27m 18s.xml">
+      <configuration name="All Features in: MovieDbWeb_Beta_0_0" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ActeurRealisateurDAOTest_should_create_actor - 2019.11.08 at 17h 02m 49s.xml">
+      <configuration name="ActeurRealisateurDAOTest.should_create_actor" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ActeurRealisateurDAOTest - 2019.11.08 at 17h 02m 56s.xml">
+      <configuration name="ActeurRealisateurDAOTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ActeurRealisateurDAOTest - 2019.11.12 at 16h 28m 03s.xml">
+      <configuration name="ActeurRealisateurDAOTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ActeurRealisateurDAOTest - 2019.11.12 at 16h 30m 26s.xml">
+      <configuration name="ActeurRealisateurDAOTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ActeurRealisateurDAOTest - 2019.11.13 at 11h 27m 58s.xml">
+      <configuration name="ActeurRealisateurDAOTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="817255000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="1225" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32936078" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.49841774" weight="0.2828175" />
+      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32864866" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" weight="0.32972974" />
+      <window_info anchor="right" id="Database" order="12" sideWeight="0.49841774" visible="true" weight="0.1770891" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.17697228" />
+      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.49841774" weight="0.11621472" />
+      <window_info id="UI Designer" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39783785" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32321042" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292797" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29718006" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.5004677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.30160487" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3253796" />
+      <window_info anchor="right" id="SciView" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="right" id="Coverage" order="11" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Learn" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="4" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.3362256" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32972974" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32972974" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Learn" order="4" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="17" visible="true" weight="0.014967259" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29373246" />
+      <window_info anchor="right" id="JetGradle" order="4" />
+      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.49841774" weight="0.11621472" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info id="UI Designer" order="7" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Docker" order="14" weight="0.32972974" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32321042" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32864866" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3292797" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.49841774" weight="0.2828175" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.5004677" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.103521876" />
+      <window_info anchor="right" id="SciView" order="0" />
+      <window_info anchor="right" id="Database" order="12" sideWeight="0.49841774" visible="true" weight="0.14194237" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.17697228" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="right" id="Coverage" order="11" sideWeight="0.50158226" side_tool="true" visible="true" weight="0.1770891" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3264642" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39783785" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="password" language="JAVA" />
+        <watch expression="cr" language="JAVA" />
+        <watch expression="createdAt" language="JAVA" />
+        <watch expression="email" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>createdAt</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cr</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>password</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>password=&quot;zorro&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vagrant/linuxMysqlNODocker/Vagrantfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="139" column="52" lean-forward="true" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/dao/FilmDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/dao/JointureActeursRealisateurDAO.java" />
+    <entry file="das://f3f90125-2e5c-40ac-9f17-d17e5179c820/schema/moviedb/table/ROLE" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/model/Utilisateur.java" />
+    <entry file="file://$PROJECT_DIR$/vagrant/linuxMysqlNODocker/Vagrantfile" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/dao/FilmDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/dao/JointureActeursRealisateurDAO.java" />
+    <entry file="das://f3f90125-2e5c-40ac-9f17-d17e5179c820/schema/moviedb/table/ROLE">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/dao/JointureFilmDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/dao/UtilisateurDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/ActRealEditDialog.fxml" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f3f90125-2e5c-40ac-9f17-d17e5179c820/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="77" selection-start-column="77" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceUserController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/views/ActRealEditDialogController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/views/InterfacePrincipaleController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/vincentfillon/views/InterfaceUserController.java" />
+    <entry file="das://f3f90125-2e5c-40ac-9f17-d17e5179c820/schema/moviedb/table/UTILISATEUR" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfacePasswordSettingController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceActeursRealisateursAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/target/classes/main/vincentfillon/views/InterfaceForgettenPassword.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceActeursRealisateursAdminController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfacePrincipaleController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceFilmsAdminController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceForgettenPasswordController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceUser.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceFilmsAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfaceForgettenPassword.fxml" />
+    <entry file="das://f3f90125-2e5c-40ac-9f17-d17e5179c820/schema/moviedb/table/UTILISATEUR">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/JoueEditDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/vincentfillon/Main.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/vincentfillon/views/ActRealEditDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/vincentfillon/dao/ActeurRealisateurDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/dao/ActeurRealisateurDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/model/ActeurRealisateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/f3f90125-2e5c-40ac-9f17-d17e5179c820">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>f3f90125-2e5c-40ac-9f17-d17e5179c820</OriginalElement>
+          <nodes>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.slave_relay_log_info</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.help_category</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.db</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_summary_by_user_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.procs_priv</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_digest</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.memory_summary_by_user_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.EVENTS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.persisted_variables</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.slave_worker_info</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_errors_summary_by_host_by_error</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.GENRE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.waits_by_host_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.PROFILING</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMP_RESET</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.table_lock_waits_summary_by_table</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.password_history</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_tables_with_full_table_scans</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_DEFAULT_STOPWORD</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.data_lock_waits</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.variables_by_thread</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_by_thread_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.socket_summary_by_instance</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statement_analysis</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ROLE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$io_global_by_wait_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.COLUMNS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_object_overview</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.memory_global_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.CHECK_CONSTRAINTS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_history</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMP_PER_INDEX_RESET</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.time_zone_leap_second</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.VIEW_TABLE_USAGE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_DATAFILES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.user_variables_by_thread</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.KEY_COLUMN_USAGE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.columns_priv</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$ps_digest_95th_percentile_by_avg_us</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$io_global_by_file_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.JOUE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.KEYWORDS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.latest_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.io_global_by_wait_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.time_zone_transition_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_summary_by_account_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_unused_indexes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statements_with_full_table_scans</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.ST_GEOMETRY_COLUMNS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statements_with_errors_or_warnings</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary_by_statement_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.metadata_locks</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$io_global_by_file_by_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary_by_stages</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_COLUMNS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.memory_summary_by_thread_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.help_keyword</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.memory_by_thread_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.engine_cost</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_current</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_index_statistics</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_history_long</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.component</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.log_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FOREIGN</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.socket_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_current</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_summary_by_thread_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.io_global_by_file_by_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.version</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.table_io_waits_summary_by_table</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.func</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.CHARACTER_SETS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$ps_digest_avg_latency_distribution</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.OPTIMIZER_TRACE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.innodb_index_stats</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.PLUGINS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary_by_file_io_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary_by_stages</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.RESOURCE_GROUPS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$session</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.innodb_buffer_stats_by_table</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.socket_summary_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_flattened_keys</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary_by_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_summary_by_account_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_by_instance</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary_by_statement_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.accounts</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.keyring_keys</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.PROCESSLIST</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statements_with_full_table_scans</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.VIEW_ROUTINE_USAGE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.COLLATION_CHARACTER_SET_APPLICABILITY</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.setup_actors</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.metrics</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_table_statistics</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_table_statistics</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_configuration</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.COLUMN_PRIVILEGES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.session</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$waits_by_user_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.global_variables</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.setup_threads</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.status_by_host</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_connection_configuration</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_summary_by_thread_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.setup_instruments</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.memory_summary_global_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_SESSION_TEMP_TABLESPACES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.table_io_waits_summary_by_index_usage</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_history_long</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.ST_UNITS_OF_MEASURE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.session_ssl_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.ROUTINES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.users</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.global_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_DELETED</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TRX</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TABLES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.objects_summary_global_by_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_index_statistics</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.prepared_statements_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.innodb_table_stats</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_errors_summary_by_account_by_error</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_summary_global_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.file_summary_by_instance</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.file_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_program</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ACTEUR_REALISATEUR</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_histogram_by_digest</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_host_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_table_statistics_with_buffer</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$memory_by_thread_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FOREIGN_COLS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$memory_by_host_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.setup_objects</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_group_member_stats</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_by_host_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.server_cost</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.user</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$memory_global_total</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.performance_timers</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.TABLE_PRIVILEGES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_redundant_indexes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.FILES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_connection_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_INDEXES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.io_global_by_wait_by_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.slave_master_info</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.UTILISATEUR</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.servers</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.data_locks</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.threads</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMPMEM</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_history_long</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_summary_global_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.TABLE_CONSTRAINTS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.TABLES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary_by_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.ps_check_lost_instrumentation</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary_by_statement_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.memory_summary_by_account_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_by_user_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.session_status</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.USER_PRIVILEGES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_BEING_DELETED</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$latest_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary_by_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.hosts</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.help_topic</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.time_zone</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary_by_file_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$innodb_buffer_stats_by_schema</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.memory_by_host_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_errors_summary_by_user_by_error</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_BUFFER_PAGE_LRU</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.innodb_buffer_stats_by_schema</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.rwlock_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_histogram_global</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_global_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_current</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.plugin</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.SCHEMATA</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_thread_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.slow_log</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.session_connect_attrs</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.STATISTICS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_summary_by_account_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.REALISE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.help_relation</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FIELDS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMP_PER_INDEX</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.waits_by_user_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.gtid_executed</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_INDEX_CACHE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_history_long</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_history</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_table_statistics_with_buffer</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.variables_info</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.session_account_connect_attrs</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_current</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.default_roles</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMPMEM_RESET</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$ps_schema_table_statistics_io</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_auto_increment_columns</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary_by_file_io_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.cond_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.user_defined_functions</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:sys.sys_config</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$user_summary_by_statement_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_VIRTUAL</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary_by_stages</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.io_global_by_file_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_summary_by_host_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary_by_statement_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_user_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.PARTITIONS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.ENGINES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_INDEX_TABLE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$wait_classes_global_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statement_analysis</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.session_variables</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_status_by_coordinator</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.time_zone_transition</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.status_by_thread</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary_by_file_io_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.VIEWS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.file_summary_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_waits_history</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$innodb_buffer_stats_by_table</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_summary_by_host_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.memory_summary_by_host_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$waits_by_host_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary_by_statement_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$memory_global_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.TABLESPACES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statements_with_sorting</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_global_filters</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statements_with_sorting</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.EVALUE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.tables_priv</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$processlist</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.COLLATIONS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$memory_by_user_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.user_summary_by_file_io_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.proxies_priv</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.CORRESPOND</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.COLUMN_STATISTICS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$waits_global_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_METRICS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.waits_global_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_errors_summary_by_thread_by_error</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.TRIGGERS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CACHED_INDEXES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.status_by_user</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.mutex_instances</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.innodb_lock_waits</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_tables_with_full_table_scans</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary_by_statement_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$wait_classes_global_by_avg_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statements_with_temp_tables</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.setup_consumers</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_transactions_summary_by_user_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.wait_classes_global_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_by_account_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.status_by_account</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statements_with_errors_or_warnings</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.REFERENTIAL_CONSTRAINTS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.global_grants</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_stages_history</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.host_cache</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TABLESPACES_BRIEF</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_status_by_worker</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$schema_table_lock_waits</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.schema_table_lock_waits</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$io_by_thread_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statements_with_temp_tables</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_CMP</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.memory_by_user_by_current_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.io_by_thread_by_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.time_zone_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.memory_global_total</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.SCHEMA_PRIVILEGES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.host_summary_by_statement_type</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_applier_filters</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TABLESPACES</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.replication_group_members</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$statements_with_runtimes_in_95th_percentile</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_BUFFER_POOL_STATS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.PARAMETERS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$io_global_by_wait_by_bytes</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_errors_summary_global_by_error</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.general_log</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:mysql.role_edges</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.wait_classes_global_by_avg_latency</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.table_handles</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TEMP_TABLE_INFO</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_BUFFER_PAGE</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$host_summary_by_stages</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.statements_with_runtimes_in_95th_percentile</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.x$innodb_lock_waits</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:performance_schema.events_statements_summary_global_by_event_name</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_TABLESTATS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.ST_SPATIAL_REFERENCE_SYSTEMS</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:information_schema.INNODB_FT_CONFIG</node>
+            <node x="" y="">f3f90125-2e5c-40ac-9f17-d17e5179c820.VIEW:sys.processlist</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="474.0" y="297.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/f3f90125-2e5c-40ac-9f17-d17e5179c820.SCHEMA:moviedb">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>f3f90125-2e5c-40ac-9f17-d17e5179c820.SCHEMA:moviedb</OriginalElement>
+          <nodes>
+            <node x="647.25" y="416.5">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.CORRESPOND</node>
+            <node x="875.5" y="130.0">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.UTILISATEUR</node>
+            <node x="65.25" y="142.0">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ACTEUR_REALISATEUR</node>
+            <node x="431.17510548523217" y="-50.17932489451476">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM</node>
+            <node x="332.25000000000006" y="416.5">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.JOUE</node>
+            <node x="867.5" y="404.0">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.EVALUE</node>
+            <node x="895.0" y="0.0">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ROLE</node>
+            <node x="65.25" y="416.5">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.REALISE</node>
+            <node x="677.5" y="202.0">f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.GENRE</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.REALISE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM">
+              <point x="61.75" y="-39.5" />
+              <point x="250.5" y="384.0" />
+              <point x="461.50000000000006" y="384.0" />
+              <point x="-84.0" y="112.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.CORRESPOND" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM">
+              <point x="-39.75" y="-39.5" />
+              <point x="687.0" y="384.0" />
+              <point x="573.5" y="384.0" />
+              <point x="28.0" y="112.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.EVALUE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.UTILISATEUR">
+              <point x="37.0" y="-52.0" />
+              <point x="0.0" y="112.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.JOUE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM">
+              <point x="61.75" y="-39.5" />
+              <point x="-28.0" y="112.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.UTILISATEUR" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ROLE">
+              <point x="0.0" y="-112.0" />
+              <point x="0.0" y="40.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.CORRESPOND" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.GENRE">
+              <point x="39.75" y="-39.5" />
+              <point x="0.0" y="40.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.REALISE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ACTEUR_REALISATEUR">
+              <point x="-61.75" y="-39.5" />
+              <point x="-61.75" y="100.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.JOUE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ACTEUR_REALISATEUR">
+              <point x="-61.75" y="-39.5" />
+              <point x="394.00000000000006" y="374.0" />
+              <point x="250.5" y="374.0" />
+              <point x="61.75" y="100.0" />
+            </edge>
+            <edge source="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.EVALUE" target="f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.FILM">
+              <point x="-37.0" y="-52.0" />
+              <point x="904.5" y="374.0" />
+              <point x="629.5" y="374.0" />
+              <point x="84.0" y="112.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8602540834845736" x="269.0" y="188.0" />
+          <SelectedNodes>
+            <node>f3f90125-2e5c-40ac-9f17-d17e5179c820.TABLE:moviedb.ACTEUR_REALISATEUR</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BDD/MySQL/Projet_Filmotheque.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="186" column="49" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/ActRealEditDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views_controllers/InterfacePrincipale.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/MovieEditDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialog.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/ActRealEditDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vagrant/mysqlLinuxDocker/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BDD/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/vincentfillon/views/InterfaceFilmsAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="321" column="18" selection-start-line="321" selection-start-column="18" selection-end-line="321" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>MovieDb</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15551049" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>com.mysql.jdbc_5.1.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15551049" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15551049" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Filmotheque_Inerface_BDD</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15551049" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>mysql:mysql-connector-java:8.0.17</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15551049" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>
